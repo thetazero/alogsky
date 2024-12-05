@@ -1,0 +1,1 @@
+1. Write an outline of the general training phases of a 1500m/800m training plan based on the following racing schedule. Write this training plan for someone who has a 3:47 1500m pr and 1:55 800m pr. Make the peak millage 50 miles per week.
