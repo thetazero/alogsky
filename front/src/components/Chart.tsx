@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import {
     Chart as ChartJS,
@@ -10,6 +10,8 @@ import {
     Title,
     Tooltip,
     Legend,
+    ChartData,
+    ChartOptions,
 } from "chart.js";
 
 export interface DataPoint {
@@ -20,7 +22,6 @@ export interface DataPoint {
 export interface ChartProps {
     data: DataPoint[],
     title: string,
-    xTitle: string,
     yTitle: string,
     yUnit: string,
     options: {
@@ -49,63 +50,87 @@ const calculateRollingAverage = (data: number[], windowSize: number): number[] =
 };
 
 
-const Chart: React.FC<ChartProps> = ({ data, options }) => {
+const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title }) => {
+    const [graphData, setGraphData] = useState<ChartData | null>(null);
+    const [graphOptions, setGraphOptions] = useState<ChartOptions | null>(null);
+    const [sortedData, setSortedData] = useState<DataPoint[]>([]);
+    const [labels, setLabels] = useState<string[]>([]);
+    const [yValues, setYValues] = useState<number[]>([]);
+    const [smoothedYValues, setSmoothedYValues] = useState<number[]>([]);
 
-    const sortedRuns = data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    useEffect(() => {
+        setSortedData(data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()));
+    }, [data]);
 
-    const labels = sortedRuns.map((run) => run.date.toDateString());
-    const y_values = sortedRuns.map((run) => run.y);
+    useEffect(() => {
+        setLabels(sortedData.map((run) => run.date.toDateString()));
+    }, [sortedData]);
 
-    // Apply rolling average
-    const smoothedDistances = calculateRollingAverage(y_values, options.rollingAverageWindow);
+    useEffect(() => {
+        setYValues(sortedData.map((run) => run.y));
+    }, [sortedData]);
 
-    const data_holder = {
-        labels,
-        datasets: [
-            {
-                label: "Distance (miles)",
-                data: smoothedDistances,
-                borderColor: "#4CAF50",
-                backgroundColor: "rgba(76, 175, 80, 0.2)",
-                borderWidth: 2,
-                pointRadius: 2, // Smaller point radius to reduce spikiness
-                pointBackgroundColor: "#4CAF50",
-                tension: 0.4, // Add smoothing to the line
-            },
-        ],
-    };
+    useEffect(() => {
+        setSmoothedYValues(calculateRollingAverage(yValues, options.rollingAverageWindow));
+    }, [yValues, options.rollingAverageWindow]);
 
-    const graph_options = {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: "top" as const,
-            },
-            title: {
-                display: true,
-                text: "Mileage Chart",
-            },
-        },
-        scales: {
-            x: {
+    useEffect(() => {
+        setGraphData({
+            labels: labels,
+            datasets: [
+                {
+                    label: `${yTitle} (${yUnit})`,
+                    data: smoothedYValues,
+                    borderColor: "#4CAF50",
+                    backgroundColor: "rgba(76, 175, 80, 0.2)",
+                    borderWidth: 2,
+                    pointRadius: 2, // Smaller point radius to reduce spikiness
+                    pointBackgroundColor: "#4CAF50",
+                    tension: 0.4, // Add smoothing to the line
+                },
+            ],
+        });
+    }, [smoothedYValues, labels, yTitle, yUnit]);
+
+    useEffect(() => {
+        setGraphOptions({
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "top" as const,
+                },
                 title: {
                     display: true,
-                    text: "Date",
+                    text: title,
                 },
             },
-            y: {
-                title: {
-                    display: true,
-                    text: "Distance (miles)",
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: "Date",
+                    },
                 },
-                beginAtZero: true,
+                y: {
+                    title: {
+                        display: true,
+                        text: yTitle,
+                    },
+                    beginAtZero: true,
+                },
             },
-        },
-    };
+        });
+    }, [title, yTitle]);
 
     return (
         <div>
-            <Line data={data_holder} options={graph_options} />
+            {
+                graphData != null ? (
+                    <Line data={graphData} options={graphOptions} />
+                ) : (
+                    <div>loading...</div>
+                )
+            }
         </div>
     );
 };

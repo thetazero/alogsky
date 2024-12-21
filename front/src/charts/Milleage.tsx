@@ -43,7 +43,6 @@ const MileageChart: React.FC<MileageChartProps> = ({ runs }) => {
             <Chart
                 data={data}
                 title="Mileage Over Time"
-                xTitle="Date"
                 yTitle="Miles"
                 yUnit="mi"
                 options={{ rollingAverageWindow }}
