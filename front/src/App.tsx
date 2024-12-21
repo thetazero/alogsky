@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Run from './activities/Run';
 import data from "./data/log.json"
+import strava_data from "./data/strava_export.json"
 import process from './process/main';
 import { RunData } from './types';
 
@@ -9,7 +10,9 @@ function App() {
     const [processed, setProcessed] = useState<RunData[]>([]);
 
     useEffect(() => {
-        setProcessed(process(data))
+        const manual = process(data)
+        const strava = process(strava_data)
+        setProcessed([...manual, ...strava])
     }, [data]);
 
     return (
@@ -23,7 +26,7 @@ function App() {
                     }
                 }
             >
-                {processed.map((run, i) => (
+                {processed.slice(0, 10).map((run, i) => (
                     <Run key={i} data={run} />
                 ))}
             </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Minutes, RunData, TimeOfDay, Miles } from "../types";
+import { Seconds, Meters, RunData, TimeOfDay, Miles } from "../types";
 
 interface RunProps {
     data: RunData;
@@ -20,10 +20,15 @@ function capitalize_first_letter(s: string): string {
     return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
-function format_minutes_per_mile(distance: Miles, duration: Minutes): string {
-    const mpm = duration / distance
-    const minutes = Math.floor(mpm)
-    const seconds = Math.round((mpm - minutes) * 60)
+function meters_to_miles(meters: Meters): Miles {
+    return meters * 0.000621371 as Miles
+}
+
+function format_minutes_per_mile(distance: Miles, duration: Seconds): string {
+    console.log(distance, duration)
+    const rate = duration / distance
+    const minutes = Math.floor(rate / 60)
+    const seconds = Math.floor(rate % 60)
     return `${minutes}:${seconds.toString().padStart(2, "0")}`
 }
 
@@ -32,15 +37,18 @@ const Run: React.FC<RunProps> = (
     {
         data: {
             title,
-            notes,
-            distance,
-            duration,
             date,
+            distance,
+            moving_time,
+            elapsed_time,
+            temperature,
+            feels_like
         },
     }: RunProps
 ) => {
-    let [name, setName] = useState<string>(title)
-    const [minutesPerMile, setMinutesPerMile] = useState<string>(format_minutes_per_mile(distance, duration))
+    const [name, setName] = useState<string>(title)
+    const [minutesPerMile, setMinutesPerMile] = useState<string>(format_minutes_per_mile(distance, moving_time))
+    const [miles, setMiles] = useState<Miles>(meters_to_miles(distance))
 
     useEffect(() => {
         if (title.length == 0) {
@@ -52,8 +60,13 @@ const Run: React.FC<RunProps> = (
     }, [title, date])
 
     useEffect(() => {
-        setMinutesPerMile(format_minutes_per_mile(distance, duration))
-    }, [distance, duration])
+        setMinutesPerMile(format_minutes_per_mile(miles, moving_time))
+    }, [miles, moving_time])
+
+    useEffect(() => {
+        let dist = meters_to_miles(distance)
+        setMiles(dist)
+    }, [distance])
     return (
         <div
             className="card"
@@ -63,9 +76,9 @@ const Run: React.FC<RunProps> = (
                 {
                     textAlign: "left",
                 }
-            }>{notes}</p>
+            }> {elapsed_time} {temperature} {feels_like}</p>
             <p>
-                {distance} miles | {minutesPerMile} /mi
+                {miles.toFixed(2)} miles | {minutesPerMile} /mi
             </p>
         </div>
     );
