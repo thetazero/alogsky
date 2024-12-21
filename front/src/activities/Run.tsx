@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Seconds, RunData, TimeOfDay, Miles } from "../types";
+import { RunData, TimeOfDay, Miles } from "../types";
 import { meters_to_miles } from "../utils/unit_conversion";
+import { format_minutes_per_mile } from "../utils/format";
 
 interface RunProps {
     data: RunData;
@@ -19,13 +20,6 @@ function get_time_of_day(date: Date): TimeOfDay {
 
 function capitalize_first_letter(s: string): string {
     return s.charAt(0).toUpperCase() + s.slice(1)
-}
-
-function format_minutes_per_mile(distance: Miles, duration: Seconds): string {
-    const rate = duration / distance
-    const minutes = Math.floor(rate / 60)
-    const seconds = Math.floor(rate % 60)
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`
 }
 
 function pretty_date(date: Date): string {

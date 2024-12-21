@@ -24,6 +24,7 @@ export interface ChartProps {
     title: string,
     yTitle: string,
     yUnit: string,
+    labelFn: ((value: number) => string) | null,
     options: {
         rollingAverageWindow: number,
     }
@@ -50,7 +51,7 @@ const calculateRollingAverage = (data: number[], windowSize: number): number[] =
 };
 
 
-const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title }) => {
+const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labelFn }) => {
     const [graphData, setGraphData] = useState<ChartData | null>(null);
     const [graphOptions, setGraphOptions] = useState<ChartOptions | null>(null);
     const [sortedData, setSortedData] = useState<DataPoint[]>([]);
@@ -64,9 +65,6 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title }) =>
 
     useEffect(() => {
         setLabels(sortedData.map((run) => run.date.toDateString()));
-    }, [sortedData]);
-
-    useEffect(() => {
         setYValues(sortedData.map((run) => run.y));
     }, [sortedData]);
 
@@ -102,6 +100,21 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title }) =>
                 title: {
                     display: true,
                     text: title,
+                    font: {
+                        size: 24,
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            const value = context.raw as number;
+                            if (labelFn) {
+                                return labelFn(value);
+                            } else {
+                                return `${value.toFixed(2)} ${yUnit}`;
+                            }
+                        }
+                    }
                 },
             },
             scales: {
@@ -109,12 +122,18 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title }) =>
                     title: {
                         display: true,
                         text: "Date",
+                        font: {
+                            size: 16,
+                        }
                     },
                 },
                 y: {
                     title: {
                         display: true,
-                        text: yTitle,
+                        text: `${yTitle} (${yUnit})`,
+                        font: {
+                            size: 16,
+                        }
                     },
                     beginAtZero: true,
                 },
