@@ -35,4 +35,4 @@ def extract_relevant_runs(activities: Any):
 
 
 if __name__ == "__main__":
-    read_strava_export("data", "front/src/data/strava_export.json")
+    read_strava_export("neltoid", "front/src/data/strava_neltoid.json")

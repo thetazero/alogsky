@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Run from './activities/Run';
 import data from "./data/log.json"
+// import strava_data from "./data/strava_neltoid.json"
 import strava_data from "./data/strava_export.json"
 import process from './process/main';
 import { RunData } from './types';

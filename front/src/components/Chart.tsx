@@ -63,7 +63,7 @@ const Chart: React.FC<ChartProps> = ({ data, options }) => {
         labels,
         datasets: [
             {
-                label: "Distance (miles, smoothed)",
+                label: "Distance (miles)",
                 data: smoothedDistances,
                 borderColor: "#4CAF50",
                 backgroundColor: "rgba(76, 175, 80, 0.2)",
