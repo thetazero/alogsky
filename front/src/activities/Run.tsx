@@ -32,6 +32,15 @@ function format_minutes_per_mile(distance: Miles, duration: Seconds): string {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`
 }
 
+function pretty_date(date: Date): string {
+    return date.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    })
+}
+
 
 const Run: React.FC<RunProps> = (
     {
@@ -76,7 +85,11 @@ const Run: React.FC<RunProps> = (
                 {
                     textAlign: "left",
                 }
-            }> {elapsed_time} {temperature} {feels_like}</p>
+            }> 
+            Temp: {temperature ? temperature : "???"} (C)
+            <br/>
+            Date: {pretty_date(date)}
+            </p>
             <p>
                 {miles.toFixed(2)} miles | {minutesPerMile} /mi
             </p>

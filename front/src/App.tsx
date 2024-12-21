@@ -12,7 +12,9 @@ function App() {
     useEffect(() => {
         const manual = process(data)
         const strava = process(strava_data)
-        setProcessed([...manual, ...strava])
+        const all = [...manual, ...strava]
+        all.sort((a, b) => b.date.getTime() - a.date.getTime())
+        setProcessed(all)
     }, [data]);
 
     return (
