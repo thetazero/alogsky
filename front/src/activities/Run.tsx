@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RunData } from "../types";
 
 interface RunProps {
@@ -12,12 +12,22 @@ const Run: React.FC<RunProps> = (
             notes,
             distance,
             duration,
+            date,
         },
     }: RunProps
 ) => {
+    let [name, setName] = useState<string>(title)
+
+    useEffect(() => {
+        if (title.length == 0) {
+            setName("Untitled")
+        } else {
+            setName(title)
+        }
+    }, [title])
     return (
         <div>
-            <h3>{title}</h3>
+            <h3>{name} - {date.toString()}</h3>
             <p>{notes}</p>
             <p>
                 {distance} miles in {duration} minutes

@@ -1,22 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import { Miles, RunData, Minutes } from './types';
 import Run from './activities/Run';
+import data from "./data/log.json"
+import process from './process/main';
+import { RunData } from './types';
 
 function App() {
-    const [run, setRun] = useState<RunData>({
-        title: "First Run",
-        notes: "This was my first run",
-        distance: 3 as Miles,
-        duration: 30 as Minutes,
-    });
+    const [processed, setProcessed] = useState<RunData[]>([]);
 
-  return (
-    <>
-      <h1>Training Log</h1>
-      <Run data={run} />
-    </>
-  )
+    useEffect(() => {
+        setProcessed(process(data))
+    }, [data]);
+
+    return (
+        <>
+            <h1>Training Log</h1>
+            <div>
+                {processed.map((run, i) => (
+                    <Run key={i} data={run} />
+                ))}
+            </div>
+            <div>
+                {JSON.stringify(data)}
+            </div>
+        </>
+    )
 }
 
 export default App

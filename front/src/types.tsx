@@ -6,4 +6,6 @@ export interface RunData {
     notes: string
     distance: Miles
     duration: Minutes
+    date: Date
+    type: "run"
 }
