@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Seconds, Meters, RunData, TimeOfDay, Miles } from "../types";
+import { Seconds, RunData, TimeOfDay, Miles } from "../types";
+import { meters_to_miles } from "../utils/unit_conversion";
 
 interface RunProps {
     data: RunData;
@@ -20,12 +21,7 @@ function capitalize_first_letter(s: string): string {
     return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
-function meters_to_miles(meters: Meters): Miles {
-    return meters * 0.000621371 as Miles
-}
-
 function format_minutes_per_mile(distance: Miles, duration: Seconds): string {
-    console.log(distance, duration)
     const rate = duration / distance
     const minutes = Math.floor(rate / 60)
     const seconds = Math.floor(rate % 60)
@@ -49,15 +45,13 @@ const Run: React.FC<RunProps> = (
             date,
             distance,
             moving_time,
-            elapsed_time,
             temperature,
-            feels_like
         },
     }: RunProps
 ) => {
     const [name, setName] = useState<string>(title)
-    const [minutesPerMile, setMinutesPerMile] = useState<string>(format_minutes_per_mile(distance, moving_time))
     const [miles, setMiles] = useState<Miles>(meters_to_miles(distance))
+    const [minutesPerMile, setMinutesPerMile] = useState<string>(format_minutes_per_mile(miles, moving_time))
 
     useEffect(() => {
         if (title.length == 0) {
@@ -85,10 +79,10 @@ const Run: React.FC<RunProps> = (
                 {
                     textAlign: "left",
                 }
-            }> 
-            Temp: {temperature ? temperature : "???"} (C)
-            <br/>
-            Date: {pretty_date(date)}
+            }>
+                Temp: {temperature ? temperature : "???"} (C)
+                <br />
+                Date: {pretty_date(date)}
             </p>
             <p>
                 {miles.toFixed(2)} miles | {minutesPerMile} /mi
