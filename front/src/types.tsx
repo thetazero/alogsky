@@ -9,3 +9,9 @@ export interface RunData {
     date: Date
     type: "run"
 }
+
+export enum TimeOfDay {
+    Morning = "morning",
+    Afternoon = "afternoon",
+    Evening = "evening",
+}

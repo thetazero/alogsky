@@ -15,7 +15,14 @@ function App() {
     return (
         <>
             <h1>Training Log</h1>
-            <div>
+            <div
+
+                style={
+                    {
+                        textAlign: "center",
+                    }
+                }
+            >
                 {processed.map((run, i) => (
                     <Run key={i} data={run} />
                 ))}
