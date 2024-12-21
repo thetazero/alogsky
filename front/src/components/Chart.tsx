@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import {
@@ -13,6 +12,7 @@ import {
     ChartData,
     ChartOptions,
 } from "chart.js";
+import zoomPlugin from 'chartjs-plugin-zoom';
 
 export interface DataPoint {
     date: Date,
@@ -29,6 +29,7 @@ export interface ChartProps {
         rollingAverageWindow: number,
     }
 }
+
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -36,7 +37,8 @@ ChartJS.register(
     LineElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
+    zoomPlugin,
 );
 
 const calculateRollingAverage = (data: number[], windowSize: number): number[] => {
@@ -49,7 +51,6 @@ const calculateRollingAverage = (data: number[], windowSize: number): number[] =
     }
     return averages;
 };
-
 
 const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labelFn }) => {
     const [graphData, setGraphData] = useState<ChartData | null>(null);
@@ -82,9 +83,9 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                     borderColor: "#4CAF50",
                     backgroundColor: "rgba(76, 175, 80, 0.2)",
                     borderWidth: 2,
-                    pointRadius: 2, // Smaller point radius to reduce spikiness
+                    pointRadius: 2,
                     pointBackgroundColor: "#4CAF50",
-                    tension: 0.4, // Add smoothing to the line
+                    tension: 0.4,
                 },
             ],
         });
@@ -116,6 +117,19 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                         }
                     }
                 },
+                zoom: {
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        mode: 'x', // Zooming on both axes
+                    },
+                    pan: {
+                        enabled: true,
+                        mode: 'x', // Panning on both axes
+                        threshold: 10,
+                    },
+                }
             },
             scales: {
                 x: {
@@ -135,7 +149,16 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                             size: 16,
                         }
                     },
-                    beginAtZero: true,
+                    ticks: {
+                        callback: (value) => {
+                            const num = value as number;
+                            if (labelFn) {
+                                return labelFn(num);
+                            } else {
+                                return `${num.toFixed(2)} ${yUnit}`;
+                            }
+                        },
+                    }
                 },
             },
         });

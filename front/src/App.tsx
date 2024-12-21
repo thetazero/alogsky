@@ -6,7 +6,7 @@ import data from "./data/log.json"
 import strava_data from "./data/strava_export.json"
 import process from './process/main';
 import { RunData } from './types';
-import MileageChart from './charts/Milleage';
+import SingleMetricChart from './charts/MetricChart';
 
 function App() {
     const [processed, setProcessed] = useState<RunData[]>([]);
@@ -22,7 +22,7 @@ function App() {
     return (
         <>
             <h1>Training Log</h1>
-            <MileageChart runs={processed} />
+            <SingleMetricChart runs={processed} />
             <div
 
                 style={

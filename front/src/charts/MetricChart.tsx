@@ -3,7 +3,7 @@ import { MinutesPerMile, RunData, SecondsPerMeter } from "../types";
 import { meters_to_miles, seconds_per_meter_to_minutes_per_mile } from "../utils/unit_conversion";
 import Chart from "../components/Chart";
 import { DataPoint } from "../components/Chart";
-import { fmt_minutes_per_mile } from "../utils/format";
+import { fmt_minutes_per_mile, format_minutes_per_mile } from "../utils/format";
 
 interface MileageChartProps {
     runs: RunData[];
@@ -16,7 +16,7 @@ enum Metrics {
 }
 const allMetrics: Metrics[] = Object.values(Metrics);
 
-const MileageChart: React.FC<MileageChartProps> = ({ runs }) => {
+const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
     const [data, setData] = useState<DataPoint[]>([]);
 
     const [rollingAverageWindow, setRollingAverageWindow] = useState(30); // Default rolling average window size
@@ -39,7 +39,7 @@ const MileageChart: React.FC<MileageChartProps> = ({ runs }) => {
                         y: parseFloat(meters_to_miles(run.distance).toFixed(2)), // Convert meters to miles
                     }))
                 )
-                setLabelFn(null);
+                setLabelFn(() => (value: number) => `${value.toFixed(1)} miles`);
                 break;
             case Metrics.Pace:
                 setTitle("Pace");
@@ -51,11 +51,7 @@ const MileageChart: React.FC<MileageChartProps> = ({ runs }) => {
                         y: seconds_per_meter_to_minutes_per_mile(run.moving_time / run.distance as SecondsPerMeter), // Convert seconds per meter to minutes per mile
                     }))
                 )
-                const fn = (value: number) => {
-                    const minutes_per_mile: MinutesPerMile = value as MinutesPerMile
-                    return `${fmt_minutes_per_mile(minutes_per_mile)}/mile`
-                }
-                setLabelFn(() => fn);
+                setLabelFn(() => format_minutes_per_mile)
                 break;
             case Metrics.ActiveTime:
                 setTitle("Active Time");
@@ -67,7 +63,7 @@ const MileageChart: React.FC<MileageChartProps> = ({ runs }) => {
                         y: run.moving_time / 60, // Convert seconds to minutes
                     }))
                 )
-                setLabelFn(null);
+                setLabelFn(() => (value: number) => `${value.toFixed(0)} minutes`);
                 break;
         }
     }, [runs, metric]);
@@ -109,4 +105,4 @@ const MileageChart: React.FC<MileageChartProps> = ({ runs }) => {
     );
 };
 
-export default MileageChart;
+export default SingleMetricChart;
