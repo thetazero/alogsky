@@ -71,7 +71,6 @@ const MileageChart: React.FC<MileageChartProps> = ({ runs }) => {
                 break;
         }
     }, [runs, metric]);
-    console.log(labelFn);
     return (
         <div>
             <div style={{ marginBottom: "20px" }}>
