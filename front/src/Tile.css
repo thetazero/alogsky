@@ -37,6 +37,22 @@
     /* Space between title and content */
 }
 
+.tile-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.buttons {
+    position: absolute;
+    /* Position buttons relative to .tile-header */
+    top: 4px;
+    /* 4px from the top */
+    right: 4px;
+    /* 4px from the right */
+    display: flex;
+    gap: 8px;
+}
+
 .tile-close-button {
     background: none;
     border: none;

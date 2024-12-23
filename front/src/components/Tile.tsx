@@ -13,13 +13,22 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
                 {
                     title && <h2>{title}</h2>
                 }
-                <button
-                    className="tile-close-button"
-                    onClick={onClose}
-                    aria-label="Close"
-                >
-                    ×
-                </button>
+                <div className="buttons">
+                    <button
+                        className="tile-close-button"
+                        onClick={onClose}
+                        aria-label="Close"
+                    >
+                        ×
+                    </button>
+                    <button
+                        className="tile-close-button"
+                        onClick={onClose}
+                        aria-label="Close"
+                    >
+                        ×
+                    </button>
+                </div>
             </div>
             <div className="tile-content">
                 {children}
