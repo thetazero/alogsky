@@ -16,10 +16,13 @@ function pretty_date(date: Date): string {
 
 interface RunProps {
     data: RunData;
+    height: number;  // Fixed height for each run
+    style?: React.CSSProperties;  // Allow passing style as a prop
 }
 
 const Run: React.FC<RunProps> = ({
-    data: { date, distance, moving_time, temperature },
+    data: { date, distance, moving_time, temperature, title },
+    height,
 }: RunProps) => {
     const [minutesPerMile, setMinutesPerMile] = useState<InverseSpeed>(moving_time.per(distance));
 
@@ -28,29 +31,36 @@ const Run: React.FC<RunProps> = ({
     }, [distance, moving_time]);
 
     return (
-        <div className="space-y-4">
-            <div className="text-left">
-                {pretty_date(date)}
-                {
-                    temperature && (
-                        <p className="text-sm">
-                            Feels like: {temperature.in(celsius).amount}°C
-                        </p>
-                    )
-                }
+        <div
+            className="space-y-6 p-6 dark:border-gray-500 bg-gray-900 dark:bg-gray-800"
+            style={{ height }}  // Apply only height for the row
+        >
+            {/* Title with some visual prominence */}
+            <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-bold text-white">{title}</h2>
+                <span className="text-sm text-gray-400">{pretty_date(date)}</span>
             </div>
-            {
-                JSON.stringify(temperature)
-            }
 
-            <div className="text-lg font-semibold">
+            {/* Temperature (if available) */}
+            {temperature && (
+                <p className="text-sm text-gray-400">
+                    Feels like: {temperature.in(celsius).amount}°C
+                </p>
+            )}
+
+            <div className="text-lg font-semibold text-gray-300">
                 <p>
                     {distance.in(miles).amount.toFixed(2)} miles |{" "}
                     {fmt_minutes_per_mile(minutesPerMile)}
                 </p>
             </div>
+
+
+            {/* Optional line break for better separation between runs */}
+            <hr className="border-gray-600 dark:border-gray-700 mt-4" />
         </div>
     );
 };
+
 
 export default Run;
