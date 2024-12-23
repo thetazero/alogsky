@@ -65,7 +65,10 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
     }, [data]);
 
     useEffect(() => {
-        setLabels(sortedData.map((run) => run.date.toDateString()));
+        setLabels(sortedData.map((run) => run.date.toLocaleDateString('en-GB', {
+            year: "numeric",
+            month: "numeric",
+        })));
         setYValues(sortedData.map((run) => run.y));
     }, [sortedData]);
 
@@ -90,7 +93,6 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
             ],
         });
     }, [smoothedYValues, labels, yTitle, yUnit]);
-
     useEffect(() => {
         setGraphOptions({
             responsive: true,
@@ -99,7 +101,7 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                     position: "top" as const,
                 },
                 title: {
-                    display: true,
+                    display: false,
                     text: title,
                     font: {
                         size: 24,
@@ -134,7 +136,7 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
             scales: {
                 x: {
                     title: {
-                        display: true,
+                        display: false,
                         text: "Date",
                         font: {
                             size: 16,
@@ -143,7 +145,7 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                 },
                 y: {
                     title: {
-                        display: true,
+                        display: false,
                         text: `${yTitle} (${yUnit})`,
                         font: {
                             size: 16,

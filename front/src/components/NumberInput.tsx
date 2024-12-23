@@ -60,8 +60,6 @@ const NumberInput: React.FC<NumberInputProps> = ({
                 step={step}
                 className={`w-20 p-2 border border-gray-600 bg-gray-800 rounded-sm text-white text-sm ${isEmpty ? 'text-gray-500' : 'text-white'}`}
                 style={{
-                    "-moz-appearance": "textfield",
-                    "-webkit-appearance": "none",
                     "appearance": "none", // hides the up/down arrows
                 }}
                 placeholder={isEmpty ? min.toString() : ""}
@@ -75,7 +73,6 @@ const NumberInput: React.FC<NumberInputProps> = ({
                         margin: 0;
                     }
                     input[type="number"] {
-                        -moz-appearance: textfield;
                         appearance: none;
                     }
                 `}
