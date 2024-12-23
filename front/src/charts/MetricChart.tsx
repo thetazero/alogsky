@@ -5,6 +5,7 @@ import { DataPoint } from "../components/Chart";
 import { fmt_minutes_per_mile } from "../utils/format";
 import { miles } from "@buge/ts-units/length";
 import { minutes } from "@buge/ts-units/time";
+import NumberInput from "../components/NumberInput"; // Adjust the import path based on your project structure
 
 interface MileageChartProps {
     runs: RunData[];
@@ -68,31 +69,36 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
                 break;
         }
     }, [runs, metric]);
+
     return (
-        <div>
-            <div style={{ marginBottom: "20px" }}>
-                <label htmlFor="metric">Metric: </label>
-                <select name="metric" id="metric"
-                    value={metric}
-                    onChange={(e) => setMetric(e.target.value as Metrics)}
-                    style={{ marginLeft: "10px", padding: "5px" }}
-                >
-                    {
-                        allMetrics.map((metric) => (
+        <>
+            <div className="mb-4 flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                    <label htmlFor="metric" className="text-sm">Metric: </label>
+                    <select
+                        name="metric"
+                        id="metric"
+                        value={metric}
+                        onChange={(e) => setMetric(e.target.value as Metrics)}
+                        className="p-1.5 border border-gray-600 bg-gray-800 rounded-sm text-white text-sm w-32"
+                    >
+                        {allMetrics.map((metric) => (
                             <option key={metric} value={metric}>{metric}</option>
-                        ))
-                    }
-                </select>
-                <br />
-                <label htmlFor="rolling-window">Rolling Average Window Size: </label>
-                <input
-                    id="rolling-window"
-                    type="number"
-                    min="1"
-                    value={rollingAverageWindow}
-                    onChange={(e) => setRollingAverageWindow(Number(e.target.value))}
-                    style={{ marginLeft: "10px", padding: "5px" }}
-                />
+                        ))}
+                    </select>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                    <label htmlFor="rolling-window" className="text-sm">Rolling Average Window Size: </label>
+                    <NumberInput
+                        value={rollingAverageWindow}
+                        onChange={setRollingAverageWindow}
+                        min={1}
+                        max={100}
+                        step={1}
+                        className="w-32"
+                    />
+                </div>
             </div>
             <Chart
                 data={data}
@@ -102,7 +108,7 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
                 labelFn={labelFn}
                 options={{ rollingAverageWindow }}
             />
-        </div>
+        </>
     );
 };
 
