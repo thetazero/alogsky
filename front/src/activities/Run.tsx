@@ -36,7 +36,6 @@ function pretty_date(date: Date): string {
 const Run: React.FC<RunProps> = (
     {
         data: {
-            title,
             date,
             distance,
             moving_time,
@@ -44,17 +43,7 @@ const Run: React.FC<RunProps> = (
         },
     }: RunProps
 ) => {
-    const [name, setName] = useState<string>(title)
     const [minutesPerMile, setMinutesPerMile] = useState<InverseSpeed>(moving_time.per(distance))
-
-    useEffect(() => {
-        if (title.length == 0) {
-            const time_of_date = get_time_of_day(date)
-            setName(`${capitalize_first_letter(time_of_date)} run`)
-        } else {
-            setName(title)
-        }
-    }, [title, date])
 
     useEffect(() => {
         setMinutesPerMile(moving_time.per(distance))
@@ -64,7 +53,6 @@ const Run: React.FC<RunProps> = (
         <div
             className="card"
         >
-            <h3>{name}</h3>
             <p style={
                 {
                     textAlign: "left",

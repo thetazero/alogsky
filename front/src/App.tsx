@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import './Tile.css'
 import Run from './activities/Run';
 import data from "./data/log.json"
 // import strava_data from "./data/strava_neltoid.json"
@@ -7,6 +8,7 @@ import strava_data from "./data/strava_export.json"
 import process from './process/main';
 import { RunData } from './types';
 import SingleMetricChart from './charts/MetricChart';
+import Tile from './components/Tile';
 
 function App() {
     const [processed, setProcessed] = useState<RunData[]>([]);
@@ -31,9 +33,13 @@ function App() {
                     }
                 }
             >
-                {processed.slice(0, 10).map((run, i) => (
-                    <Run key={i} data={run} />
-                ))}
+                <div className="tile-grid">
+                    {processed.slice(0, 10).map((run, i) => (
+                        <Tile key={i} title={run.title}>
+                            <Run data={run} />
+                        </Tile>
+                    ))}
+                </div>
             </div>
             <div>
                 {JSON.stringify(data)}
