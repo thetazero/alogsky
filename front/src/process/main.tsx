@@ -1,6 +1,9 @@
 import { RunData } from "../types";
+import { meters } from "@buge/ts-units/length";
+import { seconds } from "@buge/ts-units/time";
+import { celsius } from "@buge/ts-units/temperature";
 
-function process(data: any[]) : RunData[] {
+function process(data: any[]): RunData[] {
     return data.map(_process);
 }
 
@@ -18,20 +21,20 @@ function _process(point: any) {
 }
 
 function process_run_v1(data: any, date: Date): RunData {
-    const title = data.title;
-    const notes = data.notes;
-    const distance = data.distance;
-    const duration = data.duration;
+    const title: string = data.title;
+    const notes: string = data.notes;
+    const distance = meters(data.distance);
+    const duration = seconds(data.duration);
     return { title, notes, distance, moving_time: duration, date, type: "run" };
-} 
+}
 
 function process_run_v2(data: any, date: Date): RunData {
-    const title = data.title;
-    const distance = data.distance;
-    const moving_time = data.moving_time;
-    const elapsed_time = data.elapsed_time;
-    const temperature = data.temperature;
-    const feels_like = data.feels_like;
+    const title: string = data.title;
+    const distance = meters(data.distance);
+    const moving_time = seconds(data.moving_time);
+    const elapsed_time = seconds(data.elapsed_time);
+    const temperature = celsius(data.temperature);
+    const feels_like = celsius(data.feels_like);
     return { title, notes: "", distance, moving_time, elapsed_time, temperature, feels_like, date, type: "run" };
 }
 

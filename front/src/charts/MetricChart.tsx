@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { MinutesPerMile, RunData, SecondsPerMeter } from "../types";
-import { meters_to_miles, seconds_per_meter_to_minutes_per_mile } from "../utils/unit_conversion";
+import { minutes_per_mile, RunData } from "../types";
 import Chart from "../components/Chart";
 import { DataPoint } from "../components/Chart";
-import { fmt_minutes_per_mile, format_minutes_per_mile } from "../utils/format";
+import { fmt_minutes_per_mile } from "../utils/format";
+import { miles } from "@buge/ts-units/length";
+import { minutes } from "@buge/ts-units/time";
 
 interface MileageChartProps {
     runs: RunData[];
@@ -36,7 +37,7 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
                 setData(
                     runs.map((run) => ({
                         date: run.date,
-                        y: parseFloat(meters_to_miles(run.distance).toFixed(2)), // Convert meters to miles
+                        y: run.distance.in(miles).amount,
                     }))
                 )
                 setLabelFn(() => (value: number) => `${value.toFixed(1)} miles`);
@@ -48,10 +49,10 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
                 setData(
                     runs.map((run) => ({
                         date: run.date,
-                        y: seconds_per_meter_to_minutes_per_mile(run.moving_time / run.distance as SecondsPerMeter), // Convert seconds per meter to minutes per mile
+                        y: (run.moving_time.per(run.distance)).in(minutes_per_mile).amount,
                     }))
                 )
-                setLabelFn(() => format_minutes_per_mile)
+                setLabelFn(() => (value: number) => fmt_minutes_per_mile(minutes_per_mile(value)));
                 break;
             case Metrics.ActiveTime:
                 setTitle("Active Time");
@@ -60,7 +61,7 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
                 setData(
                     runs.map((run) => ({
                         date: run.date,
-                        y: run.moving_time / 60, // Convert seconds to minutes
+                        y: run.moving_time.in(minutes).amount,
                     }))
                 )
                 setLabelFn(() => (value: number) => `${value.toFixed(0)} minutes`);

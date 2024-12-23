@@ -1,13 +1,9 @@
-import { Miles, MinutesPerMile, Seconds, Minutes } from "../types";
+import { InverseSpeed } from "../types";
+import { minutes_per_mile } from "../types";
 
-export function fmt_minutes_per_mile(minutes_per_mile: MinutesPerMile): string {
-    const minutes = Math.floor(minutes_per_mile);
-    const seconds = Math.round((minutes_per_mile - minutes) * 60);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}/miles`;
-}
-
-export function format_minutes_per_mile(distance: Miles, duration: Seconds): string {
-    const duration_minutes = duration / 60 as Minutes;
-    const minutes_per_mile = duration_minutes / distance as MinutesPerMile;
-    return fmt_minutes_per_mile(minutes_per_mile);
+export function fmt_minutes_per_mile(inverse_speed: InverseSpeed): string {
+    let mpm = inverse_speed.in(minutes_per_mile).amount;
+    const minutes = Math.floor(mpm);
+    const seconds = Math.round((mpm - minutes) * 60);
+    return `${minutes}:${seconds.toString().padStart(2, "0")}/mile`;
 }

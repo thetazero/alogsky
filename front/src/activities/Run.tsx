@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { RunData, TimeOfDay, Miles } from "../types";
-import { meters_to_miles } from "../utils/unit_conversion";
-import { format_minutes_per_mile } from "../utils/format";
+import { InverseSpeed, RunData, TimeOfDay } from "../types";
+import { Length, miles } from "@buge/ts-units/length";
+import { fmt_minutes_per_mile } from "../utils/format";
+import { celsius } from "@buge/ts-units/temperature";
 
 interface RunProps {
     data: RunData;
@@ -44,8 +45,7 @@ const Run: React.FC<RunProps> = (
     }: RunProps
 ) => {
     const [name, setName] = useState<string>(title)
-    const [miles, setMiles] = useState<Miles>(meters_to_miles(distance))
-    const [minutesPerMile, setMinutesPerMile] = useState<string>(format_minutes_per_mile(miles, moving_time))
+    const [minutesPerMile, setMinutesPerMile] = useState<InverseSpeed>(moving_time.per(distance))
 
     useEffect(() => {
         if (title.length == 0) {
@@ -57,13 +57,9 @@ const Run: React.FC<RunProps> = (
     }, [title, date])
 
     useEffect(() => {
-        setMinutesPerMile(format_minutes_per_mile(miles, moving_time))
-    }, [miles, moving_time])
+        setMinutesPerMile(moving_time.per(distance))
+    }, [distance, moving_time])
 
-    useEffect(() => {
-        let dist = meters_to_miles(distance)
-        setMiles(dist)
-    }, [distance])
     return (
         <div
             className="card"
@@ -74,12 +70,12 @@ const Run: React.FC<RunProps> = (
                     textAlign: "left",
                 }
             }>
-                Temp: {temperature ? temperature : "???"} (C)
+                Temp: {temperature ? temperature.in(celsius).amount : "???"} (C)
                 <br />
                 Date: {pretty_date(date)}
             </p>
             <p>
-                {miles.toFixed(2)} miles | {minutesPerMile} /mi
+                {distance.in(miles).amount.toFixed(2)} miles | {fmt_minutes_per_mile(minutesPerMile)} /mi
             </p>
         </div>
     );

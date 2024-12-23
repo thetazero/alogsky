@@ -1,19 +1,23 @@
-export type Miles = number & { __miles__: void }
-export type Minutes = number & { __minutes__: void }
-export type Seconds = number & { __seconds__: void }
-export type Celsius = number & { __celsius__: void }
-export type Meters = number & { __meters__: void }
-export type SecondsPerMeter = number & { __seconds_per_meter__: void }
-export type MinutesPerMile = number & { __minutes_per_mile__: void }
+import { Quantity, Unit } from '@buge/ts-units';
+import { Length, miles } from '@buge/ts-units/length';
+import { Temperature } from '@buge/ts-units/temperature';
+import { minutes, Time } from '@buge/ts-units/time';
+
+export type InverseSpeedDimensions = {
+    length: -1;
+    time: 1;
+}
+export type InverseSpeed = Quantity<number, InverseSpeedDimensions>;
+export const minutes_per_mile: Unit<number, InverseSpeedDimensions> = minutes.per(miles);
 
 export interface RunData {
     title: string
     notes: string
-    distance: Meters
-    moving_time: Seconds
-    elapsed_time?: Seconds
-    temperature?: Celsius
-    feels_like?: Celsius
+    distance: Length,
+    moving_time: Time,
+    elapsed_time?: Time,
+    temperature?: Temperature,
+    feels_like?: Temperature,
     date: Date
     type: "run"
 }
