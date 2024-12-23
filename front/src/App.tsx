@@ -23,23 +23,15 @@ function App() {
 
     return (
         <>
-            <h1>Training Log</h1>
-            <SingleMetricChart runs={processed} />
-            <div
-
-                style={
-                    {
-                        textAlign: "center",
-                    }
-                }
-            >
-                <div className="tile-grid">
-                    {processed.slice(0, 10).map((run, i) => (
-                        <Tile key={i} title={run.title}>
-                            <Run data={run} />
-                        </Tile>
-                    ))}
-                </div>
+            <div className="grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-5 p-4 mx-auto bg-gray-900 rounded-lg">
+                <Tile title='Single Metric Chart'>
+                    <SingleMetricChart runs={processed} />
+                </Tile>
+                {processed.slice(0, 10).map((run, i) => (
+                    <Tile key={i} title={run.title}>
+                        <Run data={run} />
+                    </Tile>
+                ))}
             </div>
             <div>
                 {JSON.stringify(data)}
