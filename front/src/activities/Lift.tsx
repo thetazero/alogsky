@@ -54,17 +54,27 @@ const Lift: React.FC<LiftProps> = ({ data }) => {
                 </span>
             </div>
             <div className="text-lg font-semibold text-gray-300">
-                {
-                    table.map((row, i) => (
-                        <div key={i}>
-                            {row.map((rep, j) => (
-                                <p key={j}>
-                                    {rep}
-                                </p>
+                <div className="overflow-x-auto">
+                    <table className="table-auto w-full border-collapse border border-gray-500">
+                        <tbody>
+                            {table.map((row, rowIndex) => (
+                                <tr
+                                    key={rowIndex}
+                                    className={rowIndex % 2 === 0 ? "bg-gray-800" : "bg-gray-700"}
+                                >
+                                    {row.map((cell, cellIndex) => (
+                                        <td
+                                            key={cellIndex}
+                                            className="border border-gray-500 px-4 py-2 text-gray-300"
+                                        >
+                                            {cell}
+                                        </td>
+                                    ))}
+                                </tr>
                             ))}
-                        </div>
-                    ))
-                }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

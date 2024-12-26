@@ -1,22 +1,33 @@
 import React from 'react';
 import { FixedSizeList as List } from 'react-window'; // Import from react-window
 import Run from '../activities/Run';
-import { RunData } from '../types';
+import { LiftData, RunData } from '../types';
+import Lift from '../activities/Lift';
 
 // Define the data structure for the individual run
 interface TrainingLogProps {
-    processed: RunData[]; // The processed data array
+    processed: (RunData| LiftData)[]; // The processed data array
+}
+
+function activity_to_view(activity: RunData | LiftData, height: number) {
+    if (activity.type === 'run') {
+        return <Run data={activity} height={height} />;
+    } else if (activity.type === 'lift') {
+        return <Lift data={activity} />;
+    }
+    return <div>Not implemented</div>;
 }
 
 const TrainingLog: React.FC<TrainingLogProps> = ({ processed }) => {
     const itemHeight = 200;  // Height of each row
+
 
     // Row renderer for each item in the list
     const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => {
         const run = processed[index]; // Get the corresponding run data
         return (
             <div style={style} className="py-2"> {/* Apply style for virtual scrolling */}
-                <Run data={run} height={itemHeight} />
+                {activity_to_view(run, itemHeight)}
             </div>
         );
     };

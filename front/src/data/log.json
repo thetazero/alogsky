@@ -69,5 +69,61 @@
                 }
             ]
         }
+    },
+    {
+        "version": 1,
+        "type": "lift",
+        "date": "Dec 25, 2024, 10:00:00 AM",
+        "data": {
+            "duration": 10,
+            "notes": "",
+            "exercises": [
+                {
+                    "exercise": "Lateral Raise",
+                    "reps": 8,
+                    "weight": "3 kg"
+                },
+                {
+                    "exercise": "Lateral Raise",
+                    "reps": 8,
+                    "weight": "4 kg"
+                },
+                {
+                    "exercise": "Lateral Raise",
+                    "reps": 8,
+                    "weight": "5 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "5 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "7 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "8 kg"
+                },
+                {
+                    "exercise": "Bicep Curl",
+                    "reps": 8,
+                    "weight": "6 kg"
+                },
+                {
+                    "exercise": "Bicep Curl",
+                    "reps": 8,
+                    "weight": "8 kg"
+                },
+                {
+                    "exercise": "Bicep Curl",
+                    "reps": 8,
+                    "weight": "8 kg"
+                }
+            ]
+        }
     }
 ]
