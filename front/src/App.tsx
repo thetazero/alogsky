@@ -37,7 +37,7 @@ function App() {
                     <SingleMetricChart runs={runs} />
                 </Tile>
                 <Tile title="Training Log">
-                    <TrainingLog processed={runs} />
+                    <TrainingLog processed={processed} />
                 </Tile>
                 <Tile title="Lifting Overview">
                     {

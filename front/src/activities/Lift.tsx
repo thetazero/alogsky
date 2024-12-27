@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Exercise, LiftData, RepData } from "../types";
+import { Exercise, LiftData, pounds, RepData } from "../types";
+import { total_tonage } from "../utils/metrics";
 
 export interface LiftProps {
     data: LiftData;
+    height: number;
 }
 
 function group_by_exercise(data: LiftData): Map<Exercise, RepData[]> {
@@ -33,7 +35,7 @@ function to_table(data: Map<Exercise, RepData[]>): string[][] {
     });
 }
 
-const Lift: React.FC<LiftProps> = ({ data }) => {
+const Lift: React.FC<LiftProps> = ({ data, height }) => {
     const [table, setTable] = useState<string[][]>([]);
 
     useEffect(() => {
@@ -41,7 +43,9 @@ const Lift: React.FC<LiftProps> = ({ data }) => {
     }, [data]);
 
     return (
-        <div className="space-y-6 p-6 dark:border-gray-500 bg-gray-900 dark:bg-gray-800">
+        <div className="space-y-6 p-6 dark:border-gray-500 bg-gray-900 dark:bg-gray-800 border-box"
+            style={{ height }}
+        >
             <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">{data.title}</h2>
                 <span className="text-sm text-gray-400">
@@ -53,8 +57,17 @@ const Lift: React.FC<LiftProps> = ({ data }) => {
                     })}
                 </span>
             </div>
-            <div className="text-lg font-semibold text-gray-300">
-                <div className="overflow-x-auto">
+            <div className="text-lg text-gray-300 text-sm">
+                <span className="font-semibold">Tonage: </span> {total_tonage(data).in(pounds).amount.toFixed(0)} lbs
+            </div>
+            <div className="text-lg text-gray-300 text-sm">
+                <div className="overflow-x-auto overflow-y-scroll"
+                    style={
+                        {
+                            height: height - 150
+                        }
+                    }
+                >
                     <table className="table-auto w-full border-collapse border border-gray-500">
                         <tbody>
                             {table.map((row, rowIndex) => (
@@ -76,6 +89,7 @@ const Lift: React.FC<LiftProps> = ({ data }) => {
                     </table>
                 </div>
             </div>
+            <hr className="border-gray-600 dark:border-gray-700 mt-4" />
         </div>
     );
 };

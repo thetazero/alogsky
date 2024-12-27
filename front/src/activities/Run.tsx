@@ -32,7 +32,7 @@ const Run: React.FC<RunProps> = ({
 
     return (
         <div
-            className="space-y-6 p-6 dark:border-gray-500 bg-gray-900 dark:bg-gray-800"
+            className="space-y-6 p-6 bg-gray-900 dark:bg-gray-800 border-box"
             style={{ height }}  // Apply only height for the row
         >
             {/* Title with some visual prominence */}
@@ -54,9 +54,6 @@ const Run: React.FC<RunProps> = ({
                     {fmt_minutes_per_mile(minutesPerMile)}
                 </p>
             </div>
-
-
-            {/* Optional line break for better separation between runs */}
             <hr className="border-gray-600 dark:border-gray-700 mt-4" />
         </div>
     );
