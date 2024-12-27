@@ -1,7 +1,5 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback } from 'react';
 import { VariableSizeList as List } from 'react-window';
-import { ContentRect } from 'react-measure'; // Import react-measure
-import Measure from 'react-measure';
 import Run from '../activities/Run';
 import { LiftData, RunData } from '../types';
 import Lift from '../activities/Lift';

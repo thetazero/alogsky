@@ -15,9 +15,7 @@ function rep_tonage(rep: RepData) {
 
 export function total_tonage(lift: LiftData): Mass {
     return lift.reps.map(
-        rep => {
-            return rep_tonage(rep)
-        }
+        rep_tonage
     ).reduce((
         a, b
     ) => {
