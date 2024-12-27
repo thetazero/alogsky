@@ -1,4 +1,4 @@
-import { LiftData, RepData, RunData } from "../types";
+import { Exercise, LiftData, RepData, RunData } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -70,13 +70,36 @@ function parse_weight(weight: string): Mass {
     }
 }
 
+const exercise_map: Map<string, Exercise> = new Map(
+    [
+        ["Squat", Exercise.Squat],
+        ["Bench", Exercise.Bench],
+        ["Romanian Deadlift", Exercise.RomanianDeadLift],
+        ["Oxidative Squat", Exercise.OxidativeSquat],
+        ["Bicep Curl", Exercise.BicepCurl],
+        ["Rows", Exercise.Row],
+        ["Pullups", Exercise.Pullup],
+        ["Single Leg Calf Raise", Exercise.SingleLegCalfRaise],
+        ["Lateral Raise", Exercise.LateralRaise],
+        ["Overhead Press", Exercise.OverheadPress],
+        ["Pushup", Exercise.Pushup],
+        ["Situp", Exercise.Situp],
+    ],
+);
+
+function parse_exercise(exercise: string): Exercise {
+    const res = exercise_map.get(exercise)
+    if (res) return res
+    throw `${exercise} is not a valid exercise`
+}
+
 function process_liftv1(data: any, date: Date): LiftData {
     const title: string = data.title ?? "Lift"
     const notes: string = data.notes ?? undefined;
     const duration = minutes(data.duration);
     const reps = data.exercises.map((exercise: any) => {
         const rep_data: RepData = {
-            exercise: exercise.exercise,
+            exercise: parse_exercise(exercise.exercise),
             reps: exercise.reps,
             weight: parse_weight(`${exercise.weight}`),
         }

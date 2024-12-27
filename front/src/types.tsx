@@ -1,4 +1,4 @@
-import {  Quantity, Unit } from '@buge/ts-units';
+import { Quantity, Unit } from '@buge/ts-units';
 import { Length, miles } from '@buge/ts-units/length';
 import { Temperature } from '@buge/ts-units/temperature';
 import { minutes, Time } from '@buge/ts-units/time';
@@ -32,6 +32,13 @@ export enum Exercise {
     RomanianDeadLift = "Romanian Deadlift",
     OxidativeSquat = "Oxidative Squat",
     BicepCurl = "Bicep Curl",
+    Row = "Row",
+    Pullup = "Pullup",
+    SingleLegCalfRaise = "Single Leg Calf Raise",
+    LateralRaise = "Lateral Raise",
+    OverheadPress = "Overhead Press",
+    Pushup = "Pushup",
+    Situp = "Situp"
 }
 
 export interface RepData {
