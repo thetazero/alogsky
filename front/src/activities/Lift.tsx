@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Exercise, LiftData, pounds, RepData } from "../types";
-import { total_tonage } from "../utils/metrics";
+import { lift_tonage } from "../analysis/metrics";
+import PrettyDate from "../components/Date";
 
 export interface LiftProps {
     data: LiftData;
@@ -48,17 +49,10 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
         >
             <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">{data.title}</h2>
-                <span className="text-sm text-gray-400">
-                    {data.date.toLocaleDateString("en-US", {
-                        weekday: "long",
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                    })}
-                </span>
+                <PrettyDate date={data.date}/>
             </div>
             <div className="text-lg text-gray-300 text-sm">
-                <span className="font-semibold">Tonage: </span> {total_tonage(data).in(pounds).amount.toFixed(0)} lbs
+                <span className="font-semibold">Tonage: </span> {lift_tonage(data).in(pounds).amount.toFixed(0)} lbs
             </div>
             <div className="text-lg text-gray-300 text-sm">
                 <div className="overflow-x-auto overflow-y-scroll"

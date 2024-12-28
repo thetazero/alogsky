@@ -13,7 +13,7 @@ function rep_tonage(rep: RepData) {
     return (rep.weight.plus(pounds(125).times(extra_weight))).times(rep.reps);
 }
 
-export function total_tonage(lift: LiftData): Mass {
+export function lift_tonage(lift: LiftData): Mass {
     return lift.reps.map(
         rep_tonage
     ).reduce((

@@ -55,3 +55,5 @@ export interface LiftData {
     reps: RepData[]
     type: "lift"
 }
+
+export type TrainingData = RunData | LiftData
