@@ -1,4 +1,4 @@
-import { TrainingData, LiftData, RunData, pounds, SleepData } from "../types";
+import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { lift_tonage } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
@@ -55,7 +55,7 @@ class Analysis {
 
     get_week_start(date: Date): Date {
         date = new Date(date)
-        const day = (date.getDay() -1) % 7
+        const day = (date.getDay() - 1) % 7
         date.setHours(-24 * day)
         date.setHours(0)
         date.setMilliseconds(0)
@@ -74,8 +74,11 @@ class Analysis {
     }
 
     total_distance(): Length {
-        if (this.runs.length === 0) return miles(0)
-        return this.runs.map(r => r.distance).reduce((a, b) => a.plus(b))
+        return this.runs.map(r => r.distance).reduce((a, b) => a.plus(b), miles(0))
+    }
+
+    total_moving_time(): Time {
+        return this.runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
     }
 
     training_time(): Time {
@@ -89,6 +92,22 @@ class Analysis {
         const total_sleep_data_points = this.sleeps.length
         if (total_sleep_data_points === 0) return seconds(0)
         return total_sleep_time.per(total_sleep_data_points)
+    }
+
+    average_pace(): InverseSpeed {
+        const dist = this.total_distance()
+        const time = this.total_moving_time()
+        return time.per(dist)
+    }
+
+    split_into_weeks(): Analysis[] {
+        const week_count = this.number_of_weeks()
+        const res = []
+        for (let i = 0; i < week_count; i++) {
+            const data = this.get_data_for_week(i)
+            res.push(new Analysis(data))
+        }
+        return res
     }
 }
 
