@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import { AiOutlineClose, AiOutlineExpandAlt, AiOutlineShrink } from "react-icons/ai"; // Import specific icons
+import BottomGrows from "./BottomGrows";
 
 export interface TileProps {
     title?: string;
@@ -16,7 +17,7 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
 
     return (
         <div
-            className={`level-1 card p-4 shadow-lg transition-all duration-500 ease-in-out ${isExpanded ? "h-screen fixed top-0 left-0 z-50" : "w-auto h-auto"
+            className={`level-1 card p-4 shadow-lg transition-all duration-500 ease-in-out ${isExpanded ? "h-screen fixed top-0 left-0 z-50" : "relative w-auto h-auto"
                 }`}
             style={{
                 width: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
@@ -24,34 +25,39 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
                 height: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
             }}
         >
-            <div className="grid grid-rows-[auto,1fr] gap-3 mb-3 relative h-full">
-                <div className="flex justify-between items-center">
-                    {title && <h2 className="text-xl">{title}</h2>}
-                    <div className="absolute top-1 right-1 flex gap-2">
-                        <button
-                            className="text-white hover:text-green-500 transition-colors"
-                            onClick={handleExpand}
-                            aria-label="Expand"
-                        >
-                            {isExpanded ? (
-                                <AiOutlineShrink className="w-5 h-5" />
-                            ) : (
-                                <AiOutlineExpandAlt className="w-5 h-5" />
-                            )}
-                        </button>
-                        <button
-                            className="text-white hover:text-red-500 transition-colors"
-                            onClick={onClose}
-                            aria-label="Close"
-                        >
-                            <AiOutlineClose className="w-5 h-5" />
-                        </button>
-                    </div>
-                </div>
-                <div className="text-gray-400 text-base space-y-3 leading-relaxed break-words overflow-auto">
-                    {children}
-                </div>
+
+            <div className="absolute top-1 right-1 flex gap-2 p-4">
+                <button
+                    className="text-white hover:text-green-500 transition-colors"
+                    onClick={handleExpand}
+                    aria-label="Expand"
+                >
+                    {isExpanded ? (
+                        <AiOutlineShrink className="w-5 h-5" />
+                    ) : (
+                        <AiOutlineExpandAlt className="w-5 h-5" />
+                    )}
+                </button>
+                <button
+                    className="text-white hover:text-red-500 transition-colors"
+                    onClick={onClose}
+                    aria-label="Close"
+                >
+                    <AiOutlineClose className="w-5 h-5" />
+                </button>
             </div>
+            <BottomGrows
+                topChild={
+                    <div className="flex justify-between items-center">
+                        {title && <h2 className="text-xl">{title}</h2>}
+                    </div>
+                }
+                bottomChild={
+                    <div className="text-gray-400 text-base space-y-3 leading-relaxed break-words overflow-auto">
+                        {children}
+                    </div>
+                }
+            />
         </div>
     );
 };
