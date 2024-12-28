@@ -125,5 +125,53 @@
                 }
             ]
         }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 28, 2024, 6:46:00 AM",
+        "data": {
+            "duration": 492
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 27, 2024, 6:54:00 AM",
+        "data": {
+            "duration": 545
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 26, 2024, 6:30:00 AM",
+        "data": {
+            "duration": 578
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 24, 2024, 6:30:00 AM",
+        "data": {
+            "duration": 183
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 23, 2024, 8:00:00 AM",
+        "data": {
+            "duration": 518
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 22, 2024, 7:30:00 AM",
+        "data": {
+            "duration": 462
+        }
     }
 ]

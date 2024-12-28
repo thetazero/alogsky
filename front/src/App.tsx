@@ -7,10 +7,9 @@ import process, { ActivityData } from './process/main';
 import { LiftData, RunData } from './types';
 import SingleMetricChart from './charts/MetricChart';
 import Tile from './components/Tile';
-import TrainingLog from './components/TrainingLog';
-import Lift from './activities/Lift';
 import WeekOverview from './tiles/WeekOverview';
 import Analysis from './analysis/analysis'
+import TrainingLogTile from './tiles/TrainingLogTile';
 
 function App() {
     const [processed, setProcessed] = useState<ActivityData[]>([]);
@@ -39,14 +38,7 @@ function App() {
                     <SingleMetricChart runs={runs} />
                 </Tile>
                 <Tile title="Training Log">
-                    <TrainingLog processed={processed} />
-                </Tile>
-                <Tile title="Lifting Overview">
-                    {
-                        lifts.map((lift, i) => (
-                            <Lift key={i} data={lift} />
-                        ))
-                    }
+                    <TrainingLogTile analysis={analysis} />
                 </Tile>
                 <Tile title="Weekly Overview">
                     <WeekOverview analysis={analysis} />

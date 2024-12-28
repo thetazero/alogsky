@@ -13,6 +13,7 @@ export type InverseSpeedDimensions = {
 export type InverseSpeed = Quantity<number, InverseSpeedDimensions>;
 export const minutes_per_mile: Unit<number, InverseSpeedDimensions> = minutes.per(miles);
 export const pounds: Unit<number, MassDimension> = kilograms.times(2.20462).withSymbol("lbs");
+export const tons: Unit<number, MassDimension> = pounds.times(2000).withSymbol("tons");
 
 export interface RunData {
     title: string
@@ -56,4 +57,10 @@ export interface LiftData {
     type: "lift"
 }
 
-export type TrainingData = RunData | LiftData
+export interface SleepData {
+    duration: Time
+    date: Date
+    type: "sleep"
+}
+
+export type TrainingData = RunData | LiftData | SleepData;

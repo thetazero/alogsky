@@ -1,4 +1,4 @@
-import { Exercise, LiftData, RepData, RunData } from "../types";
+import { Exercise, LiftData, RepData, RunData, SleepData, TrainingData } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -8,16 +8,15 @@ import { Mass } from "@buge/ts-units/mass";
 import { pounds } from "../types";
 import { Unit } from "@buge/ts-units";
 
-export type ActivityData = RunData | LiftData;
-
-function process(data: any[]): ActivityData[] {
+function process(data: any[]): TrainingData[] {
     return data.map(_process);
 }
 
-const proc_map: { [key: string]: (point: any, date: Date) => ActivityData } = {
+const proc_map: { [key: string]: (point: any, date: Date) => TrainingData } = {
     "run1": process_run_v1,
     "run2": process_run_v2,
     "lift1": process_liftv1,
+    "sleep1": parse_sleepv1,
 }
 
 function _process(point: any) {
@@ -100,7 +99,7 @@ function process_liftv1(data: any, date: Date): LiftData {
     const reps = data.exercises.map((exercise: any) => {
         const rep_data: RepData = {
             exercise: parse_exercise(exercise.exercise),
-            reps: exercise.reps,
+            reps: parseInt(exercise.reps),
             weight: parse_weight(`${exercise.weight}`),
         }
         return rep_data;
@@ -115,5 +114,12 @@ function process_liftv1(data: any, date: Date): LiftData {
     };
 }
 
+function parse_sleepv1(data: any, date: Date): SleepData {
+    return {
+        date,
+        duration: minutes(parseFloat(data.duration)),
+        type: "sleep",
+    };
+}
 
 export default process

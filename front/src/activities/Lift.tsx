@@ -83,7 +83,6 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
                     </table>
                 </div>
             </div>
-            <hr className="border-gray-600 dark:border-gray-700 mt-4" />
         </div>
     );
 };

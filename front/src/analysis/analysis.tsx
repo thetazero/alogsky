@@ -1,4 +1,4 @@
-import { TrainingData, LiftData, RunData, pounds } from "../types";
+import { TrainingData, LiftData, RunData, pounds, SleepData } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { lift_tonage } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
@@ -7,6 +7,7 @@ import { seconds, Time } from "@buge/ts-units/time";
 class Analysis {
     runs: RunData[]
     lifts: LiftData[]
+    sleeps: SleepData[]
     training_data: TrainingData[]
 
     constructor(training_data: TrainingData[]) {
@@ -16,6 +17,7 @@ class Analysis {
         })
         this.lifts = training_data.filter(e => e.type === "lift")
         this.training_data = training_data
+        this.sleeps = training_data.filter(e => e.type === "sleep")
     }
 
     _get_oldest_date(): Date {
@@ -80,6 +82,13 @@ class Analysis {
         const run_training_time = this.runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
         const lift_training_time = this.lifts.map(l => l.duration).reduce((a, b) => a.plus(b), seconds(0))
         return run_training_time.plus(lift_training_time)
+    }
+
+    average_sleep_time(): Time {
+        const total_sleep_time = this.sleeps.map(s => s.duration).reduce((a, b) => a.plus(b), seconds(0))
+        const total_sleep_data_points = this.sleeps.length
+        if (total_sleep_data_points === 0) return seconds(0)
+        return total_sleep_time.per(total_sleep_data_points)
     }
 }
 

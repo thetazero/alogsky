@@ -54,7 +54,6 @@ const Run: React.FC<RunProps> = ({
                     {fmt_minutes_per_mile(minutesPerMile)}
                 </p>
             </div>
-            <hr className="line mt-4" />
         </div>
     );
 };

@@ -1,12 +1,14 @@
 import React, { useCallback } from 'react';
 import { VariableSizeList as List } from 'react-window';
 import Run from '../activities/Run';
-import { LiftData, RunData } from '../types';
+import { TrainingData } from '../types';
 import Lift from '../activities/Lift';
+import { hours } from '@buge/ts-units/time';
+import { format_time } from '../utils/format';
 
 // Define the data structure for the individual run
 interface TrainingLogProps {
-    processed: (RunData | LiftData)[]; // The processed data array
+    processed: TrainingData[]; // The processed data array
     height?: number; // Optional height for the list
 }
 
@@ -17,6 +19,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
             const item = processed[index];
             if (item.type === "run") return 300;
             else if (item.type == "lift") return 300;
+            else if (item.type == "sleep") return 50;
             else return 100;
         },
         [processed]
@@ -27,14 +30,18 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
         const activity = processed[index];
 
         return (
-            <div style={style} className="py-2"> {/* Apply style for virtual scrolling */}
+            <div style={style} className="py-2 border-b border-gray-600"> {/* Apply style for virtual scrolling */}
                 {activity.type === 'run' ? (
                     <Run data={activity} height={getItemSize(index)} />
                 ) : activity.type === 'lift' ? (
                     <Lift data={activity} height={getItemSize(index)} />
-                ) : (
-                    <div>Not implemented</div>
-                )}
+                ) : activity.type === 'sleep' ? (
+                    <div>Sleep: {format_time(activity.duration)}</div>
+                )
+                    :
+                    (
+                        <div>{activity.type} Not implemented</div>
+                    )}
             </div>
         );
     };
