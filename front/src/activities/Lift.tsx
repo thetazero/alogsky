@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Exercise, LiftData, pounds, RepData } from "../types";
 import { lift_tonage } from "../analysis/metrics";
 import PrettyDate from "../components/Date";
+import Activity from "../components/Activity";
 
 export interface LiftProps {
     data: LiftData;
@@ -44,21 +45,15 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
     }, [data]);
 
     return (
-        <div className="activity"
-            style={{ height }}
-        >
-            <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold emph">{data.title}</h2>
-                <PrettyDate date={data.date}/>
-            </div>
-            <div className="text-sm">
-                <span className="font-semibold emph">Tonage: </span> {lift_tonage(data).in(pounds).amount.toFixed(0)} lbs
+        <Activity date={data.date} height={height} title="Lift">
+            <div className="mb-4">
+                <span className="font-semibold emph mb-4">Tonage: </span> {lift_tonage(data).in(pounds).amount.toFixed(0)} lbs
             </div>
             <div className="text-sm">
                 <div className="overflow-x-auto overflow-y-scroll"
                     style={
                         {
-                            height: height - 150
+                            height: height - 120
                         }
                     }
                 >
@@ -83,7 +78,7 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
                     </table>
                 </div>
             </div>
-        </div>
+        </Activity>
     );
 };
 

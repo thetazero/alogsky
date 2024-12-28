@@ -22,7 +22,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
     const getItemSize = useCallback(
         (index: number) => {
             const item = processed[index];
-            if (item.type === "run") return 300;
+            if (item.type === "run") return 120;
             else if (item.type == "lift") return 300;
             else if (item.type == "sleep") return 100;
             else return 100;
@@ -35,7 +35,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
         const activity = processed[index];
 
         return (
-            <div style={style} className="py-2 border-b border-gray-600"> {/* Apply style for virtual scrolling */}
+            <div style={style} className="border-b border-gray-600"> {/* Apply style for virtual scrolling */}
                 {activity.type === 'run' ? (
                     <Run data={activity} height={getItemSize(index)} />
                 ) : activity.type === 'lift' ? (

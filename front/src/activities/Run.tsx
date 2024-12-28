@@ -3,6 +3,7 @@ import { InverseSpeed, RunData } from "../types";
 import { miles } from "@buge/ts-units/length";
 import { fmt_minutes_per_mile } from "../utils/format";
 import { celsius } from "@buge/ts-units/temperature";
+import Activity from "../components/Activity";
 
 // Move the pretty_date function outside of the component for better readability
 function pretty_date(date: Date): string {
@@ -31,30 +32,19 @@ const Run: React.FC<RunProps> = ({
     }, [distance, moving_time]);
 
     return (
-        <div
-            className="activity"
-            style={{ height }}  // Apply only height for the row
-        >
-            {/* Title with some visual prominence */}
-            <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold emph">{title}</h2>
-                <span className="text-sm">{pretty_date(date)}</span>
-            </div>
-
+        <Activity title={title} date={date} height={height}>
             {/* Temperature (if available) */}
             {temperature && (
-                <p className="text-sm">
+                <>
                     Feels like: {temperature.in(celsius).amount}°C
-                </p>
+                </>
             )}
 
-            <div className="text-lg">
-                <p>
-                    {distance.in(miles).amount.toFixed(2)} miles |{" "}
-                    {fmt_minutes_per_mile(minutesPerMile)}
-                </p>
-            </div>
-        </div>
+            <p>
+                {distance.in(miles).amount.toFixed(2)} miles |{" "}
+                {fmt_minutes_per_mile(minutesPerMile)}
+            </p>
+        </Activity>
     );
 };
 

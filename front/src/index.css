@@ -28,7 +28,7 @@
 }
 
 .activity {
-    @apply space-y-6 p-2 box-border
+    @apply py-4 box-border
 }
 
 .level-1 {

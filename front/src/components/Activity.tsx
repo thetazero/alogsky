@@ -8,14 +8,12 @@ export interface ActivityProps {
     date: Date
 }
 
-const Activity: React.FC<ActivityProps> = ({ children, height, title, date }) => {
+const Activity: React.FC<ActivityProps> = ({ children, title, date }) => {
 
     return (
-        <div className="activity"
-            style={{ height }}
-        >
+        <div className="activity">
             <div className="flex justify-between items-center">
-                <h2 className="text-xl font-bold emph">{title}</h2>
+                <div className="text-xl font-bold emph mb-4">{title}</div>
                 <div className="text-sm">
                     <PrettyDate date={date} />
                 </div>
