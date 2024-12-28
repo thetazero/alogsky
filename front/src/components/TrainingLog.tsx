@@ -7,9 +7,10 @@ import Lift from '../activities/Lift';
 // Define the data structure for the individual run
 interface TrainingLogProps {
     processed: (RunData | LiftData)[]; // The processed data array
+    height?: number; // Optional height for the list
 }
 
-const TrainingLog: React.FC<TrainingLogProps> = ({ processed }) => {
+const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
     // Dynamically get item size from the cached heights
     const getItemSize = useCallback(
         (index: number) => {
@@ -39,9 +40,13 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed }) => {
     };
 
     return (
-        <div className="w-full p-4">
+        <div className="w-full p-4"
+            style={
+                height ? { height } : {}
+            }
+        >
             <List
-                height={500} // Set the visible height of the list
+                height={height || 500} // Default height for the list
                 itemCount={processed.length} // Number of items to render
                 itemSize={getItemSize} // Dynamic size of each row
                 width="100%" // Full width
