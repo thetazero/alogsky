@@ -34,7 +34,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
         const activity = processed[index];
 
         return (
-            <div style={style} className="border-b border-gray-600"> {/* Apply style for virtual scrolling */}
+            <div style={style}>
                 {activity.type === 'run' ? (
                     <Run data={activity} height={getItemSize(index)} />
                 ) : activity.type === 'lift' ? (
@@ -51,7 +51,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
     };
 
     return (
-        <div className="w-full p-4"
+        <div className="w-full"
             style={
                 height ? { height } : {}
             }

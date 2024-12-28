@@ -45,7 +45,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
 
     return (
         <>
-            <div className="mb-6 flex items-center justify-between p-4 shadow-lg card level-2">
+            <div className="mb-6 flex items-center justify-between p-2 shadow-lg card level-2">
                 <button
                     onClick={handlePreviousWeek}
                     className="p-2 rounded-full bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-20"
@@ -54,7 +54,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
                     <AiOutlineLeft className="w-6 h-6 text-white" />
                 </button>
                 <div className="text-center">
-                    <div className="text-xl font-semibold emph">
+                    <div className="text-l emph">
                         Week {week + 1} of {totalWeeks}
                     </div>
                     <div className="text-sm font-light mt-1 deemph">
@@ -75,7 +75,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
             <div className="mt-6">
                 <TrainingLog
                     processed={weekAnalysis.training_data}
-                    height={500}
+                    height={400}
                 />
             </div>
         </>

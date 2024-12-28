@@ -27,10 +27,6 @@
     border-radius: 10px;
 }
 
-.activity {
-    @apply py-4 box-border
-}
-
 .level-1 {
     @apply bg-gray-900 text-gray-200
 }

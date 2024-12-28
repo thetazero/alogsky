@@ -4,14 +4,16 @@ import TrainingLog from "../components/TrainingLog";
 import TrainingSummary from "../components/TrainingSummary";
 
 export interface TrainingLogTileProps {
-    analysis: Analysis; 
+    analysis: Analysis;
 }
 
 
 const TrainingLogTile: React.FC<TrainingLogTileProps> = ({ analysis }) => {
     return (
-        <div className="w-full p-4">
-            <TrainingSummary analysis={analysis} />
+        <div className="w-full">
+            <div className="mb-4">
+                <TrainingSummary analysis={analysis} />
+            </div>
             <TrainingLog processed={analysis.training_data} />
         </div>
     );
