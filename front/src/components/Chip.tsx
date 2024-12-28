@@ -7,7 +7,7 @@ export interface ChipProps {
 
 const Chip: React.FC<ChipProps> = ({ title, subtitle }) => {
     return (
-        <div className="p-4 bg-gray-700 rounded-md shadow-md text-center">
+        <div className="p-4 shadow-md text-center level-2 card">
             <div className="font-semibold text-lg text-indigo-400">
                 {title}
             </div>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import './Tile.css'
 import data from "./data/log.json"
 // import strava_data from "./data/strava_neltoid.json"
 import strava_data from "./data/strava_export.json"

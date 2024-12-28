@@ -26,3 +26,19 @@
     background: #1f2937; /* Dark background for track */
     border-radius: 10px;
 }
+
+.level-1 {
+    @apply bg-gray-800 text-white
+}
+
+.card.level-1 {
+    @apply rounded-lg border border-gray-700
+}
+
+.level-2 {
+    @apply bg-gray-700 text-gray-200
+}
+
+.card.level-2 {
+    @apply rounded-lg border border-gray-600
+}

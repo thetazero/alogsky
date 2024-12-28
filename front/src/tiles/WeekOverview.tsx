@@ -2,8 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Analysis from "../analysis/analysis";
 import DateRange from "../components/DateRange";
-import { miles } from "@buge/ts-units/length";
-import { hours } from "@buge/ts-units/time";
 import TrainingLog from "../components/TrainingLog";
 import TrainingSummary from "../components/TrainingSummary";
 
@@ -48,16 +46,16 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
     return (
 
         <>
-            <div className="mb-6 flex items-center justify-between bg-gray-900 text-gray-200 p-4 rounded-md shadow-lg">
+            <div className="mb-6 flex items-center justify-between p-4 shadow-lg card level-2">
                 <button
                     onClick={handlePreviousWeek}
-                    className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="p-2 rounded-full bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-20"
                     disabled={week === 0}
                 >
                     &lt;
                 </button>
                 <div className="text-center">
-                    <div className="text-xl font-semibold text-white">
+                    <div className="text-xl font-semibold text-gray-100">
                         Week {week + 1} of {totalWeeks}
                     </div>
                     <div className="text-sm font-light text-gray-400 mt-1">
