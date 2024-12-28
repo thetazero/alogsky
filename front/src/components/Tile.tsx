@@ -23,6 +23,7 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
                 width: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
                 margin: isExpanded ? "8px" : "0", // Add margin of 8px on each side when expanded
                 height: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
+                maxHeight: isExpanded ? undefined : "60vh",
             }}
         >
 

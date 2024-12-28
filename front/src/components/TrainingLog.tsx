@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { VariableSizeList as List } from 'react-window';
 import Run from '../activities/Run';
 import { TrainingData } from '../types';
@@ -8,28 +8,43 @@ import SleepActivity from '../activities/Sleep';
 // Define the data structure for the individual run
 interface TrainingLogProps {
     processed: TrainingData[]; // The processed data array
-    height?: number; // Optional height for the list
+    height?: number; // Optional height for the list (fallback)
 }
 
 const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
-    const [redrawKey, setRedrawKey] = React.useState(0);
-    useEffect(() => {
-        setRedrawKey((prev) => prev + 1);
-    }, [processed, height]);
+    const [containerHeight, setContainerHeight] = useState(height || 500);
+    const containerRef = useRef<HTMLDivElement>(null);
 
-    // Dynamically get item size from the cached heights
+    useEffect(() => {
+        const handleResize = () => {
+            if (containerRef.current) {
+                setContainerHeight(containerRef.current.offsetHeight);
+            }
+        };
+
+        // Create a ResizeObserver to monitor changes in the container's size
+        const resizeObserver = new ResizeObserver(handleResize);
+
+        if (containerRef.current) {
+            resizeObserver.observe(containerRef.current);
+        }
+
+        return () => {
+            resizeObserver.disconnect();
+        };
+    }, []);
+
     const getItemSize = useCallback(
         (index: number) => {
             const item = processed[index];
-            if (item.type === "run") return 120;
-            else if (item.type == "lift") return 300;
-            else if (item.type == "sleep") return 100;
+            if (item.type === 'run') return 120;
+            else if (item.type === 'lift') return 300;
+            else if (item.type === 'sleep') return 100;
             else return 100;
         },
         [processed]
     );
 
-    // Row renderer for each item in the list
     const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => {
         const activity = processed[index];
 
@@ -41,28 +56,21 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
                     <Lift data={activity} height={getItemSize(index)} />
                 ) : activity.type === 'sleep' ? (
                     <SleepActivity data={activity} height={getItemSize(index)} />
-                )
-                    :
-                    (
-                        <div>{activity.type} Not implemented</div>
-                    )}
+                ) : (
+                    <div>{activity.type} Not implemented</div>
+                )}
             </div>
         );
     };
 
     return (
-        <div className="w-full"
-            style={
-                height ? { height } : {}
-            }
-        >
+        <div ref={containerRef} className="w-full h-full">
             <List
-                height={height || 500} // Default height for the list
+                height={containerHeight} // Dynamically updated height
                 itemCount={processed.length} // Number of items to render
                 itemSize={getItemSize} // Dynamic size of each row
                 width="100%" // Full width
                 className="scroll-smooth"
-                key={redrawKey} // Re-render the list when the data changes
             >
                 {Row}
             </List>
