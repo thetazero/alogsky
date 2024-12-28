@@ -1,6 +1,8 @@
 import { TrainingData, LiftData, RunData, pounds } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { lift_tonage } from "./metrics";
+import { Length, miles } from "@buge/ts-units/length";
+import { seconds, Time } from "@buge/ts-units/time";
 
 class Analysis {
     runs: RunData[]
@@ -67,6 +69,17 @@ class Analysis {
     total_tonage(): Mass {
         if (this.lifts.length === 0) return pounds(0)
         return this.lifts.map(lift_tonage).reduce((a, b) => a.plus(b))
+    }
+
+    total_distance(): Length {
+        if (this.runs.length === 0) return miles(0)
+        return this.runs.map(r => r.distance).reduce((a, b) => a.plus(b))
+    }
+
+    training_time(): Time {
+        const run_training_time = this.runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
+        const lift_training_time = this.lifts.map(l => l.duration).reduce((a, b) => a.plus(b), seconds(0))
+        return run_training_time.plus(lift_training_time)
     }
 }
 

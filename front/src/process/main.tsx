@@ -31,18 +31,18 @@ function _process(point: any) {
 function process_run_v1(data: any, date: Date): RunData {
     const title: string = data.title;
     const notes: string = data.notes;
-    const distance = meters(data.distance);
-    const duration = seconds(data.duration);
+    const distance = meters(parseFloat(data.distance));
+    const duration = seconds(parseFloat(data.duration));
     return { title, notes, distance, moving_time: duration, date, type: "run" };
 }
 function process_run_v2(data: any, date: Date): RunData {
     const title: string = data.title;
-    const distance = meters(data.distance);
-    const moving_time = seconds(data.moving_time);
-    const elapsed_time = seconds(data.elapsed_time);
+    const distance = meters(parseFloat(data.distance));
+    const moving_time = seconds(parseFloat(data.moving_time));
+    const elapsed_time = seconds(parseFloat(data.elapsed_time));
 
-    const temperature = data.temperature !== '' ? celsius(data.temperature) : undefined;
-    const feels_like = data.feels_like !== '' ? celsius(data.feels_like) : undefined;
+    const temperature = data.temperature !== '' ? celsius(parseFloat(data.temperature)) : undefined;
+    const feels_like = data.feels_like !== '' ? celsius(parseFloat(data.feels_like)) : undefined;
 
     return {
         title,

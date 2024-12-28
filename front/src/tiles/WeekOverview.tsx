@@ -1,7 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Analysis from "../analysis/analysis";
-import PrettyDate from "../components/Date";
+import DateRange from "../components/DateRange";
+import { miles } from "@buge/ts-units/length";
+import { hours } from "@buge/ts-units/time";
 
 export interface WeekLogProps {
     analysis: Analysis;
@@ -23,43 +25,68 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
     useEffect(() => {
         setWeekAnalysis(new Analysis(analysis.get_data_for_week(week)));
         if (analysis.training_data.length > 0) {
-        const [start, end] = analysis.date_range_for_week(week);
-        setStartDay(start)
-        setEndDay(end)
+            const [start, end] = analysis.date_range_for_week(week);
+            setStartDay(start);
+            setEndDay(end);
         }
     }, [week]);
 
-    const handleWeekChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setWeek(Number(event.target.value));
+    const handlePreviousWeek = () => {
+        if (week > 0) {
+            setWeek(week - 1);
+        }
+    };
+
+    const handleNextWeek = () => {
+        if (week < totalWeeks - 1) {
+            setWeek(week + 1);
+        }
     };
 
     return (
         <>
-            <div className="mb-4">
-                <label htmlFor="week-selector" className="block text-sm font-medium mb-2">
-                    Select Week:
-                </label>
-                <select
-                    id="week-selector"
-                    value={week}
-                    onChange={handleWeekChange}
-                    className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white focus:outline-none focus:ring focus:ring-indigo-500"
+            <div className="mb-4 flex items-center justify-between">
+                <button
+                    onClick={handlePreviousWeek}
+                    className="p-2 bg-gray-800 text-white rounded hover:bg-gray-700 focus:outline-none focus:ring focus:ring-indigo-500"
+                    disabled={week === 0}
                 >
-                    {Array.from({ length: totalWeeks }, (_, index) => (
-                        <option key={index} value={index}>
-                            Week {index + 1}
-                        </option>
-                    ))}
-                </select>
-            </div>
-
-            <div className="text-lg font-semibold">
-                Week: {week + 1} / {totalWeeks}
+                    &lt;
+                </button>
+                <div className="text-lg font-semibold">
+                    Week: {week + 1} / {totalWeeks}  &nbsp;
+                    <span className="text-sm font-normal">
+                        (<DateRange
+                            startDate={startDay}
+                            endDate={endDay}
+                        />)
+                    </span>
+                </div>
+                <button
+                    onClick={handleNextWeek}
+                    className="p-2 bg-gray-800 text-white rounded hover:bg-gray-700 focus:outline-none focus:ring focus:ring-indigo-500"
+                    disabled={week === totalWeeks - 1}
+                >
+                    &gt;
+                </button>
             </div>
 
             <div className="text-sm mt-2">
                 Tonage: {weekAnalysis.total_tonage().amount.toFixed(0)} lbs
             </div>
+
+            <div className="text-sm mt-2">
+                Milleage: {
+                    weekAnalysis.total_distance().in(miles).amount.toFixed(1)
+                } miles
+            </div>
+
+            <div className="text-sm mt-2">
+                Training Time: {
+                    weekAnalysis.training_time().in(hours).amount.toFixed(1)
+                } hours
+            </div>
+
 
             <div className="text-sm mt-2">
                 Runs: {weekAnalysis.runs.length}
@@ -68,9 +95,6 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
             <div className="text-sm mt-2">
                 Lifts: {weekAnalysis.lifts.length}
             </div>
-
-            start: <PrettyDate date={startDay} />
-            end: <PrettyDate date={endDay} />
         </>
     );
 };
