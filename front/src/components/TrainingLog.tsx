@@ -1,9 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { VariableSizeList as List } from 'react-window';
 import Run from '../activities/Run';
 import { TrainingData } from '../types';
 import Lift from '../activities/Lift';
-import { hours } from '@buge/ts-units/time';
 import { format_time } from '../utils/format';
 
 // Define the data structure for the individual run
@@ -13,6 +12,11 @@ interface TrainingLogProps {
 }
 
 const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
+    const [redrawKey, setRedrawKey] = React.useState(0);
+    useEffect(() => {
+        setRedrawKey((prev) => prev + 1);
+    }, [processed, height]);
+
     // Dynamically get item size from the cached heights
     const getItemSize = useCallback(
         (index: number) => {
@@ -58,6 +62,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
                 itemSize={getItemSize} // Dynamic size of each row
                 width="100%" // Full width
                 className="scroll-smooth"
+                key={redrawKey} // Re-render the list when the data changes
             >
                 {Row}
             </List>
