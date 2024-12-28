@@ -1,5 +1,5 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"; // Import icons from react-icons
 import Analysis from "../analysis/analysis";
 import DateRange from "../components/DateRange";
 import TrainingLog from "../components/TrainingLog";
@@ -44,7 +44,6 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
     };
 
     return (
-
         <>
             <div className="mb-6 flex items-center justify-between p-4 shadow-lg card level-2">
                 <button
@@ -52,7 +51,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
                     className="p-2 rounded-full bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-20"
                     disabled={week === 0}
                 >
-                    &lt;
+                    <AiOutlineLeft className="w-6 h-6 text-white" />
                 </button>
                 <div className="text-center">
                     <div className="text-xl font-semibold emph">
@@ -67,7 +66,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
                     className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                     disabled={week === totalWeeks - 1}
                 >
-                    &gt;
+                    <AiOutlineRight className="w-6 h-6 text-white" />
                 </button>
             </div>
 

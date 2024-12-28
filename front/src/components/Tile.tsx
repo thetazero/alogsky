@@ -1,4 +1,5 @@
 import React, { ReactNode, useState } from "react";
+import { AiOutlineClose, AiOutlineExpandAlt, AiOutlineShrink } from "react-icons/ai"; // Import specific icons
 
 export interface TileProps {
     title?: string;
@@ -15,9 +16,7 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
 
     return (
         <div
-            className={`level-1 card p-4 shadow-lg transition-all duration-500 ease-in-out ${isExpanded
-                ? "h-screen fixed top-0 left-0 z-50" // Remove width classes, use calc for width
-                : "w-auto h-auto"
+            className={`level-1 card p-4 shadow-lg transition-all duration-500 ease-in-out ${isExpanded ? "h-screen fixed top-0 left-0 z-50" : "w-auto h-auto"
                 }`}
             style={{
                 width: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
@@ -32,14 +31,18 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
                         onClick={handleExpand}
                         aria-label="Expand"
                     >
-                        {isExpanded ? "↩️" : "🔼"}
+                        {isExpanded ? (
+                            <AiOutlineShrink className="w-5 h-5" />
+                        ) : (
+                            <AiOutlineExpandAlt className="w-5 h-5" />
+                        )}
                     </button>
                     <button
                         className="text-white hover:text-red-500 transition-colors"
                         onClick={onClose}
                         aria-label="Close"
                     >
-                        ×
+                        <AiOutlineClose className="w-5 h-5" />
                     </button>
                 </div>
             </div>

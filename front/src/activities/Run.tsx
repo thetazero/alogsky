@@ -33,13 +33,11 @@ const Run: React.FC<RunProps> = ({
 
     return (
         <Activity title={title} date={date} height={height}>
-            {/* Temperature (if available) */}
             {temperature && (
                 <>
                     Feels like: {temperature.in(celsius).amount}°C
                 </>
             )}
-
             <p>
                 {distance.in(miles).amount.toFixed(2)} miles |{" "}
                 {fmt_minutes_per_mile(minutesPerMile)}
