@@ -5,6 +5,7 @@ import DateRange from "../components/DateRange";
 import { miles } from "@buge/ts-units/length";
 import { hours } from "@buge/ts-units/time";
 import TrainingLog from "../components/TrainingLog";
+import TrainingSummary from "../components/TrainingSummary";
 
 export interface WeekLogProps {
     analysis: Analysis;
@@ -72,38 +73,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
                 </button>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm mt-4">
-                <div className="p-4 bg-gray-700 rounded-md shadow-md text-center">
-                    <div className="font-semibold text-lg text-indigo-400">
-                        {weekAnalysis.total_tonage().amount.toFixed(0)} lbs
-                    </div>
-                    <div className="text-gray-300">Total Tonnage</div>
-                </div>
-                <div className="p-4 bg-gray-700 rounded-md shadow-md text-center">
-                    <div className="font-semibold text-lg text-indigo-400">
-                        {weekAnalysis.total_distance().in(miles).amount.toFixed(1)} miles
-                    </div>
-                    <div className="text-gray-300">Total Mileage</div>
-                </div>
-                <div className="p-4 bg-gray-700 rounded-md shadow-md text-center">
-                    <div className="font-semibold text-lg text-indigo-400">
-                        {weekAnalysis.training_time().in(hours).amount.toFixed(1)} hrs
-                    </div>
-                    <div className="text-gray-300">Training Time</div>
-                </div>
-                <div className="p-4 bg-gray-700 rounded-md shadow-md text-center">
-                    <div className="font-semibold text-lg text-indigo-400">
-                        {weekAnalysis.runs.length}
-                    </div>
-                    <div className="text-gray-300">Runs</div>
-                </div>
-                <div className="p-4 bg-gray-700 rounded-md shadow-md text-center">
-                    <div className="font-semibold text-lg text-indigo-400">
-                        {weekAnalysis.lifts.length}
-                    </div>
-                    <div className="text-gray-300">Lifts</div>
-                </div>
-            </div>
+            <TrainingSummary analysis={weekAnalysis} />
 
             <div className="mt-6">
                 <TrainingLog
