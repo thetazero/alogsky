@@ -21,33 +21,36 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
             style={{
                 width: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
                 margin: isExpanded ? "8px" : "0", // Add margin of 8px on each side when expanded
+                height: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
             }}
         >
-            <div className="flex justify-between items-center mb-3 relative">
-                {title && <h2 className="text-xl">{title}</h2>}
-                <div className="absolute top-1 right-1 flex gap-2">
-                    <button
-                        className="text-white hover:text-green-500 transition-colors"
-                        onClick={handleExpand}
-                        aria-label="Expand"
-                    >
-                        {isExpanded ? (
-                            <AiOutlineShrink className="w-5 h-5" />
-                        ) : (
-                            <AiOutlineExpandAlt className="w-5 h-5" />
-                        )}
-                    </button>
-                    <button
-                        className="text-white hover:text-red-500 transition-colors"
-                        onClick={onClose}
-                        aria-label="Close"
-                    >
-                        <AiOutlineClose className="w-5 h-5" />
-                    </button>
+            <div className="grid grid-rows-[auto,1fr] gap-3 mb-3 relative h-full">
+                <div className="flex justify-between items-center">
+                    {title && <h2 className="text-xl">{title}</h2>}
+                    <div className="absolute top-1 right-1 flex gap-2">
+                        <button
+                            className="text-white hover:text-green-500 transition-colors"
+                            onClick={handleExpand}
+                            aria-label="Expand"
+                        >
+                            {isExpanded ? (
+                                <AiOutlineShrink className="w-5 h-5" />
+                            ) : (
+                                <AiOutlineExpandAlt className="w-5 h-5" />
+                            )}
+                        </button>
+                        <button
+                            className="text-white hover:text-red-500 transition-colors"
+                            onClick={onClose}
+                            aria-label="Close"
+                        >
+                            <AiOutlineClose className="w-5 h-5" />
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div className="text-gray-400 text-base space-y-3 leading-relaxed break-words">
-                {children}
+                <div className="text-gray-400 text-base space-y-3 leading-relaxed break-words overflow-auto">
+                    {children}
+                </div>
             </div>
         </div>
     );
