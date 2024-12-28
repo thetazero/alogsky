@@ -15,11 +15,11 @@ const Activity: React.FC<ActivityProps> = ({ children, title, date }) => {
             <div className="border-b border-gray-600 pb-4">
                 <div className="flex justify-between items-center">
                     <div className="text-xl font-bold emph mb-4">{title}</div>
-                    <div className="text-sm">
+                    <div className="text-sm text-gray-400">
                         <PrettyDate date={date} />
                     </div>
                 </div>
-                <div className="text-sm">
+                <div className="text-sm text-gray-300">
                     {children}
                 </div>
             </div>
