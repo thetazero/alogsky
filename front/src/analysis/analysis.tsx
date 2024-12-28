@@ -40,7 +40,7 @@ class Analysis {
         const oldest_date = this._get_oldest_date()
         const oldest_start = this.get_week_start(oldest_date)
         const start = new Date(oldest_start.getTime() + idx * 7 * 24 * 60 * 60 * 1000)
-        const end = new Date(start.getTime() + 7 * 24 * 60 * 60 * 1000)
+        const end = this.get_week_end(start)
         return [start, end]
     }
 
@@ -55,7 +55,7 @@ class Analysis {
 
     get_week_start(date: Date): Date {
         date = new Date(date)
-        const day = date.getDay() % 7
+        const day = (date.getDay() -1) % 7
         date.setHours(-24 * day)
         date.setHours(0)
         date.setMilliseconds(0)
@@ -64,8 +64,8 @@ class Analysis {
 
     get_week_end(date: Date): Date {
         date = this.get_week_start(date)
-        date.setHours(24 * 7)
-        return date
+        date.setHours(24 * 6)
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59, 999)
     }
 
     total_tonage(): Mass {
