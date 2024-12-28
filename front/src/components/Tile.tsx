@@ -53,9 +53,7 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
                     </div>
                 }
                 bottomChild={
-                    <div className="text-gray-400 text-base space-y-3 leading-relaxed break-words overflow-auto">
-                        {children}
-                    </div>
+                    children
                 }
             />
         </div>
