@@ -27,6 +27,10 @@
     border-radius: 10px;
 }
 
+.activity {
+    @apply space-y-6 p-2 box-border
+}
+
 .level-1 {
     @apply bg-gray-900 text-gray-200
 }

@@ -4,6 +4,7 @@ import Run from '../activities/Run';
 import { TrainingData } from '../types';
 import Lift from '../activities/Lift';
 import { format_time } from '../utils/format';
+import SleepActivity from '../activities/Sleep';
 
 // Define the data structure for the individual run
 interface TrainingLogProps {
@@ -23,7 +24,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
             const item = processed[index];
             if (item.type === "run") return 300;
             else if (item.type == "lift") return 300;
-            else if (item.type == "sleep") return 50;
+            else if (item.type == "sleep") return 100;
             else return 100;
         },
         [processed]
@@ -40,7 +41,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
                 ) : activity.type === 'lift' ? (
                     <Lift data={activity} height={getItemSize(index)} />
                 ) : activity.type === 'sleep' ? (
-                    <div>Sleep: {format_time(activity.duration)}</div>
+                    <SleepActivity data={activity} height={getItemSize(index)} />
                 )
                     :
                     (

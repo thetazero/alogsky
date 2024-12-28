@@ -32,7 +32,7 @@ const Run: React.FC<RunProps> = ({
 
     return (
         <div
-            className="space-y-6 p-6 border-box"
+            className="activity"
             style={{ height }}  // Apply only height for the row
         >
             {/* Title with some visual prominence */}

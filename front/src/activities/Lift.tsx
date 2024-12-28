@@ -44,7 +44,7 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
     }, [data]);
 
     return (
-        <div className="space-y-6 p-6 dark:border-gray-500 border-box"
+        <div className="activity"
             style={{ height }}
         >
             <div className="flex justify-between items-center">
