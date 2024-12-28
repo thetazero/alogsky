@@ -55,10 +55,10 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
                     &lt;
                 </button>
                 <div className="text-center">
-                    <div className="text-xl font-semibold text-gray-100">
+                    <div className="text-xl font-semibold emph">
                         Week {week + 1} of {totalWeeks}
                     </div>
-                    <div className="text-sm font-light text-gray-400 mt-1">
+                    <div className="text-sm font-light mt-1 deemph">
                         <DateRange startDate={startDay} endDate={endDay} />
                     </div>
                 </div>

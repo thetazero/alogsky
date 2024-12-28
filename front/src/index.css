@@ -35,6 +35,10 @@
     @apply text-gray-200
 }
 
+.level-1 .deemph {
+    @apply text-gray-400
+}
+
 .level-1 .line {
     @apply border-gray-700
 }
