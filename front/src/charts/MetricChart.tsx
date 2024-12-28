@@ -1,74 +1,53 @@
 import React, { useEffect, useState } from "react";
-import { minutes_per_mile, RunData } from "../types";
 import Chart from "../components/Chart";
+import Analysis from "../analysis/analysis";
+import { Metric } from "../analysis/analysis";
 import { DataPoint } from "../components/Chart";
-import { fmt_minutes_per_mile } from "../utils/format";
-import { miles } from "@buge/ts-units/length";
-import { minutes } from "@buge/ts-units/time";
-import NumberInput from "../components/NumberInput"; // Adjust the import path based on your project structure
 
 interface MileageChartProps {
-    runs: RunData[];
+    analysis: Analysis
 }
 
-enum Metrics {
-    Mileage = "Mileage",
-    Pace = "Pace",
-    ActiveTime = "Active Time",
-}
-const allMetrics: Metrics[] = Object.values(Metrics);
+const allMetrics: Metric[] = Object.values(Metric);
 
-const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
+const SingleMetricChart: React.FC<MileageChartProps> = ({ analysis }) => {
+    const [weeklyAnalysis, setWeeklyAnalysis] = useState<Analysis[]>([]);
     const [data, setData] = useState<DataPoint[]>([]);
 
-    const [rollingAverageWindow, setRollingAverageWindow] = useState(30); // Default rolling average window size
-    const [metric, setMetric] = useState<Metrics>(Metrics.Mileage);
+    const [metric, setMetric] = useState<Metric>(Metric.Mileage);
 
     const [title, setTitle] = useState<string>("");
     const [yTitle, setYTitle] = useState<string>("");
     const [yUnit, setYUnit] = useState<string>("");
-    const [labelFn, setLabelFn] = useState<((value: number) => string) | null>(null);
 
     useEffect(() => {
+        setWeeklyAnalysis(analysis.split_into_weeks())
+    }, [analysis])
+
+    useEffect(() => {
+        setData(
+            weeklyAnalysis.map(analysis => {
+                return analysis.get_metric(metric)
+            }).filter(e => e != null)
+        )
         switch (metric) {
-            case Metrics.Mileage:
+            case Metric.Mileage:
                 setTitle("Mileage");
                 setYTitle("Mileage");
                 setYUnit("miles");
-                setData(
-                    runs.map((run) => ({
-                        date: run.date,
-                        y: run.distance.in(miles).amount,
-                    }))
-                )
-                setLabelFn(() => (value: number) => `${value.toFixed(1)} miles`);
                 break;
-            case Metrics.Pace:
+            case Metric.Pace:
                 setTitle("Pace");
                 setYTitle("Pace");
                 setYUnit("minutes/miles");
-                setData(
-                    runs.map((run) => ({
-                        date: run.date,
-                        y: (run.moving_time.per(run.distance)).in(minutes_per_mile).amount,
-                    }))
-                )
-                setLabelFn(() => (value: number) => fmt_minutes_per_mile(minutes_per_mile(value)));
                 break;
-            case Metrics.ActiveTime:
+            case Metric.ActiveTime:
                 setTitle("Active Time");
                 setYTitle("Active Time");
                 setYUnit("minutes");
-                setData(
-                    runs.map((run) => ({
-                        date: run.date,
-                        y: run.moving_time.in(minutes).amount,
-                    }))
-                )
-                setLabelFn(() => (value: number) => `${value.toFixed(0)} minutes`);
                 break;
         }
-    }, [runs, metric]);
+    }, [weeklyAnalysis, metric]);
 
     return (
         <>
@@ -79,7 +58,7 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
                         name="metric"
                         id="metric"
                         value={metric}
-                        onChange={(e) => setMetric(e.target.value as Metrics)}
+                        onChange={(e) => setMetric(e.target.value as Metric)}
                         className="p-1.5 border border-gray-600 bg-gray-800 rounded-sm text-white text-sm w-32"
                     >
                         {allMetrics.map((metric) => (
@@ -87,26 +66,12 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ runs }) => {
                         ))}
                     </select>
                 </div>
-
-                <div className="flex items-center space-x-2">
-                    <label htmlFor="rolling-window" className="text-sm">Rolling Average Window Size: </label>
-                    <NumberInput
-                        value={rollingAverageWindow}
-                        onChange={setRollingAverageWindow}
-                        min={1}
-                        max={100}
-                        step={1}
-                        className="w-32"
-                    />
-                </div>
             </div>
             <Chart
                 data={data}
                 title={title}
                 yTitle={yTitle}
                 yUnit={yUnit}
-                labelFn={labelFn}
-                options={{ rollingAverageWindow }}
             />
         </>
     );

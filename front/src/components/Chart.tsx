@@ -17,6 +17,7 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 export interface DataPoint {
     date: Date,
     y: number,
+    label: string
 }
 
 export interface ChartProps {
@@ -24,10 +25,6 @@ export interface ChartProps {
     title: string,
     yTitle: string,
     yUnit: string,
-    labelFn: ((value: number) => string) | null,
-    options: {
-        rollingAverageWindow: number,
-    }
 }
 
 ChartJS.register(
@@ -41,24 +38,13 @@ ChartJS.register(
     zoomPlugin,
 );
 
-const calculateRollingAverage = (data: number[], windowSize: number): number[] => {
-    const averages: number[] = [];
-    for (let i = 0; i < data.length; i++) {
-        const start = Math.max(0, i - windowSize + 1);
-        const window = data.slice(start, i + 1);
-        const average = window.reduce((sum, value) => sum + value, 0) / window.length;
-        averages.push(average);
-    }
-    return averages;
-};
-
-const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labelFn }) => {
+const Chart: React.FC<ChartProps> = ({ data, yTitle, yUnit, title }) => {
     const [graphData, setGraphData] = useState<ChartData | null>(null);
     const [graphOptions, setGraphOptions] = useState<ChartOptions | null>(null);
     const [sortedData, setSortedData] = useState<DataPoint[]>([]);
     const [labels, setLabels] = useState<string[]>([]);
     const [yValues, setYValues] = useState<number[]>([]);
-    const [smoothedYValues, setSmoothedYValues] = useState<number[]>([]);
+    const [pointLabels, setPointLabels] = useState<string[]>([]); // To store labels for each data point
 
     useEffect(() => {
         setSortedData(data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()));
@@ -67,14 +53,12 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
     useEffect(() => {
         setLabels(sortedData.map((run) => run.date.toLocaleDateString('en-GB', {
             year: "numeric",
+            day: "numeric",
             month: "numeric",
         })));
         setYValues(sortedData.map((run) => run.y));
+        setPointLabels(sortedData.map((run) => run.label)); // Update point labels
     }, [sortedData]);
-
-    useEffect(() => {
-        setSmoothedYValues(calculateRollingAverage(yValues, options.rollingAverageWindow));
-    }, [yValues, options.rollingAverageWindow]);
 
     useEffect(() => {
         setGraphData({
@@ -82,7 +66,7 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
             datasets: [
                 {
                     label: `${yTitle} (${yUnit})`,
-                    data: smoothedYValues,
+                    data: yValues,
                     borderColor: "#4CAF50",
                     backgroundColor: "rgba(76, 175, 80, 0.2)",
                     borderWidth: 2,
@@ -92,7 +76,8 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                 },
             ],
         });
-    }, [smoothedYValues, labels, yTitle, yUnit]);
+    }, [labels, yTitle, yUnit]);
+
     useEffect(() => {
         setGraphOptions({
             responsive: true,
@@ -107,18 +92,6 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                         size: 24,
                     }
                 },
-                tooltip: {
-                    callbacks: {
-                        label: (context) => {
-                            const value = context.raw as number;
-                            if (labelFn) {
-                                return labelFn(value);
-                            } else {
-                                return `${value.toFixed(2)} ${yUnit}`;
-                            }
-                        }
-                    }
-                },
                 zoom: {
                     zoom: {
                         wheel: {
@@ -131,7 +104,16 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                         mode: 'x', // Panning on both axes
                         threshold: 10,
                     },
-                }
+                },
+                tooltip: {
+                    callbacks: {
+                        // Show the label in the tooltip
+                        label: (tooltipItem) => {
+                            const index = tooltipItem.dataIndex;
+                            return pointLabels[index];
+                        },
+                    },
+                },
             },
             scales: {
                 x: {
@@ -153,18 +135,13 @@ const Chart: React.FC<ChartProps> = ({ data, options, yTitle, yUnit, title, labe
                     },
                     ticks: {
                         callback: (value) => {
-                            const num = value as number;
-                            if (labelFn) {
-                                return labelFn(num);
-                            } else {
-                                return `${num.toFixed(2)} ${yUnit}`;
-                            }
+                            return `${value} ${yUnit}`;
                         },
-                    }
+                    },
                 },
             },
         });
-    }, [title, yTitle]);
+    }, [title, yTitle, pointLabels, yUnit]);
 
     return (
         <div>

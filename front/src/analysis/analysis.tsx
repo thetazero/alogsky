@@ -1,26 +1,36 @@
-import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed } from "../types";
+import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { lift_tonage } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
-import { seconds, Time } from "@buge/ts-units/time";
+import { hours, seconds, Time } from "@buge/ts-units/time";
+import { DataPoint } from "../components/Chart";
+import { fmt_minutes_per_mile } from "../utils/format";
+
+export enum Metric {
+    Mileage = "Mileage",
+    Pace = "Pace",
+    ActiveTime = "Active Time",
+}
 
 class Analysis {
     runs: RunData[]
     lifts: LiftData[]
     sleeps: SleepData[]
     training_data: TrainingData[]
+    first_activity: Date | null
 
     constructor(training_data: TrainingData[]) {
-
         this.runs = training_data.filter(e => {
             return e.type === "run"
         })
         this.lifts = training_data.filter(e => e.type === "lift")
         this.training_data = training_data
         this.sleeps = training_data.filter(e => e.type === "sleep")
+        this.first_activity = this._get_oldest_date()
     }
 
-    _get_oldest_date(): Date {
+    _get_oldest_date(): Date| null {
+        if (this.training_data.length == 0) return null
         return this.training_data.map(d => d.date).reduce((a, b) => {
             if (a.getTime() < b.getTime()) return a
             return b
@@ -30,7 +40,7 @@ class Analysis {
     number_of_weeks(): number {
         if (this.training_data.length === 0) return 0
         const oldest_date = this._get_oldest_date()
-        const oldest_start = this.get_week_start(oldest_date)
+        const oldest_start = this.get_week_start(oldest_date) as Date
         const now = new Date()
         const weeks = Math.ceil((now.getTime() - oldest_start.getTime()) / (1000 * 60 * 60 * 24 * 7))
         return weeks
@@ -108,6 +118,34 @@ class Analysis {
             res.push(new Analysis(data))
         }
         return res
+    }
+
+    get_metric(metric: Metric): DataPoint | null {
+        if (!this.first_activity) return null
+        switch (metric) {
+            case Metric.Mileage:
+                const dist = this.total_distance().in(miles).amount
+                return {
+                    date: this.first_activity,
+                    y: dist,
+                    label: `${dist.toFixed(1)} miles`
+                }
+            case Metric.ActiveTime:
+                const time = this.training_time().in(hours).amount
+                return {
+                    date: this.first_activity,
+                    y: time,
+                    label: `${time.toFixed(1)} hours`
+                }
+            case Metric.Pace:
+                const pace = this.average_pace()
+                return {
+                    date: this.first_activity,
+                    y: pace.in(minutes_per_mile).amount,
+                    label: fmt_minutes_per_mile(pace)
+                }
+
+        }
     }
 }
 
