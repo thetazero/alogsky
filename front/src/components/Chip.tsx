@@ -11,7 +11,7 @@ const Chip: React.FC<ChipProps> = ({ title, subtitle }) => {
             <div className="font-semibold text-lg text-indigo-400">
                 {title}
             </div>
-            <div className="text-gray-300">{subtitle}</div>
+            <div className="text-gray-500">{subtitle}</div>
         </div>
     );
 };

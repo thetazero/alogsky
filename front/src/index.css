@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    @apply bg-gray-900 
+    @apply bg-gray-950 
 }
 
 /* Global scrollbar styles */
@@ -28,17 +28,25 @@
 }
 
 .level-1 {
-    @apply bg-gray-800 text-white
+    @apply bg-gray-900 text-gray-200
+}
+
+.level-1 .emph {
+    @apply text-gray-200
+}
+
+.level-1 .line {
+    @apply border-gray-700
 }
 
 .card.level-1 {
-    @apply rounded-lg border border-gray-700
+    @apply rounded-lg border border-gray-800
 }
 
 .level-2 {
-    @apply bg-gray-700 text-gray-200
+    @apply bg-gray-800 text-gray-300
 }
 
 .card.level-2 {
-    @apply rounded-lg border border-gray-600
+    @apply rounded-lg border border-gray-700
 }

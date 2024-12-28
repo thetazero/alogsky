@@ -44,17 +44,17 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
     }, [data]);
 
     return (
-        <div className="space-y-6 p-6 dark:border-gray-500 bg-gray-900 dark:bg-gray-800 border-box"
+        <div className="space-y-6 p-6 dark:border-gray-500 border-box"
             style={{ height }}
         >
             <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-white">{data.title}</h2>
+                <h2 className="text-2xl font-bold emph">{data.title}</h2>
                 <PrettyDate date={data.date}/>
             </div>
-            <div className="text-lg text-gray-300 text-sm">
-                <span className="font-semibold">Tonage: </span> {lift_tonage(data).in(pounds).amount.toFixed(0)} lbs
+            <div className="text-sm">
+                <span className="font-semibold emph">Tonage: </span> {lift_tonage(data).in(pounds).amount.toFixed(0)} lbs
             </div>
-            <div className="text-lg text-gray-300 text-sm">
+            <div className="text-sm">
                 <div className="overflow-x-auto overflow-y-scroll"
                     style={
                         {

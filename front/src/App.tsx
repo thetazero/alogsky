@@ -34,7 +34,7 @@ function App() {
 
     return (
         <>
-            <div className="grid grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto bg-gray-900 rounded-lg">
+            <div className="grid grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
                 <Tile title='Single Metric Chart'>
                     <SingleMetricChart runs={runs} />
                 </Tile>

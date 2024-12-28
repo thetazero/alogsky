@@ -15,7 +15,7 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
 
     return (
         <div
-            className={`level-1 card p-4 shadow-md transition-all duration-500 ease-in-out ${isExpanded
+            className={`level-1 card p-4 shadow-lg transition-all duration-500 ease-in-out ${isExpanded
                 ? "h-screen fixed top-0 left-0 z-50" // Remove width classes, use calc for width
                 : "w-auto h-auto"
                 }`}

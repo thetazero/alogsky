@@ -32,29 +32,29 @@ const Run: React.FC<RunProps> = ({
 
     return (
         <div
-            className="space-y-6 p-6 bg-gray-900 dark:bg-gray-800 border-box"
+            className="space-y-6 p-6 border-box"
             style={{ height }}  // Apply only height for the row
         >
             {/* Title with some visual prominence */}
             <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-white">{title}</h2>
-                <span className="text-sm text-gray-400">{pretty_date(date)}</span>
+                <h2 className="text-2xl font-bold emph">{title}</h2>
+                <span className="text-sm">{pretty_date(date)}</span>
             </div>
 
             {/* Temperature (if available) */}
             {temperature && (
-                <p className="text-sm text-gray-400">
+                <p className="text-sm">
                     Feels like: {temperature.in(celsius).amount}°C
                 </p>
             )}
 
-            <div className="text-lg font-semibold text-gray-300">
+            <div className="text-lg">
                 <p>
                     {distance.in(miles).amount.toFixed(2)} miles |{" "}
                     {fmt_minutes_per_mile(minutesPerMile)}
                 </p>
             </div>
-            <hr className="border-gray-600 dark:border-gray-700 mt-4" />
+            <hr className="line mt-4" />
         </div>
     );
 };
