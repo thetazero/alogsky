@@ -3,7 +3,6 @@ import { VariableSizeList as List } from 'react-window';
 import Run from '../activities/Run';
 import { TrainingData } from '../types';
 import Lift from '../activities/Lift';
-import { format_time } from '../utils/format';
 import SleepActivity from '../activities/Sleep';
 
 // Define the data structure for the individual run
