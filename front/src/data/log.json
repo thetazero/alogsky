@@ -173,5 +173,21 @@
         "data": {
             "duration": 462
         }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 29, 2024, 7:22:00 AM",
+        "data": {
+            "duration": 493
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Dec 30, 2024, 6:30:00 AM",
+        "data": {
+            "duration": 503
+        }
     }
 ]
