@@ -43,7 +43,7 @@ function App() {
                     <WeekOverview analysis={analysis} />
                 </Tile>
                 {
-                    errors && (
+                    errors.length && (
                         <Tile title="Parse Errors">
                             {
                                 errors.map((err, i) => {
