@@ -37,8 +37,7 @@ const InjurySnapshotHorizontalScroller: React.FC<InjurtyDataHorizontalScrollerPr
     const Column = ({ index, style }: { index: number; style: React.CSSProperties }) => {
         const snapshot = snapshots[index];
 
-        // Interpolate the background color based on pain level (0 to 10)
-        const painLevel = snapshot.pain || 0; // Default to 0 if pain is undefined
+        const painLevel = snapshot.pain || 0;
         const backgroundColor = `rgba(255, 0, 0, ${painLevel / 10})`; // From transparent to red
 
         return (
