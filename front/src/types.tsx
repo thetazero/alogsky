@@ -77,4 +77,10 @@ export interface InjuryData {
     type: "injury"
 }
 
-export type TrainingData = RunData | LiftData | SleepData | InjuryData;
+export interface KayakData {
+    duration: Time
+    date: Date
+    type: "kayak"
+}
+
+export type TrainingData = RunData | LiftData | SleepData | InjuryData | KayakData;

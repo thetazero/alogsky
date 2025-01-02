@@ -2,7 +2,7 @@ import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minut
 import { Mass } from "@buge/ts-units/mass";
 import { lift_tonage } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
-import { hours, seconds, Time } from "@buge/ts-units/time";
+import { hours, minutes, seconds, Time } from "@buge/ts-units/time";
 import { DataPoint } from "../components/Chart";
 import { fmt_minutes_per_mile } from "../utils/format";
 
@@ -29,7 +29,7 @@ class Analysis {
         this.first_activity = this._get_oldest_date()
     }
 
-    _get_oldest_date(): Date| null {
+    _get_oldest_date(): Date | null {
         if (this.training_data.length == 0) return null
         return this.training_data.map(d => d.date).reduce((a, b) => {
             if (a.getTime() < b.getTime()) return a
@@ -39,7 +39,7 @@ class Analysis {
 
     number_of_weeks(): number {
         if (this.training_data.length === 0) return 0
-        const oldest_date = this._get_oldest_date()
+        const oldest_date = this._get_oldest_date() as Date
         const oldest_start = this.get_week_start(oldest_date) as Date
         const now = new Date()
         const weeks = Math.ceil((now.getTime() - oldest_start.getTime()) / (1000 * 60 * 60 * 24 * 7))
@@ -92,9 +92,14 @@ class Analysis {
     }
 
     training_time(): Time {
-        const run_training_time = this.runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
-        const lift_training_time = this.lifts.map(l => l.duration).reduce((a, b) => a.plus(b), seconds(0))
-        return run_training_time.plus(lift_training_time)
+        return this.training_data.map(d => {
+            if (d.type == "run") return d.moving_time
+            if (d.type == "lift") return d.duration
+            if (d.type == "injury") return minutes(0)
+            if (d.type == "kayak") return d.duration
+            if (d.type == "sleep") return minutes(0)
+            throw "Training time does not cover all types"
+        }).reduce((a, b) => a.plus(b), minutes(0))
     }
 
     average_sleep_time(): Time {
