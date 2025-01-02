@@ -89,10 +89,10 @@ class Analysis {
         }).reduce((a, b) => a.plus(b), minutes(0))
     }
 
-    average_sleep_time(): Time {
+    average_sleep_time(): Time | null {
         const total_sleep_time = this.sleeps.map(s => s.duration).reduce((a, b) => a.plus(b), seconds(0))
         const total_sleep_data_points = this.sleeps.length
-        if (total_sleep_data_points === 0) return seconds(0)
+        if (total_sleep_data_points === 0) return null
         return total_sleep_time.per(total_sleep_data_points)
     }
 
