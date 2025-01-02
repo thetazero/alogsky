@@ -199,7 +199,8 @@
                 "pain": 2,
                 "description": "Felt a pain in right foot towards the end of the run. Went away after 15 minutes.",
                 "location": "outer right foot metatarsals"
-            }, {
+            }, 
+            {
                 "pain": 2,
                 "description": "Felt a sharp pain in my left shin for a few seconds.",
                 "location": "left shin"
@@ -215,6 +216,11 @@
                 "pain": 1,
                 "description": "Felt a sharp pain in my left shin for a few seconds.",
                 "location": "left shin"
+            },
+            {
+                "pain": 0,
+                "description": "",
+                "location": "outer right foot metatarsals"
             }
         ]
     },
@@ -228,6 +234,11 @@
                 "pain": 2,
                 "description": "plantar hurt in the morning consistent dull pain while walking, went away after slight massaging. Comes back after not moving for a while.",
                 "location": "left plantar"
+            },
+            {
+                "pain": 0,
+                "description": "",
+                "location": "left shin"
             }
         ]
     },

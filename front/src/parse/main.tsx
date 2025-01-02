@@ -1,4 +1,4 @@
-import { Exercise, InjuryData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData } from "../types";
+import { Exercise, PainSnapshotData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, BodyLocation } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -200,12 +200,26 @@ function parse_sleepv1(data: any, date: Date): SleepData {
     };
 }
 
-function parse_injuryv1(data: any, date: Date): InjuryData {
+const body_location_map: Map<string, BodyLocation> = new Map(
+    [
+        ["outer right foot metatarsals", BodyLocation.RightFootMetatarsals],
+        ["left shin", BodyLocation.LeftShin],
+        ["left plantar", BodyLocation.LeftPlantar],
+    ],
+);
+
+function parse_body_location(str: string): BodyLocation {
+    const res = body_location_map.get(str.toLowerCase())
+    if (res) return res
+    throw `${str} is not a valid body location`
+}
+
+function parse_injuryv1(data: any, date: Date): PainSnapshotData {
     const pains = data.map((pain: any) => {
         return {
             pain: pain.pain,
             description: pain.description,
-            location: pain.location,
+            location: parse_body_location(pain.location),
         };
     });
     return { pains, date, type: "injury" };

@@ -7,3 +7,9 @@ export function get_week_start(date: Date): Date {
     date.setMilliseconds(0)
     return date
 }
+
+export function get_week_end(date: Date): Date {
+    date = get_week_start(date)
+    date.setHours(24 * 6)
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59, 999)
+}

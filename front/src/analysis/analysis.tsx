@@ -1,10 +1,11 @@
-import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile } from "../types";
+import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile, InjuryData, PainSnapshotData, BodyLocation } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { lift_tonage } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
 import { hours, minutes, seconds, Time } from "@buge/ts-units/time";
 import { DataPoint } from "../components/Chart";
 import { fmt_minutes_per_mile } from "../utils/format";
+import { get_week_end, get_week_start } from "../utils/time";
 
 export enum Metric {
     Mileage = "Mileage",
@@ -17,6 +18,7 @@ class Analysis {
     lifts: LiftData[]
     sleeps: SleepData[]
     training_data: TrainingData[]
+    pain_snapshot_data: PainSnapshotData[]
     first_activity: Date | null
 
     constructor(training_data: TrainingData[]) {
@@ -26,6 +28,7 @@ class Analysis {
         this.lifts = training_data.filter(e => e.type === "lift")
         this.training_data = training_data
         this.sleeps = training_data.filter(e => e.type === "sleep")
+        this.pain_snapshot_data = this.training_data.filter(e => e.type === "injury")
         this.first_activity = this._get_oldest_date()
     }
 
@@ -40,17 +43,17 @@ class Analysis {
     number_of_weeks(): number {
         if (this.training_data.length === 0) return 0
         const oldest_date = this._get_oldest_date() as Date
-        const oldest_start = this.get_week_start(oldest_date) as Date
+        const oldest_start = get_week_start(oldest_date) as Date
         const now = new Date()
         const weeks = Math.ceil((now.getTime() - oldest_start.getTime()) / (1000 * 60 * 60 * 24 * 7))
         return weeks
     }
 
     date_range_for_week(idx: number): [Date, Date] {
-        const oldest_date = this._get_oldest_date()
-        const oldest_start = this.get_week_start(oldest_date)
+        const oldest_date = this._get_oldest_date() as Date
+        const oldest_start = get_week_start(oldest_date)
         const start = new Date(oldest_start.getTime() + idx * 7 * 24 * 60 * 60 * 1000)
-        const end = this.get_week_end(start)
+        const end = get_week_end(start)
         return [start, end]
     }
 
@@ -60,22 +63,6 @@ class Analysis {
         return this.training_data.filter(d => {
             return d.date.getTime() >= start.getTime() && d.date.getTime() < end.getTime()
         })
-    }
-
-
-    get_week_start(date: Date): Date {
-        date = new Date(date)
-        const day = (date.getDay() - 1) % 7
-        date.setHours(-24 * day)
-        date.setHours(0)
-        date.setMilliseconds(0)
-        return date
-    }
-
-    get_week_end(date: Date): Date {
-        date = this.get_week_start(date)
-        date.setHours(24 * 6)
-        return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59, 999)
     }
 
     total_tonage(): Mass {
@@ -151,6 +138,32 @@ class Analysis {
                 }
 
         }
+    }
+
+    get_injury_data(): InjuryData[] {
+        const map: Map<BodyLocation, InjuryData> = new Map([]);
+        this.pain_snapshot_data.forEach(snapshot => {
+            const date = snapshot.date
+            snapshot.pains.forEach(pain => {
+                const location = pain.location
+                const list = map.get(location) ?? {
+                    location,
+                    snapshots: []
+                }
+                list.snapshots.push({
+                    date,
+                    description: pain.description,
+                    pain: pain.pain
+                })
+                map.set(location, list)
+            })
+        })
+        return Array.from(map.values()).map(injury_data => {
+            injury_data.snapshots = injury_data.snapshots.sort(
+                (a, b) => b.date.getTime() - a.date.getTime()
+            )
+            return injury_data
+        })
     }
 }
 
