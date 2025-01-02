@@ -163,7 +163,6 @@ function parse_liftv2(data: any, date: Date): LiftData {
         if (typeof exercise === 'string') {
             return natural_reps_parse(exercise)
         } else {
-            console.log(exercise)
             if (exercise.reps.length) {
                 const exc_rep = []
                 for (let i = 0; i < exercise.reps.length; i++) {

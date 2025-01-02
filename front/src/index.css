@@ -32,7 +32,7 @@
 }
 
 .level-1 .emph {
-    @apply text-gray-200
+    @apply text-gray-100
 }
 
 .level-1 .deemph {
@@ -49,6 +49,14 @@
 
 .level-2 {
     @apply bg-gray-800 text-gray-300
+}
+
+.level-2 .emph {
+    @apply text-gray-200
+}
+
+.level-2 .deemph {
+    @apply text-gray-600
 }
 
 .card.level-2 {

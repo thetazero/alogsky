@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import data from "./data/log.json"
 // import strava_data from "./data/strava_neltoid.json"
 import strava_data from "./data/strava_export.json"
@@ -10,6 +9,7 @@ import Tile from './components/Tile';
 import WeekOverview from './tiles/WeekOverview';
 import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
+import MonthCalendar from './components/MonthCalendar';
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
@@ -41,6 +41,9 @@ function App() {
                 </Tile>
                 <Tile title="Weekly Overview">
                     <WeekOverview analysis={analysis} />
+                </Tile>
+                <Tile title="Calendar Test">
+                    <MonthCalendar date={new Date()}/>
                 </Tile>
                 {
                     errors.length && (
