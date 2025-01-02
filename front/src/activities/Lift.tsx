@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Exercise, LiftData, pounds, RepData } from "../types";
+import { Exercise, LiftData, pounds, RepData, tons } from "../types";
 import { lift_tonage } from "../analysis/metrics";
 import Activity from "../components/Activity";
 import ScrollableTable from "../components/Table";
+import { nice_number } from "../utils/format";
 
 export interface LiftProps {
     data: LiftData;
@@ -47,7 +48,7 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
     return (
         <Activity date={data.date} height={height} title="Lift">
             <div className="mb-4">
-                <span className="font-semibold emph mb-4">Tonage: </span> {lift_tonage(data).in(pounds).amount.toFixed(0)} lbs
+                <span className="font-semibold emph mb-4">Tonage: </span> {nice_number(lift_tonage(data).in(tons).amount)} tons
             </div>
             <ScrollableTable height={height - 120} table={table} />
         </Activity>
