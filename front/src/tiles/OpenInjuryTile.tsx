@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Analysis from "../analysis/analysis";
 import { InjuryData } from "../types";
+import { get_first } from "../analysis/utils";
+import DateRange from "../components/DateRange";
+import InjurySnapshotHorizontalScroller from "../components/InjurySnapshotHorizontalScroller";
 
 export interface OpenInjuryTileProps {
     analysis: Analysis
@@ -21,10 +24,16 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
                 openInjuryData.map(injury => {
                     return (
                         <div key={injury.location} className="p-2 rounded-full deemph">
-                            {injury.location}
-                            {
-                                JSON.stringify(injury)
-                            }
+                            {injury.location}:
+                            {" "}
+                            <DateRange
+                                startDate={get_first(injury.snapshots).date}
+                                endDate={new Date()}
+                            />
+                            <hr className="line my-4"/>
+                            <InjurySnapshotHorizontalScroller
+                                snapshots={injury.snapshots}
+                            />
                         </div>
                     )
                 })
