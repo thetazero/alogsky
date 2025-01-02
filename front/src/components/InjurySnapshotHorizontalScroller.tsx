@@ -11,7 +11,7 @@ interface InjurtyDataHorizontalScrollerProps {
 
 const InjurySnapshotHorizontalScroller: React.FC<InjurtyDataHorizontalScrollerProps> = ({ snapshots, width }) => {
     const [containerWidth, setContainerWidth] = useState(width || 500);
-    const [snapShot, setSnapShot] = useState<InjurySnapshots>(snapshots[0]);
+    const [snapShot, setSnapShot] = useState<InjurySnapshots>(snapshots[snapshots.length - 1]);
     const containerRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<List>(null);
 
@@ -47,8 +47,8 @@ const InjurySnapshotHorizontalScroller: React.FC<InjurtyDataHorizontalScrollerPr
                 className="relative h-full w-full p-2"
                 onMouseEnter={() => setSnapShot(snapshot)}
             >
-                <div className="flex items-center justify-center h-full w-full text-xl">
-                    {snapshot.pain}
+                <div className="flex items-center justify-center h-full w-full">
+                    <PrettyDate date={snapshot.date} compact={true} />
                 </div>
             </div>
         );

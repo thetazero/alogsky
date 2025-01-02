@@ -14,7 +14,7 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
 
     useEffect(() => {
         const injuries = analysis.get_injury_data()
-        let open_injuries = injuries.filter(injury => injury.snapshots[0].pain >= 1)
+        let open_injuries = injuries.filter(injury => injury.snapshots[injury.snapshots.length - 1].pain >= 1)
         setOpenInjuryData(open_injuries)
     }, [analysis])
 
@@ -30,13 +30,20 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
                                 startDate={get_first(injury.snapshots).date}
                                 endDate={new Date()}
                             />
-                            <hr className="line my-4"/>
+                            <hr className="line my-4" />
                             <InjurySnapshotHorizontalScroller
                                 snapshots={injury.snapshots}
                             />
                         </div>
                     )
                 })
+            }
+            {
+                openInjuryData.length == 0 && (
+                    <>
+                        No currently open injuries
+                    </>
+                )
             }
         </>
     )

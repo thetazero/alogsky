@@ -160,7 +160,7 @@ class Analysis {
         })
         return Array.from(map.values()).map(injury_data => {
             injury_data.snapshots = injury_data.snapshots.sort(
-                (a, b) => b.date.getTime() - a.date.getTime()
+                (a, b) => a.date.getTime() - b.date.getTime()
             )
             return injury_data
         })

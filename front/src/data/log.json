@@ -274,7 +274,7 @@
         "data": [
             {
                 "pain": 2,
-                "description": "plantar hurt in the morning consistent, went away after",
+                "description": "consistent dull pain, went away after",
                 "location": "left plantar"
             }
         ]
@@ -328,5 +328,18 @@
         "data": {
             "duration": 480
         }
+    },
+    {
+
+        "version": 1,
+        "type": "injury",
+        "date": "Jan 2, 2025, 4:35:00 PM",
+        "data": [
+            {
+                "pain": 0,
+                "description": "",
+                "location": "left plantar"
+            }
+        ]
     }
 ]
