@@ -15,6 +15,7 @@ interface TrainingLogProps {
 const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
     const [containerHeight, setContainerHeight] = useState(height || 500);
     const containerRef = useRef<HTMLDivElement>(null);
+    const listRef = useRef<List>(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -46,6 +47,11 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
         [processed]
     );
 
+    useEffect(() => {
+        // Reset list cache when the processed data changes
+        listRef.current?.resetAfterIndex(0, true);
+    }, [processed]);
+
     const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => {
         const activity = processed[index];
 
@@ -69,6 +75,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
     return (
         <div ref={containerRef} className="w-full h-full">
             <List
+                ref={listRef} // Reference to the list
                 height={containerHeight} // Dynamically updated height
                 itemCount={processed.length} // Number of items to render
                 itemSize={getItemSize} // Dynamic size of each row
