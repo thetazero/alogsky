@@ -4,6 +4,7 @@ import Run from '../activities/Run';
 import { TrainingData } from '../types';
 import Lift from '../activities/Lift';
 import SleepActivity from '../activities/Sleep';
+import Activity from './Activity';
 
 // Define the data structure for the individual run
 interface TrainingLogProps {
@@ -57,7 +58,9 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
                 ) : activity.type === 'sleep' ? (
                     <SleepActivity data={activity} height={getItemSize(index)} />
                 ) : (
-                    <div>{activity.type} Not implemented</div>
+                    <Activity date={activity.date} title={activity.type} height={getItemSize(index)}>
+                        Card for {activity.type} data has not been implemented yet
+                    </Activity>
                 )}
             </div>
         );

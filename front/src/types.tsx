@@ -39,7 +39,9 @@ export enum Exercise {
     LateralRaise = "Lateral Raise",
     OverheadPress = "Overhead Press",
     Pushup = "Pushup",
-    Situp = "Situp"
+    Situp = "Situp",
+    BulgarianSplitSquat = "Bulgarian Split Squat",
+    ShortFootExercise = "Short Foot Exercise"
 }
 
 export interface RepData {
@@ -49,8 +51,8 @@ export interface RepData {
 }
 
 export interface LiftData {
-    title: string
-    notes: string
+    title?: string
+    notes?: string
     duration: Time
     date: Date
     reps: RepData[]
@@ -63,4 +65,16 @@ export interface SleepData {
     type: "sleep"
 }
 
-export type TrainingData = RunData | LiftData | SleepData;
+export interface PainData {
+    pain: number
+    description: string
+    location: string
+}
+
+export interface InjuryData {
+    pains: PainData[]
+    date: Date
+    type: "injury"
+}
+
+export type TrainingData = RunData | LiftData | SleepData | InjuryData;

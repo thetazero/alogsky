@@ -3,9 +3,10 @@ import { Exercise, LiftData, pounds, RepData } from "../types";
 
 const bonus_weight: Map<Exercise, number> = new Map([
     [Exercise.Pullup, 1.0],
-    [Exercise.Pushup, 1.0],
+    [Exercise.Pushup, 0.7],
     [Exercise.SingleLegCalfRaise, 1.0],
     [Exercise.Situp, 0.8],
+    [Exercise.BulgarianSplitSquat, 0.7],
 ]);
 
 function rep_tonage(rep: RepData) {

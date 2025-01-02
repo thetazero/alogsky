@@ -3,8 +3,8 @@ import './App.css'
 import data from "./data/log.json"
 // import strava_data from "./data/strava_neltoid.json"
 import strava_data from "./data/strava_export.json"
-import process, { ActivityData } from './process/main';
-import { LiftData, RunData } from './types';
+import parse from './parse/main';
+import { TrainingData } from './types';
 import SingleMetricChart from './charts/MetricChart';
 import Tile from './components/Tile';
 import WeekOverview from './tiles/WeekOverview';
@@ -12,22 +12,21 @@ import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
 
 function App() {
-    const [processed, setProcessed] = useState<ActivityData[]>([]);
-    const [runs, setRuns] = useState<RunData[]>([]);
-    const [lifts, setLifts] = useState<LiftData[]>([]);
+    const [processed, setProcessed] = useState<TrainingData[]>([]);
     const [analysis, setAnalysis] = useState<Analysis>(new Analysis([]));
+    const [errors, setErrors] = useState<string[]>([]);
 
     useEffect(() => {
-        const manual = process(data)
-        const strava = process(strava_data)
-        const all = [...manual, ...strava]
+        const manual = parse(data)
+        const strava = parse(strava_data)
+        const all = [...manual[0], ...strava[0]]
+        const errors = [...manual[1], ...strava[1]]
+        setErrors(errors)
         all.sort((a, b) => b.date.getTime() - a.date.getTime())
         setProcessed(all)
     }, [data]);
 
     useEffect(() => {
-        setRuns(processed.filter((activity) => activity.type === "run"))
-        setLifts(processed.filter((activity) => activity.type === "lift"))
         setAnalysis(new Analysis(processed))
     }, [processed]);
 
@@ -43,6 +42,17 @@ function App() {
                 <Tile title="Weekly Overview">
                     <WeekOverview analysis={analysis} />
                 </Tile>
+                {
+                    errors && (
+                        <Tile title="Parse Errors">
+                            {
+                                errors.map((err, i) => {
+                                    return (<p key={i}>Parse Error: {err}</p>)
+                                })
+                            }
+                        </Tile>
+                    )
+                }
             </div>
         </>
     )

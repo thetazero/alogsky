@@ -189,5 +189,101 @@
         "data": {
             "duration": 503
         }
+    },
+    {
+        "version": 1,
+        "type": "injury",
+        "date": "Dec 30, 2024, 12:30:00 PM",
+        "data": [
+            {
+                "pain": 2,
+                "description": "Felt a pain in right foot towards the end of the run. Went away after 15 minutes.",
+                "location": "outer right foot metatarsals"
+            }, {
+                "pain": 2,
+                "description": "Felt a sharp pain in my left shin for a few seconds.",
+                "location": "left shin"
+            }
+        ]
+    },
+    {
+        "version": 1,
+        "type": "injury",
+        "date": "Dec 31, 2024, 12:30:00 PM",
+        "data": [
+            {
+                "pain": 1,
+                "description": "Felt a sharp pain in my left shin for a few seconds.",
+                "location": "left shin"
+            }
+        ]
+    },
+    {
+
+        "version": 1,
+        "type": "injury",
+        "date": "Jan 1, 2025, 12:30:00 PM",
+        "data": [
+            {
+                "pain": 2,
+                "description": "plantar hurt in the morning consistent dull pain while walking, went away after slight massaging. Comes back after not moving for a while.",
+                "location": "left plantar"
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 1, 2025, 10:00:00 AM",
+        "data": {
+            "duration": 10,
+            "notes": "",
+            "exercises": [
+                {
+                    "exercise": "short foot exercise",
+                    "reps": [20, 20, 20],
+                    "weight": [0, 0, 0]
+                }
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "kayak",
+        "date": "Jan 1, 2025, 10:00:00 AM",
+        "data": {
+            "duration": 40
+        }
+    },
+    {
+
+        "version": 1,
+        "type": "injury",
+        "date": "Jan 2, 2025, 4:35:00 PM",
+        "data": [
+            {
+                "pain": 2,
+                "description": "plantar hurt in the morning consistent, went away after",
+                "location": "left plantar"
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 2, 2025, 7:50:00 AM",
+        "data": {
+            "duration": 35,
+            "notes": "Decided to lift instead of run due to plantar pain, tweaked right glute a tiny bit",
+            "exercises": [
+                "bicep curl: 6x3kg, 8x7kg, 8x8kg, 8x8kg",
+                "lateral raise: 8x3kg, 8x5kg, 8x6kg",
+                "Bulgarian split squat: 8x8kg, 8x8kg, 8x8kg",
+                "single leg calf raise: 20, 20, 20",
+                "overhead press: 8x6kg, 8x8kg, 8x8kg",
+                "rows: 8x8kg, 8x8kg",
+                "bench: 8x8kg, 8x8kg"
+            ]
+        }
     }
 ]
