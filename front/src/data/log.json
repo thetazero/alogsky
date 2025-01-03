@@ -176,7 +176,7 @@
     },
     {
         "version": 1,
-        "type": "injury",
+        "type": "pain",
         "date": "Dec 30, 2024, 12:30:00 PM",
         "data": [
             {
@@ -193,7 +193,7 @@
     },
     {
         "version": 1,
-        "type": "injury",
+        "type": "pain",
         "date": "Dec 31, 2024, 12:30:00 PM",
         "data": [
             {
@@ -211,7 +211,7 @@
     {
 
         "version": 1,
-        "type": "injury",
+        "type": "pain",
         "date": "Jan 1, 2025, 12:30:00 PM",
         "data": [
             {
@@ -253,7 +253,7 @@
     {
 
         "version": 1,
-        "type": "injury",
+        "type": "pain",
         "date": "Jan 2, 2025, 4:35:00 PM",
         "data": [
             {
@@ -316,7 +316,7 @@
     {
 
         "version": 1,
-        "type": "injury",
+        "type": "pain",
         "date": "Jan 3, 2025, 4:35:00 PM",
         "data": [
             {

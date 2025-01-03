@@ -20,7 +20,7 @@ const proc_map: { [key: string]: (point: any, date: Date) => TrainingData } = {
     "run2": parse_run_v2,
     "lift1": parse_liftv1,
     "sleep1": parse_sleepv1,
-    "injury1": parse_injuryv1,
+    "pain1": parse_painv1,
     "lift2": parse_liftv2,
     "kayak1": parse_kayakv1,
 }
@@ -214,7 +214,7 @@ function parse_body_location(str: string): BodyLocation {
     throw `${str} is not a valid body location`
 }
 
-function parse_injuryv1(data: any, date: Date): PainSnapshotData {
+function parse_painv1(data: any, date: Date): PainSnapshotData {
     const pains = data.map((pain: any) => {
         return {
             pain: pain.pain,
@@ -222,7 +222,7 @@ function parse_injuryv1(data: any, date: Date): PainSnapshotData {
             location: parse_body_location(pain.location),
         };
     });
-    return { pains, date, type: "injury" };
+    return { pains, date, type: "pain" };
 }
 
 function parse_kayakv1(data: any, date: Date): KayakData {

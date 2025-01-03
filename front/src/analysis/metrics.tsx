@@ -42,7 +42,7 @@ export function training_time(training_data: TrainingData[]): Time {
     return training_data.map(d => {
         if (d.type == "run") return d.moving_time
         if (d.type == "lift") return d.duration
-        if (d.type == "injury") return minutes(0)
+        if (d.type == "pain") return minutes(0)
         if (d.type == "kayak") return d.duration
         if (d.type == "sleep") return minutes(0)
         throw "Training time does not cover all types"

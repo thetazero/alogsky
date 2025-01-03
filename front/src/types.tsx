@@ -74,7 +74,7 @@ export interface PainData {
 export interface PainSnapshotData {
     pains: PainData[]
     date: Date
-    type: "injury"
+    type: "pain"
 }
 
 export interface KayakData {
@@ -90,12 +90,12 @@ export enum BodyLocation {
     LeftPlantar = "Left Plantar",
 }
 
-export interface InjuryData {
+export interface PainData {
     location: BodyLocation
-    snapshots: InjurySnapshots[]
+    snapshots: PainSnapshots[]
 }
 
-export interface InjurySnapshots {
+export interface PainSnapshots {
     description: string
     pain: number
     date: Date

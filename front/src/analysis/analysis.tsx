@@ -1,4 +1,4 @@
-import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile, InjuryData, PainSnapshotData, BodyLocation, Metric, tons } from "../types";
+import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile, PainData, PainSnapshotData, BodyLocation, Metric, tons } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { average_pace, lift_tonage, total_mileage, total_moving_time, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
@@ -22,7 +22,7 @@ class Analysis {
         this.lifts = training_data.filter(e => e.type === "lift")
         this.training_data = training_data
         this.sleeps = training_data.filter(e => e.type === "sleep")
-        this.pain_snapshot_data = this.training_data.filter(e => e.type === "injury")
+        this.pain_snapshot_data = this.training_data.filter(e => e.type === "pain")
         this.first_activity = this._get_oldest_date()
     }
 
@@ -136,8 +136,8 @@ class Analysis {
         }
     }
 
-    get_injury_data(): InjuryData[] {
-        const map: Map<BodyLocation, InjuryData> = new Map([]);
+    get_injury_data(): PainData[] {
+        const map: Map<BodyLocation, PainData> = new Map([]);
         this.pain_snapshot_data.forEach(snapshot => {
             const date = snapshot.date
             snapshot.pains.forEach(pain => {
