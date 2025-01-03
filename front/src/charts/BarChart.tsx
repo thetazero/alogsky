@@ -13,16 +13,18 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export type BarChartData = {
+    label: string;
+    data: number[];
+    backgroundColor: string;
+}
+
+export type BarChartDataSet = {
     labels: string[];
-    datasets: {
-        label: string;
-        data: number[];
-        backgroundColor: string;
-    }[];
+    datasets: BarData[];
 }
 
 export interface BarChartProps {
-    data: BarChartData;
+    data: BarChartDataSet;
     title?: string;
 }
 
@@ -59,7 +61,7 @@ const BarChart: React.FC<BarChartProps> = ({ data, title }) => {
 
     return (
         <div className="w-full h-full">
-            <Bar options={options} data={data} height={300}/>
+            <Bar options={options} data={data} height={300} />
         </div>
     );
 };

@@ -1,42 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Analysis from "../analysis/analysis";
 import BottomGrows from "../components/BottomGrows";
-import BarChart, { BarChartData } from "../charts/BarChart";
+import BarChart, { BarChartData, BarChartDataSet } from "../charts/BarChart";
 import { get_week_start } from "../utils/time";
-import { pounds } from "../types";
-import { miles } from "@buge/ts-units/length";
+import { Metric } from "../types";
+
+function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): BarChartData {
+    const data: {
+        label: string;
+        data: number[];
+        backgroundColor: string;
+    } = {
+        label: metric,
+        data: [],
+        backgroundColor: metric === Metric.Mileage ? "#6366f1" : "red"
+    }
+    for (let i = 0; i < weeks; i++) {
+        const week_data = analysis.get_metric_for_week(metric, i)
+        data.data.push(week_data);
+    }
+    return data
+}
 
 export interface TrainingSummaryTileProps {
     analysis: Analysis;
 }
 
-
 const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) => {
-    const [barData, setBarData] = React.useState<BarChartData>({ labels: [], datasets: [] });
+    const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] });
+    const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
 
     useEffect(() => {
-        if(analysis.training_data.length === 0) return
+        if (analysis.training_data.length === 0) return
         const first_date = get_week_start(analysis._get_oldest_date() as Date);
-        const lables = []
+        const labels = []
         while (first_date <= new Date()) {
-            lables.push(first_date.toDateString());
+            labels.push(first_date.toDateString());
             first_date.setDate(first_date.getDate() + 7);
         }
-        const milleage_data: {
-            label: string;
-            data: number[];
-            backgroundColor: string;
-        } = {
-            label: "Mileage",
-            data: [],
-            backgroundColor: "#6366f1"
-        }
-        for (let i = 0; i < lables.length; i++) {
-            const week_data = analysis.get_data_for_week(i);
-            const milleage = week_data.filter(e => e.type === "run").reduce((acc, e) => acc.plus(e.distance), miles(0));
-            milleage_data.data.push(milleage.in(miles).amount);
-        }
-        setBarData({ labels: lables, datasets: [milleage_data] });
+        setBarData({
+            labels: labels,
+            datasets: metrics.map((metric) => getDataForMetric(analysis, metric, labels.length)),
+        });
     }, [analysis]);
 
     return (

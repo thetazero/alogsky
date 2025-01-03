@@ -102,3 +102,9 @@ export interface InjurySnapshots {
 }
 
 export type TrainingData = RunData | LiftData | SleepData | PainSnapshotData | KayakData;
+export enum Metric {
+    Mileage = "Mileage",
+    Pace = "Pace",
+    ActiveTime = "Active Time",
+    Tonage = "Tonage",
+}

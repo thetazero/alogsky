@@ -1,5 +1,7 @@
 import { Mass } from "@buge/ts-units/mass";
-import { Exercise, LiftData, pounds, RepData } from "../types";
+import { Exercise, InverseSpeed, LiftData, pounds, RepData, RunData, TrainingData } from "../types";
+import { miles } from "@buge/ts-units/length";
+import { minutes, seconds, Time } from "@buge/ts-units/time";
 
 const bonus_weight: Map<Exercise, number> = new Map([
     [Exercise.Pullup, 1.0],
@@ -22,4 +24,33 @@ export function lift_tonage(lift: LiftData): Mass {
     ) => {
         return a.plus(b)
     })
+}
+
+export function total_mileage(runs: RunData[]) {
+    return runs.map(r => r.distance).reduce((a, b) => a.plus(b), miles(0))
+}
+
+export function total_tonage(lifts: LiftData[]): Mass {
+    return lifts.map(lift_tonage).reduce((a, b) => a.plus(b), pounds(0))
+}
+
+export function total_moving_time(runs: RunData[]): Time {
+    return runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
+}
+
+export function training_time(training_data: TrainingData[]): Time {
+    return training_data.map(d => {
+        if (d.type == "run") return d.moving_time
+        if (d.type == "lift") return d.duration
+        if (d.type == "injury") return minutes(0)
+        if (d.type == "kayak") return d.duration
+        if (d.type == "sleep") return minutes(0)
+        throw "Training time does not cover all types"
+    }).reduce((a, b) => a.plus(b), minutes(0))
+}
+
+export function average_pace(runs: RunData[]): InverseSpeed {
+    const dist = total_mileage(runs)
+    const time = total_moving_time(runs)
+    return time.per(dist)
 }

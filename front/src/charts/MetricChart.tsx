@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chart from "../components/Chart";
 import Analysis from "../analysis/analysis";
-import { Metric } from "../analysis/analysis";
+import { Metric } from "../types";
 import { DataPoint } from "../components/Chart";
 import BottomGrows from "../components/BottomGrows";
 
@@ -28,7 +28,7 @@ const SingleMetricChart: React.FC<MileageChartProps> = ({ analysis }) => {
     useEffect(() => {
         setData(
             weeklyAnalysis.map(analysis => {
-                return analysis.get_metric(metric)
+                return analysis.get_metric_for_chart(metric)
             }).filter(e => e != null)
         )
         switch (metric) {

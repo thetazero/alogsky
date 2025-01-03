@@ -1,17 +1,11 @@
-import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile, InjuryData, PainSnapshotData, BodyLocation } from "../types";
+import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile, InjuryData, PainSnapshotData, BodyLocation, Metric, tons } from "../types";
 import { Mass } from "@buge/ts-units/mass";
-import { lift_tonage } from "./metrics";
+import { average_pace, lift_tonage, total_mileage, total_moving_time, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
 import { hours, minutes, seconds, Time } from "@buge/ts-units/time";
 import { DataPoint } from "../components/Chart";
 import { fmt_minutes_per_mile } from "../utils/format";
 import { get_week_end, get_week_start } from "../utils/time";
-
-export enum Metric {
-    Mileage = "Mileage",
-    Pace = "Pace",
-    ActiveTime = "Active Time",
-}
 
 class Analysis {
     runs: RunData[]
@@ -65,28 +59,8 @@ class Analysis {
         })
     }
 
-    total_tonage(): Mass {
-        if (this.lifts.length === 0) return pounds(0)
-        return this.lifts.map(lift_tonage).reduce((a, b) => a.plus(b))
-    }
-
-    total_distance(): Length {
-        return this.runs.map(r => r.distance).reduce((a, b) => a.plus(b), miles(0))
-    }
-
-    total_moving_time(): Time {
-        return this.runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
-    }
-
-    training_time(): Time {
-        return this.training_data.map(d => {
-            if (d.type == "run") return d.moving_time
-            if (d.type == "lift") return d.duration
-            if (d.type == "injury") return minutes(0)
-            if (d.type == "kayak") return d.duration
-            if (d.type == "sleep") return minutes(0)
-            throw "Training time does not cover all types"
-        }).reduce((a, b) => a.plus(b), minutes(0))
+    get_analysis_for_week(idx: number): Analysis {
+        return new Analysis(this.get_data_for_week(idx))
     }
 
     average_sleep_time(): Time | null {
@@ -94,12 +68,6 @@ class Analysis {
         const total_sleep_data_points = this.sleeps.length
         if (total_sleep_data_points === 0) return null
         return total_sleep_time.per(total_sleep_data_points)
-    }
-
-    average_pace(): InverseSpeed {
-        const dist = this.total_distance()
-        const time = this.total_moving_time()
-        return time.per(dist)
     }
 
     split_into_weeks(): Analysis[] {
@@ -112,25 +80,53 @@ class Analysis {
         return res
     }
 
-    get_metric(metric: Metric): DataPoint | null {
-        if (!this.first_activity) return null
+    total_mileage(): Length {
+        return total_mileage(this.runs)
+    }
+
+    total_training_time(): Time {
+        return total_training_time(this.training_data)
+    }
+
+    total_tonage(): Mass {
+        return total_tonage(this.lifts)
+    }
+
+    get_metric(metric: Metric): number {
         switch (metric) {
             case Metric.Mileage:
-                const dist = this.total_distance().in(miles).amount
+                return this.total_mileage().in(miles).amount
+            case Metric.ActiveTime:
+                return this.total_training_time().in(hours).amount
+            case Metric.Pace:
+                return average_pace(this.runs).in(minutes_per_mile).amount
+            case Metric.Tonage:
+                return this.total_tonage().in(tons).amount
+        }
+    }
+
+    get_metric_for_week(metric: Metric, week: number): number {
+        return this.get_analysis_for_week(week).get_metric(metric)
+    }
+
+    get_metric_for_chart(metric: Metric): DataPoint | null {
+        if (!this.first_activity) return null
+        const y = this.get_metric(metric)
+        switch (metric) {
+            case Metric.Mileage:
                 return {
                     date: this.first_activity,
-                    y: dist,
-                    label: `${dist.toFixed(1)} miles`
+                    y,
+                    label: `${y.toFixed(1)} miles`
                 }
             case Metric.ActiveTime:
-                const time = this.training_time().in(hours).amount
                 return {
                     date: this.first_activity,
-                    y: time,
-                    label: `${time.toFixed(1)} hours`
+                    y,
+                    label: `${y.toFixed(1)} hours`
                 }
             case Metric.Pace:
-                const pace = this.average_pace()
+                const pace = average_pace(this.runs)
                 return {
                     date: this.first_activity,
                     y: pace.in(minutes_per_mile).amount,
