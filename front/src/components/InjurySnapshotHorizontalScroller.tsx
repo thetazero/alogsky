@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FixedSizeList as List } from 'react-window';
 import { InjurySnapshots } from '../types';
 import PrettyDate from './Date';

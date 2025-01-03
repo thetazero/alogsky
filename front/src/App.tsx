@@ -4,13 +4,14 @@ import data from "./data/log.json"
 import strava_data from "./data/strava_export.json"
 import parse from './parse/main';
 import { TrainingData } from './types';
-import SingleMetricChart from './charts/MetricChart';
 import OpenInjuryTile from './tiles/OpenInjuryTile';
 import Tile from './components/Tile';
 import WeekOverview from './tiles/WeekOverview';
 import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
 import MonthCalendar from './components/MonthCalendar';
+import TrainingSummaryTile from './tiles/TrainingSummaryTile';
+import SingleMetricChart from './charts/MetricChart';
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
@@ -34,9 +35,9 @@ function App() {
     return (
         <>
             <div className="grid grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
-                {/* <Tile title='Single Metric Chart'>
+                <Tile title='Single Metric Chart'>
                     <SingleMetricChart analysis={analysis} />
-                </Tile> */}
+                </Tile>
                 <Tile title="Training Log">
                     <TrainingLogTile analysis={analysis} />
                 </Tile>
@@ -48,6 +49,9 @@ function App() {
                 </Tile>
                 <Tile title="Open Injuries">
                     <OpenInjuryTile analysis={analysis} />
+                </Tile>
+                <Tile title="Training Summary">
+                    <TrainingSummaryTile analysis={analysis} />
                 </Tile>
                 {
                     errors.length && (
