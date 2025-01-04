@@ -27,8 +27,9 @@ export interface TrainingSummaryTileProps {
 }
 
 const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) => {
-    const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] });
+    const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] })
     const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
+    const [weeksToShow, setWeeksToShow] = useState<number>(10)
 
     useEffect(() => {
         if (analysis.training_data.length === 0) return
@@ -39,10 +40,15 @@ const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) =
             first_date.setDate(first_date.getDate() + 7);
         }
         setBarData({
-            labels: labels,
-            datasets: metrics.map((metric) => getDataForMetric(analysis, metric, labels.length)),
+            labels: labels.slice(-weeksToShow),
+            datasets: metrics.map((metric) => {
+                const data = getDataForMetric(analysis, metric, labels.length)
+                data.data = data.data.slice(-weeksToShow)
+                return data
+            }
+            ),
         });
-    }, [analysis, metrics]);
+    }, [analysis, metrics, weeksToShow]);
 
     return (
         <BottomGrows
