@@ -138,12 +138,12 @@ class Analysis {
     }
 
     get_injury_data(): PainAtLocationData[] {
-        const map: Map<BodyLocation, PainAtLocationData> = new Map([]);
+        const map: Map<string, PainAtLocationData> = new Map([]);
         this.pain_snapshot_data.forEach(snapshot => {
             const date = snapshot.date
             snapshot.pains.forEach(pain => {
                 const location = pain.location
-                const pain_at_location: PainAtLocationData = map.get(location) ?? {
+                const pain_at_location: PainAtLocationData = map.get(location.to_string()) ?? {
                     location,
                     snapshots: [],
                 }
@@ -152,7 +152,7 @@ class Analysis {
                     description: pain.description,
                     pain: pain.pain
                 })
-                map.set(location, pain_at_location)
+                map.set(location.to_string(), pain_at_location)
             })
         })
         return Array.from(map.values()).map(injury_data => {

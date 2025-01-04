@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, BodyLocation } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -7,6 +7,7 @@ import { Mass as MassDimension } from "@buge/ts-units/mass/dimension";
 import { Mass } from "@buge/ts-units/mass";
 import { pounds } from "../types";
 import { Unit } from "@buge/ts-units";
+import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
 
 function parse(data: any[]): [TrainingData[], string[]] {
     const parsed = data.map(_parse);
@@ -191,18 +192,23 @@ function parse_sleepv1(data: any, date: Date): SleepData {
         type: "sleep",
     };
 }
+const location_map_default: [string, BodyLocationWithoutSide][] = Object.values(BodyLocationWithoutSide).map((loc) => [loc.toLowerCase(), loc])
+const locations_map: Map<string, BodyLocationWithoutSide> = new Map([
+    ...location_map_default,
+]);
 
-const def: [string, BodyLocation][] = Object.values(BodyLocation).map((loc) => [loc.toLowerCase(), loc])
-const body_location_map: Map<string, BodyLocation> = new Map(
-    [
-        ["outer right foot metatarsals", BodyLocation.RightFootMetatarsals],
-        ...def
-    ],
-);
+export function parse_body_location(str: string): BodyLocation {
+    str = str.trim().toLocaleLowerCase()
 
-function parse_body_location(str: string): BodyLocation {
-    const res = body_location_map.get(str.toLowerCase())
-    if (res) return res
+    let side: Side;
+    if (str.slice(0, 4) === "left") side = Side.Left
+    else if (str.slice(0, 5) === "right") side = Side.Right
+    else side = Side.NoSide
+
+    const location = str.replace(/left|right/g, "").trim() 
+    const location_enum = locations_map.get(location)
+
+    if (location_enum) return new BodyLocation(location_enum, side)
     throw `${str} is not a valid body location`
 }
 

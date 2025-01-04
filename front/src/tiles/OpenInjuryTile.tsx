@@ -23,8 +23,8 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
             {
                 openInjuryData.map(injury => {
                     return (
-                        <div key={injury.location} className="p-2 rounded-full deemph">
-                            {injury.location}:
+                        <div key={injury.location.to_string()} className="p-2 rounded-full deemph">
+                            {injury.location.to_string()}:
                             {" "}
                             <DateRange
                                 startDate={get_first(injury.snapshots).date}

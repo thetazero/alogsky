@@ -5,6 +5,7 @@ import { minutes, Time } from '@buge/ts-units/time';
 import { Mass as MassDimension } from '@buge/ts-units/mass/dimension';
 import { Mass } from '@buge/ts-units/mass/';
 import { kilograms } from '@buge/ts-units/mass';
+import BodyLocation from './pt/body_location';
 
 export type InverseSpeedDimensions = {
     length: -1;
@@ -82,15 +83,6 @@ export interface KayakData {
     duration: Time
     date: Date
     type: "kayak"
-}
-
-export enum BodyLocation { 
-    RightFootMetatarsals = "Right Foot Metatarsals",
-    LeftShin = "Left Shin",
-    RightShin = "Right Shin",
-    LeftPlantar = "Left Plantar",
-    LeftUpperBack = "Left Upper Back",
-    RightHipFlexor = "Right Hip Flexor",
 }
 
 export interface PainAtLocationData {
