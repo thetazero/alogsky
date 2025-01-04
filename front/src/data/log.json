@@ -354,6 +354,11 @@
                 "pain": 1,
                 "description": "Slight pain after second rep of squats at (135), left upper back, shoulder blade area.",
                 "location": "left upper back"
+            },
+            {
+                "pain": 1,
+                "description": "Slight pain while doing pullups and occasioanlly while walking",
+                "location": "right hip flexor"
             }
         ]
     },
