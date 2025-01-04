@@ -76,7 +76,7 @@ const Chart: React.FC<ChartProps> = ({ data, yTitle, yUnit, title }) => {
                 },
             ],
         });
-    }, [labels, yTitle, yUnit]);
+    }, [labels, yTitle, yUnit, yValues]);
 
     useEffect(() => {
         setGraphOptions({

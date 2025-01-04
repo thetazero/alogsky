@@ -5,16 +5,6 @@ import { fmt_minutes_per_mile } from "../utils/format";
 import { celsius } from "@buge/ts-units/temperature";
 import Activity from "../components/Activity";
 
-// Move the pretty_date function outside of the component for better readability
-function pretty_date(date: Date): string {
-    return date.toLocaleDateString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    });
-}
-
 interface RunProps {
     data: RunData;
     height: number;  // Fixed height for each run

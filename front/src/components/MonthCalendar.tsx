@@ -10,12 +10,12 @@ const MonthCalendar: React.FC<MonthCalendarProps> = ({ date }) => {
     const [days, setDays] = useState<number[]>([])
 
     useEffect(() => {
-        let new_days = getNDays(getStartDay(date), 35)
+        const new_days = getNDays(getStartDay(date), 35)
         setDays(new_days)
     }, [date])
 
     function getStartDay(date: Date): Date {
-        let x: Date = new Date(date)
+        const x: Date = new Date(date)
         x.setDate(0)
         return get_week_start(x)
     }

@@ -30,7 +30,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
             setStartDay(start);
             setEndDay(end);
         }
-    }, [week]);
+    }, [week, analysis]);
 
     const handlePreviousWeek = () => {
         if (week > 0) {

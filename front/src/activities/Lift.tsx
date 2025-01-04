@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Exercise, LiftData, pounds, RepData, tons } from "../types";
+import { Exercise, LiftData, RepData, tons } from "../types";
 import { lift_tonage } from "../analysis/metrics";
 import Activity from "../components/Activity";
 import ScrollableTable from "../components/Table";
@@ -11,9 +11,9 @@ export interface LiftProps {
 }
 
 function group_by_exercise(data: LiftData): Map<Exercise, RepData[]> {
-    let cache: Map<Exercise, RepData[]> = new Map();
+    const cache: Map<Exercise, RepData[]> = new Map();
     for (const rep of data.reps) {
-        let cur = cache.get(rep.exercise) ?? [];
+        const cur = cache.get(rep.exercise) ?? [];
         cur.push(rep);
         cache.set(rep.exercise, cur);
     }
@@ -22,14 +22,14 @@ function group_by_exercise(data: LiftData): Map<Exercise, RepData[]> {
 
 function to_table(data: Map<Exercise, RepData[]>): string[][] {
     const rows: RepData[][] = Array.from(data.values());
-    let unnorm: string[][] = rows.map((row) => row.map((rep) => {
+    const unnorm: string[][] = rows.map((row) => row.map((rep) => {
         if (rep.weight.amount === 0) return `${rep.reps}`;
         else if (rep.reps === 0) return `${rep.weight.toString()}`;
         else return `${rep.reps} x ${rep.weight.toString()}`
     }));
-    let max_length = Math.max(...unnorm.map((row) => row.length));
+    const max_length = Math.max(...unnorm.map((row) => row.length));
     unnorm.map((row) => {
-        let missing = max_length - row.length;
+        const missing = max_length - row.length;
         return row.concat(new Array(missing).fill(""));
     });
     // add exercise name to the beginning of each row

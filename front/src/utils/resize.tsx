@@ -18,5 +18,5 @@ export function useResizeObserver(containerRef: React.RefObject<HTMLDivElement>,
         return () => {
             resizeObserver.disconnect();
         };
-    }, []);
+    }, [callback, containerRef]);
 }

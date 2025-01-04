@@ -82,7 +82,7 @@ function split_unit(input: string): [string, string] {
 export function parse_weight(weight: string | number | undefined): Mass {
     if (weight === undefined) return pounds(0)
     if (typeof weight === 'number') return pounds(weight)
-    let [value, unit] = split_unit(weight)
+    const [value, unit] = split_unit(weight)
     const unit_map: { [key: string]: Unit<number, MassDimension> } = {
         "lbs": pounds,
         "kg": kilograms,

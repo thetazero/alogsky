@@ -26,7 +26,7 @@ function App() {
         setErrors(errors)
         all.sort((a, b) => b.date.getTime() - a.date.getTime())
         setProcessed(all)
-    }, [data]);
+    }, []);
 
     useEffect(() => {
         setAnalysis(new Analysis(processed))

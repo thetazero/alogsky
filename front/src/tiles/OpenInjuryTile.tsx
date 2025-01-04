@@ -14,7 +14,7 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
 
     useEffect(() => {
         const injuries = analysis.get_injury_data()
-        let open_injuries = injuries.filter(injury => injury.snapshots[injury.snapshots.length - 1].pain >= 1)
+        const open_injuries = injuries.filter(injury => injury.snapshots[injury.snapshots.length - 1].pain >= 1)
         setOpenInjuryData(open_injuries)
     }, [analysis])
 

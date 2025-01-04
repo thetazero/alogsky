@@ -42,7 +42,7 @@ const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) =
             labels: labels,
             datasets: metrics.map((metric) => getDataForMetric(analysis, metric, labels.length)),
         });
-    }, [analysis]);
+    }, [analysis, metrics]);
 
     return (
         <BottomGrows

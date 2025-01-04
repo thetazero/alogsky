@@ -23,12 +23,11 @@ const NumberInput: React.FC<NumberInputProps> = ({
     const [isEmpty, setIsEmpty] = useState<boolean>(false); // Track if the input is empty
 
     useEffect(() => {
-        // If the value is empty or 0, we set it to min
         if (localValue === "" || value === 0) {
             setLocalValue(min.toString());
             setIsEmpty(true);
         }
-    }, [min, value]);
+    }, [min, value, localValue]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value;
