@@ -90,6 +90,7 @@ export enum BodyLocation {
     RightShin = "Right Shin",
     LeftPlantar = "Left Plantar",
     LeftUpperBack = "Left Upper Back",
+    RightHipFlexor = "Right Hip Flexor",
 }
 
 export interface PainAtLocationData {
