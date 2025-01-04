@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Analysis from "../analysis/analysis";
-import { PainData } from "../types";
+import { PainAtLocationData } from "../types";
 import { get_first } from "../analysis/utils";
 import DateRange from "../components/DateRange";
 import InjurySnapshotHorizontalScroller from "../components/InjurySnapshotHorizontalScroller";
@@ -10,7 +10,7 @@ export interface OpenInjuryTileProps {
 }
 
 const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
-    const [openInjuryData, setOpenInjuryData] = useState<PainData[]>([]);
+    const [openInjuryData, setOpenInjuryData] = useState<PainAtLocationData[]>([]);
 
     useEffect(() => {
         const injuries = analysis.get_injury_data()

@@ -1,8 +1,8 @@
-import { TrainingData, LiftData, RunData, pounds, SleepData, InverseSpeed, minutes_per_mile, PainData, PainSnapshotData, BodyLocation, Metric, tons } from "../types";
+import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainAtLocationData, PainLogData, BodyLocation, Metric, tons } from "../types";
 import { Mass } from "@buge/ts-units/mass";
-import { average_pace, lift_tonage, total_mileage, total_moving_time, total_tonage, training_time as total_training_time } from "./metrics";
+import { average_pace, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
-import { hours, minutes, seconds, Time } from "@buge/ts-units/time";
+import { hours, seconds, Time } from "@buge/ts-units/time";
 import { DataPoint } from "../components/Chart";
 import { fmt_minutes_per_mile } from "../utils/format";
 import { get_week_end, get_week_start } from "../utils/time";
@@ -12,7 +12,7 @@ class Analysis {
     lifts: LiftData[]
     sleeps: SleepData[]
     training_data: TrainingData[]
-    pain_snapshot_data: PainSnapshotData[]
+    pain_snapshot_data: PainLogData[]
     first_activity: Date | null
 
     constructor(training_data: TrainingData[]) {
@@ -132,26 +132,27 @@ class Analysis {
                     y: pace.in(minutes_per_mile).amount,
                     label: fmt_minutes_per_mile(pace)
                 }
-
+            default:
+                return null
         }
     }
 
-    get_injury_data(): PainData[] {
-        const map: Map<BodyLocation, PainData> = new Map([]);
+    get_injury_data(): PainAtLocationData[] {
+        const map: Map<BodyLocation, PainAtLocationData> = new Map([]);
         this.pain_snapshot_data.forEach(snapshot => {
             const date = snapshot.date
             snapshot.pains.forEach(pain => {
                 const location = pain.location
-                const list = map.get(location) ?? {
+                const pain_at_location: PainAtLocationData = map.get(location) ?? {
                     location,
-                    snapshots: []
+                    snapshots: [],
                 }
-                list.snapshots.push({
+                pain_at_location.snapshots.push({
                     date,
                     description: pain.description,
                     pain: pain.pain
                 })
-                map.set(location, list)
+                map.set(location, pain_at_location)
             })
         })
         return Array.from(map.values()).map(injury_data => {

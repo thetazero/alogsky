@@ -65,14 +65,14 @@ export interface SleepData {
     type: "sleep"
 }
 
-export interface PainData {
+export interface PainAtLocationLogData {
     pain: number
     description: string
     location: BodyLocation
 }
 
-export interface PainSnapshotData {
-    pains: PainData[]
+export interface PainLogData {
+    pains: PainAtLocationLogData[]
     date: Date
     type: "pain"
 }
@@ -90,18 +90,18 @@ export enum BodyLocation {
     LeftPlantar = "Left Plantar",
 }
 
-export interface PainData {
+export interface PainAtLocationData {
     location: BodyLocation
-    snapshots: PainSnapshots[]
+    snapshots: PainSnapshotsData[]
 }
 
-export interface PainSnapshots {
+export interface PainSnapshotsData {
     description: string
     pain: number
     date: Date
 }
 
-export type TrainingData = RunData | LiftData | SleepData | PainSnapshotData | KayakData;
+export type TrainingData = RunData | LiftData | SleepData | PainLogData | KayakData;
 export enum Metric {
     Mileage = "Mileage",
     Pace = "Pace",

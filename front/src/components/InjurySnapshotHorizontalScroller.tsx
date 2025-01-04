@@ -1,17 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FixedSizeList as List } from 'react-window';
-import { PainSnapshots } from '../types';
+import { PainSnapshotsData } from '../types';
 import PrettyDate from './Date';
 
 // Define the data structure for the individual run
 interface InjurtyDataHorizontalScrollerProps {
-    snapshots: PainSnapshots[]; // The processed data array
+    snapshots: PainSnapshotsData[]; // The processed data array
     width?: number; // Optional height for the list (fallback)
 }
 
 const InjurySnapshotHorizontalScroller: React.FC<InjurtyDataHorizontalScrollerProps> = ({ snapshots, width }) => {
     const [containerWidth, setContainerWidth] = useState(width || 500);
-    const [snapShot, setSnapShot] = useState<PainSnapshots>(snapshots[snapshots.length - 1]);
+    const [snapShot, setSnapShot] = useState<PainSnapshotsData>(snapshots[snapshots.length - 1]);
     const containerRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<List>(null);
 

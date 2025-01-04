@@ -63,7 +63,7 @@ describe("Test parse lift v2", () => {
             }
         }
         const [res, errors] = parse([data])
-        const lift: LiftData = res[0]
+        const lift: LiftData = res[0] as LiftData
         expect(errors).toEqual([])
         expect(lift).not.toEqual(undefined)
         expect(lift.reps).toHaveLength(21)

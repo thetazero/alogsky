@@ -1,4 +1,4 @@
-import { Exercise, PainSnapshotData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, BodyLocation } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, BodyLocation } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -214,7 +214,7 @@ function parse_body_location(str: string): BodyLocation {
     throw `${str} is not a valid body location`
 }
 
-function parse_painv1(data: any, date: Date): PainSnapshotData {
+function parse_painv1(data: any, date: Date): PainLogData {
     const pains = data.map((pain: any) => {
         return {
             pain: pain.pain,
