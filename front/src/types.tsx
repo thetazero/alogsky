@@ -12,7 +12,7 @@ export type InverseSpeedDimensions = {
 }
 export type InverseSpeed = Quantity<number, InverseSpeedDimensions>;
 export const minutes_per_mile: Unit<number, InverseSpeedDimensions> = minutes.per(miles);
-export const pounds: Unit<number, MassDimension> = kilograms.times(2.20462).withSymbol("lbs");
+export const pounds: Unit<number, MassDimension> = kilograms.times(1/2.20462).withSymbol("lbs");
 export const tons: Unit<number, MassDimension> = pounds.times(2000).withSymbol("tons");
 
 export interface RunData {
@@ -41,7 +41,8 @@ export enum Exercise {
     Pushup = "Pushup",
     Situp = "Situp",
     BulgarianSplitSquat = "Bulgarian Split Squat",
-    ShortFootExercise = "Short Foot Exercise"
+    ShortFootExercise = "Short Foot Exercise",
+    SingleLegStairCalfRaise = "Single Leg Stair Calf Raise",
 }
 
 export interface RepData {
@@ -88,6 +89,7 @@ export enum BodyLocation {
     LeftShin = "Left Shin",
     RightShin = "Right Shin",
     LeftPlantar = "Left Plantar",
+    LeftUpperBack = "Left Upper Back",
 }
 
 export interface PainAtLocationData {

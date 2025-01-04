@@ -260,6 +260,11 @@
                 "pain": 2,
                 "description": "consistent dull pain, went away after",
                 "location": "left plantar"
+            },
+            {
+                "pain": 1,
+                "description": "Right shin hurting before bed, sharp pain that went away after calf massage. location 5 inches over ankle ball.",
+                "location": "right shin"
             }
         ]
     },
@@ -314,24 +319,59 @@
         }
     },
     {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 3, 2025, 4:01:00 AM",
+        "data": {
+            "duration": 244
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 4, 2025, 3:55:00 AM",
+        "data": {
+            "duration": 432
+        }
+    },
+    {
 
         "version": 1,
         "type": "pain",
         "date": "Jan 3, 2025, 4:35:00 PM",
         "data": [
             {
+                "pain": 2,
+                "description": "started hurting a bit, went away when walking. Realised it was Sciatica. Negative for straight leg raise test, positive for slump test on left foot for Sciatica. Standard stretches helped.",
+                "location": "left plantar"
+            },
+            {
                 "pain": 0,
                 "description": "",
-                "location": "left plantar"
+                "location": "right shin"
+            },
+            {
+                "pain": 1,
+                "description": "Slight pain after second rep of squats at (135), left upper back, shoulder blade area.",
+                "location": "left upper back"
             }
         ]
     },
     {
-        "version": 1,
-        "type": "sleep",
-        "date": "Jan 3, 2025, 4:01:00 AM",
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 4, 2025, 10:43:00 AM",
         "data": {
-            "duration": 244
+            "duration": 34,
+            "notes": "",
+            "exercises": [
+                "squat: 8x95lbs, 8x135lbs, 8x135lbs, 8x135lbs",
+                "single leg stair calf raise: 20, 20, 20",
+                "bicep curl: 8x10lbs, 8x20lbs, 8x20lbs, 8x25lbs",
+                "bulgarian split squat: 8x15lbs, 6x15lbs",
+                "pull up: 8, 8, 8",
+                "overhead press: 8x15lbs, 8x15lbs, 8x20lbs"
+            ]
         }
     }
 ]

@@ -35,18 +35,18 @@ function App() {
     return (
         <>
             <div className="grid grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
-                <Tile title='Single Metric Chart'>
+                {/* <Tile title='Single Metric Chart'>
                     <SingleMetricChart analysis={analysis} />
-                </Tile>
+                </Tile> */}
                 <Tile title="Training Log">
                     <TrainingLogTile analysis={analysis} />
                 </Tile>
                 <Tile title="Weekly Overview">
                     <WeekOverview analysis={analysis} />
                 </Tile>
-                <Tile title="Calendar Test">
+                {/* <Tile title="Calendar Test">
                     <MonthCalendar date={new Date()}/>
-                </Tile>
+                </Tile> */}
                 <Tile title="Open Injuries">
                     <OpenInjuryTile analysis={analysis} />
                 </Tile>

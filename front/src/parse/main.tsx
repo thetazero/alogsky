@@ -94,22 +94,14 @@ export function parse_weight(weight: string | number | undefined): Mass {
     }
 }
 
+const defaults_for_exercise_map: [string, Exercise][] = Object.values(Exercise).map((exc) => [exc.toLowerCase(), exc])
 const exercise_map: Map<string, Exercise> = new Map(
     [
-        ["squat", Exercise.Squat],
-        ["bench", Exercise.Bench],
-        ["romanian deadlift", Exercise.RomanianDeadLift],
-        ["oxidative squat", Exercise.OxidativeSquat],
-        ["bicep curl", Exercise.BicepCurl],
         ["rows", Exercise.Row],
         ["pullups", Exercise.Pullup],
-        ["single leg calf raise", Exercise.SingleLegCalfRaise],
-        ["lateral raise", Exercise.LateralRaise],
-        ["overhead press", Exercise.OverheadPress],
-        ["pushup", Exercise.Pushup],
-        ["situp", Exercise.Situp],
-        ["bulgarian split squat", Exercise.BulgarianSplitSquat],
-        ["short foot exercise", Exercise.ShortFootExercise],
+        ["pull ups", Exercise.Pullup],
+        ["pull up", Exercise.Pullup],
+        ...defaults_for_exercise_map
     ],
 );
 
@@ -200,11 +192,11 @@ function parse_sleepv1(data: any, date: Date): SleepData {
     };
 }
 
+const def: [string, BodyLocation][] = Object.values(BodyLocation).map((loc) => [loc.toLowerCase(), loc])
 const body_location_map: Map<string, BodyLocation> = new Map(
     [
         ["outer right foot metatarsals", BodyLocation.RightFootMetatarsals],
-        ["left shin", BodyLocation.LeftShin],
-        ["left plantar", BodyLocation.LeftPlantar],
+        ...def
     ],
 );
 

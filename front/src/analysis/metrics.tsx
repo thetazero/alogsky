@@ -3,7 +3,7 @@ import { Exercise, InverseSpeed, LiftData, pounds, RepData, RunData, TrainingDat
 import { miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 
-const bonus_weight: Map<Exercise, number> = new Map([
+const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
     [Exercise.SingleLegCalfRaise, 1.0],
@@ -11,19 +11,14 @@ const bonus_weight: Map<Exercise, number> = new Map([
     [Exercise.BulgarianSplitSquat, 0.7],
 ]);
 
-function rep_tonage(rep: RepData) {
-    const extra_weight = bonus_weight.get(rep.exercise) ?? 0.0;
-    return (rep.weight.plus(pounds(125).times(extra_weight))).times(rep.reps);
+export function rep_tonage(rep: RepData) {
+    const extra_weight_multiplier = bonus_weight_map.get(rep.exercise) ?? 0.0;
+    const bonus_weight = pounds(125).times(extra_weight_multiplier)
+    return (rep.weight.plus(bonus_weight)).times(rep.reps);
 }
 
 export function lift_tonage(lift: LiftData): Mass {
-    return lift.reps.map(
-        rep_tonage
-    ).reduce((
-        a, b
-    ) => {
-        return a.plus(b)
-    })
+    return lift.reps.map(rep_tonage).reduce((a, b) => a.plus(b), pounds(0))
 }
 
 export function total_mileage(runs: RunData[]) {
