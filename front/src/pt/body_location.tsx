@@ -10,6 +10,9 @@ export enum BodyLocationWithoutSide {
     Plantar = "Plantar",
     UpperBack = "Upper Back",
     HipFlexor = "Hip Flexor",
+    Knee = "Knee",
+    Heel = "Heel",
+    Core = "Core",
 }
 
 class BodyLocation {
