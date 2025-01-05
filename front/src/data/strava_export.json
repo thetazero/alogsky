@@ -20204,19 +20204,6 @@
   {
     "version": 2,
     "type": "run",
-    "date": "Dec 30, 2024, 1:20:41 AM",
-    "data": {
-      "title": "Treadmill",
-      "distance": "6533.9365234375",
-      "moving_time": "1827.0",
-      "elapsed_time": "1827.0",
-      "temperature": "",
-      "feels_like": ""
-    }
-  },
-  {
-    "version": 2,
-    "type": "run",
     "date": "Jan 4, 2025, 5:14:14 PM",
     "data": {
       "title": "With Matteo and Donald",

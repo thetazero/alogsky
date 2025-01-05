@@ -182,7 +182,7 @@
             {
                 "pain": 2,
                 "description": "Felt a pain in right foot towards the end of the run. Went away after 15 minutes.",
-                "location": "outer right foot metatarsals"
+                "location": "right foot metatarsals"
             }, 
             {
                 "pain": 2,
@@ -204,7 +204,7 @@
             {
                 "pain": 0,
                 "description": "",
-                "location": "outer right foot metatarsals"
+                "location": "right foot metatarsals"
             }
         ]
     },
@@ -377,6 +377,37 @@
                 "pull up: 8, 8, 8",
                 "overhead press: 8x15lbs, 8x15lbs, 8x20lbs"
             ]
+        }
+    },
+    {
+
+        "version": 1,
+        "type": "pain",
+        "date": "Jan 3, 2025, 11:12:00 AM",
+        "data": [
+            {
+                "pain": 2,
+                "description": "started hurting on the last 3 miles of my 10 mile run",
+                "location": "left knee"
+            },
+            {
+                "pain": 0,
+                "description": "started hurting after my run, barely noticable",
+                "location": "left heel"
+            },
+            {
+                "pain": 4,
+                "description": "Was cramping for most of the run, pain moved around a lot",
+                "location": "core"
+            }
+        ]
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 5, 2025, 8:16:00 AM",
+        "data": {
+            "duration": 674
         }
     }
 ]
