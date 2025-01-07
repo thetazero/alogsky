@@ -1,6 +1,6 @@
 import { kilograms } from "@buge/ts-units/mass";
 import { Exercise, LiftData } from "../types";
-import parse, { parse_body_location, parse_weight } from "./main";
+import parse, { natural_reps_parse, parse_body_location, parse_weight } from "./main";
 import { Side } from "../pt/body_location";
 
 describe("Test parse weigth", () => {
@@ -87,5 +87,26 @@ describe("Should parse body location", () => {
         console.log(parsed)
         expect(parsed.location).toEqual("Foot Metatarsals")
         expect(parsed.side).toEqual(Side.Left)
+    })
+})
+
+// todo: test stuff like overhead press: 8x6kg, 8x8kg, 8x8kg
+describe("Test parse more natural reps", () => {
+    it("Works in basic cases", () => {
+        let example = "overhead press: 8x6kg, 8x8kg, 8x8kg"
+        let parsed = natural_reps_parse(example)
+        expect(parsed).toHaveLength(3)
+        expect(parsed[0].reps).toEqual(8)
+        expect(parsed[0].weight.in(kilograms).amount).toEqual(6)
+    })
+
+    it("Works when a rep is empty", () => {
+        let text = "overhead press: 8x6kg,"
+        let parsed = natural_reps_parse(text)
+        expect(parsed).toHaveLength(1)
+
+        text = "overhead press: "
+        parsed = natural_reps_parse(text)
+        expect(parsed).toHaveLength(0)
     })
 })

@@ -4,11 +4,12 @@ import { miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 
 const bonus_weight_map: Map<Exercise, number> = new Map([
+    [Exercise.BulgarianSplitSquat, 0.7],
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
-    [Exercise.SingleLegCalfRaise, 1.0],
+    [Exercise.SingleLegCalfRaise, 0.8],
+    [Exercise.SingleLegStairCalfRaise, 0.8],
     [Exercise.Situp, 0.8],
-    [Exercise.BulgarianSplitSquat, 0.7],
 ]);
 
 export function rep_tonage(rep: RepData) {

@@ -102,6 +102,7 @@ const exercise_map: Map<string, Exercise> = new Map(
         ["pullups", Exercise.Pullup],
         ["pull ups", Exercise.Pullup],
         ["pull up", Exercise.Pullup],
+        ["push up", Exercise.Pushup],
         ...defaults_for_exercise_map
     ],
 );
@@ -134,10 +135,11 @@ function parse_liftv1(data: any, date: Date): LiftData {
     };
 }
 
-function natural_reps_parse(str: string): RepData[] {
+export function natural_reps_parse(str: string): RepData[] {
     const [exercise, reps] = str.split(":")
     const exc = parse_exercise(exercise)
     return reps.split(",").map(rep_str => {
+        if (rep_str.trim() === "") return null
         const [times, weight] = rep_str.split("x")
         const repdata: RepData = {
             exercise: exc,
@@ -145,7 +147,7 @@ function natural_reps_parse(str: string): RepData[] {
             weight: parse_weight(weight)
         }
         return repdata
-    })
+    }).filter(rep => rep !== null)
 }
 
 function parse_liftv2(data: any, date: Date): LiftData {
