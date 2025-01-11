@@ -197,6 +197,9 @@ function parse_sleepv1(data: any, date: Date): SleepData {
 const location_map_default: [string, BodyLocationWithoutSide][] = Object.values(BodyLocationWithoutSide).map((loc) => [loc.toLowerCase(), loc])
 const locations_map: Map<string, BodyLocationWithoutSide> = new Map([
     ...location_map_default,
+    ["lower shin", BodyLocationWithoutSide.Shin],
+    ["both shins", BodyLocationWithoutSide.Shin],
+    ["hamstrings", BodyLocationWithoutSide.Hamstring],
 ]);
 
 export function parse_body_location(str: string): BodyLocation {

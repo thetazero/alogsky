@@ -1,7 +1,7 @@
 import { kilograms } from "@buge/ts-units/mass";
 import { Exercise, LiftData } from "../types";
 import parse, { natural_reps_parse, parse_body_location, parse_weight } from "./main";
-import { Side } from "../pt/body_location";
+import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
 
 describe("Test parse weigth", () => {
     it('Should parse kg', () => {
@@ -87,6 +87,14 @@ describe("Should parse body location", () => {
         console.log(parsed)
         expect(parsed.location).toEqual("Foot Metatarsals")
         expect(parsed.side).toEqual(Side.Left)
+    })
+
+    it('Should parse body location without side', () => {
+        const location = "calf"
+        const parsed = parse_body_location(location)
+        console.log(parsed)
+        expect(parsed.location).toEqual(BodyLocationWithoutSide.Calf)
+        expect(parsed.side).toEqual(Side.NoSide)
     })
 })
 
