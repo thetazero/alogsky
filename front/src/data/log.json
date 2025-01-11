@@ -383,7 +383,20 @@
 
         "version": 1,
         "type": "pain",
-        "date": "Jan 3, 2025, 11:12:00 AM",
+        "date": "Jan 4, 2025, 11:12:00 AM",
+        "data": [
+            {
+                "pain": 1,
+                "description": "Tightness / soreness around the achilles area on both legs",
+                "location": "calf"
+            }
+        ]
+    },
+    {
+
+        "version": 1,
+        "type": "pain",
+        "date": "Jan 5, 2025, 11:12:00 AM",
         "data": [
             {
                 "pain": 2,
@@ -399,6 +412,11 @@
                 "pain": 4,
                 "description": "Was cramping for most of the run, pain moved around a lot",
                 "location": "core"
+            },
+            {
+                "pain": 2,
+                "description": "Dull pain while lying down 4 hours post long run",
+                "location": "left plantar"
             }
         ]
     },
@@ -408,6 +426,39 @@
         "date": "Jan 5, 2025, 8:16:00 AM",
         "data": {
             "duration": 674
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 6, 2025, 6:25:00 AM",
+        "data": {
+            "duration": 429
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 7, 2025, 7:20:00 AM",
+        "data": {
+            "duration": 420
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 6, 2025, 6:43:00 PM",
+        "data": {
+            "duration": 40,
+            "notes": "Groups of 3",
+            "exercises": [
+                "push up: 20, 20, 20",
+                "single leg stair calf raise: 15, 20, 20",
+                "rows: 10x25lbs, 8x35lbs, 8x35lbs",
+                "bicep curl: 8x20lbs, 8x25lbs, 7x25lbs",
+                "squat: 8x115lbs, 8x135lbs, 8x135lbs",
+                "overhead press: 8x15lbs, 8x15lbs, 8x20lbs"
+            ]
         }
     }
 ]
