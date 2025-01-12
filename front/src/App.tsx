@@ -9,9 +9,7 @@ import Tile from './components/Tile';
 import WeekOverview from './tiles/WeekOverview';
 import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
-import MonthCalendar from './components/MonthCalendar';
 import TrainingSummaryTile from './tiles/TrainingSummaryTile';
-import SingleMetricChart from './charts/MetricChart';
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
