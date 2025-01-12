@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -218,13 +218,20 @@ export function parse_body_location(str: string): BodyLocation {
 }
 
 function parse_painv1(data: any, date: Date): PainLogData {
-    const pains = data.map((pain: any) => {
+    const pains: PainAtLocationLogData[] = data.map((pain: any) => {
         return {
             pain: pain.pain,
             description: pain.description,
             location: parse_body_location(pain.location),
-        };
+        }
     });
+    const location_set = new Set()
+    for (const pain of pains) {
+        if (location_set.has(pain.location.to_string())) {
+            throw `Duplicate location ${pain.location.to_string()} in pain log on ${date.toDateString()}`
+        }
+        location_set.add(pain.location.to_string())
+    }
     return { pains, date, type: "pain" };
 }
 

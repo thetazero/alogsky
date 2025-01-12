@@ -14,7 +14,12 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
 
     useEffect(() => {
         const injuries = analysis.get_injury_data()
-        const open_injuries = injuries.filter(injury => injury.snapshots[injury.snapshots.length - 1].pain >= 1)
+        const open_injuries = injuries.filter(injury => {
+            const last_snapshot = injury.snapshots[injury.snapshots.length - 1]
+            const recent_pain = last_snapshot.pain >= 1
+            const has_recent_snapshot = last_snapshot.date.getTime() > new Date().getTime() - 1000 * 60 * 60 * 24 * 3 // 3 days
+            return recent_pain && has_recent_snapshot
+        })
         setOpenInjuryData(open_injuries)
     }, [analysis])
 
