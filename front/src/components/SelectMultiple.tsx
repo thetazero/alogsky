@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ellipses_text } from "../utils/text";
 
 interface SelectMultipleProps<T> {
     options: T[];
@@ -26,14 +27,15 @@ const SelectMultiple = <T,>({
     };
 
     return (
-        <div className="relative w-64 level-2 card">
+        <div className="relative w-48 level-2 card">
             {/* Trigger Button */}
             <button
                 className="w-full px-4 py-2 text-left rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                 onClick={() => setIsOpen((prev) => !prev)}
+                onBlur={() => setIsOpen(false)}
             >
                 {selected.length > 0
-                    ? selected.map(renderOption).join(", ")
+                    ? ellipses_text(selected.map(renderOption).join(", "), 20)
                     : "Select options"}
                 <span className="float-right">▼</span>
             </button>

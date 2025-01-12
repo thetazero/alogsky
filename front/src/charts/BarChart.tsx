@@ -20,7 +20,7 @@ export type BarChartData = {
 
 export type BarChartDataSet = {
     labels: string[];
-    datasets: BarData[];
+    datasets: BarChartData[];
 }
 
 export interface BarChartProps {
