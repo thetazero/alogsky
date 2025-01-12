@@ -568,13 +568,8 @@
         "date": "Jan 9, 2025",
         "data": [
             {
-                "pain": 1,
-                "description": "hurt a bit in the morning",
-                "location": "right hamstring"
-            },
-            {
                 "pain": 3,
-                "description": "hurt during run",
+                "description": "hurt during run, also a bit in the morning",
                 "location": "right hamstring"
             },
             {
@@ -634,11 +629,6 @@
             {
                 "pain": 1,
                 "description": "hurt a bit after waking up",
-                "location": "left shin"
-            },
-            {
-                "pain": 1,
-                "description": "hurt a bit after waking up",
                 "location": "right hamstring"
             },
             {
@@ -648,7 +638,7 @@
             },
             {
                 "pain": 1,
-                "description": "on and off during run",
+                "description": "on and off during run and after waking up",
                 "location": "left shin"
             },
             {
@@ -690,6 +680,11 @@
                 "pain": 2,
                 "description": "pain during run",
                 "location": "left core"
+            },
+            {
+                "pain": 1,
+                "description": "small duration of pain during run",
+                "location": "right hip flexor"
             }
         ]
     }
