@@ -8,11 +8,33 @@ import { Mass } from "@buge/ts-units/mass";
 import { pounds } from "../types";
 import { Unit } from "@buge/ts-units";
 import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
+import { get_day_string } from "../utils/time";
 
 function parse(data: any[]): [TrainingData[], string[]] {
     const parsed = data.map(_parse);
     const training_data = parsed.filter(d => typeof d !== 'string')
     const errors = parsed.filter(d => typeof d === 'string')
+
+    const [training_data_post, errors_post] = post_process(training_data)
+    return [training_data_post, errors.concat(errors_post)]
+}
+
+function post_process(training_data: TrainingData[]): [TrainingData[], string[]] {
+    const errors: string[] = []
+    const sleep_days = new Set()
+    training_data = training_data.filter((data) => {
+        if (data.type === "sleep") {
+            const day_string = get_day_string(data.date)
+            if (sleep_days.has(day_string)) {
+                errors.push(`Duplicate sleep log on ${day_string}`)
+                return false
+            } else {
+                sleep_days.add(day_string)
+                return true
+            }
+        }
+        return true
+    })
     return [training_data, errors]
 }
 

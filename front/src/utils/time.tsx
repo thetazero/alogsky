@@ -23,3 +23,8 @@ export function calendar_days_appart(date1: Date, date2: Date): number {
     const day2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
     return Math.abs((day1.getTime() - day2.getTime()) / (1000 * 60 * 60 * 24))
 }
+
+export function get_day_string(date: Date): string {
+    date = new Date(date)
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+}

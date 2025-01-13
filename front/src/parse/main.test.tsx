@@ -118,3 +118,29 @@ describe("Test parse more natural reps", () => {
         expect(parsed).toHaveLength(0)
     })
 })
+
+describe("Should throw an error if there on incorrectly duplicate data", () => {
+    it("Throws if there is multiple sleep data for a day", () => {
+        const data = [
+            {
+                "version": 1,
+                "type": "sleep",
+                "date": "Jan 2, 2024, 7:50:00 AM",
+                "data": {
+                    "duration": 8 * 60,
+                }
+            },
+            {
+                "version": 1,
+                "type": "sleep",
+                "date": "Jan 2, 2024, 9:50:00 AM",
+                "data": {
+                    "duration": 8 * 60,
+                }
+            }
+        ]
+        const [parsed_data, errors] = parse(data)
+        expect(parsed_data).toHaveLength(1)
+        expect(errors).toEqual(["Duplicate sleep log on 2024-1-2"])
+    });
+})
