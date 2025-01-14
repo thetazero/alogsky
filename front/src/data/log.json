@@ -10,7 +10,7 @@
                 {
                     "exercise": "Bicep Curl",
                     "reps": 8,
-                    "weight": "22.5 lbs"
+                    "weight": "45 lbs"
                 },
                 {
                     "exercise": "Squat",
@@ -30,7 +30,7 @@
                 {
                     "exercise": "Bicep Curl",
                     "reps": 6,
-                    "weight": "25 lbs"
+                    "weight": "50 lbs"
                 },
                 {
                     "exercise": "Oxidative Squat",
@@ -81,47 +81,47 @@
                 {
                     "exercise": "Lateral Raise",
                     "reps": 8,
-                    "weight": "3 kg"
-                },
-                {
-                    "exercise": "Lateral Raise",
-                    "reps": 8,
-                    "weight": "4 kg"
-                },
-                {
-                    "exercise": "Lateral Raise",
-                    "reps": 8,
-                    "weight": "5 kg"
-                },
-                {
-                    "exercise": "Overhead Press",
-                    "reps": 8,
-                    "weight": "5 kg"
-                },
-                {
-                    "exercise": "Overhead Press",
-                    "reps": 8,
-                    "weight": "7 kg"
-                },
-                {
-                    "exercise": "Overhead Press",
-                    "reps": 8,
-                    "weight": "8 kg"
-                },
-                {
-                    "exercise": "Bicep Curl",
-                    "reps": 8,
                     "weight": "6 kg"
                 },
                 {
-                    "exercise": "Bicep Curl",
+                    "exercise": "Lateral Raise",
                     "reps": 8,
                     "weight": "8 kg"
                 },
                 {
+                    "exercise": "Lateral Raise",
+                    "reps": 8,
+                    "weight": "10 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "10 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "14 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "16 kg"
+                },
+                {
                     "exercise": "Bicep Curl",
                     "reps": 8,
-                    "weight": "8 kg"
+                    "weight": "12 kg"
+                },
+                {
+                    "exercise": "Bicep Curl",
+                    "reps": 8,
+                    "weight": "16 kg"
+                },
+                {
+                    "exercise": "Bicep Curl",
+                    "reps": 8,
+                    "weight": "16 kg"
                 }
             ]
         }
@@ -282,13 +282,13 @@
             "duration": 35,
             "notes": "Decided to lift instead of run due to plantar pain, tweaked right glute a tiny bit",
             "exercises": [
-                "bicep curl: 6x3kg, 8x7kg, 8x8kg, 8x8kg",
-                "lateral raise: 8x3kg, 8x5kg, 8x6kg",
-                "Bulgarian split squat: 8x8kg, 8x8kg, 8x8kg",
+                "bicep curl: 6x6kg, 8x14kg, 8x16kg, 8x16kg",
+                "lateral raise: 8x6kg, 8x10kg, 8x12kg",
+                "Bulgarian split squat: 8x16kg, 8x16kg, 8x16kg",
                 "single leg calf raise: 20, 20, 20",
-                "overhead press: 8x6kg, 8x8kg, 8x8kg",
+                "overhead press: 8x12kg, 8x16kg, 8x16kg",
                 "rows: 8x8kg, 8x8kg",
-                "bench: 8x8kg, 8x8kg"
+                "bench: 8x16kg, 8x16kg"
             ]
         }
     },
@@ -377,10 +377,10 @@
             "exercises": [
                 "squat: 8x95lbs, 8x135lbs, 8x135lbs, 8x135lbs",
                 "single leg stair calf raise: 20, 20, 20",
-                "bicep curl: 8x10lbs, 8x20lbs, 8x20lbs, 8x25lbs",
-                "bulgarian split squat: 8x15lbs, 6x15lbs",
+                "bicep curl: 8x20lbs, 8x40lbs, 8x40lbs, 8x50lbs",
+                "bulgarian split squat: 8x30lbs, 6x30lbs",
                 "pull up: 8, 8, 8",
-                "overhead press: 8x15lbs, 8x15lbs, 8x20lbs"
+                "overhead press: 8x30lbs, 8x30lbs, 8x40lbs"
             ]
         }
     },
@@ -458,9 +458,9 @@
                 "push up: 20, 20, 20",
                 "single leg stair calf raise: 15, 20, 20",
                 "rows: 10x25lbs, 8x35lbs, 8x35lbs",
-                "bicep curl: 8x20lbs, 8x25lbs, 7x25lbs",
+                "bicep curl: 8x40lbs, 8x50lbs, 7x50lbs",
                 "squat: 8x115lbs, 8x135lbs, 8x135lbs",
-                "overhead press: 8x15lbs, 8x15lbs, 8x20lbs"
+                "overhead press: 8x30lbs, 8x30lbs, 8x40lbs"
             ]
         }
     },
@@ -687,5 +687,28 @@
                 "location": "right hip flexor"
             }
         ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 13, 2025, 5:32:00 PM",
+        "data": {
+            "duration": 45,
+            "notes": "Hamstrings felt very extremely tired by end of lift",
+            "exercises": [
+                "squat: 12x135lbs, 12x135lbs",
+                "cable seated row: 12x65lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x30lbs, 12x45lbs",
+                "overhead press: 12x40lbs, 12x50lbs",
+                "speed skater jumps: 5, 5",
+                "single leg stair calf raise: 20, 20",
+                "pull up: 8, 8, 8",
+                "one leg buck: 12",
+                "45 degree back extension: 12, 12",
+                "med ball seated russian twist: 12x15lbs, 12x15lbs",
+                "bulgarian split squat: 12x20lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs"
+            ]
+        }
     }
 ]
