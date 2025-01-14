@@ -29,21 +29,27 @@ export interface RunData {
 }
 
 export enum Exercise {
-    Squat = "Squat",
     Bench = "Bench",
-    RomanianDeadLift = "Romanian Deadlift",
-    OxidativeSquat = "Oxidative Squat",
     BicepCurl = "Bicep Curl",
-    Row = "Row",
-    Pullup = "Pullup",
-    SingleLegCalfRaise = "Single Leg Calf Raise",
-    LateralRaise = "Lateral Raise",
-    OverheadPress = "Overhead Press",
-    Pushup = "Pushup",
-    Situp = "Situp",
     BulgarianSplitSquat = "Bulgarian Split Squat",
+    CableSeatedRow = "Cable Seated Row",
+    DumbellOneLegOneArmRomanialDeadLift = "Dumbell One Leg One Arm Romanian Deadlift",
+    FourtyFiveDegreeBackExtension = "45 Degree Back Extension",
+    LateralRaise = "Lateral Raise",
+    MedBallSeatedRussianTwist = "Med Ball Seated Russian Twist",
+    OneLegBuck = "One Leg Buck",
+    OverheadPress = "Overhead Press",
+    OxidativeSquat = "Oxidative Squat",
+    Pullup = "Pullup",
+    Pushup = "Pushup",
+    RomanianDeadLift = "Romanian Deadlift",
+    Row = "Row",
     ShortFootExercise = "Short Foot Exercise",
+    SingleLegCalfRaise = "Single Leg Calf Raise",
     SingleLegStairCalfRaise = "Single Leg Stair Calf Raise",
+    Situp = "Situp",
+    SpeedSkaterJumps = "Speed Skater Jumps",
+    Squat = "Squat",
 }
 
 export interface RepData {

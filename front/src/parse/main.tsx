@@ -125,6 +125,7 @@ const exercise_map: Map<string, Exercise> = new Map(
         ["pull ups", Exercise.Pullup],
         ["pull up", Exercise.Pullup],
         ["push up", Exercise.Pushup],
+        ["dumbell 1 leg, 1 arm rdl", Exercise.DumbellOneLegOneArmRomanialDeadLift],
         ...defaults_for_exercise_map
     ],
 );
