@@ -1,4 +1,4 @@
-import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, BodyLocation, Metric, tons, PainAtLocationData } from "../types";
+import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, Metric, tons, PainAtLocationData } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { average_pace, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
@@ -6,6 +6,57 @@ import { hours, seconds, Time } from "@buge/ts-units/time";
 import { DataPoint } from "../components/Chart";
 import { fmt_minutes_per_mile } from "../utils/format";
 import { get_week_end, get_week_start } from "../utils/time";
+
+export class TrainingDataSet {
+    data: TrainingData[]
+
+    runs: RunData[]
+    lifts: LiftData[]
+    sleeps: SleepData[]
+    pain_snapshot_data: PainLogData[]
+
+    _first_activity: Date
+    _last_activity: Date
+
+    constructor(data: TrainingData[]) {
+        if (data.length === 0) throw new Error("No data provided")
+        this.data = data.sort((a, b) => a.date.getTime() - b.date.getTime())
+        this.runs = data.filter(e => e.type === "run")
+        this.lifts = data.filter(e => e.type === "lift")
+        this.sleeps = data.filter(e => e.type === "sleep")
+        this.pain_snapshot_data = data.filter(e => e.type === "pain")
+
+        this._first_activity = this.data.map(d => d.date).reduce((a, b) => {
+            if (a.getTime() < b.getTime()) return a
+            return b
+        })
+        this._last_activity = this.data.map(d => d.date).reduce((a, b) => {
+            if (a.getTime() > b.getTime()) return a
+            return b
+        })
+    }
+
+    number_of_weeks(): number {
+        return Math.ceil((this._last_activity.getTime() - this._first_activity.getTime()) / (1000 * 60 * 60 * 24 * 7))
+    }
+
+    date_range_for_week(idx: number): [Date, Date] {
+        const oldest_date = this._first_activity
+        const oldest_start = get_week_start(oldest_date)
+        const start = new Date(oldest_start.getTime() + idx * 7 * 24 * 60 * 60 * 1000)
+        const end = get_week_end(start)
+        return [start, end]
+    }
+
+    dataset_for_week(idx: number): TrainingDataSet | null {
+        const [start, end] = this.date_range_for_week(idx)
+        let week_data = (this.data.filter(d => {
+            return d.date.getTime() >= start.getTime() && d.date.getTime() < end.getTime()
+        }))
+        if (week_data.length === 0) return null
+        return new TrainingDataSet(week_data)
+    }
+}
 
 class Analysis {
     runs: RunData[]
