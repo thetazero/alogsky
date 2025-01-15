@@ -274,7 +274,8 @@ function parse_painv2(data: any, date: Date): PainLogData {
         })
         return snapshots
     }).flat()
-    return { pains: pain_at_location, date, type: "pain" }
+    const res: PainLogData = { pains: pain_at_location, date, type: "pain" }
+    return res
 }
 
 function parse_kayakv1(data: any, date: Date): KayakData {

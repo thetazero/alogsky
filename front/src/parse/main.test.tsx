@@ -84,7 +84,6 @@ describe("Should parse body location", () => {
     it('Should parse body location with side', () => {
         const location = "Left Foot Metatarsals"
         const parsed = parse_body_location(location)
-        console.log(parsed)
         expect(parsed.location).toEqual("Foot Metatarsals")
         expect(parsed.side).toEqual(Side.Left)
     })
@@ -92,7 +91,6 @@ describe("Should parse body location", () => {
     it('Should parse body location without side', () => {
         const location = "calf"
         const parsed = parse_body_location(location)
-        console.log(parsed)
         expect(parsed.location).toEqual(BodyLocationWithoutSide.Calf)
         expect(parsed.side).toEqual(Side.NoSide)
     })
@@ -179,6 +177,7 @@ describe("Parse pain v2", () => {
         expect(errors).toEqual([])
         expect(parsed_data).toHaveLength(1)
         const pain: PainLogData = parsed_data[0] as PainLogData
+        expect(pain.type).toBe("pain")
         expect(pain.pains).toHaveLength(5)
         const snapshot_4 = pain.pains[3]
         expect(snapshot_4.description).toEqual("Started hurting 7 miles in after picking up the pace to catch up")
