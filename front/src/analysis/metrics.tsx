@@ -10,6 +10,10 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.SingleLegCalfRaise, 0.8],
     [Exercise.SingleLegStairCalfRaise, 0.8],
     [Exercise.Situp, 0.8],
+    [Exercise.DeadBugs, 0.1],
+    [Exercise.LemonSqueezers, 0.2],
+    [Exercise.Plank, 0.02],
+    [Exercise.SupineKneeDrive, 0.1],
 ]);
 
 export function rep_tonage(rep: RepData) {
