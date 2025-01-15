@@ -5,6 +5,7 @@ export enum Side {
 }
 
 export enum BodyLocationWithoutSide {
+    AchillesTendon = "Achilles Tendon",
     Ankle = "Ankle",
     Calf = "Calf",
     Core = "Core",

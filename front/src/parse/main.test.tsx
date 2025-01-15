@@ -1,6 +1,6 @@
 import { kilograms } from "@buge/ts-units/mass";
-import { Exercise, LiftData } from "../types";
-import parse, { natural_reps_parse, parse_body_location, parse_weight } from "./main";
+import { Exercise, LiftData, PainLogData } from "../types";
+import parse, { extract_paren_data, natural_reps_parse, parse_body_location, parse_weight } from "./main";
 import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
 
 describe("Test parse weigth", () => {
@@ -143,4 +143,63 @@ describe("Should throw an error if there on incorrectly duplicate data", () => {
         expect(parsed_data).toHaveLength(1)
         expect(errors).toEqual(["Duplicate sleep log on 2024-1-2"])
     });
+})
+
+describe("Parse pain v2", () => {
+    it("Should parse in basic case", () => {
+        const data = {
+            "version": 2,
+            "type": "pain",
+            "date": "Jan 2, 2024, 7:50:00 AM",
+            "data": [
+                {
+                    "description": "Pain during run",
+                    "snapshots": [
+                        "lower back (1)",
+                        "left knee (1)",
+                        "upper back (1)",
+                    ]
+                },
+                {
+                    "description": "Started hurting 7 miles in after picking up the pace to catch up",
+                    "snapshots": [
+                        "right achilles (3)",
+                    ]
+                },
+                {
+                    "description": "Pain during core",
+                    "snapshots": [
+                        "right hip flexor (2)",
+                    ]
+                }
+            ]
+        }
+
+        const [parsed_data, errors] = parse([data])
+        expect(errors).toEqual([])
+        expect(parsed_data).toHaveLength(1)
+        const pain: PainLogData = parsed_data[0] as PainLogData
+        expect(pain.pains).toHaveLength(5)
+        const snapshot_4 = pain.pains[3]
+        expect(snapshot_4.description).toEqual("Started hurting 7 miles in after picking up the pace to catch up")
+        expect(snapshot_4.location.location).toEqual(BodyLocationWithoutSide.AchillesTendon)
+        expect(snapshot_4.location.side).toEqual(Side.Right)
+        expect(snapshot_4.pain).toEqual(3)
+    })
+})
+
+describe("extract paren data", () => {
+    it('Should work with one paren pair', () => {
+        const data = "right hip flexor (2)"
+        const [description, pain] = extract_paren_data(data)
+        expect(description).toEqual("right hip flexor")
+        expect(pain).toEqual("2")
+    })
+
+    it('Should work with no paren pair', () => {
+        const data = "right hip flexor"
+        const [description, pain] = extract_paren_data(data)
+        expect(description).toEqual("right hip flexor")
+        expect(pain).toEqual("")
+    })
 })

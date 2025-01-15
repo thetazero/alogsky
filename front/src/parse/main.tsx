@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, PainAtLocationData } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -44,6 +44,7 @@ const proc_map: { [key: string]: (point: any, date: Date) => TrainingData } = {
     "lift1": parse_liftv1,
     "sleep1": parse_sleepv1,
     "pain1": parse_painv1,
+    "pain2": parse_painv2,
     "lift2": parse_liftv2,
     "kayak1": parse_kayakv1,
 }
@@ -224,6 +225,7 @@ const locations_map: Map<string, BodyLocationWithoutSide> = new Map([
     ["lower shin", BodyLocationWithoutSide.Shin],
     ["both shins", BodyLocationWithoutSide.Shin],
     ["hamstrings", BodyLocationWithoutSide.Hamstring],
+    ["achilles", BodyLocationWithoutSide.AchillesTendon],
 ]);
 
 export function parse_body_location(str: string): BodyLocation {
@@ -234,7 +236,7 @@ export function parse_body_location(str: string): BodyLocation {
     else if (str.slice(0, 5) === "right") side = Side.Right
     else side = Side.NoSide
 
-    const location = str.replace(/left|right/g, "").trim() 
+    const location = str.replace(/left|right/g, "").trim()
     const location_enum = locations_map.get(location)
 
     if (location_enum) return new BodyLocation(location_enum, side)
@@ -259,11 +261,36 @@ function parse_painv1(data: any, date: Date): PainLogData {
     return { pains, date, type: "pain" };
 }
 
+function parse_painv2(data: any, date: Date): PainLogData {
+    const pain_at_location: PainAtLocationLogData[] = data.map((point: any) => {
+        const description = point.description
+        const snapshots = point.snapshots.map((snap: any) => {
+            const [location, pain] = extract_paren_data(snap)
+            return {
+                description,
+                pain: parseInt(pain),
+                location: parse_body_location(location),
+            }
+        })
+        return snapshots
+    }).flat()
+    return { pains: pain_at_location, date, type: "pain" }
+}
+
 function parse_kayakv1(data: any, date: Date): KayakData {
     return {
         duration: minutes(parseFloat(data.duration)),
         date,
         type: "kayak",
+    }
+}
+
+export function extract_paren_data(data: string): [string, string] {
+    const match = data.match(/(.*)\((.*)\)/)
+    if (match) {
+        return [match[1].trim(), match[2].trim()]
+    } else {
+        return [data.trim(), ""]
     }
 }
 
