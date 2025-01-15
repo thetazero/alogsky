@@ -1,7 +1,7 @@
 import { kilograms } from "@buge/ts-units/mass";
 import { Exercise, LiftData, PainLogData } from "../types";
 import parse, { extract_paren_data, natural_reps_parse, parse_body_location, parse_weight } from "./main";
-import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
+import { BodyLocationWithoutSide, Side } from "../pt/body_location";
 
 describe("Test parse weigth", () => {
     it('Should parse kg', () => {
@@ -99,8 +99,8 @@ describe("Should parse body location", () => {
 // todo: test stuff like overhead press: 8x6kg, 8x8kg, 8x8kg
 describe("Test parse more natural reps", () => {
     it("Works in basic cases", () => {
-        let example = "overhead press: 8x6kg, 8x8kg, 8x8kg"
-        let parsed = natural_reps_parse(example)
+        const example = "overhead press: 8x6kg, 8x8kg, 8x8kg"
+        const parsed = natural_reps_parse(example)
         expect(parsed).toHaveLength(3)
         expect(parsed[0].reps).toEqual(8)
         expect(parsed[0].weight.in(kilograms).amount).toEqual(6)

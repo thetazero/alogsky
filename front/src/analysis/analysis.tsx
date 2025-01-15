@@ -1,4 +1,4 @@
-import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, BodyLocation, Metric, tons, PainAtLocationData } from "../types";
+import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, Metric, tons, PainAtLocationData } from "../types";
 import { Mass } from "@buge/ts-units/mass";
 import { average_pace, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";

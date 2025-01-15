@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, PainAtLocationData } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
