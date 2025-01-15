@@ -691,6 +691,21 @@
     {
         "version": 2,
         "type": "lift",
+        "date": "Jan 12, 2025, 11:30:00 AM",
+        "data": {
+            "duration": 8,
+            "notes": "core",
+            "exercises": [
+                "dead bugs: 20, 20",
+                "lemon squeezers: 20, 20",
+                "plank: 60",
+                "knee drive push leg thing: 30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
         "date": "Jan 13, 2025, 5:32:00 PM",
         "data": {
             "duration": 45,
