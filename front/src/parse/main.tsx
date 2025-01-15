@@ -226,6 +226,8 @@ const locations_map: Map<string, BodyLocationWithoutSide> = new Map([
     ["both shins", BodyLocationWithoutSide.Shin],
     ["hamstrings", BodyLocationWithoutSide.Hamstring],
     ["achilles", BodyLocationWithoutSide.AchillesTendon],
+    ["back of knee", BodyLocationWithoutSide.Knee], // TODO: More specific? likely tendon stuff
+    ["patella", BodyLocationWithoutSide.PatellarTendon],
 ]);
 
 export function parse_body_location(str: string): BodyLocation {

@@ -761,26 +761,42 @@
     {
         "version": 2,
         "type": "pain",
-        "date": "Jan 12, 2025",
+        "date": "Jan 13, 2025",
         "data": [
             {
-                "description": "Pain during run",
+                "description": "Pain in the morning",
                 "snapshots": [
-                    "lower back (1)",
-                    "left knee (1)",
+                    "left back of knee (1)",
+                    "right achilles (2)",
+                    "right knee (1)"
+                ]
+            },
+            {
+                "description": "Soreness",
+                "snapshots": [
+                    "core (2)"
+                ]
+            },
+            {
+                "description": "After sitting and working, then after run as well",
+                "snapshots": [
+                    "left plantar (2)"
+                ]
+            },
+            {
+                "description": "During run",
+                "snapshots": [
+                    "left patella (2)"
+                ]
+            },
+            {
+                "description": "Hurts post lift",
+                "snapshots": [
+                    "right knee (2)",
+                    "left knee (2)",
+                    "left hamstring (2)",
+                    "right hamstring (2)",
                     "upper back (1)"
-                ]
-            },
-            {
-                "description": "Started hurting 7 miles in after picking up the pace to catch up",
-                "snapshots": [
-                    "right achilles (3)"
-                ]
-            },
-            {
-                "description": "Pain during core",
-                "snapshots": [
-                    "right hip flexor (2)"
                 ]
             }
         ]
@@ -808,7 +824,8 @@
                     "left lat (1)",
                     "right lat (1)",
                     "left glute (2)",
-                    "right glute (2)"
+                    "right glute (2)",
+                    "lower core (2)"
                 ]
             }
         ]
