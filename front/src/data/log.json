@@ -807,8 +807,7 @@
         "date": "Jan 14, 2025 12:00:00 PM",
         "data": [
             {
-                "description": "After waking up",
-                "snapshots": [
+                "description": "After waking up", "snapshots": [
                     "right achilles (3)"
                 ]
             },
@@ -829,5 +828,67 @@
                 ]
             }
         ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Jan 15, 2025 12:00:00 PM",
+        "data": [
+            {
+                "description": "Soreness",
+                "snapshots": [
+                    "both hamstrings (2)",
+                    "both quads (2)",
+                    "both glutes (2)",
+                    "both tricep (1)"
+                ]
+            },
+            {
+                "description": "Hurts likely due to pitt track workout yesterday, big toe does not hurt",
+                "snapshots": [
+                    "left toes (2)"
+                ]
+            },
+            {
+                "description": "Flash of pain while sitting on the couch",
+                "snapshots": [
+                    "right hamstring (3, flash)"
+                ]
+            },
+            {
+                "description": "While swimming",
+                "snapshots": [
+                    "right shoulder (2)",
+                    "right ankle (2)"
+                ]
+            },
+            {
+                "description": "During run",
+                "snapshots": [
+                    "left back inner knee tendon (2)",
+                    "right quad (1)",
+                    "left hamstring (1)",
+                    "right hamstring (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 15, 2025, 2:00:00 PM",
+        "data": {
+            "duration": 35,
+            "notes": "",
+            "exercises": [
+                "bench: 6x95lbs, 6x95lbs, 5x105lbs",
+                "dumbell row: 6x60lbs, 8x70lbs, 8x80lbs",
+                "lateral raises: 3x8x20lbs",
+                "bicep curls:3x8x40lbs",
+                "dumbell incline bench: 8x40lbs, 8x50lbs, 8x60lbs",
+                "dumbell flys: 8x3x30lbs",
+                "farmer cary: 2x(24kg|15meters)"
+            ]
+        }
     }
 ]
