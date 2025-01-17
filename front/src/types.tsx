@@ -44,7 +44,11 @@ export enum Exercise {
     BulgarianSplitSquat = "Bulgarian Split Squat",
     CableSeatedRow = "Cable Seated Row",
     DeadBugs = "Dead Bugs",
+    DumbellFly = "Dumbell Fly",
+    DumbellInclineBench = "Dumbell Incline Bench",
     DumbellOneLegOneArmRomanialDeadLift = "Dumbell One Leg One Arm Romanian Deadlift",
+    DumbellRow = "Dumbell Row",
+    FarmerCary = "Farmer Cary",
     FourtyFiveDegreeBackExtension = "45 Degree Back Extension",
     LateralRaise = "Lateral Raise",
     LemonSqueezers = "Lemon Squeezers",
@@ -57,19 +61,21 @@ export enum Exercise {
     Pushup = "Pushup",
     RomanianDeadLift = "Romanian Deadlift",
     Row = "Row",
-    SupineKneeDrive = "Supine Knee Drive", // https://www.youtube.com/watch?v=wpt_RPlfcR4 (but without the band)
     ShortFootExercise = "Short Foot Exercise",
     SingleLegCalfRaise = "Single Leg Calf Raise",
     SingleLegStairCalfRaise = "Single Leg Stair Calf Raise",
     Situp = "Situp",
     SpeedSkaterJumps = "Speed Skater Jumps",
     Squat = "Squat",
+    SupineKneeDrive = "Supine Knee Drive", // https://www.youtube.com/watch?v=wpt_RPlfcR4 (but without the band)
 }
 
 export interface RepData {
     exercise: Exercise,
     reps: number,
     weight: Mass
+    length?: Length
+    time?: Time
 }
 
 export interface LiftData {

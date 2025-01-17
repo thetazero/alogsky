@@ -9,6 +9,7 @@ export enum BodyLocationWithoutSide {
     Ankle = "Ankle",
     Calf = "Calf",
     Core = "Core",
+    Foot = "Foot",
     FootMetatarsals = "Foot Metatarsals",
     Glute = "Glute",
     Hamstring = "Hamstring",
@@ -22,6 +23,9 @@ export enum BodyLocationWithoutSide {
     Plantar = "Plantar",
     Quad = "Quad",
     Shin = "Shin",
+    Shoulder = "Shoulder",
+    Toes = "Toes",
+    Tricep = "Tricep",
     UpperBack = "Upper Back",
     ITBand = "IT Band",
 }

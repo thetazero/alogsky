@@ -2,13 +2,14 @@ import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
-import { kilograms } from "@buge/ts-units/mass";
+import { kilograms, Mass } from "@buge/ts-units/mass";
 import { Mass as MassDimension } from "@buge/ts-units/mass/dimension";
-import { Mass } from "@buge/ts-units/mass";
 import { pounds } from "../types";
-import { Unit } from "@buge/ts-units";
+import { Quantity, Unit } from "@buge/ts-units";
 import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
 import { get_day_string } from "../utils/time";
+import { Time as TimeDimension } from "@buge/ts-units/time/dimension";
+import { Length as LengthDimension } from "@buge/ts-units/length/dimension";
 
 function parse(data: any[]): [TrainingData[], string[]] {
     const parsed = data.map(_parse);
@@ -99,22 +100,33 @@ function split_unit(input: string): [string, string] {
     if (match) {
         return [match[1], match[2] || ""];
     } else {
-        throw new Error("Input string does not match the expected format.");
+        throw new Error("Unit parsing error");
     }
 }
 
-export function parse_weight(weight: string | number | undefined): Mass {
+export function parse_unit(weight: string | number | undefined): Quantity<number, MassDimension | TimeDimension | LengthDimension> {
     if (weight === undefined) return pounds(0)
     if (typeof weight === 'number') return pounds(weight)
     const [value, unit] = split_unit(weight)
-    const unit_map: { [key: string]: Unit<number, MassDimension> } = {
+    const unit_map: { [key: string]: Unit<number, MassDimension | TimeDimension | LengthDimension> } = {
         "lbs": pounds,
         "kg": kilograms,
+        "s": seconds,
+        "meters": meters,
     }
     if (unit in unit_map) {
         return unit_map[unit](parseFloat(value));
     } else {
         return pounds(parseFloat(value));
+    }
+}
+
+export function parse_units(units: string): Quantity<number, MassDimension | TimeDimension | LengthDimension>[] {
+    const in_parens_data = data_if_in_parens(units)
+    if (in_parens_data) {
+        return in_parens_data.split("|").map(parse_unit)
+    } else {
+        return [parse_unit(units)]
     }
 }
 
@@ -128,6 +140,9 @@ const exercise_map: Map<string, Exercise> = new Map(
         ["push up", Exercise.Pushup],
         ["dumbell 1 leg, 1 arm rdl", Exercise.DumbellOneLegOneArmRomanialDeadLift],
         ["knee drive push leg thing", Exercise.SupineKneeDrive],
+        ["lateral raises", Exercise.LateralRaise],
+        ["bicep curls", Exercise.BicepCurl],
+        ["dumbell flys", Exercise.DumbellFly],
         ...defaults_for_exercise_map
     ],
 );
@@ -146,7 +161,7 @@ function parse_liftv1(data: any, date: Date): LiftData {
         const rep_data: RepData = {
             exercise: parse_exercise(exercise.exercise),
             reps: parseInt(exercise.reps),
-            weight: parse_weight(`${exercise.weight}`),
+            weight: parse_unit(`${exercise.weight}`) as Mass,
         }
         return rep_data;
     });
@@ -160,18 +175,28 @@ function parse_liftv1(data: any, date: Date): LiftData {
     };
 }
 
+export function make_rep_data(exercise: Exercise, reps: number, units: Quantity<number, MassDimension | TimeDimension | LengthDimension>[]): RepData {
+    const mass = units.filter(unit => unit.dimension === MassDimension) as Quantity<number, MassDimension>[]
+    const time = units.filter(unit => unit.dimension === TimeDimension) as Quantity<number, TimeDimension>[]
+    const length = units.filter(unit => unit.dimension === LengthDimension) as Quantity<number, LengthDimension>[]
+    return {
+        exercise,
+        reps,
+        weight: mass.length ? mass[0] as Mass : pounds(0),
+        time: time.length ? time[0] : undefined,
+        length: length.length ? length[0] : undefined,
+    } 
+
+}
+
 export function natural_reps_parse(str: string): RepData[] {
     const [exercise, reps] = str.split(":")
     const exc = parse_exercise(exercise)
     return reps.split(",").map(rep_str => {
         if (rep_str.trim() === "") return null
-        const [times, weight] = rep_str.split("x")
-        const repdata: RepData = {
-            exercise: exc,
-            reps: parseInt(times),
-            weight: parse_weight(weight)
-        }
-        return repdata
+        const [times, units] = rep_str.split("x")
+        const units_list = parse_units(units)
+        return make_rep_data(exc, parseInt(times), units_list)
     }).filter(rep => rep !== null)
 }
 
@@ -189,7 +214,7 @@ function parse_liftv2(data: any, date: Date): LiftData {
                     exc_rep.push({
                         exercise: parse_exercise(exercise.exercise),
                         reps: parseInt(exercise.reps[i]),
-                        weight: parse_weight(exercise.weight[i]),
+                        weight: parse_unit(exercise.weight[i]),
                     })
                 }
                 return exc_rep
@@ -197,7 +222,7 @@ function parse_liftv2(data: any, date: Date): LiftData {
                 return {
                     exercise: parse_exercise(exercise.exercise),
                     reps: parseInt(exercise.reps),
-                    weight: parse_weight(`${exercise.weight}`),
+                    weight: parse_unit(`${exercise.weight}`),
                 }
             }
         }
@@ -227,32 +252,41 @@ const locations_map: Map<string, BodyLocationWithoutSide> = new Map([
     ["hamstrings", BodyLocationWithoutSide.Hamstring],
     ["achilles", BodyLocationWithoutSide.AchillesTendon],
     ["back of knee", BodyLocationWithoutSide.Knee], // TODO: More specific? likely tendon stuff
+    ["back inner knee tendon", BodyLocationWithoutSide.Knee],
     ["patella", BodyLocationWithoutSide.PatellarTendon],
+    ["feet", BodyLocationWithoutSide.Foot],
+    ["quads", BodyLocationWithoutSide.Quad],
+    ["shins", BodyLocationWithoutSide.Shin],
+    ["glutes", BodyLocationWithoutSide.Glute],
 ]);
 
-export function parse_body_location(str: string): BodyLocation {
+export function parse_body_location(str: string): BodyLocation[] {
     str = str.trim().toLocaleLowerCase()
 
     let side: Side;
     if (str.slice(0, 4) === "left") side = Side.Left
     else if (str.slice(0, 5) === "right") side = Side.Right
+    else if (str.slice(0, 4) === "both") {
+        const remainder = str.slice(4).trim()
+        return parse_body_location(`left ${remainder}`).concat(parse_body_location(`right ${remainder}`))
+    } 
     else side = Side.NoSide
 
     const location = str.replace(/left|right/g, "").trim()
     const location_enum = locations_map.get(location)
 
-    if (location_enum) return new BodyLocation(location_enum, side)
+    if (location_enum) return [new BodyLocation(location_enum, side)]
     throw `${str} is not a valid body location`
 }
 
 function parse_painv1(data: any, date: Date): PainLogData {
     const pains: PainAtLocationLogData[] = data.map((pain: any) => {
-        return {
-            pain: pain.pain,
+        return parse_body_location(pain.location).map(location => ({
             description: pain.description,
-            location: parse_body_location(pain.location),
-        }
-    });
+            pain: parseInt(pain.pain),
+            location,
+        }))
+    }).flat()
     const location_set = new Set()
     for (const pain of pains) {
         if (location_set.has(pain.location.to_string())) {
@@ -263,17 +297,20 @@ function parse_painv1(data: any, date: Date): PainLogData {
     return { pains, date, type: "pain" };
 }
 
-function parse_painv2(data: any, date: Date): PainLogData {
-    const pain_at_location: PainAtLocationLogData[] = data.map((point: any) => {
+function parse_painv2(data: unknown, date: Date): PainLogData {
+    const pain_at_location: PainAtLocationLogData[] = as_array(data, `pain data v2 must be array`).map((point: unknown) => {
+        if (typeof point !== 'object' || point === null) {
+            throw "Pain data must be an array of objects"
+        }
         const description = point.description
-        const snapshots = point.snapshots.map((snap: any) => {
+        const snapshots: PainAtLocationLogData[] = point.snapshots.map((snap: any) => {
             const [location, pain] = extract_paren_data(snap)
-            return {
+            return parse_body_location(location).map(loc=> ({
                 description,
                 pain: parseInt(pain),
-                location: parse_body_location(location),
-            }
-        })
+                location: loc,
+            } as PainAtLocationLogData))
+        }).flat()
         return snapshots
     }).flat()
     const res: PainLogData = { pains: pain_at_location, date, type: "pain" }
@@ -295,6 +332,20 @@ export function extract_paren_data(data: string): [string, string] {
     } else {
         return [data.trim(), ""]
     }
+}
+
+export function data_if_in_parens(data: string | undefined | null): string | null {
+    if (data && data.length >= 2 && data[0] === "(" && data[data.length - 1] === ")") {
+        return data.slice(1, data.length - 1)
+    }
+    return null
+}
+
+function as_array(data: unknown, err_msg: string): unknown[] {
+    if (!Array.isArray(data)) {
+        throw err_msg
+    }
+    return data
 }
 
 export default parse
