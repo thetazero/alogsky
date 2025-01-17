@@ -1,5 +1,5 @@
 import { Mass } from "@buge/ts-units/mass";
-import { Exercise, InverseSpeed, LiftData, pounds, RepData, RunData, TrainingData } from "../types";
+import { Exercise, InverseSpeed, LiftData, minutes_per_mile, pounds, RepData, RunData, TrainingData } from "../types";
 import { miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 
@@ -52,5 +52,6 @@ export function training_time(training_data: TrainingData[]): Time {
 export function average_pace(runs: RunData[]): InverseSpeed {
     const dist = total_mileage(runs)
     const time = total_moving_time(runs)
+    if (time.amount == 0) return minutes_per_mile(0)
     return time.per(dist)
 }
