@@ -890,5 +890,29 @@
                 "farmer cary: 2x(24kg|15meters)"
             ]
         }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 16, 2025, 4:30:00 PM",
+        "data": {
+            "duration": 50,
+            "notes": "",
+            "exercises": [
+                "squat: 12x95lbs, 12x115lbs, 12x135lbs",
+                "cable seated row: 12x65lbs, 12x80lbs",
+                "overhead press: 12x40lbs, 12x60lbs",
+                "single leg stair calf raise: 15, 15",
+                "pull up: 8, 8",
+                "one leg buck: 12",
+                "45 degree back extension: 12, 12",
+                "plate mcgill crunch: 25",
+                "bulgarian split squat: 12x20lbs, 12x30lbs",
+                "lateral bunkie: 20s",
+                "medial bunkie: 20s",
+                "anterior bunkie: 20s",
+                "oxidative squat: 12x95lbs, 12x95lbs"
+            ]
+        }
     }
 ]
