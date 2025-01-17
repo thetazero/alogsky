@@ -8,12 +8,10 @@ import { Metric } from "../types";
 import { get_week_start } from "../utils/time";
 
 function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): BarChartData {
-    const data: {
-        label: string;
-        data: number[];
-    } = {
+    const data: BarChartData = {
         label: metric,
         data: [],
+        unit: analysis.get_unit_for_metric(metric),
     }
     for (let i = 0; i < weeks; i++) {
         const week_data = analysis.get_metric_for_week(metric, i)
@@ -65,7 +63,7 @@ const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) =
             bottomChild={
                 <div className="mb-4 card level-2">
                     <BarChart
-                        data={barData} title="Weekly Mileage"
+                        data_set={barData} title="Weekly Mileage"
                     />
                 </div>
             }

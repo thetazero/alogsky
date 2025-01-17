@@ -45,9 +45,9 @@ function App() {
                 {/* <Tile title="Calendar Test">
                     <MonthCalendar date={new Date()}/>
                 </Tile> */}
-                <Tile title="Open Injuries">
+                {/* <Tile title="Open Injuries">
                     <OpenInjuryTile analysis={analysis} />
-                </Tile>
+                </Tile> */}
                 <Tile title="Training Summary">
                     <TrainingSummaryTile analysis={analysis} />
                 </Tile>
