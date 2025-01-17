@@ -24,8 +24,18 @@ export interface RunData {
     elapsed_time?: Time,
     temperature?: Temperature,
     feels_like?: Temperature,
+    workout_data?: RunningWorkoutData,
     date: Date
     type: "run"
+}
+
+export interface RunningWorkoutData {
+    intervals: Interval[],
+}
+
+export interface Interval {
+    duration: Time,
+    distance: Length,
 }
 
 export enum Exercise {
