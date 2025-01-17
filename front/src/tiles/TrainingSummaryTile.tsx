@@ -27,7 +27,7 @@ export interface TrainingSummaryTileProps {
 const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) => {
     const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] })
     const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
-    const [weeksToShow, setWeeksToShow] = useState<number>(10)
+    const [weeksToShow, setWeeksToShow] = useState<number>(15)
 
     useEffect(() => {
         if (analysis.training_data.length === 0) return

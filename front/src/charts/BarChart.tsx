@@ -13,6 +13,7 @@ import {
 import { hue_from_string } from "../utils/color";
 import { Dimensions, Quantity, Unit } from '@buge/ts-units';
 import { fmt_quantity } from '../utils/format';
+import { normalize_within } from '../utils/stats';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -59,7 +60,7 @@ const BarChart: React.FC<BarChartProps> = ({ data_set, title }) => {
                 const data = dataset.data.map((d) => d.amount);
                 return {
                     label: dataset.label,
-                    data,
+                    data: normalize_within(data, 0, Math.max(...data)),
                     backgroundColor: `hsl(${hue}, 50%, 50%)`,
                 }
             }),
@@ -104,7 +105,12 @@ const BarChart: React.FC<BarChartProps> = ({ data_set, title }) => {
                 grid: { color: '#374151' }, // Tailwind bg-gray-600
             },
             y: {
-                ticks: { color: '#d1d5db' }, // Tailwind text-gray-300
+                ticks: {
+                    color: '#d1d5db', // Tailwind text-gray-300
+                    callback: function (value: number) {
+                        return `${value * 100}%`; // Append a percentage sign to the tick values
+                    },
+                },
                 grid: { color: '#374151' }, // Tailwind bg-gray-600
             },
         },
