@@ -6,17 +6,14 @@ import BottomGrows from "../components/BottomGrows";
 import SelectMultiple from "../components/SelectMultiple";
 import { Metric } from "../types";
 import { get_week_start } from "../utils/time";
-import { hue_from_string } from "../utils/color";
 
 function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): BarChartData {
     const data: {
         label: string;
         data: number[];
-        backgroundColor: string;
     } = {
         label: metric,
         data: [],
-        backgroundColor: `hsl(${hue_from_string(metric)}, 50%, 50%)`,
     }
     for (let i = 0; i < weeks; i++) {
         const week_data = analysis.get_metric_for_week(metric, i)
