@@ -39,6 +39,7 @@ export interface Interval {
 }
 
 export enum Exercise {
+    AnteriorBunkie = "Anterior Bunkie",
     Bench = "Bench",
     BicepCurl = "Bicep Curl",
     BulgarianSplitSquat = "Bulgarian Split Squat",
@@ -50,13 +51,16 @@ export enum Exercise {
     DumbellRow = "Dumbell Row",
     FarmerCary = "Farmer Cary",
     FourtyFiveDegreeBackExtension = "45 Degree Back Extension",
+    LateralBunkie = "Lateral Bunkie",
     LateralRaise = "Lateral Raise",
     LemonSqueezers = "Lemon Squeezers",
     MedBallSeatedRussianTwist = "Med Ball Seated Russian Twist",
+    MedialBunkie = "Medial Bunkie",
     OneLegBuck = "One Leg Buck",
     OverheadPress = "Overhead Press",
     OxidativeSquat = "Oxidative Squat",
     Plank = "Plank",
+    PlateMcGillCrunch = "Plate McGill Crunch",
     Pullup = "Pullup",
     Pushup = "Pushup",
     RomanianDeadLift = "Romanian Deadlift",
