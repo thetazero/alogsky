@@ -10,6 +10,7 @@ import WeekOverview from './tiles/WeekOverview';
 import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
 import TrainingSummaryTile from './tiles/TrainingSummaryTile';
+import CommandProvider from './CommandProvider';
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
@@ -31,7 +32,7 @@ function App() {
     }, [processed]);
 
     return (
-        <>
+        <CommandProvider>
             <div className="grid grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
                 {/* <Tile title='Single Metric Chart'>
                     <SingleMetricChart analysis={analysis} />
@@ -63,7 +64,7 @@ function App() {
                     )
                 }
             </div>
-        </>
+        </CommandProvider>
     )
 }
 

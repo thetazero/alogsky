@@ -1,15 +1,20 @@
 import React, { ReactNode, useState } from "react";
 import { AiOutlineClose, AiOutlineExpandAlt, AiOutlineShrink } from "react-icons/ai"; // Import specific icons
 import BottomGrows from "./BottomGrows";
+import { useCommand } from "../CommandProvider";
 
 export interface TileProps {
     title?: string;
     children?: ReactNode;
-    onClose?: () => void;
 }
 
-const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
+const Tile: React.FC<TileProps> = ({ title, children }) => {
     const [isExpanded, setIsExpanded] = useState(false); // State for expanding the tile
+    const { closePanel } = useCommand();
+
+    const onClose = () => {
+        closePanel("tile");
+    }
 
     const handleExpand = () => {
         setIsExpanded(!isExpanded); // Toggle expanded state
