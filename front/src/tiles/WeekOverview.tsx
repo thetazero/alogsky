@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"; // Import icons from react-icons
 import Analysis from "../analysis/analysis";
 import DateRange from "../components/DateRange";
@@ -6,12 +6,9 @@ import TrainingLog from "../components/TrainingLog";
 import TrainingSummary from "../components/TrainingSummary";
 import BottomGrows from "../components/BottomGrows";
 import Tile from "../components/Tile";
+import panelComponentType from "./tileType";
 
-export interface WeekLogProps {
-    analysis: Analysis;
-}
-
-const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
+const WeekOverview: panelComponentType = ({ analysis, id }) => {
     const [totalWeeks, setTotalWeeks] = useState<number>(0);
     const [week, setWeek] = useState<number>(0);
     const [weekAnalysis, setWeekAnalysis] = useState<Analysis>(new Analysis([]));
@@ -46,7 +43,7 @@ const WeekOverview: React.FC<WeekLogProps> = ({ analysis }) => {
     };
 
     return (
-        <Tile title="Weekly Overview">
+        <Tile title="Weekly Overview" id={id}>
             <BottomGrows
                 topChild={
                     <>

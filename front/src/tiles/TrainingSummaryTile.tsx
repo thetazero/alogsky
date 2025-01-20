@@ -7,6 +7,7 @@ import SelectMultiple from "../components/SelectMultiple";
 import { Metric } from "../types";
 import { get_week_start } from "../utils/time";
 import Tile from "../components/Tile";
+import panelComponentType from "./tileType";
 
 function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): BarChartData {
     const data: BarChartData = {
@@ -21,11 +22,7 @@ function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): Ba
     return data
 }
 
-export interface TrainingSummaryTileProps {
-    analysis: Analysis;
-}
-
-const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) => {
+const TrainingSummaryTile: panelComponentType = ({ analysis, id }) => {
     const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] })
     const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
     const [weeksToShow, setWeeksToShow] = useState<number>(15)
@@ -50,7 +47,7 @@ const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) =
     }, [analysis, metrics, weeksToShow]);
 
     return (
-        <Tile title="Training Summary">
+        <Tile title="Training Summary" id={id}>
             <BottomGrows
                 topChild={
                     <div className="mb-4 flex items-center space-x-4">

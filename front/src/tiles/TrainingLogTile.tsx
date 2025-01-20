@@ -1,18 +1,18 @@
-import React from "react";
 import Analysis from "../analysis/analysis";
 import TrainingLog from "../components/TrainingLog";
 import TrainingSummary from "../components/TrainingSummary";
 import BottomGrows from "../components/BottomGrows";
 import Tile from "../components/Tile";
+import panelComponentType from "./tileType";
 
 export interface TrainingLogTileProps {
     analysis: Analysis;
 }
 
 
-const TrainingLogTile: React.FC<TrainingLogTileProps> = ({ analysis }) => {
+const TrainingLogTile: panelComponentType = ({ analysis, id }) => {
     return (
-        <Tile title="Training Log">
+        <Tile title="Training Log" id={id}>
             <BottomGrows
                 topChild={
                     <div className="mb-4">

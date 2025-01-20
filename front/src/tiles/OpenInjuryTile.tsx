@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Analysis from "../analysis/analysis";
 import { PainAtLocationData } from "../types";
 import { get_first } from "../analysis/utils";
@@ -6,12 +6,13 @@ import DateRange from "../components/DateRange";
 import InjurySnapshotHorizontalScroller from "../components/InjurySnapshotHorizontalScroller";
 import { calendar_days_appart } from "../utils/time";
 import Tile from "../components/Tile";
+import panelComponentType from "./tileType";
 
 export interface OpenInjuryTileProps {
     analysis: Analysis
 }
 
-const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
+const OpenInjuryTile: panelComponentType = ({ analysis, id }) => {
     const [openInjuryData, setOpenInjuryData] = useState<PainAtLocationData[]>([]);
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
     }, [analysis])
 
     return (
-        <Tile title="Open Injuries">
+        <Tile title="Open Injuries" id={id}>
             {
                 openInjuryData.map(injury => {
                     return (

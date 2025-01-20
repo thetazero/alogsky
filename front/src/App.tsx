@@ -5,7 +5,6 @@ import strava_data from "./data/strava_export.json"
 import parse from './parse/main';
 import { TrainingData } from './types';
 import OpenInjuryTile from './tiles/OpenInjuryTile';
-import Tile from './components/Tile';
 import WeekOverview from './tiles/WeekOverview';
 import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
@@ -31,24 +30,29 @@ function App() {
         setAnalysis(new Analysis(processed))
     }, [processed]);
 
+    const defaultTiles = [
+        {
+            component: WeekOverview,
+            id: "week-overview"
+        },
+        {
+            component: TrainingLogTile,
+            id: "training-log"
+        },
+        {
+            component: TrainingSummaryTile,
+            id: "training-summary"
+        },
+        {
+            component: OpenInjuryTile,
+            id: "open-injuries"
+        },
+    ]
+
     return (
-        <CommandProvider>
-            <TrainingLogTile analysis={analysis} />
-            <WeekOverview analysis={analysis} />
-            <OpenInjuryTile analysis={analysis} />
-            <TrainingSummaryTile analysis={analysis} />
-            {
-                errors.length && (
-                    <Tile title="Parse Errors">
-                        {
-                            errors.map((err, i) => {
-                                return (<p key={i}>Parse Error: {err}</p>)
-                            })
-                        }
-                    </Tile>
-                )
-            }
-        </CommandProvider>
+        <>
+            <CommandProvider defaultTiles={defaultTiles} parseErrors={errors} analysis={analysis} />
+        </>
     )
 }
 

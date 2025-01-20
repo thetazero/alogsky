@@ -6,14 +6,15 @@ import { useCommand } from "../CommandProvider";
 export interface TileProps {
     title?: string;
     children?: ReactNode;
+    id: string;
 }
 
-const Tile: React.FC<TileProps> = ({ title, children }) => {
+const Tile: React.FC<TileProps> = ({ title, children, id }) => {
     const [isExpanded, setIsExpanded] = useState(false); // State for expanding the tile
     const { closePanel } = useCommand();
 
     const onClose = () => {
-        closePanel("tile");
+        closePanel(id);
     }
 
     const handleExpand = () => {
