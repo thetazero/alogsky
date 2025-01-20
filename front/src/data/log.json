@@ -914,5 +914,68 @@
                 "oxidative squat: 12x95lbs, 12x95lbs"
             ]
         }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 16, 2025, 7:30:00 AM",
+        "data": {
+            "duration": 516
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 17, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 505
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 18, 2025, 7:00:00 AM",
+        "data": {
+            "duration": 485
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 19, 2025, 8:20:00 AM",
+        "data": {
+            "duration": 525
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 20, 2025, 7:40:00 AM",
+        "data": {
+            "duration": 496
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 20, 2025, 5:10:00 PM",
+        "data": {
+            "duration": 55,
+            "notes": "",
+            "exercises": [
+                "squat: 12x95lbs, 12x145lbs, 12x155lbs",
+                "cable seated row: 12x70lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x35lbs, 12x45lbs",
+                "overhead press: 12x50lbs, 12x60lbs",
+                "speed skater jumps: 5, 5",
+                "single leg stair calf raise: 20, 20",
+                "pull up: 8, 8, 8",
+                "one leg buck: 12, 12",
+                "45 degree back extension: 12, 12",
+                "med ball seated russian twist: 15x15lbs, 15x15lbs",
+                "bulgarian split squat: 12x20lbs, 12x30lbs",
+                "oxidative squat: 12x95lbs, 12x105lbs"
+            ]
+        }
     }
 ]
