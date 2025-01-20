@@ -21,8 +21,10 @@ const CommandProvider: React.FC<CommandProviderProps> = ({ children }) => {
 
     return (
         <CommandContext.Provider value={{ sendMessage, closePanel }}>
-            {children}
-        </CommandContext.Provider>
+            <div className="grid grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
+                {children}
+            </div>
+        </CommandContext.Provider >
     )
 }
 

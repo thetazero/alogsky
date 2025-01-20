@@ -5,6 +5,7 @@ import { get_first } from "../analysis/utils";
 import DateRange from "../components/DateRange";
 import InjurySnapshotHorizontalScroller from "../components/InjurySnapshotHorizontalScroller";
 import { calendar_days_appart } from "../utils/time";
+import Tile from "../components/Tile";
 
 export interface OpenInjuryTileProps {
     analysis: Analysis
@@ -25,7 +26,7 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
     }, [analysis])
 
     return (
-        <>
+        <Tile title="Open Injuries">
             {
                 openInjuryData.map(injury => {
                     return (
@@ -51,7 +52,7 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
                     </>
                 )
             }
-        </>
+        </Tile>
     )
 }
 

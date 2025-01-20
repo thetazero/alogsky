@@ -6,6 +6,7 @@ import BottomGrows from "../components/BottomGrows";
 import SelectMultiple from "../components/SelectMultiple";
 import { Metric } from "../types";
 import { get_week_start } from "../utils/time";
+import Tile from "../components/Tile";
 
 function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): BarChartData {
     const data: BarChartData = {
@@ -49,25 +50,27 @@ const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) =
     }, [analysis, metrics, weeksToShow]);
 
     return (
-        <BottomGrows
-            topChild={
-                <div className="mb-4 flex items-center space-x-4">
-                    <SelectMultiple
-                        options={Object.values(Metric)}
-                        selected={metrics}
-                        onChange={setMetrics}
-                        renderOption={(option) => option}
-                    />
-                </div>
-            }
-            bottomChild={
-                <div className="mb-4 card level-2">
-                    <BarChart
-                        data_set={barData} title="Weekly Mileage"
-                    />
-                </div>
-            }
-        />
+        <Tile title="Training Summary">
+            <BottomGrows
+                topChild={
+                    <div className="mb-4 flex items-center space-x-4">
+                        <SelectMultiple
+                            options={Object.values(Metric)}
+                            selected={metrics}
+                            onChange={setMetrics}
+                            renderOption={(option) => option}
+                        />
+                    </div>
+                }
+                bottomChild={
+                    <div className="mb-4 card level-2">
+                        <BarChart
+                            data_set={barData} title="Weekly Mileage"
+                        />
+                    </div>
+                }
+            />
+        </Tile>
     );
 };
 
