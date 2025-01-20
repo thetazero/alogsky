@@ -10,6 +10,7 @@ import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
 import TrainingSummaryTile from './tiles/TrainingSummaryTile';
 import CommandProvider from './CommandProvider';
+import ParticularLiftTile from './tiles/ParticularLiftTile';
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
@@ -43,10 +44,14 @@ function App() {
             component: TrainingSummaryTile,
             id: "training-summary"
         },
+        // {
+        //     component: OpenInjuryTile,
+        //     id: "open-injuries"
+        // },
         {
-            component: OpenInjuryTile,
-            id: "open-injuries"
-        },
+            component: ParticularLiftTile,
+            id: "particular-lift"
+        }
     ]
 
     return (

@@ -32,6 +32,6 @@ describe("Test Analysis class", () => {
         }
         const analysis = new Analysis([run_data]);
         expect(analysis.total_mileage().in(miles).amount).toBeCloseTo(6.8363259)
-        expect(analysis.get_metric(Metric.Mileage)).toBeCloseTo(6.8363259)
+        expect(analysis.get_metric(Metric.Mileage).in(miles).amount).toBeCloseTo(6.8363259)
     });
 });

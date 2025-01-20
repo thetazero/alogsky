@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Analysis from "../analysis/analysis";
 import { PainAtLocationData } from "../types";
 import { get_first } from "../analysis/utils";
 import DateRange from "../components/DateRange";
@@ -7,10 +6,6 @@ import InjurySnapshotHorizontalScroller from "../components/InjurySnapshotHorizo
 import { calendar_days_appart } from "../utils/time";
 import Tile from "../components/Tile";
 import panelComponentType from "./tileType";
-
-export interface OpenInjuryTileProps {
-    analysis: Analysis
-}
 
 const OpenInjuryTile: panelComponentType = ({ analysis, id }) => {
     const [openInjuryData, setOpenInjuryData] = useState<PainAtLocationData[]>([]);

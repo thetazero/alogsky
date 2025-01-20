@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 interface TableProps {
+    headers?: string[]; // Optional headers for the table
     table: string[][]; // 2D array representing table rows and cells
     height: number;    // Height of the scrollable container
 }
 
-const ScrollableTable: React.FC<TableProps> = ({ table, height }) => {
+const ScrollableTable: React.FC<TableProps> = ({ table, height, headers }) => {
     const [filled, setFilled] = useState<string[][]>([]);
 
     useEffect(() => {
@@ -28,6 +29,21 @@ const ScrollableTable: React.FC<TableProps> = ({ table, height }) => {
         >
             <table className="table-auto w-full">
                 <tbody>
+                    {
+                        // Render headers if they exist
+                        headers && (
+                            <tr className="bg-gray-700">
+                                {headers.map((header, index) => (
+                                    <th
+                                        key={index}
+                                        className="border-gray-700 px-4 py-2 text-gray-300"
+                                    >
+                                        {header}
+                                    </th>
+                                ))}
+                            </tr>
+                        )
+                    }
                     {filled.map((row, rowIndex) => (
                         <tr
                             key={rowIndex}

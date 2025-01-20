@@ -1,5 +1,5 @@
 import { hours, Time } from "@buge/ts-units/time";
-import { InverseSpeed } from "../types";
+import { InverseSpeed, RepData } from "../types";
 import { minutes_per_mile } from "../types";
 import { Dimensions, Quantity } from "@buge/ts-units";
 
@@ -31,4 +31,10 @@ export function fmt_quantity(q: Quantity<number, Dimensions>): string {
         default:
             return `${nice_number(q.amount)} ${q.unit.symbol}`;
     }
+}
+
+export function fmt_rep(rep: RepData): string {
+    if (rep.weight.amount === 0) return `${rep.reps}`;
+    else if (rep.reps === 0) return `${rep.weight.toString()}`;
+    else return `${rep.reps} x ${rep.weight.toString()}`
 }
