@@ -26,6 +26,7 @@ const SelectSearch = <T,>({
     const selectOption = (option: T) => {
         onChange(option);
         setIsOpen(false);
+        setSearchQuery(""); // Clear the search query after selection
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
@@ -41,7 +42,14 @@ const SelectSearch = <T,>({
 
     const focusSearch = () => {
         setTimeout(() => searchRef.current?.select(), 100);
-    }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter" && filteredOptions.length > 0) {
+            selectOption(filteredOptions[0]); // Select the first filtered option
+            e.preventDefault(); // Prevent default form submission behavior
+        }
+    };
 
     return (
         <div
@@ -74,6 +82,7 @@ const SelectSearch = <T,>({
                             placeholder="Search..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyDown={handleKeyDown} // Add keydown listener for Enter key
                             ref={searchRef}
                         />
                     </div>
