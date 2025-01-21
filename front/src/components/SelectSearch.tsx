@@ -6,6 +6,7 @@ interface SelectSearchProps<T> {
     onChange: (selected: T) => void;
     renderOption: (option: T) => React.ReactNode; // For custom rendering of options
     getOptionKey?: (option: T) => string | number; // Unique key for each option
+    filterOptions?: (query: string, option: T) => boolean; // Optional custom filter logic
 }
 
 const SelectSearch = <T,>({
@@ -14,12 +15,17 @@ const SelectSearch = <T,>({
     onChange,
     renderOption,
     getOptionKey,
+    filterOptions = (query, option) =>
+        JSON.stringify(option).toLowerCase().includes(query.toLowerCase()), // Default filter logic
 }: SelectSearchProps<T>) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const searchRef = useRef<HTMLInputElement>(null);
 
     const selectOption = (option: T) => {
         onChange(option);
+        setIsOpen(false);
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
@@ -28,50 +34,71 @@ const SelectSearch = <T,>({
         }
     };
 
+    // Filter options based on the search query
+    const filteredOptions = options.filter((option) =>
+        filterOptions(searchQuery, option)
+    );
+
+    const focusSearch = () => {
+        setTimeout(() => searchRef.current?.select(), 100);
+    }
+
     return (
         <div
             className="relative w-48 level-2 card"
             ref={dropdownRef}
             onBlur={handleBlur}
             tabIndex={-1} // Allow div to receive focus
+            onClick={focusSearch}
         >
             {/* Trigger Button */}
             <button
                 className="w-full px-4 py-2 text-left rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                 onClick={() => setIsOpen((prev) => !prev)}
             >
-                {
-                    selected
-                        ? renderOption(selected)
-                        : "Select option"
-                }
+                {selected ? renderOption(selected) : "Select option"}
                 <span className="float-right">▼</span>
             </button>
 
             {/* Dropdown Menu */}
             {isOpen && (
                 <div
-                    className="absolute z-10 w-full mt-1 rounded shadow-lg level-2 bg-white"
+                    className="absolute z-10 w-full mt-1 rounded shadow-lg level-2"
                     tabIndex={0} // Allows focus within dropdown
                 >
+                    {/* Search Bar */}
+                    <div className="p-2">
+                        <input
+                            type="text"
+                            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm level-2"
+                            placeholder="Search..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            ref={searchRef}
+                        />
+                    </div>
+
+                    {/* Options List */}
                     <ul className="max-h-48 overflow-auto">
-                        {options.map((option) => (
-                            <li
-                                key={getOptionKey ? getOptionKey(option) : JSON.stringify(option)}
-                                className="px-4 py-2"
-                            >
-                                <label className="flex items-center space-x-2 cursor-pointer">
-                                    <span
-                                    onClick={
-                                        () => {
-                                            selectOption(option);
-                                            setIsOpen(false);
-                                        }
-                                    }
-                                    >{renderOption(option)}</span>
-                                </label>
+                        {filteredOptions.length > 0 ? (
+                            filteredOptions.map((option) => (
+                                <li
+                                    key={getOptionKey ? getOptionKey(option) : JSON.stringify(option)}
+                                    className="px-4 py-2"
+                                >
+                                    <label
+                                        className="flex items-center space-x-2 cursor-pointer"
+                                        onClick={() => selectOption(option)}
+                                    >
+                                        {renderOption(option)}
+                                    </label>
+                                </li>
+                            ))
+                        ) : (
+                            <li className="px-4 py-2 text-gray-500 text-sm">
+                                No options found
                             </li>
-                        ))}
+                        )}
                     </ul>
                 </div>
             )}
