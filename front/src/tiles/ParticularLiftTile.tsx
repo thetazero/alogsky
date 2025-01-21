@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Tile from "../components/Tile";
 import panelComponentType from "./tileType";
 import { Exercise, RepData } from "../types";
-import { fmt_quantity } from "../utils/format";
+import { fmt_rep } from "../utils/format";
 import ScrollableTable from "../components/Table";
+import SelectSearch from "../components/SelectSearch";
 
 type LiftHistory = {
     reps: RepData[],
@@ -32,16 +33,21 @@ const ParticularLiftTile: panelComponentType = ({ analysis, id }) => {
 
     return (
         <Tile title={`${exercise} history`} id={id}>
-            {exercise}
+            <div className="mb-4 flex items-center space-x-4">
+                <SelectSearch
+                    options={Object.values(Exercise)}
+                    selected={exercise}
+                    onChange={setExercise}
+                    renderOption={(option: Exercise) => option}
+                />
+            </div>
             {
                 <ScrollableTable
                     headers={["Date", "Reps"]}
                     table={history.map(lift => {
                         return [
                             lift.date.toDateString(),
-                            lift.reps.map(rep => {
-                                return `${rep.reps}x${fmt_quantity(rep.weight)}`
-                            }).join(", ")
+                            lift.reps.map(fmt_rep).join(", ")
                         ]
                     })}
                     height={400}
