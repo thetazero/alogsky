@@ -34,7 +34,7 @@ const CommandProvider: React.FC<CommandProviderProps> = ({ defaultTiles, parseEr
 
     return (
         <CommandContext.Provider value={{ sendMessage, closePanel, addPanel }}>
-            <div className="grid grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
                 {tiles.map(({ component: Component, id }) => (
                     <Component key={id} analysis={analysis} id={id} />
                 ))}
