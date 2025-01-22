@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from "react";
 import { AiOutlineClose, AiOutlineExpandAlt, AiOutlineShrink } from "react-icons/ai"; // Import specific icons
 import BottomGrows from "./BottomGrows";
 import { useCommand } from "../CommandProvider";
-import { useIsSmallScreen, useMediaQuery } from "../utils/screen_size";
+import { useMediaQuery } from "../utils/screen_size";
 
 export interface TileProps {
     title?: string;
