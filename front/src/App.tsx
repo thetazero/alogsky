@@ -37,12 +37,12 @@ function App() {
             id: "week-overview"
         },
         {
-            component: TrainingLogTile,
-            id: "training-log"
-        },
-        {
             component: TrainingSummaryTile,
             id: "training-summary"
+        },
+        {
+            component: TrainingLogTile,
+            id: "training-log"
         },
         // {
         //     component: OpenInjuryTile,

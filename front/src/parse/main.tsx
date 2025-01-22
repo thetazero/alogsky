@@ -185,7 +185,7 @@ export function make_rep_data(exercise: Exercise, reps: number, units: Quantity<
         weight: mass.length ? mass[0] as Mass : pounds(0),
         time: time.length ? time[0] : undefined,
         length: length.length ? length[0] : undefined,
-    } 
+    }
 
 }
 
@@ -194,10 +194,21 @@ export function natural_reps_parse(str: string): RepData[] {
     const exc = parse_exercise(exercise)
     return reps.split(",").map(rep_str => {
         if (rep_str.trim() === "") return null
-        const [times, units] = rep_str.split("x")
-        const units_list = parse_units(units)
-        return make_rep_data(exc, parseInt(times), units_list)
-    }).filter(rep => rep !== null)
+        const split = rep_str.split("x")
+        if (split.length <= 2) {
+            const units_list = parse_units(split[1])
+            return [make_rep_data(exc, parseInt(split[0]), units_list)]
+        } else if (split.length === 3) {
+            const [sets, reps, units] = split
+            const units_list = parse_units(units)
+            const res = []
+            for (let i = 0; i < parseInt(sets); i++) {
+                res.push(make_rep_data(exc, parseInt(reps), units_list))
+            }
+            return res.flat()
+        }
+        throw `Invalid rep string: ${rep_str}`
+    }).flat().filter(rep => rep !== null)
 }
 
 function parse_liftv2(data: any, date: Date): LiftData {
@@ -269,7 +280,7 @@ export function parse_body_location(str: string): BodyLocation[] {
     else if (str.slice(0, 4) === "both") {
         const remainder = str.slice(4).trim()
         return parse_body_location(`left ${remainder}`).concat(parse_body_location(`right ${remainder}`))
-    } 
+    }
     else side = Side.NoSide
 
     const location = str.replace(/left|right/g, "").trim()
@@ -305,7 +316,7 @@ function parse_painv2(data: unknown, date: Date): PainLogData {
         const description = point.description
         const snapshots: PainAtLocationLogData[] = point.snapshots.map((snap: any) => {
             const [location, pain] = extract_paren_data(snap)
-            return parse_body_location(location).map(loc=> ({
+            return parse_body_location(location).map(loc => ({
                 description,
                 pain: parseInt(pain),
                 location: loc,

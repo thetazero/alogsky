@@ -148,6 +148,16 @@ describe("natural reps parse", () => {
         expect(parsed[0].time).toEqual(undefined)
 
     })
+
+    it('Works for duplicate sets', () => {
+        const parsed = natural_reps_parse("bicep curl: 3x8x40lbs, 12x50lbs")
+        expect(parsed).toHaveLength(4)
+        expect(parsed[0].reps).toEqual(8)
+        expect(parsed[0].weight.in(pounds).amount).toEqual(40)
+        expect(parsed[1].reps).toEqual(8)
+        expect(parsed[3].reps).toEqual(12)
+        expect(parsed[3].weight.in(pounds).amount).toEqual(50)
+    })
 })
 
 describe("Should throw an error if there on incorrectly duplicate data", () => {
