@@ -2,13 +2,16 @@
   "name": "my-app",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://thetazero.github.io/alogsky",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@buge/ts-units": "^1.2.3",
@@ -30,6 +33,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/react-measure": "^2.0.12",
+    "@types/react-window": "^1.8.8",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
     "@vitejs/plugin-react": "^4.3.4",
@@ -37,6 +41,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "jsdom": "^25.0.1",
     "postcss": "^8.4.49",

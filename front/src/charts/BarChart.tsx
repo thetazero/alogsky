@@ -107,8 +107,8 @@ const BarChart: React.FC<BarChartProps> = ({ data_set, title }) => {
             y: {
                 ticks: {
                     color: '#d1d5db', // Tailwind text-gray-300
-                    callback: function (value: number) {
-                        return `${value * 100}%`; // Append a percentage sign to the tick values
+                    callback: function (tickValue: string | number) {
+                        return `${Number(tickValue) * 100}%`; // Append a percentage sign to the tick values
                     },
                 },
                 grid: { color: '#374151' }, // Tailwind bg-gray-600

@@ -4,7 +4,6 @@ import data from "./data/log.json"
 import strava_data from "./data/strava_export.json"
 import parse from './parse/main';
 import { TrainingData } from './types';
-import OpenInjuryTile from './tiles/OpenInjuryTile';
 import WeekOverview from './tiles/WeekOverview';
 import Analysis from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';

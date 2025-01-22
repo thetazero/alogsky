@@ -309,7 +309,7 @@ function parse_painv1(data: any, date: Date): PainLogData {
 }
 
 function parse_painv2(data: unknown, date: Date): PainLogData {
-    const pain_at_location: PainAtLocationLogData[] = as_array(data, `pain data v2 must be array`).map((point: unknown) => {
+    const pain_at_location: PainAtLocationLogData[] = as_array(data, `pain data v2 must be array`).map((point: any) => {
         if (typeof point !== 'object' || point === null) {
             throw "Pain data must be an array of objects"
         }

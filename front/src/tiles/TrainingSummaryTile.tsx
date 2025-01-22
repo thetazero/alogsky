@@ -25,7 +25,7 @@ function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): Ba
 const TrainingSummaryTile: panelComponentType = ({ analysis, id }) => {
     const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] })
     const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
-    const [weeksToShow, setWeeksToShow] = useState<number>(15)
+    const [weeksToShow, _] = useState<number>(15)
 
     useEffect(() => {
         if (analysis.training_data.length === 0) return
