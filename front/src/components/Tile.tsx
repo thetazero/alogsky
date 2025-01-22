@@ -2,6 +2,7 @@ import React, { ReactNode, useState } from "react";
 import { AiOutlineClose, AiOutlineExpandAlt, AiOutlineShrink } from "react-icons/ai"; // Import specific icons
 import BottomGrows from "./BottomGrows";
 import { useCommand } from "../CommandProvider";
+import { useIsSmallScreen, useMediaQuery } from "../utils/screen_size";
 
 export interface TileProps {
     title?: string;
@@ -11,6 +12,7 @@ export interface TileProps {
 
 const Tile: React.FC<TileProps> = ({ title, children, id }) => {
     const [isExpanded, setIsExpanded] = useState(false); // State for expanding the tile
+    const isSmallScreen = useMediaQuery("(max-width: 640px)"); // Check if the screen is small
     const { closePanel } = useCommand();
 
     const onClose = () => {
@@ -21,6 +23,18 @@ const Tile: React.FC<TileProps> = ({ title, children, id }) => {
         setIsExpanded(!isExpanded); // Toggle expanded state
     };
 
+    const maxHeight = (is_small: boolean) => {
+        if (is_small) {
+            return "90vh"
+        }
+        return "60vh"
+    }
+
+    const calcHeight = (is_small: boolean) => {
+        if (is_small) return "90vh"
+        return "auto"
+    }
+
     return (
         <div
             className={`level-1 card p-4 shadow-lg transition-all duration-500 ease-in-out ${isExpanded ? "h-screen fixed top-0 left-0 z-50" : "relative w-auto h-auto"
@@ -28,8 +42,9 @@ const Tile: React.FC<TileProps> = ({ title, children, id }) => {
             style={{
                 width: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
                 margin: isExpanded ? "8px" : "0", // Add margin of 8px on each side when expanded
-                height: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
-                maxHeight: isExpanded ? undefined : "60vh",
+                minHeight: "30vh",
+                height: isExpanded ? "calc(100% - 16px)" : calcHeight(isSmallScreen),
+                maxHeight: isExpanded ? undefined : maxHeight(isSmallScreen),
             }}
         >
 
