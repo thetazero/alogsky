@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
-import Analysis from "../analysis/analysis";
+import { useEffect, useState } from "react";
 import { PainAtLocationData } from "../types";
 import { get_first } from "../analysis/utils";
 import DateRange from "../components/DateRange";
 import InjurySnapshotHorizontalScroller from "../components/InjurySnapshotHorizontalScroller";
+import { calendar_days_appart } from "../utils/time";
+import Tile from "../components/Tile";
+import panelComponentType from "./tileType";
 
-export interface OpenInjuryTileProps {
-    analysis: Analysis
-}
-
-const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
+const OpenInjuryTile: panelComponentType = ({ analysis, id }) => {
     const [openInjuryData, setOpenInjuryData] = useState<PainAtLocationData[]>([]);
 
     useEffect(() => {
@@ -17,14 +15,14 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
         const open_injuries = injuries.filter(injury => {
             const last_snapshot = injury.snapshots[injury.snapshots.length - 1]
             const recent_pain = last_snapshot.pain >= 1
-            const has_recent_snapshot = last_snapshot.date.getTime() > new Date().getTime() - 1000 * 60 * 60 * 24 * 3 // 3 days
+            const has_recent_snapshot = calendar_days_appart(last_snapshot.date, new Date()) <= 3
             return recent_pain && has_recent_snapshot
         })
         setOpenInjuryData(open_injuries)
     }, [analysis])
 
     return (
-        <>
+        <Tile title="Open Injuries" id={id}>
             {
                 openInjuryData.map(injury => {
                     return (
@@ -50,7 +48,7 @@ const OpenInjuryTile: React.FC<OpenInjuryTileProps> = ({ analysis }) => {
                     </>
                 )
             }
-        </>
+        </Tile>
     )
 }
 

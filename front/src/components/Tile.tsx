@@ -1,19 +1,39 @@
 import React, { ReactNode, useState } from "react";
 import { AiOutlineClose, AiOutlineExpandAlt, AiOutlineShrink } from "react-icons/ai"; // Import specific icons
 import BottomGrows from "./BottomGrows";
+import { useCommand } from "../CommandProvider";
+import { useMediaQuery } from "../utils/screen_size";
 
 export interface TileProps {
     title?: string;
     children?: ReactNode;
-    onClose?: () => void;
+    id: string;
 }
 
-const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
+const Tile: React.FC<TileProps> = ({ title, children, id }) => {
     const [isExpanded, setIsExpanded] = useState(false); // State for expanding the tile
+    const isSmallScreen = useMediaQuery("(max-width: 640px)"); // Check if the screen is small
+    const { closePanel } = useCommand();
+
+    const onClose = () => {
+        closePanel(id);
+    }
 
     const handleExpand = () => {
         setIsExpanded(!isExpanded); // Toggle expanded state
     };
+
+    const maxHeight = (is_small: boolean) => {
+        if (is_small) {
+            return "90vh"
+        }
+        return "60vh"
+    }
+
+    const calcHeight = (is_small: boolean) => {
+        if (is_small) return "90vh"
+        return "auto"
+    }
 
     return (
         <div
@@ -22,8 +42,9 @@ const Tile: React.FC<TileProps> = ({ title, children, onClose }) => {
             style={{
                 width: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
                 margin: isExpanded ? "8px" : "0", // Add margin of 8px on each side when expanded
-                height: isExpanded ? "calc(100% - 16px)" : "auto", // Subtract 8px margin on each side (16px total)
-                maxHeight: isExpanded ? undefined : "60vh",
+                minHeight: "30vh",
+                height: isExpanded ? "calc(100% - 16px)" : calcHeight(isSmallScreen),
+                maxHeight: isExpanded ? undefined : maxHeight(isSmallScreen),
             }}
         >
 

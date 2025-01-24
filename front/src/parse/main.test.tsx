@@ -1,35 +1,48 @@
 import { kilograms } from "@buge/ts-units/mass";
-import { Exercise, LiftData } from "../types";
-import parse, { natural_reps_parse, parse_body_location, parse_weight } from "./main";
-import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
+import { Exercise, LiftData, PainLogData, pounds } from "../types";
+import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse_body_location, parse_unit, parse_units } from "./main";
+import { BodyLocationWithoutSide, Side } from "../pt/body_location";
+import { meters } from "@buge/ts-units/length";
 
-describe("Test parse weigth", () => {
+describe("Test parse unit", () => {
     it('Should parse kg', () => {
         const with_space = "8 kg"
-        let parsed = parse_weight(with_space)
+        let parsed = parse_unit(with_space)
         expect(parsed.in(kilograms).amount).toEqual(8)
 
         const without_space = "8kg"
-        parsed = parse_weight(without_space)
+        parsed = parse_unit(without_space)
         expect(parsed.in(kilograms).amount).toEqual(8)
 
         const decimal = "8.5kg"
-        parsed = parse_weight(decimal)
+        parsed = parse_unit(decimal)
         expect(parsed.in(kilograms).amount).toEqual(8.5)
     })
 
     it('Should parse 0', () => {
         let zero = "  0"
-        let parsed = parse_weight(zero)
+        let parsed = parse_unit(zero)
         expect(parsed.in(kilograms).amount).toEqual(0)
 
         zero = "0"
-        parsed = parse_weight(zero)
+        parsed = parse_unit(zero)
         expect(parsed.in(kilograms).amount).toEqual(0)
 
         zero = "  0.   "
-        parsed = parse_weight(zero)
+        parsed = parse_unit(zero)
         expect(parsed.in(kilograms).amount).toEqual(0)
+    })
+
+    it('Should parse seconds', () => {
+        const seconds = "8s"
+        const parsed = parse_unit(seconds)
+        expect(parsed.amount).toEqual(8)
+    })
+
+    it('Should parse meters', () => {
+        const meters = "8m"
+        const parsed = parse_unit(meters)
+        expect(parsed.amount).toEqual(8)
     })
 });
 
@@ -80,29 +93,36 @@ describe("Test parse lift v2", () => {
     })
 });
 
-describe("Should parse body location", () => {
+describe("parse body location", () => {
     it('Should parse body location with side', () => {
         const location = "Left Foot Metatarsals"
         const parsed = parse_body_location(location)
-        console.log(parsed)
-        expect(parsed.location).toEqual("Foot Metatarsals")
-        expect(parsed.side).toEqual(Side.Left)
+        expect(parsed.length).toEqual(1)
+        expect(parsed[0].location).toEqual("Foot Metatarsals")
+        expect(parsed[0].side).toEqual(Side.Left)
     })
 
     it('Should parse body location without side', () => {
         const location = "calf"
         const parsed = parse_body_location(location)
-        console.log(parsed)
-        expect(parsed.location).toEqual(BodyLocationWithoutSide.Calf)
-        expect(parsed.side).toEqual(Side.NoSide)
+        expect(parsed.length).toEqual(1)
+        expect(parsed[0].location).toEqual(BodyLocationWithoutSide.Calf)
+        expect(parsed[0].side).toEqual(Side.NoSide)
+    })
+
+    it('Should parse body location with both sides', ()=>{
+        const location = "both feet"
+        const parsed = parse_body_location(location)
+        expect(parsed.length).toEqual(2)
+        expect(parsed[0].location).toEqual(BodyLocationWithoutSide.Foot)
     })
 })
 
 // todo: test stuff like overhead press: 8x6kg, 8x8kg, 8x8kg
-describe("Test parse more natural reps", () => {
+describe("natural reps parse", () => {
     it("Works in basic cases", () => {
-        let example = "overhead press: 8x6kg, 8x8kg, 8x8kg"
-        let parsed = natural_reps_parse(example)
+        const example = "overhead press: 8x6kg, 8x8kg, 8x8kg"
+        const parsed = natural_reps_parse(example)
         expect(parsed).toHaveLength(3)
         expect(parsed[0].reps).toEqual(8)
         expect(parsed[0].weight.in(kilograms).amount).toEqual(6)
@@ -116,6 +136,40 @@ describe("Test parse more natural reps", () => {
         text = "overhead press: "
         parsed = natural_reps_parse(text)
         expect(parsed).toHaveLength(0)
+    })
+
+    it("Works for multi unit exercises", () => {
+        let text = "farmer cary: 2x(24lbs|15meters)"
+        let parsed = natural_reps_parse(text)
+        expect(parsed).toHaveLength(1)
+        expect(parsed[0].reps).toEqual(2)
+        expect(parsed[0].weight).toEqual(pounds(24))
+        expect(parsed[0].length).toEqual(meters(15))
+        expect(parsed[0].time).toEqual(undefined)
+
+    })
+
+    it("single multi unit exercises", () => {
+        expect(natural_reps_parse("farmer cary: 1x(24lbs|15meters)")).toEqual(
+            [
+                {
+                    "exercise": Exercise.FarmerCary,
+                    "length": meters(15),
+                    "weight": pounds(24),
+                    "reps": 1,
+                }
+            ]
+        )
+    })
+
+    it('Works for duplicate sets', () => {
+        const parsed = natural_reps_parse("bicep curl: 3x8x40lbs, 12x50lbs")
+        expect(parsed).toHaveLength(4)
+        expect(parsed[0].reps).toEqual(8)
+        expect(parsed[0].weight.in(pounds).amount).toEqual(40)
+        expect(parsed[1].reps).toEqual(8)
+        expect(parsed[3].reps).toEqual(12)
+        expect(parsed[3].weight.in(pounds).amount).toEqual(50)
     })
 })
 
@@ -143,4 +197,101 @@ describe("Should throw an error if there on incorrectly duplicate data", () => {
         expect(parsed_data).toHaveLength(1)
         expect(errors).toEqual(["Duplicate sleep log on 2024-1-2"])
     });
+})
+
+describe("Parse pain v2", () => {
+    it("Should parse in basic case", () => {
+        const data = {
+            "version": 2,
+            "type": "pain",
+            "date": "Jan 2, 2024, 7:50:00 AM",
+            "data": [
+                {
+                    "description": "Pain during run",
+                    "snapshots": [
+                        "lower back (1)",
+                        "left knee (1)",
+                        "upper back (1)",
+                    ]
+                },
+                {
+                    "description": "Started hurting 7 miles in after picking up the pace to catch up",
+                    "snapshots": [
+                        "right achilles (3)",
+                    ]
+                },
+                {
+                    "description": "Pain during core",
+                    "snapshots": [
+                        "right hip flexor (2)",
+                    ]
+                }
+            ]
+        }
+
+        const [parsed_data, errors] = parse([data])
+        expect(errors).toEqual([])
+        expect(parsed_data).toHaveLength(1)
+        const pain: PainLogData = parsed_data[0] as PainLogData
+        expect(pain.type).toBe("pain")
+        expect(pain.pains).toHaveLength(5)
+        const snapshot_4 = pain.pains[3]
+        expect(snapshot_4.description).toEqual("Started hurting 7 miles in after picking up the pace to catch up")
+        expect(snapshot_4.location.location).toEqual(BodyLocationWithoutSide.AchillesTendon)
+        expect(snapshot_4.location.side).toEqual(Side.Right)
+        expect(snapshot_4.pain).toEqual(3)
+    })
+})
+
+describe("extract paren data", () => {
+    it('Should work with one paren pair', () => {
+        const data = "right hip flexor (2)"
+        const [description, pain] = extract_paren_data(data)
+        expect(description).toEqual("right hip flexor")
+        expect(pain).toEqual("2")
+    })
+
+    it('Should work with no paren pair', () => {
+        const data = "right hip flexor"
+        const [description, pain] = extract_paren_data(data)
+        expect(description).toEqual("right hip flexor")
+        expect(pain).toEqual("")
+    })
+})
+
+describe("data if in parens", () => {
+    it('Should work with one paren pair', () => {
+        const data = "(2)"
+        const res = data_if_in_parens(data)
+        expect(res).toEqual("2")
+    })
+
+    it('Should work with no paren pair', () => {
+        const data = "2"
+        const res = data_if_in_parens(data)
+        expect(res).toEqual(null)
+    })
+
+    it('Should work on empty string', () => {
+        expect(data_if_in_parens("")).toEqual(null)
+    })
+
+    it('Should work on undefined and null', () => {
+        expect(data_if_in_parens(undefined)).toEqual(null)
+        expect(data_if_in_parens(null)).toEqual(null)
+    })
+})
+
+describe("parse units", () => {
+    it('Should work on a single unit', () => {
+        expect(parse_units("5lbs")).toEqual([pounds(5)])
+    })
+
+    it('Should work on multiple units', () => {
+        expect(parse_units("(5lbs|10kg)")).toEqual([pounds(5), kilograms(10)])
+    })
+
+    it('Should work on multiple units and spaces', () => {
+        expect(parse_units("(  5 lbs|    10kg)")).toEqual([pounds(5), kilograms(10)])
+    })
 })

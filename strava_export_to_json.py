@@ -16,6 +16,9 @@ def extract_relevant_runs(activities: Any):
     runs = []
     for activity in activities:
         if activity["Activity Type"] == "Run":
+            activity_id = int(activity["Activity ID"])
+            if activity_id == 13220250113:
+                continue
             run = {
                 "version": 2,
                 "type": "run",

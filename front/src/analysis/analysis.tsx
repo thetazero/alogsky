@@ -6,6 +6,7 @@ import { hours, seconds, Time } from "@buge/ts-units/time";
 import { DataPoint } from "../components/Chart";
 import { fmt_minutes_per_mile } from "../utils/format";
 import { get_week_end, get_week_start } from "../utils/time";
+import { Dimensions, Quantity, Unit } from "@buge/ts-units";
 
 export class TrainingDataSet {
     data: TrainingData[]
@@ -143,26 +144,39 @@ class Analysis {
         return total_tonage(this.lifts)
     }
 
-    get_metric(metric: Metric): number {
+    get_metric(metric: Metric): Quantity<number, Dimensions> {
         switch (metric) {
             case Metric.Mileage:
-                return this.total_mileage().in(miles).amount
+                return this.total_mileage().in(miles)
             case Metric.ActiveTime:
-                return this.total_training_time().in(hours).amount
+                return this.total_training_time().in(hours)
             case Metric.Pace:
-                return average_pace(this.runs).in(minutes_per_mile).amount
+                return average_pace(this.runs).in(minutes_per_mile)
             case Metric.Tonage:
-                return this.total_tonage().in(tons).amount
+                return this.total_tonage().in(tons)
         }
     }
 
-    get_metric_for_week(metric: Metric, week: number): number {
+    get_metric_for_week(metric: Metric, week: number): Quantity<number, Dimensions> {
         return this.get_analysis_for_week(week).get_metric(metric)
+    }
+
+    get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
+        switch (metric) {
+            case Metric.Mileage:
+                return miles
+            case Metric.ActiveTime:
+                return hours
+            case Metric.Pace:
+                return minutes_per_mile
+            case Metric.Tonage:
+                return tons
+        }
     }
 
     get_metric_for_chart(metric: Metric): DataPoint | null {
         if (!this.first_activity) return null
-        const y = this.get_metric(metric)
+        const y = this.get_metric(metric).amount
         switch (metric) {
             case Metric.Mileage:
                 return {

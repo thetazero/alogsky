@@ -1,20 +1,34 @@
 import { Mass } from "@buge/ts-units/mass";
-import { Exercise, InverseSpeed, LiftData, pounds, RepData, RunData, TrainingData } from "../types";
-import { miles } from "@buge/ts-units/length";
+import { Exercise, InverseSpeed, LiftData, minutes_per_mile, pounds, RepData, RunData, TrainingData } from "../types";
+import { meters, miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 
 const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.BulgarianSplitSquat, 0.7],
+    [Exercise.Crunch, 0.1],
+    [Exercise.DeadBugs, 0.1],
+    [Exercise.FourtyFiveDegreeBackExtension, 0.3],
+    [Exercise.LemonSqueezers, 0.2],
+    [Exercise.OneLegBuck, 0.4],
+    [Exercise.Plank, 0.02],
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
     [Exercise.SingleLegCalfRaise, 0.8],
     [Exercise.SingleLegStairCalfRaise, 0.8],
     [Exercise.Situp, 0.8],
+    [Exercise.SpeedSkaterJumps, 0.05],
+    [Exercise.SupineKneeDrive, 0.1],
 ]);
 
 export function rep_tonage(rep: RepData) {
     const extra_weight_multiplier = bonus_weight_map.get(rep.exercise) ?? 0.0;
     const bonus_weight = pounds(125).times(extra_weight_multiplier)
+    if (rep.length) {
+        if (rep.exercise == Exercise.FarmerCary) {
+            const length_multiplier = rep.length.in(meters).amount / 2;
+            return rep.weight.times(rep.reps).times(length_multiplier);
+        }
+    }
     return (rep.weight.plus(bonus_weight)).times(rep.reps);
 }
 
@@ -48,5 +62,6 @@ export function training_time(training_data: TrainingData[]): Time {
 export function average_pace(runs: RunData[]): InverseSpeed {
     const dist = total_mileage(runs)
     const time = total_moving_time(runs)
+    if (time.amount == 0) return minutes_per_mile(0)
     return time.per(dist)
 }

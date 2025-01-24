@@ -24,32 +24,64 @@ export interface RunData {
     elapsed_time?: Time,
     temperature?: Temperature,
     feels_like?: Temperature,
+    workout_data?: RunningWorkoutData,
     date: Date
     type: "run"
 }
 
+export interface RunningWorkoutData {
+    intervals: Interval[],
+}
+
+export interface Interval {
+    duration: Time,
+    distance: Length,
+}
+
 export enum Exercise {
-    Squat = "Squat",
+    AnteriorBunkie = "Anterior Bunkie",
     Bench = "Bench",
-    RomanianDeadLift = "Romanian Deadlift",
-    OxidativeSquat = "Oxidative Squat",
     BicepCurl = "Bicep Curl",
-    Row = "Row",
-    Pullup = "Pullup",
-    SingleLegCalfRaise = "Single Leg Calf Raise",
-    LateralRaise = "Lateral Raise",
-    OverheadPress = "Overhead Press",
-    Pushup = "Pushup",
-    Situp = "Situp",
     BulgarianSplitSquat = "Bulgarian Split Squat",
+    CableSeatedRow = "Cable Seated Row",
+    Crunch = "Crunch",
+    DeadBugs = "Dead Bugs",
+    DumbellFly = "Dumbell Fly",
+    DumbellInclineBench = "Dumbell Incline Bench",
+    DumbellOneLegOneArmRomanialDeadLift = "Dumbell One Leg One Arm Romanian Deadlift",
+    DumbellRow = "Dumbell Row",
+    FarmerCary = "Farmer Cary",
+    FourtyFiveDegreeBackExtension = "45 Degree Back Extension",
+    LateralBunkie = "Lateral Bunkie",
+    LateralRaise = "Lateral Raise",
+    LemonSqueezers = "Lemon Squeezers",
+    MedBallSeatedRussianTwist = "Med Ball Seated Russian Twist",
+    MedialBunkie = "Medial Bunkie",
+    OneLegBuck = "One Leg Buck",
+    OverheadPress = "Overhead Press",
+    OxidativeSquat = "Oxidative Squat",
+    Plank = "Plank",
+    PlateMcGillCrunch = "Plate McGill Crunch",
+    Pullup = "Pullup",
+    Pushup = "Pushup",
+    RomanianDeadLift = "Romanian Deadlift",
+    Row = "Row",
+    RushNTwist = "Rush N Twist",
     ShortFootExercise = "Short Foot Exercise",
+    SingleLegCalfRaise = "Single Leg Calf Raise",
     SingleLegStairCalfRaise = "Single Leg Stair Calf Raise",
+    Situp = "Situp",
+    SpeedSkaterJumps = "Speed Skater Jumps",
+    Squat = "Squat",
+    SupineKneeDrive = "Supine Knee Drive", // https://www.youtube.com/watch?v=wpt_RPlfcR4 (but without the band)
 }
 
 export interface RepData {
     exercise: Exercise,
     reps: number,
     weight: Mass
+    length?: Length
+    time?: Time
 }
 
 export interface LiftData {

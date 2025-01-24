@@ -5,18 +5,27 @@ export enum Side {
 }
 
 export enum BodyLocationWithoutSide {
+    AchillesTendon = "Achilles Tendon",
     Ankle = "Ankle",
     Calf = "Calf",
     Core = "Core",
+    Foot = "Foot",
     FootMetatarsals = "Foot Metatarsals",
+    Glute = "Glute",
     Hamstring = "Hamstring",
     Heel = "Heel",
     HipFlexor = "Hip Flexor",
     Knee = "Knee",
+    Lat = "Lat",
+    LowerCore = "Lower Core",
     LowerBack = "Lower Back",
+    PatellarTendon = "Patellar Tendon",
     Plantar = "Plantar",
     Quad = "Quad",
     Shin = "Shin",
+    Shoulder = "Shoulder",
+    Toes = "Toes",
+    Tricep = "Tricep",
     UpperBack = "Upper Back",
     ITBand = "IT Band",
 }

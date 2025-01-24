@@ -10,7 +10,7 @@
                 {
                     "exercise": "Bicep Curl",
                     "reps": 8,
-                    "weight": "22.5 lbs"
+                    "weight": "45 lbs"
                 },
                 {
                     "exercise": "Squat",
@@ -30,7 +30,7 @@
                 {
                     "exercise": "Bicep Curl",
                     "reps": 6,
-                    "weight": "25 lbs"
+                    "weight": "50 lbs"
                 },
                 {
                     "exercise": "Oxidative Squat",
@@ -81,48 +81,63 @@
                 {
                     "exercise": "Lateral Raise",
                     "reps": 8,
-                    "weight": "3 kg"
-                },
-                {
-                    "exercise": "Lateral Raise",
-                    "reps": 8,
-                    "weight": "4 kg"
-                },
-                {
-                    "exercise": "Lateral Raise",
-                    "reps": 8,
-                    "weight": "5 kg"
-                },
-                {
-                    "exercise": "Overhead Press",
-                    "reps": 8,
-                    "weight": "5 kg"
-                },
-                {
-                    "exercise": "Overhead Press",
-                    "reps": 8,
-                    "weight": "7 kg"
-                },
-                {
-                    "exercise": "Overhead Press",
-                    "reps": 8,
-                    "weight": "8 kg"
-                },
-                {
-                    "exercise": "Bicep Curl",
-                    "reps": 8,
                     "weight": "6 kg"
                 },
                 {
-                    "exercise": "Bicep Curl",
+                    "exercise": "Lateral Raise",
                     "reps": 8,
                     "weight": "8 kg"
                 },
                 {
+                    "exercise": "Lateral Raise",
+                    "reps": 8,
+                    "weight": "10 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "10 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "14 kg"
+                },
+                {
+                    "exercise": "Overhead Press",
+                    "reps": 8,
+                    "weight": "16 kg"
+                },
+                {
                     "exercise": "Bicep Curl",
                     "reps": 8,
-                    "weight": "8 kg"
+                    "weight": "12 kg"
+                },
+                {
+                    "exercise": "Bicep Curl",
+                    "reps": 8,
+                    "weight": "16 kg"
+                },
+                {
+                    "exercise": "Bicep Curl",
+                    "reps": 8,
+                    "weight": "16 kg"
                 }
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Dec 26, 2024, 10:00:00 AM",
+        "data": {
+            "duration": 8,
+            "notes": "",
+            "exercises": [
+                "single leg calf raise: 20, 20, 20",
+                "push up: 20, 20",
+                "crunch: 60",
+                "rush n twist: 80"
             ]
         }
     },
@@ -282,13 +297,13 @@
             "duration": 35,
             "notes": "Decided to lift instead of run due to plantar pain, tweaked right glute a tiny bit",
             "exercises": [
-                "bicep curl: 6x3kg, 8x7kg, 8x8kg, 8x8kg",
-                "lateral raise: 8x3kg, 8x5kg, 8x6kg",
-                "Bulgarian split squat: 8x8kg, 8x8kg, 8x8kg",
+                "bicep curl: 6x6kg, 8x14kg, 8x16kg, 8x16kg",
+                "lateral raise: 8x6kg, 8x10kg, 8x12kg",
+                "Bulgarian split squat: 8x16kg, 8x16kg, 8x16kg",
                 "single leg calf raise: 20, 20, 20",
-                "overhead press: 8x6kg, 8x8kg, 8x8kg",
+                "overhead press: 8x12kg, 8x16kg, 8x16kg",
                 "rows: 8x8kg, 8x8kg",
-                "bench: 8x8kg, 8x8kg"
+                "bench: 8x16kg, 8x16kg"
             ]
         }
     },
@@ -377,10 +392,10 @@
             "exercises": [
                 "squat: 8x95lbs, 8x135lbs, 8x135lbs, 8x135lbs",
                 "single leg stair calf raise: 20, 20, 20",
-                "bicep curl: 8x10lbs, 8x20lbs, 8x20lbs, 8x25lbs",
-                "bulgarian split squat: 8x15lbs, 6x15lbs",
+                "bicep curl: 8x20lbs, 8x40lbs, 8x40lbs, 8x50lbs",
+                "bulgarian split squat: 8x30lbs, 6x30lbs",
                 "pull up: 8, 8, 8",
-                "overhead press: 8x15lbs, 8x15lbs, 8x20lbs"
+                "overhead press: 8x30lbs, 8x30lbs, 8x40lbs"
             ]
         }
     },
@@ -458,9 +473,9 @@
                 "push up: 20, 20, 20",
                 "single leg stair calf raise: 15, 20, 20",
                 "rows: 10x25lbs, 8x35lbs, 8x35lbs",
-                "bicep curl: 8x20lbs, 8x25lbs, 7x25lbs",
+                "bicep curl: 8x40lbs, 8x50lbs, 7x50lbs",
                 "squat: 8x115lbs, 8x135lbs, 8x135lbs",
-                "overhead press: 8x15lbs, 8x15lbs, 8x20lbs"
+                "overhead press: 8x30lbs, 8x30lbs, 8x40lbs"
             ]
         }
     },
@@ -687,5 +702,367 @@
                 "location": "right hip flexor"
             }
         ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 12, 2025, 11:30:00 AM",
+        "data": {
+            "duration": 8,
+            "notes": "core",
+            "exercises": [
+                "dead bugs: 20, 20",
+                "lemon squeezers: 20, 20",
+                "plank: 60",
+                "knee drive push leg thing: 30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 13, 2025, 5:32:00 PM",
+        "data": {
+            "duration": 45,
+            "notes": "Hamstrings felt very extremely tired by end of lift",
+            "exercises": [
+                "squat: 12x135lbs, 12x135lbs",
+                "cable seated row: 12x65lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x30lbs, 12x45lbs",
+                "overhead press: 12x40lbs, 12x50lbs",
+                "speed skater jumps: 5, 5",
+                "single leg stair calf raise: 20, 20",
+                "pull up: 8, 8, 8",
+                "one leg buck: 12",
+                "45 degree back extension: 12, 12",
+                "med ball seated russian twist: 12x15lbs, 12x15lbs",
+                "bulgarian split squat: 12x20lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 12, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 532
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 13, 2025, 7:30:00 AM",
+        "data": {
+            "duration": 496
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 14, 2025, 7:45:00 AM",
+        "data": {
+            "duration": 524
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 15, 2025, 7:45:00 AM",
+        "data": {
+            "duration": 547
+        }
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Jan 13, 2025",
+        "data": [
+            {
+                "description": "Pain in the morning",
+                "snapshots": [
+                    "left back of knee (1)",
+                    "right achilles (2)",
+                    "right knee (1)"
+                ]
+            },
+            {
+                "description": "Soreness",
+                "snapshots": [
+                    "core (2)"
+                ]
+            },
+            {
+                "description": "After sitting and working, then after run as well",
+                "snapshots": [
+                    "left plantar (2)"
+                ]
+            },
+            {
+                "description": "During run",
+                "snapshots": [
+                    "left patella (2)"
+                ]
+            },
+            {
+                "description": "Hurts post lift",
+                "snapshots": [
+                    "right knee (2)",
+                    "left knee (2)",
+                    "left hamstring (2)",
+                    "right hamstring (2)",
+                    "upper back (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Jan 14, 2025 12:00:00 PM",
+        "data": [
+            {
+                "description": "After waking up", "snapshots": [
+                    "right achilles (3)"
+                ]
+            },
+            {
+                "description": "Soreness throughout the day",
+                "snapshots": [
+                    "left hamstring (3)",
+                    "right hamstring (3)",
+                    "left quad (2)",
+                    "right quad (2)",
+                    "lower back (1)",
+                    "upper back (1)",
+                    "left lat (1)",
+                    "right lat (1)",
+                    "left glute (2)",
+                    "right glute (2)",
+                    "lower core (2)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Jan 15, 2025 12:00:00 PM",
+        "data": [
+            {
+                "description": "Soreness",
+                "snapshots": [
+                    "both hamstrings (2)",
+                    "both quads (2)",
+                    "both glutes (2)",
+                    "both tricep (1)"
+                ]
+            },
+            {
+                "description": "Hurts likely due to pitt track workout yesterday, big toe does not hurt",
+                "snapshots": [
+                    "left toes (2)"
+                ]
+            },
+            {
+                "description": "Flash of pain while sitting on the couch",
+                "snapshots": [
+                    "right hamstring (3, flash)"
+                ]
+            },
+            {
+                "description": "While swimming",
+                "snapshots": [
+                    "right shoulder (2)",
+                    "right ankle (2)"
+                ]
+            },
+            {
+                "description": "During run",
+                "snapshots": [
+                    "left back inner knee tendon (2)",
+                    "right quad (1)",
+                    "left hamstring (1)",
+                    "right hamstring (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 15, 2025, 2:00:00 PM",
+        "data": {
+            "duration": 35,
+            "notes": "",
+            "exercises": [
+                "bench: 6x95lbs, 6x95lbs, 5x105lbs",
+                "dumbell row: 6x60lbs, 8x70lbs, 8x80lbs",
+                "lateral raises: 3x8x20lbs",
+                "bicep curls:3x8x40lbs",
+                "dumbell incline bench: 8x40lbs, 8x50lbs, 8x60lbs",
+                "dumbell flys: 3x8x30lbs",
+                "farmer cary: 2x(24kg|20meters)"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 16, 2025, 4:30:00 PM",
+        "data": {
+            "duration": 50,
+            "notes": "",
+            "exercises": [
+                "squat: 12x95lbs, 12x115lbs, 12x135lbs",
+                "cable seated row: 12x65lbs, 12x80lbs",
+                "overhead press: 12x40lbs, 12x60lbs",
+                "single leg stair calf raise: 15, 15",
+                "pull up: 8, 8",
+                "one leg buck: 12",
+                "45 degree back extension: 12, 12",
+                "plate mcgill crunch: 25",
+                "bulgarian split squat: 12x20lbs, 12x30lbs",
+                "lateral bunkie: 20s",
+                "medial bunkie: 20s",
+                "anterior bunkie: 20s",
+                "oxidative squat: 12x95lbs, 12x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 16, 2025, 7:30:00 AM",
+        "data": {
+            "duration": 516
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 17, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 505
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 18, 2025, 7:00:00 AM",
+        "data": {
+            "duration": 485
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 19, 2025, 8:20:00 AM",
+        "data": {
+            "duration": 525
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 20, 2025, 7:40:00 AM",
+        "data": {
+            "duration": 496
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 20, 2025, 5:10:00 PM",
+        "data": {
+            "duration": 55,
+            "notes": "",
+            "exercises": [
+                "squat: 12x95lbs, 12x145lbs, 12x155lbs",
+                "cable seated row: 12x70lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x35lbs, 12x45lbs",
+                "overhead press: 12x50lbs, 12x60lbs",
+                "speed skater jumps: 5, 5",
+                "single leg stair calf raise: 20, 20",
+                "pull up: 8, 8, 8",
+                "one leg buck: 12, 12",
+                "45 degree back extension: 12, 12",
+                "med ball seated russian twist: 15x15lbs, 15x15lbs",
+                "bulgarian split squat: 12x20lbs, 12x30lbs",
+                "oxidative squat: 12x95lbs, 12x105lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 22, 2025, 2:30:00 PM",
+        "data": {
+            "duration": 35,
+            "notes": "",
+            "exercises": [
+                "dumbell row: 9x60lbs, 8x80lbs, 8x80lbs",
+                "dumbell flys: 2x8x30lbs, 8x40lbs",
+                "dumbell incline bench: 2x8x50lbs, 8x60lbs",
+                "lateral raises: 3x8x20lbs",
+                "bench: 6x95lbs, 8x95lbs, 5x105lbs",
+                "bicep curls:3x8x40lbs",
+                "farmer cary: 1x(24kg|20meters), 1x(32kg|20meters)"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 23, 2025, 5:30:00 PM",
+        "data": {
+            "duration": 50,
+            "notes": "",
+            "exercises": [
+                "squat: 12x95lbs, 12x115lbs, 12x135lbs",
+                "cable seated row: 12x65lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x35lbs",
+                "overhead press: 12x50lbs, 12x60lbs",
+                "single leg stair calf raise: 12, 15",
+                "pull up: 8, 8",
+                "one leg buck: 12",
+                "45 degree back extension: 12, 12",
+                "plate mcgill crunch: 12x25lbs",
+                "bulgarian split squat: 12x20lbs, 12x30lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 21, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 492
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 22, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 480
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 23, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 528
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 24, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 549
+        }
     }
 ]

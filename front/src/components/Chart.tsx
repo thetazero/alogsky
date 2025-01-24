@@ -147,7 +147,8 @@ const Chart: React.FC<ChartProps> = ({ data, yTitle, yUnit, title }) => {
         <div className="w-full h-full">
             {
                 graphData != null ? (
-                    <Line data={graphData} options={graphOptions} />
+                    // @ts-ignore
+                    <Line data={graphData} options={graphOptions} /> 
                 ) : (
                     <div>loading...</div>
                 )

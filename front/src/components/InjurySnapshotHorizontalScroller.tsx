@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+// @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { PainSnapshotsData } from '../types';
 import PrettyDate from './Date';

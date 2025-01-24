@@ -6,17 +6,14 @@ import BottomGrows from "../components/BottomGrows";
 import SelectMultiple from "../components/SelectMultiple";
 import { Metric } from "../types";
 import { get_week_start } from "../utils/time";
-import { hue_from_string } from "../utils/color";
+import Tile from "../components/Tile";
+import panelComponentType from "./tileType";
 
 function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): BarChartData {
-    const data: {
-        label: string;
-        data: number[];
-        backgroundColor: string;
-    } = {
+    const data: BarChartData = {
         label: metric,
         data: [],
-        backgroundColor: `hsl(${hue_from_string(metric)}, 50%, 50%)`,
+        unit: analysis.get_unit_for_metric(metric),
     }
     for (let i = 0; i < weeks; i++) {
         const week_data = analysis.get_metric_for_week(metric, i)
@@ -25,14 +22,10 @@ function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): Ba
     return data
 }
 
-export interface TrainingSummaryTileProps {
-    analysis: Analysis;
-}
-
-const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) => {
+const TrainingSummaryTile: panelComponentType = ({ analysis, id }) => {
     const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] })
     const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
-    const [weeksToShow, setWeeksToShow] = useState<number>(10)
+    const [weeksToShow, _] = useState<number>(15)
 
     useEffect(() => {
         if (analysis.training_data.length === 0) return
@@ -54,25 +47,27 @@ const TrainingSummaryTile: React.FC<TrainingSummaryTileProps> = ({ analysis }) =
     }, [analysis, metrics, weeksToShow]);
 
     return (
-        <BottomGrows
-            topChild={
-                <div className="mb-4 flex items-center space-x-4">
-                    <SelectMultiple
-                        options={Object.values(Metric)}
-                        selected={metrics}
-                        onChange={setMetrics}
-                        renderOption={(option) => option}
-                    />
-                </div>
-            }
-            bottomChild={
-                <div className="mb-4 card level-2">
-                    <BarChart
-                        data={barData} title="Weekly Mileage"
-                    />
-                </div>
-            }
-        />
+        <Tile title="Training Summary" id={id}>
+            <BottomGrows
+                topChild={
+                    <div className="mb-4 flex items-center space-x-4">
+                        <SelectMultiple
+                            options={Object.values(Metric)}
+                            selected={metrics}
+                            onChange={setMetrics}
+                            renderOption={(option) => option}
+                        />
+                    </div>
+                }
+                bottomChild={
+                    <div className="mb-4 card level-2">
+                        <BarChart
+                            data_set={barData} title="Weekly Mileage"
+                        />
+                    </div>
+                }
+            />
+        </Tile>
     );
 };
 
