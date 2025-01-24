@@ -127,6 +127,21 @@
         }
     },
     {
+        "version": 2,
+        "type": "lift",
+        "date": "Dec 26, 2024, 10:00:00 AM",
+        "data": {
+            "duration": 8,
+            "notes": "",
+            "exercises": [
+                "single leg calf raise: 20, 20, 20",
+                "push up: 20, 20",
+                "crunch: 60",
+                "rush n twist: 80"
+            ]
+        }
+    },
+    {
         "version": 1,
         "type": "sleep",
         "date": "Dec 29, 2024, 6:46:00 AM",
@@ -884,7 +899,7 @@
                 "bench: 6x95lbs, 6x95lbs, 5x105lbs",
                 "dumbell row: 6x60lbs, 8x70lbs, 8x80lbs",
                 "lateral raises: 3x8x20lbs",
-                "bicep curls:8x3x40lbs",
+                "bicep curls:3x8x40lbs",
                 "dumbell incline bench: 8x40lbs, 8x50lbs, 8x60lbs",
                 "dumbell flys: 3x8x30lbs",
                 "farmer cary: 2x(24kg|20meters)"
@@ -991,9 +1006,63 @@
                 "dumbell incline bench: 2x8x50lbs, 8x60lbs",
                 "lateral raises: 3x8x20lbs",
                 "bench: 6x95lbs, 8x95lbs, 5x105lbs",
-                "bicep curls:8x3x40lbs",
+                "bicep curls:3x8x40lbs",
                 "farmer cary: 1x(24kg|20meters), 1x(32kg|20meters)"
             ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 23, 2025, 5:30:00 PM",
+        "data": {
+            "duration": 50,
+            "notes": "",
+            "exercises": [
+                "squat: 12x95lbs, 12x115lbs, 12x135lbs",
+                "cable seated row: 12x65lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x35lbs",
+                "overhead press: 12x50lbs, 12x60lbs",
+                "single leg stair calf raise: 12, 15",
+                "pull up: 8, 8",
+                "one leg buck: 12",
+                "45 degree back extension: 12, 12",
+                "plate mcgill crunch: 12x25lbs",
+                "bulgarian split squat: 12x20lbs, 12x30lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 21, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 492
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 22, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 480
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 23, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 528
+        }
+    },
+    {
+        "version": 1,
+        "type": "sleep",
+        "date": "Jan 24, 2025, 8:00:00 AM",
+        "data": {
+            "duration": 549
         }
     }
 ]
