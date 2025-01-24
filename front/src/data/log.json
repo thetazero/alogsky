@@ -884,10 +884,10 @@
                 "bench: 6x95lbs, 6x95lbs, 5x105lbs",
                 "dumbell row: 6x60lbs, 8x70lbs, 8x80lbs",
                 "lateral raises: 3x8x20lbs",
-                "bicep curls:3x8x40lbs",
+                "bicep curls:8x3x40lbs",
                 "dumbell incline bench: 8x40lbs, 8x50lbs, 8x60lbs",
-                "dumbell flys: 8x3x30lbs",
-                "farmer cary: 2x(24kg|15meters)"
+                "dumbell flys: 3x8x30lbs",
+                "farmer cary: 2x(24kg|20meters)"
             ]
         }
     },
@@ -975,6 +975,24 @@
                 "med ball seated russian twist: 15x15lbs, 15x15lbs",
                 "bulgarian split squat: 12x20lbs, 12x30lbs",
                 "oxidative squat: 12x95lbs, 12x105lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Jan 22, 2025, 2:30:00 PM",
+        "data": {
+            "duration": 35,
+            "notes": "",
+            "exercises": [
+                "dumbell row: 9x60lbs, 8x80lbs, 8x80lbs",
+                "dumbell flys: 2x8x30lbs, 8x40lbs",
+                "dumbell incline bench: 2x8x50lbs, 8x60lbs",
+                "lateral raises: 3x8x20lbs",
+                "bench: 6x95lbs, 8x95lbs, 5x105lbs",
+                "bicep curls:8x3x40lbs",
+                "farmer cary: 1x(24kg|20meters), 1x(32kg|20meters)"
             ]
         }
     }
