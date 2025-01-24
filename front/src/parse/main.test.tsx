@@ -149,6 +149,19 @@ describe("natural reps parse", () => {
 
     })
 
+    it("single multi unit exercises", () => {
+        expect(natural_reps_parse("farmer cary: 1x(24lbs|15meters)")).toEqual(
+            [
+                {
+                    "exercise": Exercise.FarmerCary,
+                    "length": meters(15),
+                    "weight": pounds(24),
+                    "reps": 1,
+                }
+            ]
+        )
+    })
+
     it('Works for duplicate sets', () => {
         const parsed = natural_reps_parse("bicep curl: 3x8x40lbs, 12x50lbs")
         expect(parsed).toHaveLength(4)
