@@ -13,10 +13,10 @@ describe("Test Analysis class", () => {
             notes: "",
             title: ""
         }
-        const analysis = new Analysis([
+        const dataset = new TrainingDataSet([
             run_data
         ]);
-        const [start, end] = analysis.date_range_for_week(0);
+        const [start, end] = dataset.date_range_for_week(0);
         expect(start).toEqual(new Date(2024, 11, 23));
         expect(end).toEqual(new Date(2024, 11, 29, 23, 59, 59, 999));
     });
@@ -30,7 +30,8 @@ describe("Test Analysis class", () => {
             notes: "",
             title: ""
         }
-        const analysis = new Analysis([run_data]);
+        const dataset = new TrainingDataSet([run_data]);
+        const analysis = new Analysis(dataset);
         expect(analysis.total_mileage().in(miles).amount).toBeCloseTo(6.8363259)
         expect(analysis.get_metric(Metric.Mileage).in(miles).amount).toBeCloseTo(6.8363259)
     });
@@ -63,12 +64,10 @@ const long_dataset: TrainingData[] = [
 describe("Test training data set", () => {
     it('Should report the correct first and last activity date', () => {
         const dataset = new TrainingDataSet(example_dataset_1);
+        // @ts-ignore
         expect(dataset._first_activity).toEqual(new Date(2024, 11, 27));
+        // @ts-ignore
         expect(dataset._last_activity).toEqual(new Date(2024, 11, 30));
-    });
-
-    it('Should throw an error if the dataset is empty', () => {
-        expect(() => new TrainingDataSet([])).toThrow();
     });
 
     it('Should report the correct number of weeks', () => {
@@ -77,16 +76,16 @@ describe("Test training data set", () => {
 
     it('Should correctly get data for a week', () => {
         const dataset = new TrainingDataSet(long_dataset);
-        const week_0_data = dataset.dataset_for_week(0);
+        const week_0_data = dataset.analysis_for_week(0);
         expect(week_0_data).not.toBeNull();
-        expect(week_0_data?.runs.length).toBe(1);
+        expect(week_0_data.dataset.runs.length).toBe(1);
 
-        const week_1_data = dataset.dataset_for_week(1);
-        expect(week_1_data).toBeNull();
+        const week_1_data = dataset.analysis_for_week(1);
+        expect(week_1_data.dataset).toEqual(new TrainingDataSet([]));
 
-        const week_9_data = dataset.dataset_for_week(9);
+        const week_9_data = dataset.analysis_for_week(9);
         expect(week_9_data).not.toBeNull();
-        expect(week_9_data?.runs.length).toBe(2);
+        expect(week_9_data.dataset.runs.length).toBe(2);
     });
 
     it('Defines week boundaries correctly', () => {
@@ -94,7 +93,15 @@ describe("Test training data set", () => {
             make_run_data(new Date(2025, 1, 13, 0, 0, 0, 0)),
             make_run_data(new Date(2025, 1, 19, 23, 59, 59, 999)),
         ]
-        const dataset= new TrainingDataSet(data);
+        const dataset = new TrainingDataSet(data);
         expect(dataset.number_of_weeks()).toBe(1);
+    });
+
+    it('Computes the correct date ranges for weeks', () => {
+        const dataset = new TrainingDataSet(long_dataset);
+        expect(dataset.date_range_for_week(0)).toEqual([
+            new Date(2024, 11, 23, 0, 0, 0, 0),
+            new Date(2024, 11, 29, 23, 59, 59, 999)
+        ]);
     });
 })

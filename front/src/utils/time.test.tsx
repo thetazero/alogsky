@@ -1,11 +1,17 @@
 import { calendar_days_appart, different_days, get_day_string, get_week_start } from "./time";
 
-describe("Test time utilities", () => {
+describe("Get week start", () => {
     it('Should say monday is the first day of the week', () => {
         const day = new Date("2025-01-02")
         const week_start = get_week_start(day)
         expect(week_start.getDay()).toEqual(1);
     });
+
+    it('Should work on Nov 27 2024', () => {
+        const date = new Date(2024, 11, 27)
+        expect(get_week_start(date).getDay()).toEqual(1);
+        expect(get_week_start(date)).toEqual(new Date(2024, 11, 23, 0, 0,0,0));
+    })
 });
 
 describe("Test different days", () => {

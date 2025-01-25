@@ -6,11 +6,13 @@ import InjurySnapshotHorizontalScroller from "../components/InjurySnapshotHorizo
 import { calendar_days_appart } from "../utils/time";
 import Tile from "../components/Tile";
 import panelComponentType from "./tileType";
+import Analysis from "../analysis/analysis";
 
-const OpenInjuryTile: panelComponentType = ({ analysis, id }) => {
+const OpenInjuryTile: panelComponentType = ({ dataset, id }) => {
     const [openInjuryData, setOpenInjuryData] = useState<PainAtLocationData[]>([]);
 
     useEffect(() => {
+        const analysis = new Analysis(dataset) 
         const injuries = analysis.get_injury_data()
         const open_injuries = injuries.filter(injury => {
             const last_snapshot = injury.snapshots[injury.snapshots.length - 1]
@@ -19,7 +21,7 @@ const OpenInjuryTile: panelComponentType = ({ analysis, id }) => {
             return recent_pain && has_recent_snapshot
         })
         setOpenInjuryData(open_injuries)
-    }, [analysis])
+    }, [dataset])
 
     return (
         <Tile title="Open Injuries" id={id}>

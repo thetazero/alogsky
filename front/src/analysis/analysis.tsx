@@ -3,8 +3,6 @@ import { Mass } from "@buge/ts-units/mass";
 import { average_pace, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
 import { hours, seconds, Time } from "@buge/ts-units/time";
-import { DataPoint } from "../components/Chart";
-import { fmt_minutes_per_mile } from "../utils/format";
 import { get_week_end, get_week_start } from "../utils/time";
 import { Dimensions, Quantity, Unit } from "@buge/ts-units";
 
@@ -16,32 +14,44 @@ export class TrainingDataSet {
     sleeps: SleepData[]
     pain_snapshot_data: PainLogData[]
 
-    _first_activity: Date
-    _last_activity: Date
+    private _first_activity: Date | null
+    private _last_activity: Date | null
+    private _splitWeeks: TrainingDataSet[]
 
     constructor(data: TrainingData[]) {
-        if (data.length === 0) throw new Error("No data provided")
         this.data = data.sort((a, b) => a.date.getTime() - b.date.getTime())
         this.runs = data.filter(e => e.type === "run")
         this.lifts = data.filter(e => e.type === "lift")
         this.sleeps = data.filter(e => e.type === "sleep")
         this.pain_snapshot_data = data.filter(e => e.type === "pain")
 
-        this._first_activity = this.data.map(d => d.date).reduce((a, b) => {
-            if (a.getTime() < b.getTime()) return a
+        this._first_activity = this.data.map(d => d.date).reduce((a: Date | null, b: Date | null) => {
+            if (a && b && a.getTime() < b.getTime()) return a
             return b
-        })
-        this._last_activity = this.data.map(d => d.date).reduce((a, b) => {
-            if (a.getTime() > b.getTime()) return a
+        }, null)
+        this._last_activity = this.data.map(d => d.date).reduce((a: Date | null, b: Date | null) => {
+            if (a && b && a.getTime() > b.getTime()) return a
             return b
-        })
+        }, null)
+
+        if (this.number_of_weeks() === 1) {
+            this._splitWeeks = [this]
+        } else {
+            this._splitWeeks = []
+            for (let i = 0; i < this.number_of_weeks(); i++) {
+                this._splitWeeks.push(this._dataset_for_week(i))
+            }
+        }
     }
 
     number_of_weeks(): number {
-        return Math.ceil((this._last_activity.getTime() - this._first_activity.getTime()) / (1000 * 60 * 60 * 24 * 7))
+        if (!this._first_activity || !this._last_activity) return 0
+        const first_activity_week_start = get_week_start(this._first_activity)
+        return Math.ceil((this._last_activity.getTime() - first_activity_week_start.getTime()) / (1000 * 60 * 60 * 24 * 7))
     }
 
     date_range_for_week(idx: number): [Date, Date] {
+        if (!this._first_activity) throw new Error("No data")
         const oldest_date = this._first_activity
         const oldest_start = get_week_start(oldest_date)
         const start = new Date(oldest_start.getTime() + idx * 7 * 24 * 60 * 60 * 1000)
@@ -49,99 +59,47 @@ export class TrainingDataSet {
         return [start, end]
     }
 
-    dataset_for_week(idx: number): TrainingDataSet | null {
+    _dataset_for_week(idx: number): TrainingDataSet {
+        if (idx >= this.number_of_weeks()) return new TrainingDataSet([])
+        else if (idx < 0) new TrainingDataSet([])
+
         const [start, end] = this.date_range_for_week(idx)
         let week_data = (this.data.filter(d => {
             return d.date.getTime() >= start.getTime() && d.date.getTime() < end.getTime()
         }))
-        if (week_data.length === 0) return null
         return new TrainingDataSet(week_data)
+    }
+
+    analysis_for_week(idx: number): Analysis {
+        if (idx >= this.number_of_weeks() || idx < 0) return new Analysis(new TrainingDataSet([]))
+        return new Analysis(this._splitWeeks[idx])
     }
 }
 
 class Analysis {
-    runs: RunData[]
-    lifts: LiftData[]
-    sleeps: SleepData[]
-    training_data: TrainingData[]
-    pain_snapshot_data: PainLogData[]
-    first_activity: Date | null
+    dataset: TrainingDataSet
 
-    constructor(training_data: TrainingData[]) {
-        this.runs = training_data.filter(e => {
-            return e.type === "run"
-        })
-        this.lifts = training_data.filter(e => e.type === "lift")
-        this.training_data = training_data
-        this.sleeps = training_data.filter(e => e.type === "sleep")
-        this.pain_snapshot_data = this.training_data.filter(e => e.type === "pain")
-        this.first_activity = this._get_oldest_date()
-    }
-
-    _get_oldest_date(): Date | null {
-        if (this.training_data.length == 0) return null
-        return this.training_data.map(d => d.date).reduce((a, b) => {
-            if (a.getTime() < b.getTime()) return a
-            return b
-        })
-    }
-
-    number_of_weeks(): number {
-        if (this.training_data.length === 0) return 0
-        const oldest_date = this._get_oldest_date() as Date
-        const oldest_start = get_week_start(oldest_date) as Date
-        const now = new Date()
-        const weeks = Math.ceil((now.getTime() - oldest_start.getTime()) / (1000 * 60 * 60 * 24 * 7))
-        return weeks
-    }
-
-    date_range_for_week(idx: number): [Date, Date] {
-        const oldest_date = this._get_oldest_date() as Date
-        const oldest_start = get_week_start(oldest_date)
-        const start = new Date(oldest_start.getTime() + idx * 7 * 24 * 60 * 60 * 1000)
-        const end = get_week_end(start)
-        return [start, end]
-    }
-
-    get_data_for_week(idx: number): TrainingData[] {
-        if (this.training_data.length === 0) return []
-        const [start, end] = this.date_range_for_week(idx)
-        return this.training_data.filter(d => {
-            return d.date.getTime() >= start.getTime() && d.date.getTime() < end.getTime()
-        })
-    }
-
-    get_analysis_for_week(idx: number): Analysis {
-        return new Analysis(this.get_data_for_week(idx))
+    constructor(dataset: TrainingDataSet) {
+        this.dataset = dataset
     }
 
     average_sleep_time(): Time | null {
-        const total_sleep_time = this.sleeps.map(s => s.duration).reduce((a, b) => a.plus(b), seconds(0))
-        const total_sleep_data_points = this.sleeps.length
+        const total_sleep_time = this.dataset.sleeps.map(s => s.duration).reduce((a, b) => a.plus(b), seconds(0))
+        const total_sleep_data_points = this.dataset.sleeps.length
         if (total_sleep_data_points === 0) return null
         return total_sleep_time.per(total_sleep_data_points)
     }
 
-    split_into_weeks(): Analysis[] {
-        const week_count = this.number_of_weeks()
-        const res = []
-        for (let i = 0; i < week_count; i++) {
-            const data = this.get_data_for_week(i)
-            res.push(new Analysis(data))
-        }
-        return res
-    }
-
     total_mileage(): Length {
-        return total_mileage(this.runs)
+        return total_mileage(this.dataset.runs)
     }
 
     total_training_time(): Time {
-        return total_training_time(this.training_data)
+        return total_training_time(this.dataset.data)
     }
 
     total_tonage(): Mass {
-        return total_tonage(this.lifts)
+        return total_tonage(this.dataset.lifts)
     }
 
     get_metric(metric: Metric): Quantity<number, Dimensions> {
@@ -151,60 +109,15 @@ class Analysis {
             case Metric.ActiveTime:
                 return this.total_training_time().in(hours)
             case Metric.Pace:
-                return average_pace(this.runs).in(minutes_per_mile)
+                return average_pace(this.dataset.runs).in(minutes_per_mile)
             case Metric.Tonage:
                 return this.total_tonage().in(tons)
         }
     }
 
-    get_metric_for_week(metric: Metric, week: number): Quantity<number, Dimensions> {
-        return this.get_analysis_for_week(week).get_metric(metric)
-    }
-
-    get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
-        switch (metric) {
-            case Metric.Mileage:
-                return miles
-            case Metric.ActiveTime:
-                return hours
-            case Metric.Pace:
-                return minutes_per_mile
-            case Metric.Tonage:
-                return tons
-        }
-    }
-
-    get_metric_for_chart(metric: Metric): DataPoint | null {
-        if (!this.first_activity) return null
-        const y = this.get_metric(metric).amount
-        switch (metric) {
-            case Metric.Mileage:
-                return {
-                    date: this.first_activity,
-                    y,
-                    label: `${y.toFixed(1)} miles`
-                }
-            case Metric.ActiveTime:
-                return {
-                    date: this.first_activity,
-                    y,
-                    label: `${y.toFixed(1)} hours`
-                }
-            case Metric.Pace:
-                const pace = average_pace(this.runs)
-                return {
-                    date: this.first_activity,
-                    y: pace.in(minutes_per_mile).amount,
-                    label: fmt_minutes_per_mile(pace)
-                }
-            default:
-                return null
-        }
-    }
-
     get_injury_data(): PainAtLocationData[] {
         const map: Map<string, PainAtLocationData> = new Map([]);
-        this.pain_snapshot_data.forEach(snapshot => {
+        this.dataset.pain_snapshot_data.forEach(snapshot => {
             const date = snapshot.date
             snapshot.pains.forEach(pain => {
                 const location = pain.location
@@ -230,3 +143,16 @@ class Analysis {
 }
 
 export default Analysis
+
+export function get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
+    switch (metric) {
+        case Metric.Mileage:
+            return miles
+        case Metric.ActiveTime:
+            return hours
+        case Metric.Pace:
+            return minutes_per_mile
+        case Metric.Tonage:
+            return tons
+    }
+}

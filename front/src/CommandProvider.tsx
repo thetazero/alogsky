@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import Analysis from "./analysis/analysis";
+import { TrainingDataSet } from "./analysis/analysis";
 import Tile from "./components/Tile";
 import panelComponentType from "./tiles/tileType";
 
@@ -14,10 +14,10 @@ const CommandContext = createContext<CommandContextType | undefined>(undefined);
 export interface CommandProviderProps {
     defaultTiles: Array<{ component: panelComponentType; id: string }>;
     parseErrors: string[];
-    analysis: Analysis;
+    dataset: TrainingDataSet;
 }
 
-const CommandProvider: React.FC<CommandProviderProps> = ({ defaultTiles, parseErrors, analysis }) => {
+const CommandProvider: React.FC<CommandProviderProps> = ({ defaultTiles, parseErrors, dataset }) => {
     const [tiles, setTiles] = useState<Array<{ component: panelComponentType; id: string }>>(defaultTiles);
 
     const sendMessage = (message: string) => {
@@ -36,7 +36,7 @@ const CommandProvider: React.FC<CommandProviderProps> = ({ defaultTiles, parseEr
         <CommandContext.Provider value={{ sendMessage, closePanel, addPanel }}>
             <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
                 {tiles.map(({ component: Component, id }) => (
-                    <Component key={id} analysis={analysis} id={id} />
+                    <Component key={id} dataset={dataset} id={id} />
                 ))}
                 {parseErrors.length > 0 && (
                     <Tile title="Parse Errors" id='parse-errors'>

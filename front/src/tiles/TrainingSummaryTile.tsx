@@ -1,35 +1,36 @@
 import React, { useEffect, useState } from "react";
 
-import Analysis from "../analysis/analysis";
+import { get_unit_for_metric, TrainingDataSet } from "../analysis/analysis";
 import BarChart, { BarChartData, BarChartDataSet } from "../charts/BarChart";
 import BottomGrows from "../components/BottomGrows";
 import SelectMultiple from "../components/SelectMultiple";
 import { Metric } from "../types";
-import { get_week_start } from "../utils/time";
 import Tile from "../components/Tile";
 import panelComponentType from "./tileType";
 
-function getDataForMetric(analysis: Analysis, metric: Metric, weeks: number): BarChartData {
+function getDataForMetric(dataset: TrainingDataSet, metric: Metric, weeks: number): BarChartData {
+    const unit = get_unit_for_metric(metric)
     const data: BarChartData = {
         label: metric,
         data: [],
-        unit: analysis.get_unit_for_metric(metric),
+        unit,
     }
     for (let i = 0; i < weeks; i++) {
-        const week_data = analysis.get_metric_for_week(metric, i)
+        const analysis = dataset.analysis_for_week(i)
+        const week_data = analysis.get_metric(metric)
         data.data.push(week_data);
     }
     return data
 }
 
-const TrainingSummaryTile: panelComponentType = ({ analysis, id }) => {
+const TrainingSummaryTile: panelComponentType = ({ dataset, id }) => {
     const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] })
     const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
     const [weeksToShow, _] = useState<number>(15)
 
     useEffect(() => {
-        if (analysis.training_data.length === 0) return
-        const first_date = get_week_start(analysis._get_oldest_date() as Date);
+        if (dataset.data.length === 0) return
+        const [first_date, _] = dataset.date_range_for_week(0)
         const labels = []
         while (first_date <= new Date()) {
             labels.push(first_date.toDateString());
@@ -38,13 +39,13 @@ const TrainingSummaryTile: panelComponentType = ({ analysis, id }) => {
         setBarData({
             labels: labels.slice(-weeksToShow),
             datasets: metrics.map((metric) => {
-                const data = getDataForMetric(analysis, metric, labels.length)
+                const data = getDataForMetric(dataset, metric, labels.length)
                 data.data = data.data.slice(-weeksToShow)
                 return data
             }
             ),
         });
-    }, [analysis, metrics, weeksToShow]);
+    }, [dataset, metrics, weeksToShow]);
 
     return (
         <Tile title="Training Summary" id={id}>

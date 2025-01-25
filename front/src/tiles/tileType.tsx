@@ -1,6 +1,6 @@
 import React from "react";
-import Analysis from "../analysis/analysis";
+import { TrainingDataSet } from "../analysis/analysis";
 
-type panelComponentType = React.FC<{ analysis: Analysis, id: string }>;
+type panelComponentType = React.FC<{ dataset: TrainingDataSet, id: string }>;
 
 export default panelComponentType;

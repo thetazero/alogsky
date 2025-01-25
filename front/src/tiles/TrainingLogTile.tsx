@@ -5,22 +5,18 @@ import BottomGrows from "../components/BottomGrows";
 import Tile from "../components/Tile";
 import panelComponentType from "./tileType";
 
-export interface TrainingLogTileProps {
-    analysis: Analysis;
-}
 
-
-const TrainingLogTile: panelComponentType = ({ analysis, id }) => {
+const TrainingLogTile: panelComponentType = ({ dataset, id }) => {
     return (
         <Tile title="Training Log" id={id}>
             <BottomGrows
                 topChild={
                     <div className="mb-4">
-                        <TrainingSummary analysis={analysis} />
+                        <TrainingSummary analysis={new Analysis(dataset)} />
                     </div>
                 }
                 bottomChild={
-                    <TrainingLog processed={analysis.training_data} />
+                    <TrainingLog processed={dataset.data} />
                 }
             />
         </Tile>

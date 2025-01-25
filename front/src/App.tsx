@@ -5,7 +5,7 @@ import strava_data from "./data/strava_export.json"
 import parse from './parse/main';
 import { TrainingData } from './types';
 import WeekOverview from './tiles/WeekOverview';
-import Analysis from './analysis/analysis'
+import { TrainingDataSet } from './analysis/analysis'
 import TrainingLogTile from './tiles/TrainingLogTile';
 import TrainingSummaryTile from './tiles/TrainingSummaryTile';
 import CommandProvider from './CommandProvider';
@@ -13,7 +13,7 @@ import ParticularLiftTile from './tiles/ParticularLiftTile';
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
-    const [analysis, setAnalysis] = useState<Analysis>(new Analysis([]));
+    const [dataset, setDataset] = useState<TrainingDataSet>(new TrainingDataSet([]));
     const [errors, setErrors] = useState<string[]>([]);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-        setAnalysis(new Analysis(processed))
+        setDataset(new TrainingDataSet(processed))
     }, [processed]);
 
     const defaultTiles = [
@@ -55,7 +55,7 @@ function App() {
 
     return (
         <>
-            <CommandProvider defaultTiles={defaultTiles} parseErrors={errors} analysis={analysis} />
+            <CommandProvider defaultTiles={defaultTiles} parseErrors={errors} dataset={dataset} />
         </>
     )
 }

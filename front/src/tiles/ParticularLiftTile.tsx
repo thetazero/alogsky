@@ -11,13 +11,13 @@ type LiftHistory = {
     date: Date
 }[]
 
-const ParticularLiftTile: panelComponentType = ({ analysis, id }) => {
+const ParticularLiftTile: panelComponentType = ({ dataset, id }) => {
     const [exercise, setExercise] = useState<Exercise>(Exercise.Squat);
 
     const [history, setHistory] = useState<LiftHistory>([]);
 
     useEffect(() => {
-        const lifts = analysis.lifts
+        const lifts = dataset.lifts
         setHistory(
             lifts.map(lift => {
                 return {
@@ -28,7 +28,7 @@ const ParticularLiftTile: panelComponentType = ({ analysis, id }) => {
                 lift => lift.reps.length > 0
             )
         )
-    }, [analysis, exercise])
+    }, [dataset, exercise])
 
 
     return (

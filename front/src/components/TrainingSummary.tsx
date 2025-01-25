@@ -23,8 +23,8 @@ const TrainingSummary: React.FC<TrainingSummaryProps> = ({ analysis }) => {
             <Chip title={nice_number(analysis.total_tonage().in(tons).amount)} subtitle="Tons Lifted" />
             <Chip title={nice_number(analysis.total_mileage().in(miles).amount)} subtitle="Miles Ran" />
             <Chip title={nice_number(analysis.total_training_time().in(hours).amount)} subtitle="Hours Trained" />
-            <Chip title={analysis.runs.length.toString()} subtitle="Runs" />
-            <Chip title={analysis.lifts.length.toString()} subtitle="Lifts" />
+            <Chip title={analysis.dataset.runs.length.toString()} subtitle="Runs" />
+            <Chip title={analysis.dataset.lifts.length.toString()} subtitle="Lifts" />
             <Chip title={sleepTimeStr} subtitle="Average Sleep" />
         </div>
     );
