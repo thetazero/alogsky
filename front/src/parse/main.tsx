@@ -6,7 +6,8 @@ import { kilograms, Mass } from "@buge/ts-units/mass";
 import { Mass as MassDimension } from "@buge/ts-units/mass/dimension";
 import { pounds } from "../types";
 import { Quantity, Unit } from "@buge/ts-units";
-import BodyLocation, { BodyLocationWithoutSide, Side } from "../pt/body_location";
+import BodyLocation, { body_locations, Shin, Hamstring, AchillesTendon, Knee, PatellarTendon, Foot, Quad, Glute, BodyLocationWithSide } from "../pt/body_location";
+import { Side } from "../types";
 import { get_day_string } from "../utils/time";
 import { Time as TimeDimension } from "@buge/ts-units/time/dimension";
 import { Length as LengthDimension } from "@buge/ts-units/length/dimension";
@@ -255,23 +256,22 @@ function parse_sleepv1(data: any, date: Date): SleepData {
         type: "sleep",
     };
 }
-const location_map_default: [string, BodyLocationWithoutSide][] = Object.values(BodyLocationWithoutSide).map((loc) => [loc.toLowerCase(), loc])
-const locations_map: Map<string, BodyLocationWithoutSide> = new Map([
+const location_map_default: [string, BodyLocation][] = body_locations.map((loc) => [loc.name.toLowerCase(), loc])
+const locations_map: Map<string, BodyLocation> = new Map([
     ...location_map_default,
-    ["lower shin", BodyLocationWithoutSide.Shin],
-    ["both shins", BodyLocationWithoutSide.Shin],
-    ["hamstrings", BodyLocationWithoutSide.Hamstring],
-    ["achilles", BodyLocationWithoutSide.AchillesTendon],
-    ["back of knee", BodyLocationWithoutSide.Knee], // TODO: More specific? likely tendon stuff
-    ["back inner knee tendon", BodyLocationWithoutSide.Knee],
-    ["patella", BodyLocationWithoutSide.PatellarTendon],
-    ["feet", BodyLocationWithoutSide.Foot],
-    ["quads", BodyLocationWithoutSide.Quad],
-    ["shins", BodyLocationWithoutSide.Shin],
-    ["glutes", BodyLocationWithoutSide.Glute],
+    ["lower shin", Shin],
+    ["hamstrings", Hamstring],
+    ["achilles", AchillesTendon],
+    ["back of knee", Knee], // TODO: More specific? likely tendon stuff
+    ["back inner knee tendon", Knee],
+    ["patella", PatellarTendon],
+    ["feet", Foot],
+    ["quads", Quad],
+    ["shins", Shin],
+    ["glutes", Glute],
 ]);
 
-export function parse_body_location(str: string): BodyLocation[] {
+export function parse_body_location(str: string): BodyLocationWithSide[] {
     str = str.trim().toLocaleLowerCase()
 
     let side: Side;
@@ -283,10 +283,12 @@ export function parse_body_location(str: string): BodyLocation[] {
     }
     else side = Side.NoSide
 
-    const location = str.replace(/left|right/g, "").trim()
-    const location_enum = locations_map.get(location)
+    const location_str = str.replace(/left|right/g, "").trim()
+    const location = locations_map.get(location_str)
 
-    if (location_enum) return [new BodyLocation(location_enum, side)]
+    if (location) return [
+        new BodyLocationWithSide(location, side),
+    ]
     throw `${str} is not a valid body location`
 }
 

@@ -1,7 +1,8 @@
 import { kilograms } from "@buge/ts-units/mass";
 import { Exercise, LiftData, PainLogData, pounds } from "../types";
 import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse_body_location, parse_unit, parse_units } from "./main";
-import { BodyLocationWithoutSide, Side } from "../pt/body_location";
+import { Foot, Calf, FootMetatarsals, AchillesTendon, BodyLocationWithSide } from "../pt/body_location";
+import { Side } from "../types";
 import { meters } from "@buge/ts-units/length";
 
 describe("Test parse unit", () => {
@@ -98,7 +99,7 @@ describe("parse body location", () => {
         const location = "Left Foot Metatarsals"
         const parsed = parse_body_location(location)
         expect(parsed.length).toEqual(1)
-        expect(parsed[0].location).toEqual("Foot Metatarsals")
+        expect(parsed[0].location).toEqual(FootMetatarsals)
         expect(parsed[0].side).toEqual(Side.Left)
     })
 
@@ -106,7 +107,7 @@ describe("parse body location", () => {
         const location = "calf"
         const parsed = parse_body_location(location)
         expect(parsed.length).toEqual(1)
-        expect(parsed[0].location).toEqual(BodyLocationWithoutSide.Calf)
+        expect(parsed[0].location).toEqual(Calf)
         expect(parsed[0].side).toEqual(Side.NoSide)
     })
 
@@ -114,7 +115,7 @@ describe("parse body location", () => {
         const location = "both feet"
         const parsed = parse_body_location(location)
         expect(parsed.length).toEqual(2)
-        expect(parsed[0].location).toEqual(BodyLocationWithoutSide.Foot)
+        expect(parsed[0].location).toEqual(Foot)
     })
 })
 
@@ -237,8 +238,7 @@ describe("Parse pain v2", () => {
         expect(pain.pains).toHaveLength(5)
         const snapshot_4 = pain.pains[3]
         expect(snapshot_4.description).toEqual("Started hurting 7 miles in after picking up the pace to catch up")
-        expect(snapshot_4.location.location).toEqual(BodyLocationWithoutSide.AchillesTendon)
-        expect(snapshot_4.location.side).toEqual(Side.Right)
+        expect(snapshot_4.location).toEqual(new BodyLocationWithSide(AchillesTendon, Side.Right))
         expect(snapshot_4.pain).toEqual(3)
     })
 })

@@ -1,7 +1,8 @@
 import { Mass } from "@buge/ts-units/mass";
-import { Exercise, InverseSpeed, LiftData, minutes_per_mile, pounds, RepData, RunData, TrainingData } from "../types";
+import { BodyRegion, Exercise, InverseSpeed, LiftData, minutes_per_mile, PainLogData, pounds, RepData, RunData, TrainingData, unitless } from "../types";
 import { meters, miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
+import { One, Quantity } from "@buge/ts-units";
 
 const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.BulgarianSplitSquat, 0.7],
@@ -64,4 +65,26 @@ export function average_pace(runs: RunData[]): InverseSpeed {
     const time = total_moving_time(runs)
     if (time.amount == 0) return minutes_per_mile(0)
     return time.per(dist)
+}
+
+export function fatigue(data: PainLogData): Quantity<number, One> {
+    const templates: [BodyRegion, number][] = data.pains.map(
+        pain => {
+            return [
+                pain.location.region(), 
+                pain.pain
+            ]
+        }
+    );
+    const region_fatigue: Map<BodyRegion, number> = new Map([]);
+    templates.forEach(([region, pain]) => {
+        const current = region_fatigue.get(region) ?? 0;
+        region_fatigue.set(region, Math.max(current, pain));
+    });
+    // Use the templates variable or remove it if not needed
+    let fatigue = 0;
+    region_fatigue.forEach((pain) => {
+        fatigue += pain;
+    });
+    return unitless(fatigue);
 }

@@ -1,19 +1,20 @@
-import { Quantity, Unit } from '@buge/ts-units';
+import { makeUnit, One, Quantity, Unit } from '@buge/ts-units';
 import { Length, miles } from '@buge/ts-units/length';
 import { Temperature } from '@buge/ts-units/temperature';
 import { minutes, Time } from '@buge/ts-units/time';
 import { Mass as MassDimension } from '@buge/ts-units/mass/dimension';
 import { Mass } from '@buge/ts-units/mass/';
 import { kilograms } from '@buge/ts-units/mass';
-import BodyLocation from './pt/body_location';
+import { BodyLocationWithSide } from './pt/body_location';
 
 export type InverseSpeedDimensions = {
     length: -1;
     time: 1;
 }
 export type InverseSpeed = Quantity<number, InverseSpeedDimensions>;
+export const unitless: Unit<number, One> = makeUnit("", One)
 export const minutes_per_mile: Unit<number, InverseSpeedDimensions> = minutes.per(miles);
-export const pounds: Unit<number, MassDimension> = kilograms.times(1/2.20462).withSymbol("lbs");
+export const pounds: Unit<number, MassDimension> = kilograms.times(1 / 2.20462).withSymbol("lbs");
 export const tons: Unit<number, MassDimension> = pounds.times(2000).withSymbol("tons");
 
 export interface RunData {
@@ -102,7 +103,7 @@ export interface SleepData {
 export interface PainAtLocationLogData {
     pain: number
     description: string
-    location: BodyLocation
+    location: BodyLocationWithSide
 }
 
 export interface PainLogData {
@@ -118,7 +119,7 @@ export interface KayakData {
 }
 
 export interface PainAtLocationData {
-    location: BodyLocation
+    location: BodyLocationWithSide
     snapshots: PainSnapshotsData[]
 }
 
@@ -134,4 +135,24 @@ export enum Metric {
     Pace = "Pace",
     ActiveTime = "Active Time",
     Tonage = "Tonage",
+    MeanFatigueScore = "MFS"
+}export enum Side {
+    Left,
+    Right,
+    NoSide
+}// Regions of body for running / estimating fatigue score
+
+export enum BodyRegion {
+    Arm = "Arms",
+    Foot = "Foot",
+    Ankle = "Ankle",
+    Chest = "Chest",
+    Core = "Core",
+    Hamstring = "Hamstring",
+    Hip = "Hip",
+    Knee = "Knee",
+    Back = "Back",
+    LowerLeg = "LowerLeg",
+    Quad = "Quad",
+    Shoulder = "Shoulder",
 }

@@ -90,8 +90,8 @@ describe("Test training data set", () => {
 
     it('Defines week boundaries correctly', () => {
         const data = [
-            make_run_data(new Date(2025, 1, 13, 0, 0, 0, 0)),
-            make_run_data(new Date(2025, 1, 19, 23, 59, 59, 999)),
+            make_run_data(new Date(2025, 0, 13, 0, 0, 0, 0)),
+            make_run_data(new Date(2025, 0, 19, 23, 59, 59, 999)),
         ]
         const dataset = new TrainingDataSet(data);
         expect(dataset.number_of_weeks()).toBe(1);

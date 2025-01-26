@@ -1,10 +1,10 @@
-import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, Metric, tons, PainAtLocationData } from "../types";
+import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, Metric, tons, PainAtLocationData, unitless } from "../types";
 import { Mass } from "@buge/ts-units/mass";
-import { average_pace, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
+import { average_pace, fatigue, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
 import { hours, seconds, Time } from "@buge/ts-units/time";
-import { get_week_end, get_week_start } from "../utils/time";
-import { Dimensions, Quantity, Unit } from "@buge/ts-units";
+import { calendar_days_appart, get_week_end, get_week_start } from "../utils/time";
+import { Dimensions, One, Quantity, Unit } from "@buge/ts-units";
 
 export class TrainingDataSet {
     data: TrainingData[]
@@ -14,8 +14,8 @@ export class TrainingDataSet {
     sleeps: SleepData[]
     pain_snapshot_data: PainLogData[]
 
-    private _first_activity: Date | null
-    private _last_activity: Date | null
+    _first_activity: Date | null
+    _last_activity: Date | null
     private _splitWeeks: TrainingDataSet[]
 
     constructor(data: TrainingData[]) {
@@ -64,7 +64,7 @@ export class TrainingDataSet {
         else if (idx < 0) new TrainingDataSet([])
 
         const [start, end] = this.date_range_for_week(idx)
-        let week_data = (this.data.filter(d => {
+        const week_data = (this.data.filter(d => {
             return d.date.getTime() >= start.getTime() && d.date.getTime() < end.getTime()
         }))
         return new TrainingDataSet(week_data)
@@ -102,6 +102,16 @@ class Analysis {
         return total_tonage(this.dataset.lifts)
     }
 
+    get_mean_fatigue_score(): Quantity<number, One> {
+        if (this.dataset.pain_snapshot_data.length === 0) return unitless(0)
+        if (!this.dataset._first_activity || !this.dataset._last_activity) return unitless(0)
+        const fatigues = this.dataset.pain_snapshot_data.map(fatigue)
+        console.log(fatigues)
+        const daysBetween = calendar_days_appart(this.dataset._first_activity, this.dataset._last_activity)
+        const score = fatigues.reduce((a, b) => a.plus(b), unitless(0)).per(daysBetween)
+        return score
+    }
+
     get_metric(metric: Metric): Quantity<number, Dimensions> {
         switch (metric) {
             case Metric.Mileage:
@@ -112,6 +122,8 @@ class Analysis {
                 return average_pace(this.dataset.runs).in(minutes_per_mile)
             case Metric.Tonage:
                 return this.total_tonage().in(tons)
+            case Metric.MeanFatigueScore:
+                return this.get_mean_fatigue_score()
         }
     }
 
@@ -154,5 +166,7 @@ export function get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
             return minutes_per_mile
         case Metric.Tonage:
             return tons
+        case Metric.MeanFatigueScore:
+            return unitless
     }
 }

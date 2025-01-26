@@ -1,7 +1,8 @@
-import BodyLocation, { BodyLocationWithoutSide, Side } from "./body_location";
+import  { BodyLocationWithSide, FootMetatarsals } from "./body_location";
+import { Side } from "../types";
 describe('BodyLocation', () => {
     it('Should format to string correctly', () => {
-        const bodyLocation = new BodyLocation(BodyLocationWithoutSide.FootMetatarsals, Side.Right);
+        const bodyLocation = new BodyLocationWithSide(FootMetatarsals, Side.Right);
         expect(bodyLocation.to_string()).toBe("Right Foot Metatarsals");
     });
 });
