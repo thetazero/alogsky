@@ -320,7 +320,7 @@ function parse_painv2(data: unknown, date: Date): PainLogData {
             const [location, pain] = extract_paren_data(snap)
             return parse_body_location(location).map(loc => ({
                 description,
-                pain: parseInt(pain),
+                pain: parseInt(pain.split(",")[0]),
                 location: loc,
             } as PainAtLocationLogData))
         }).flat()

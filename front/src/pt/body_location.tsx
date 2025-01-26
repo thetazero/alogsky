@@ -10,7 +10,7 @@ export class BodyLocationWithSide {
     }
 
     to_string() {
-        return `${this.side === Side.Left ? "Left" : this.side === Side.Right ? "Right" : ""} ${this.location}`;
+        return `${this.side === Side.Left ? "Left" : this.side === Side.Right ? "Right" : ""} ${this.location.name}`;
     }
 
     equals(other: BodyLocationWithSide) {
