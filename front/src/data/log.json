@@ -1384,7 +1384,13 @@
                     "upper back (1)",
                     "right inner back knee tendon (1)",
                     "right ankle (1)",
-                    "right heel (1)"
+                    "right heel (1, soreness)"
+                ]
+            },
+            {
+                "description": "flash of pain that went away quickly while sitting on the couch",
+                "snapshots": [
+                    "left quad (3)"
                 ]
             }
         ]

@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { VariableSizeList as List } from 'react-window';
-import Run from '../activities/Run';
-import { TrainingData } from '../types';
-import Lift from '../activities/Lift';
-import SleepActivity from '../activities/Sleep';
 import Activity from './Activity';
+import Lift from '../activities/Lift';
+import PainCard from '../activities/Pain';
+import Run from '../activities/Run';
+import SleepActivity from '../activities/Sleep';
+import { TrainingData } from '../types';
+import { VariableSizeList as List } from 'react-window';
 
 // Define the data structure for the individual run
 interface TrainingLogProps {
@@ -42,6 +43,7 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
             if (item.type === 'run') return 120;
             else if (item.type === 'lift') return 300;
             else if (item.type === 'sleep') return 100;
+            else if (item.type === 'pain') return 130;
             else return 100;
         },
         [processed]
@@ -63,7 +65,10 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
                     <Lift data={activity} height={getItemSize(index)} />
                 ) : activity.type === 'sleep' ? (
                     <SleepActivity data={activity} height={getItemSize(index)} />
-                ) : (
+                ) : activity.type === 'pain' ? (
+                    <PainCard data={activity} height={getItemSize(index)} />
+                ) : 
+                (
                     <Activity date={activity.date} title={activity.type} height={getItemSize(index)}>
                         Card for {activity.type} data has not been implemented yet
                     </Activity>

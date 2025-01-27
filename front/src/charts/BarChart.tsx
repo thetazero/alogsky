@@ -52,7 +52,8 @@ const BarChart: React.FC<BarChartProps> = ({ data_set, title }) => {
     const [dataSetMap, setDataSetMap] = useState<Map<string, BarChartData>>(new Map());
 
     useEffect(() => {
-        const starting_hue = hue_from_string(data_set.labels.reduce((acc, label) => acc + label, ''));
+        const types_of_data = data_set.datasets.map(d => d.label)
+        const starting_hue = hue_from_string(types_of_data.reduce((acc, label) => acc + label, ''));
         setInternalData({
             labels: data_set.labels,
             datasets: data_set.datasets.map((dataset, i) => {

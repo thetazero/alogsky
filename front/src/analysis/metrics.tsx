@@ -67,11 +67,11 @@ export function average_pace(runs: RunData[]): InverseSpeed {
     return time.per(dist)
 }
 
-export function fatigue(data: PainLogData): Quantity<number, One> {
+export function fatigue_by_region(data: PainLogData): Map<BodyRegion, number> {
     const templates: [BodyRegion, number][] = data.pains.map(
         pain => {
             return [
-                pain.location.region(), 
+                pain.location.region(),
                 pain.pain
             ]
         }
@@ -81,7 +81,12 @@ export function fatigue(data: PainLogData): Quantity<number, One> {
         const current = region_fatigue.get(region) ?? 0;
         region_fatigue.set(region, Math.max(current, pain));
     });
+    return region_fatigue
+}
+
+export function fatigue(data: PainLogData): Quantity<number, One> {
     // Use the templates variable or remove it if not needed
+    const region_fatigue = fatigue_by_region(data)
     let fatigue = 0;
     region_fatigue.forEach((pain) => {
         fatigue += pain;

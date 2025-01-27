@@ -23,7 +23,8 @@ const SelectMultiple = <T,>({
         if (selected.includes(option)) {
             onChange(selected.filter((item) => item !== option));
         } else {
-            onChange([...selected, option]);
+            const new_values = [...selected, option].sort()
+            onChange(new_values);
         }
     };
 
