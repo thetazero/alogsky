@@ -25,7 +25,7 @@ function getDataForMetric(dataset: TrainingDataSet, metric: Metric, weeks: numbe
 
 const TrainingSummaryTile: panelComponentType = ({ dataset, id }) => {
     const [barData, setBarData] = React.useState<BarChartDataSet>({ labels: [], datasets: [] })
-    const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage])
+    const [metrics, setMetrics] = useState<Metric[]>([Metric.Mileage, Metric.Tonage, Metric.MeanFatigueScore])
     const [weeksToShow, _] = useState<number>(15)
 
     useEffect(() => {

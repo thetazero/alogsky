@@ -19,7 +19,7 @@ export class TrainingDataSet {
     private _splitWeeks: TrainingDataSet[]
 
     constructor(data: TrainingData[]) {
-        this.data = data.sort((a, b) => a.date.getTime() - b.date.getTime())
+        this.data = data.sort((b, a) => a.date.getTime() - b.date.getTime())
         this.runs = data.filter(e => e.type === "run")
         this.lifts = data.filter(e => e.type === "lift")
         this.sleeps = data.filter(e => e.type === "sleep")
@@ -106,7 +106,6 @@ class Analysis {
         if (this.dataset.pain_snapshot_data.length === 0) return unitless(0)
         if (!this.dataset._first_activity || !this.dataset._last_activity) return unitless(0)
         const fatigues = this.dataset.pain_snapshot_data.map(fatigue)
-        console.log(fatigues)
         const daysBetween = calendar_days_appart(this.dataset._first_activity, this.dataset._last_activity)
         const score = fatigues.reduce((a, b) => a.plus(b), unitless(0)).per(daysBetween)
         return score

@@ -212,7 +212,7 @@ describe("Parse pain v2", () => {
                     "snapshots": [
                         "lower back (1)",
                         "left knee (1)",
-                        "upper back (1)",
+                        "upper back (1, flash)",
                     ]
                 },
                 {

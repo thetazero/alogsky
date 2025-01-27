@@ -6,7 +6,7 @@ import { kilograms, Mass } from "@buge/ts-units/mass";
 import { Mass as MassDimension } from "@buge/ts-units/mass/dimension";
 import { pounds } from "../types";
 import { Quantity, Unit } from "@buge/ts-units";
-import BodyLocation, { body_locations, Shin, Hamstring, AchillesTendon, Knee, PatellarTendon, Foot, Quad, Glute, BodyLocationWithSide } from "../pt/body_location";
+import BodyLocation, { body_locations, Shin, Hamstring, AchillesTendon, Knee, PatellarTendon, Foot, Quad, Glute, BodyLocationWithSide, Pec, Lat, MidBack, Calf, Shoulder } from "../pt/body_location";
 import { Side } from "../types";
 import { get_day_string } from "../utils/time";
 import { Time as TimeDimension } from "@buge/ts-units/time/dimension";
@@ -259,16 +259,22 @@ function parse_sleepv1(data: any, date: Date): SleepData {
 const location_map_default: [string, BodyLocation][] = body_locations.map((loc) => [loc.name.toLowerCase(), loc])
 const locations_map: Map<string, BodyLocation> = new Map([
     ...location_map_default,
-    ["lower shin", Shin],
-    ["hamstrings", Hamstring],
     ["achilles", AchillesTendon],
-    ["back of knee", Knee], // TODO: More specific? likely tendon stuff
     ["back inner knee tendon", Knee],
-    ["patella", PatellarTendon],
+    ["back of knee", Knee], // TODO: More specific? likely tendon stuff
     ["feet", Foot],
+    ["glutes", Glute],
+    ["hamstrings", Hamstring],
+    ["lats", Lat],
+    ["lower shin", Shin],
+    ["middle back", MidBack],
+    ["patella", PatellarTendon],
+    ["pecs", Pec],
     ["quads", Quad],
     ["shins", Shin],
-    ["glutes", Glute],
+    ["calves", Calf],
+    ["shoulders", Shoulder],
+    ["foot sciatica", Foot], // TODO: Diagnosis ???
 ]);
 
 export function parse_body_location(str: string): BodyLocationWithSide[] {
