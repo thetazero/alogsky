@@ -143,15 +143,15 @@ export enum Metric {
 }// Regions of body for running / estimating fatigue score
 
 export enum BodyRegion {
-    Arm = "Arms",
-    Foot = "Foot",
     Ankle = "Ankle",
+    Arm = "Arms",
+    Back = "Back",
     Chest = "Chest",
     Core = "Core",
+    Foot = "Foot",
     Hamstring = "Hamstring",
     Hip = "Hip",
     Knee = "Knee",
-    Back = "Back",
     LowerLeg = "LowerLeg",
     Quad = "Quad",
     Shoulder = "Shoulder",

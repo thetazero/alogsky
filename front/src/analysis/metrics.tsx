@@ -84,12 +84,42 @@ export function fatigue_by_region(data: PainLogData): Map<BodyRegion, number> {
     return region_fatigue
 }
 
+function body_region_to_fatgue_weight(region: BodyRegion): number {
+    switch (region) {
+        case BodyRegion.Ankle:
+            return 1.0
+        case BodyRegion.Arm:
+            return 0.5
+        case BodyRegion.Back:
+            return 1.0
+        case BodyRegion.Chest:
+            return 0.5
+        case BodyRegion.Core:
+            return 1.0
+        case BodyRegion.Foot:
+            return 1.0
+        case BodyRegion.Hamstring:
+            return 3.0
+        case BodyRegion.Hip:
+            return 2.0
+        case BodyRegion.Knee:
+            return 3.0
+        case BodyRegion.LowerLeg:
+            return 2.0
+        case BodyRegion.Quad:
+            return 3.0
+        case BodyRegion.Shoulder:
+            return 0.5
+    }
+}
+
 export function fatigue(data: PainLogData): Quantity<number, One> {
     // Use the templates variable or remove it if not needed
     const region_fatigue = fatigue_by_region(data)
     let fatigue = 0;
-    region_fatigue.forEach((pain) => {
-        fatigue += pain;
+    Array.from(region_fatigue.entries()).forEach((pair) => {
+        const [region, pain] = pair;
+        fatigue += pain * body_region_to_fatgue_weight(region)
     });
     return unitless(fatigue);
 }
