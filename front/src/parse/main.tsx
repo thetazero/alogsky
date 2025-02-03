@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -45,6 +45,7 @@ const proc_map: { [key: string]: (point: any, date: Date) => TrainingData } = {
     "run2": parse_run_v2,
     "lift1": parse_liftv1,
     "sleep1": parse_sleepv1,
+    "sleep2": parse_sleepv2,
     "pain1": parse_painv1,
     "pain2": parse_painv2,
     "lift2": parse_liftv2,
@@ -249,13 +250,42 @@ function parse_liftv2(data: any, date: Date): LiftData {
     }
 }
 
+function parse_quality(data: string): SleepQuality | null {
+    data = data.trim().toLowerCase()
+    if (data === "poor") return SleepQuality.Poor
+    if (data === "low") return SleepQuality.Low
+    if (data === "fair") return SleepQuality.Fair
+    return null
+}
+
 function parse_sleepv1(data: any, date: Date): SleepData {
     return {
         date,
         duration: minutes(parseFloat(data.duration)),
         type: "sleep",
+        quality: null
     };
 }
+
+function parse_sleepv2(data: unknown, date: Date): SleepData {
+    const d = as_object(data, `Sleep data v2 must be an object`)
+    if (!("duration" in d) || typeof d.duration !== 'number') {
+        throw `Sleep data v2 must have a duration`
+    }
+    const duration = minutes(d.duration)
+    if (!("quality" in d) || typeof d.quality !== 'string') {
+        throw `Sleep data v2 must have a quality`
+    }
+    const quality = d.quality
+    return {
+        date,
+        duration,
+        type: "sleep",
+        quality: parse_quality(quality)
+    }
+}
+
+
 const location_map_default: [string, BodyLocation][] = body_locations.map((loc) => [loc.name.toLowerCase(), loc])
 const locations_map: Map<string, BodyLocation> = new Map([
     ...location_map_default,
@@ -362,6 +392,13 @@ export function data_if_in_parens(data: string | undefined | null): string | nul
 
 function as_array(data: unknown, err_msg: string): unknown[] {
     if (!Array.isArray(data)) {
+        throw err_msg
+    }
+    return data
+}
+
+function as_object(data: unknown, err_msg: string): object {
+    if (typeof data !== 'object' || data === null) {
         throw err_msg
     }
     return data

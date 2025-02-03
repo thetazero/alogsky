@@ -77,6 +77,12 @@ export enum Exercise {
     SupineKneeDrive = "Supine Knee Drive", // https://www.youtube.com/watch?v=wpt_RPlfcR4 (but without the band)
 }
 
+export enum SleepQuality {
+    Poor = "Poor",
+    Low = "Low",
+    Fair = "Fair",
+}
+
 export interface RepData {
     exercise: Exercise,
     reps: number,
@@ -98,6 +104,7 @@ export interface SleepData {
     duration: Time
     date: Date
     type: "sleep"
+    quality: SleepQuality | null
 }
 
 export interface PainAtLocationLogData {
