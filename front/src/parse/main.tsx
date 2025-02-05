@@ -145,6 +145,7 @@ const exercise_map: Map<string, Exercise> = new Map(
         ["lateral raises", Exercise.LateralRaise],
         ["bicep curls", Exercise.BicepCurl],
         ["dumbell flys", Exercise.DumbellFly],
+        ["crunches", Exercise.Crunch],
         ...defaults_for_exercise_map
     ],
 );

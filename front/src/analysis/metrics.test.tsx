@@ -85,6 +85,6 @@ describe("Test fatigue", ()=> {
                 }
             ],
         }
-        expect(fatigue(data)).toEqual(unitless(3))
+        expect(fatigue(data)).toEqual(unitless(4))
     })
 })

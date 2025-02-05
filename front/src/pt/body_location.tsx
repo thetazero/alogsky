@@ -47,6 +47,7 @@ export const Ankle = new BodyLocation("Ankle", BodyRegion.Ankle)
 export const Bicep = new BodyLocation("Bicep", BodyRegion.Arm)
 export const Calf = new BodyLocation("Calf", BodyRegion.LowerLeg)
 export const Core = new BodyLocation("Core", BodyRegion.Core)
+export const Elbow = new BodyLocation("Elbow", BodyRegion.Arm)
 export const Foot = new BodyLocation("Foot", BodyRegion.Foot)
 export const FootMetatarsals = new BodyLocation("Foot Metatarsals", BodyRegion.Foot)
 export const FootSole = new BodyLocation("Foot Sole", BodyRegion.Foot)
@@ -72,6 +73,7 @@ export const Tibialis = new BodyLocation("Tibialis", BodyRegion.LowerLeg)
 export const Toes = new BodyLocation("Toes", BodyRegion.Foot)
 export const Tricep = new BodyLocation("Tricep", BodyRegion.Arm)
 export const UpperBack = new BodyLocation("Upper Back", BodyRegion.Back)
+export const UpperCore = new BodyLocation("Upper Core", BodyRegion.Core)
 
 export const body_locations: BodyLocation[] = [
     AchillesTendon,
@@ -79,6 +81,7 @@ export const body_locations: BodyLocation[] = [
     Bicep,
     Calf,
     Core,
+    Elbow,
     Foot,
     FootMetatarsals,
     FootSole,
@@ -104,6 +107,7 @@ export const body_locations: BodyLocation[] = [
     Toes,
     Tricep,
     UpperBack,
+    UpperCore,
 ];
 
 export default BodyLocation;

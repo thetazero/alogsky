@@ -3,7 +3,7 @@ import { Mass } from "@buge/ts-units/mass";
 import { average_pace, fatigue, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, miles } from "@buge/ts-units/length";
 import { hours, seconds, Time } from "@buge/ts-units/time";
-import { calendar_days_appart, get_week_end, get_week_start } from "../utils/time";
+import { get_week_end, get_week_start } from "../utils/time";
 import { Dimensions, One, Quantity, Unit } from "@buge/ts-units";
 
 export class TrainingDataSet {
@@ -106,7 +106,8 @@ class Analysis {
         if (this.dataset.pain_snapshot_data.length === 0) return unitless(0)
         if (!this.dataset._first_activity || !this.dataset._last_activity) return unitless(0)
         const fatigues = this.dataset.pain_snapshot_data.map(fatigue)
-        const daysBetween = calendar_days_appart(this.dataset._first_activity, this.dataset._last_activity)
+        // const daysBetween = calendar_days_appart(this.dataset._first_activity, this.dataset._last_activity)
+        const daysBetween = fatigues.length
         const score = fatigues.reduce((a, b) => a.plus(b), unitless(0)).per(daysBetween)
         return score
     }

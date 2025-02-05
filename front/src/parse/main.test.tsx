@@ -172,6 +172,14 @@ describe("natural reps parse", () => {
         expect(parsed[3].reps).toEqual(12)
         expect(parsed[3].weight.in(pounds).amount).toEqual(50)
     })
+
+    it('Works for no weight', () => {
+        const parsed = natural_reps_parse("crunches: 60")
+        expect(parsed).toHaveLength(1)
+        expect(parsed[0].reps).toEqual(60)
+        expect(parsed[0].weight.in(pounds).amount).toEqual(0)
+        expect(parsed[0].exercise).toEqual(Exercise.Crunch)
+    })
 })
 
 describe("Should throw an error if there on incorrectly duplicate data", () => {
