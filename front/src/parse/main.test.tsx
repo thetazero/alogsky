@@ -1,6 +1,6 @@
 import { kilograms } from "@buge/ts-units/mass";
-import { Exercise, LiftData, PainLogData, pounds } from "../types";
-import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse_body_location, parse_unit, parse_units } from "./main";
+import { Exercise, LiftData, NoteTopic, PainLogData, pounds } from "../types";
+import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse_body_location, parse_notev1, parse_unit, parse_units } from "./main";
 import { Foot, Calf, FootMetatarsals, AchillesTendon, BodyLocationWithSide } from "../pt/body_location";
 import { Side } from "../types";
 import { meters } from "@buge/ts-units/length";
@@ -111,7 +111,7 @@ describe("parse body location", () => {
         expect(parsed[0].side).toEqual(Side.NoSide)
     })
 
-    it('Should parse body location with both sides', ()=>{
+    it('Should parse body location with both sides', () => {
         const location = "both feet"
         const parsed = parse_body_location(location)
         expect(parsed.length).toEqual(2)
@@ -303,3 +303,18 @@ describe("parse units", () => {
         expect(parse_units("(  5 lbs|    10kg)")).toEqual([pounds(5), kilograms(10)])
     })
 })
+
+describe("parse note", () => {
+    it('Should parse note', () => {
+        const data = {
+            "title": "My note",
+            "content": "This is my note",
+            "topic": "race day",
+        }
+        const parsed = parse_notev1(data, new Date())
+        expect(parsed.title).toEqual("My note")
+        expect(parsed.content).toEqual("This is my note")
+        expect(parsed.topic).toEqual(NoteTopic.RaceDay)
+    }
+    );
+});

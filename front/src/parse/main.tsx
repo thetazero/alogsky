@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -50,6 +50,7 @@ const proc_map: { [key: string]: (point: any, date: Date) => TrainingData } = {
     "pain2": parse_painv2,
     "lift2": parse_liftv2,
     "kayak1": parse_kayakv1,
+    "note1": parse_notev1,
 }
 
 function _parse(point: any): TrainingData | string {
@@ -372,6 +373,27 @@ function parse_kayakv1(data: any, date: Date): KayakData {
         duration: minutes(parseFloat(data.duration)),
         date,
         type: "kayak",
+    }
+}
+
+function str_to_topic(str: string): NoteTopic {
+    const topic = str.trim().toLowerCase()
+    const topic_map: Map<string, NoteTopic> = new Map([
+        ["race day", NoteTopic.RaceDay],
+    ])
+    const topic_res = topic_map.get(topic)
+    if (topic_res) return topic_res
+    throw `${str} is not a valid note topic`
+}
+
+export function parse_notev1(data: any, date: Date): NoteData {
+    const topic = str_to_topic(data.topic)
+    return {
+        title: data.title,
+        content: data.content,
+        date,
+        type: "note",
+        topic,
     }
 }
 

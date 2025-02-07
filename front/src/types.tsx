@@ -136,7 +136,19 @@ export interface PainSnapshotsData {
     date: Date
 }
 
-export type TrainingData = RunData | LiftData | SleepData | PainLogData | KayakData;
+export interface NoteData {
+    title: string
+    content: string
+    date: Date
+    type: "note"
+    topic: NoteTopic
+}
+
+export enum NoteTopic {
+    RaceDay = "Race Day",
+}
+
+export type TrainingData = RunData | LiftData | SleepData | PainLogData | KayakData | NoteData
 export enum Metric {
     Mileage = "Mileage",
     Pace = "Pace",
