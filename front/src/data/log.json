@@ -1664,5 +1664,272 @@
                 "rush n twist: 40"
             ]
         }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 3, 2025",
+        "data": {
+            "duration": 50,
+            "exercises": [
+                "squat: 12x95lbs, 12x145lbs, 12x155lbs",
+                "cable seated row: 12x70lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x16kg, 12x16kg",
+                "overhead press: 12x50lbs, 12x60lbs",
+                "speed skater jumps: 5, 5",
+                "single leg stair calf raise: 20, 20",
+                "pull up: 8, 8, 9",
+                "one leg buck: 12, 12",
+                "45 degree back extension: 12, 12",
+                "med ball seated russian twist: 15x15lbs, 15x20lbs",
+                "bulgarian split squat: 12x20lbs, 12x20lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs",
+                "bicep curl: 12x40lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 6, 2025",
+        "data": {
+            "duration": 50,
+            "exercises": [
+                "squat: 12x95lbs, 12x115lbs, 12x135lbs",
+                "cable seated row: 12x65lbs, 12x80lbs",
+                "dumbell 1 leg, 1 arm rdl: 12x35lbs, 35lbs",
+                "overhead press: 12x50lbs, 12x60lbs",
+                "single leg stair calf raise: 12, 12",
+                "pull up: 8, 8",
+                "one leg buck: 12",
+                "45 degree back extension: 12, 12",
+                "plate mcgill crunch: 12x25lbs, 12x25lbs",
+                "bulgarian split squat: 12x20lbs, 12x30lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 04, 2025, 8:19:00 AM",
+        "data": {
+            "duration": 537,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 06, 2025, 7:50:00 AM",
+        "data": {
+            "duration": 530,
+            "quality": "good"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 07, 2025, 8:19:00 AM",
+        "data": {
+            "duration": 488,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 8, 2025, 11:03:00 AM",
+        "data": {
+            "duration": 42,
+            "exercises": [
+                "bench: 6x95lbs, 8x95lbs, 5x105lbs",
+                "dumbell fly: 8x30lbs, 8x30lbs, 8x35lbs",
+                "lateral raise: 8x20lbs, 8x20lbs, 8x20lbs",
+                "bicep curl: 8x35lbs, 8x40lbs, 8x40lbs",
+                "dumbell row: 8x65lbs, 8x70lbs, 8x80lbs",
+                "dumbell incline bench: 8x50lbs, 8x50lbs, 8x60lbs"
+            ]
+        }
+    },
+    {
+        "version": 1,
+        "type": "note",
+        "date": "Jan 18, 2025",
+        "data": {
+            "title": "Nausea race day",
+            "content": "Cheese Breakfast bagel and individual entire cream cheese at 8am.\nBag of gold fish, 3 California Mandarins and skinny pop before noon.\ndrank most of a cold brew coffee from Scotty's at 12pm-12:20pm. \nOne Nutella b ready around 12:40.\n(1:30) started drinking Gatorade about 1/3 bottle \nAt 1:40 started feeling nauseous and resting heart rate was around 85. Felt better after taking off meet jacket. Mouth felt dry.\nFelt nauseous in waves, threw up a tiny bit in mouth twice, being cold helped on warm up at 2:35\n(3:05pm) Did 2 strides felt okay during (felt stomach a bit) felt worse after.\n(3:25) scratched race, felt a little better after Coach said unpleasant stuff. Got significantly better after staying still. Heart rate came down to 58 after 10 minutes.\nOccasional stomach pain, nausea, and mouth watering every so often (4pm). Staying still helps but, doesn't solve the issue. Got electrolytes mix from veyd, drank half a bottle.\n\n(4:05) using core seems to make it a little worse\n(5:00) no more nausea, just stomach pain\n(5:07) banna\n(5:37) stomach stopped hurting \n(6:22) slight nausea after getting on the bus\n(8:53) stomach still hurts a bit ",
+            "topic": "race day"
+        }
+    },
+    {
+        "version": 1,
+        "type": "note",
+        "date": "Jan 25, 2025",
+        "data": {
+            "title": "Race day log",
+            "content": "5:50 fruit snacks\n6:15 bagel with cream cheese \n1 banana ???\n1 Gatorade bottle finished around 11:44\n\nboth calves and hamstrings hurt throughout mile. Felt lactic 600m out, arms felt heavy about 400m out. Kicked, was difficult, didn't put into full gear. \n\nboth calves + hamstring hurt through 800. Got lactic in arms in final stretch. Legs felt like they just weren't moving with calves just not responding ",
+            "topic": "race day"
+        }
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 4, 2025",
+        "data": [
+            {
+                "description": "",
+                "snapshots": [
+                    "both glutes (2, sore)",
+                    "lower back (1, sore)",
+                    "upper back (2, sore)",
+                    "left hamstring (1, sore)",
+                    "right knee (1)",
+                    "both quads (1, sore)",
+                    "left forearm (1, sore)",
+                    "both lats (1, sore)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 5, 2025",
+        "data": [
+            {
+                "description": "",
+                "snapshots": [
+                    "both quads (2, sore)",
+                    "left foot (2)",
+                    "lower back (1)",
+                    "left calf (1)",
+                    "right bicep (1)",
+                    "mid back (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 6, 2025",
+        "data": [
+            {
+                "description": "",
+                "snapshots": [
+                    "left calf (2)",
+                    "lower back (1)"
+                ]
+            },
+            {
+                "description": "walk to bus",
+                "snapshots": [
+                    "left achilles (1)",
+                    "right foot (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 7, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "left hamstring (2, sore)",
+                    "right hamstring (1, sore)",
+                    "upper back (2, sore)",
+                    "left pec (2, sore)",
+                    "left forearm (1, sore)"
+                ]
+            },
+            {
+                "description": "pre workout",
+                "snapshots": [
+                    "lower back (1)"
+                ]
+            },
+            {
+                "description": "post workout",
+                "snapshots": [
+                    "mid back (3)",
+                    "both quads (1)",
+                    "both glutes (1)",
+                    "left foot (1)",
+                    "left hamstring (2)",
+                    "right hamstring (1)",
+                    "right calf (1)",
+                    "core (1, sore)",
+                    "left it band (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 8, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "both calves (3)",
+                    "left hamstring (2)",
+                    "right hamstring (1)",
+                    "both glute (2)",
+                    "left foot (2)",
+                    "lower back (1)",
+                    "left foot (1)",
+                    "left knee (1)",
+                    "left tibialis (1)",
+                    "upper back (1)",
+                    "right knee (1)",
+                    "mid back (1)"
+                ]
+            },
+            {
+                "description": "during row",
+                "snapshots": [
+                    "right elbow (1)"
+                ]
+            },
+            {
+                "description": "post run",
+                "snapshots": [
+                    "right ankle (2)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 9, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "both bicep (2)",
+                    "both pecs (2)",
+                    "both tricep (1)",
+                    "left calf (2)",
+                    "lower back (2)",
+                    "left knee (1)",
+                    "upper back (1)",
+                    "both shoulders (1)"
+                ]
+            },
+            {
+                "description": "post run",
+                "snapshots": [
+                    "core (1)",
+                    "both quads (1)",
+                    "right glute (1)"
+                ]
+            }
+        ]
     }
 ]
