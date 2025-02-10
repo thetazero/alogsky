@@ -51,6 +51,7 @@ export const Elbow = new BodyLocation("Elbow", BodyRegion.Arm)
 export const Foot = new BodyLocation("Foot", BodyRegion.Foot)
 export const FootMetatarsals = new BodyLocation("Foot Metatarsals", BodyRegion.Foot)
 export const FootSole = new BodyLocation("Foot Sole", BodyRegion.Foot)
+export const Forearm = new BodyLocation("Forearm", BodyRegion.Arm)
 export const Glute = new BodyLocation("Glute", BodyRegion.Hip)
 export const Hamstring = new BodyLocation("Hamstring", BodyRegion.Hamstring)
 export const Heel = new BodyLocation("Heel", BodyRegion.Foot)
@@ -85,6 +86,7 @@ export const body_locations: BodyLocation[] = [
     Foot,
     FootMetatarsals,
     FootSole,
+    Forearm,
     Glute,
     Hamstring,
     Heel,

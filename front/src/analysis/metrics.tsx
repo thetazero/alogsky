@@ -14,9 +14,10 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.Plank, 0.02],
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
+    [Exercise.RushNTwist, 0.1],
     [Exercise.SingleLegCalfRaise, 0.8],
     [Exercise.SingleLegStairCalfRaise, 0.8],
-    [Exercise.Situp, 0.8],
+    [Exercise.Situp, 0.15],
     [Exercise.SpeedSkaterJumps, 0.05],
     [Exercise.SupineKneeDrive, 0.1],
 ]);
@@ -56,6 +57,7 @@ export function training_time(training_data: TrainingData[]): Time {
         if (d.type == "pain") return minutes(0)
         if (d.type == "kayak") return d.duration
         if (d.type == "sleep") return minutes(0)
+        if (d.type == "note") return minutes(0)
         throw "Training time does not cover all types"
     }).reduce((a, b) => a.plus(b), minutes(0))
 }
