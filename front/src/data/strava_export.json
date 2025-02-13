@@ -20735,6 +20735,19 @@
     }
   },
   {
+    "version": 1,
+    "type": "row",
+    "date": "Feb 4, 2025, 10:51:08 PM",
+    "data": {
+      "title": "Erg 5k",
+      "description": "Banished due to cough\n\nThis has to be my new favorite cross training variant (I couldn't get on the treadmill)",
+      "moving_time": "1468.0",
+      "elapsed_time": "1468.0",
+      "average_heart_rate": "150.54837036132812",
+      "max_heart_rate": "186.0"
+    }
+  },
+  {
     "version": 2,
     "type": "run",
     "date": "Feb 5, 2025, 8:05:52 PM",
@@ -20823,6 +20836,19 @@
       "elapsed_time": "1035.0",
       "temperature": "12.0",
       "feels_like": ""
+    }
+  },
+  {
+    "version": 1,
+    "type": "row",
+    "date": "Feb 8, 2025, 3:27:45 PM",
+    "data": {
+      "title": "Row part 2",
+      "description": "Discovered the resistance setting, wish the foot straps wouldn't instantly come loose",
+      "moving_time": "1733.0",
+      "elapsed_time": "1733.0",
+      "average_heart_rate": "157.45297241210938",
+      "max_heart_rate": "182.0"
     }
   },
   {
