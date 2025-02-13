@@ -58,6 +58,7 @@ export function training_time(training_data: TrainingData[]): Time {
         if (d.type == "kayak") return d.duration
         if (d.type == "sleep") return minutes(0)
         if (d.type == "note") return minutes(0)
+        if (d.type == "row") return d.moving_time
         throw "Training time does not cover all types"
     }).reduce((a, b) => a.plus(b), minutes(0))
 }

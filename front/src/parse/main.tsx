@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData, RowData, per_minute } from "../types";
 import { meters } from "@buge/ts-units/length";
 import { seconds, minutes } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -51,6 +51,7 @@ const proc_map: { [key: string]: (point: any, date: Date) => TrainingData } = {
     "lift2": parse_liftv2,
     "kayak1": parse_kayakv1,
     "note1": parse_notev1,
+    "row1": parse_rowv1,
 }
 
 function _parse(point: any): TrainingData | string {
@@ -394,6 +395,19 @@ export function parse_notev1(data: any, date: Date): NoteData {
         date,
         type: "note",
         topic,
+    }
+}
+
+function parse_rowv1(data: any, date: Date): RowData {
+    return {
+        title: data.title,
+        description: data.description,
+        moving_time: seconds(parseFloat(data.moving_time)),
+        elapsed_time: seconds(parseFloat(data.elapsed_time)),
+        average_heart_rate: per_minute(parseFloat(data.average_heart_rate)),
+        max_heart_rate: per_minute(parseFloat(data.max_heart_rate)),
+        date,
+        type: "row"
     }
 }
 

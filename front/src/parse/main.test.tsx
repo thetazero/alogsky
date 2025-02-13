@@ -1,9 +1,10 @@
 import { kilograms } from "@buge/ts-units/mass";
-import { Exercise, LiftData, NoteTopic, PainLogData, pounds } from "../types";
+import { Exercise, LiftData, NoteTopic, PainLogData, per_minute, pounds, RowData } from "../types";
 import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse_body_location, parse_notev1, parse_unit, parse_units } from "./main";
 import { Foot, Calf, FootMetatarsals, AchillesTendon, BodyLocationWithSide } from "../pt/body_location";
 import { Side } from "../types";
 import { meters } from "@buge/ts-units/length";
+import { minutes, seconds } from "@buge/ts-units/time";
 
 describe("Test parse unit", () => {
     it('Should parse kg', () => {
@@ -318,3 +319,41 @@ describe("parse note", () => {
     }
     );
 });
+
+describe("parse row", () => {
+    it('Should parse row', () => {
+        const data = {
+            "version": 1,
+            "type": "row",
+            "date": "Feb 8, 2025, 3:27:45 PM",
+            "data": {
+                "title": "Row part 2",
+                "description": "Discovered the resistance setting, wish the foot straps wouldn't instantly come loose",
+                "moving_time": "1733.0",
+                "elapsed_time": "1733.0",
+                "average_heart_rate": "157.45297241210938",
+                "max_heart_rate": "182.0"
+            }
+        }
+        const [parsed, errors] = parse([data])
+        expect(errors.length).toEqual(0)
+        expect(parsed.length).toEqual(1)
+        const row = parsed[0]
+        expect(row.type).toEqual("row")
+        if (row.type == "row") {
+            const expected: RowData = {
+                title: "Row part 2",
+                description: "Discovered the resistance setting, wish the foot straps wouldn't instantly come loose",
+                moving_time: seconds(1733.0),
+                elapsed_time: seconds(1733.0),
+                average_heart_rate: per_minute(157.45297241210938),
+                max_heart_rate: per_minute(182.0),
+                type: "row",
+                date: new Date("Feb 8, 2025, 3:27:45 PM")
+            }
+            expect(row).toEqual(expected)
+        } else {
+            expect(false).toBeTruthy()
+        }
+    })
+})
