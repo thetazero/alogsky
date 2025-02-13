@@ -1931,5 +1931,32 @@
                 ]
             }
         ]
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 08, 2025, 7:35:00 AM",
+        "data": {
+            "duration": 506,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 09, 2025, 8:25:00 AM",
+        "data": {
+            "duration": 441,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 10, 2025, 8:29:00 AM",
+        "data": {
+            "duration": 479,
+            "quality": "low"
+        }
     }
 ]
