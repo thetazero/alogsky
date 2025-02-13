@@ -13,7 +13,7 @@ def read_strava_export(folder_path: str, export_path: str):
 
 
 def extract_relevant_runs(activities: Any):
-    runs = []
+    res = []
     for activity in activities:
         if activity["Activity Type"] == "Run":
             activity_id = int(activity["Activity ID"])
@@ -32,9 +32,27 @@ def extract_relevant_runs(activities: Any):
                     "feels_like": activity["Apparent Temperature"],
                 },
             }
-            runs.append(run)
+            res.append(run)
+        elif activity["Activity Type"] == "Workout":
+            title = str(activity["Activity Name"])
+            lower_title = title.lower()
+            if 'erg' in lower_title or 'row' in lower_title:
+                row = {
+                    "version": 1,
+                    "type": "row",
+                    "date": activity["Activity Date"],
+                    "data": {
+                        "title": title,
+                        "description": activity["Activity Description"],
+                        "moving_time": activity["Moving Time"],
+                        "elapsed_time": activity["Elapsed Time"],
+                        "average_heart_rate": activity["Average Heart Rate"],
+                        "max_heart_rate": activity["Max Heart Rate"],
+                    }
+                }
+                res.append(row)
 
-    return runs
+    return res
 
 
 if __name__ == "__main__":
