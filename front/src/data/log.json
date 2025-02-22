@@ -1958,5 +1958,68 @@
             "duration": 479,
             "quality": "low"
         }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 11, 2025, 8:17:00 AM",
+        "data": {
+            "duration": 493,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 12, 2025, 8:06:00 AM",
+        "data": {
+            "duration": 533,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 13, 2025, 7:42:00 AM",
+        "data": {
+            "duration": 496,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 14, 2025, 8:08:00 AM",
+        "data": {
+            "duration": 490,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 15, 2025, 7:51:00 AM",
+        "data": {
+            "duration": 452,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 16, 2025, 6:45:00 AM",
+        "data": {
+            "duration": 442,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 17, 2025, 7:29:00 AM",
+        "data": {
+            "duration": 528,
+            "quality": "fair"
+        }
     }
 ]
