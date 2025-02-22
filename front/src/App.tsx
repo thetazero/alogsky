@@ -10,6 +10,7 @@ import TrainingLogTile from './tiles/TrainingLogTile';
 import TrainingSummaryTile from './tiles/TrainingSummaryTile';
 import CommandProvider from './CommandProvider';
 import ParticularLiftTile from './tiles/ParticularLiftTile';
+import LiftLogTile from './tiles/LIftLogTile';
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
@@ -50,6 +51,10 @@ function App() {
         {
             component: ParticularLiftTile,
             id: "particular-lift"
+        },
+        {
+            component: LiftLogTile,
+            id: "lift-log"
         }
     ]
 

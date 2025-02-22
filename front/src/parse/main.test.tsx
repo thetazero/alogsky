@@ -4,7 +4,7 @@ import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse
 import { Foot, Calf, FootMetatarsals, AchillesTendon, BodyLocationWithSide } from "../pt/body_location";
 import { Side } from "../types";
 import { meters } from "@buge/ts-units/length";
-import { minutes, seconds } from "@buge/ts-units/time";
+import { seconds } from "@buge/ts-units/time";
 
 describe("Test parse unit", () => {
     it('Should parse kg', () => {
