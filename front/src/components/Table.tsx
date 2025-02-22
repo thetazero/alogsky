@@ -27,7 +27,7 @@ const ScrollableTable: React.FC<TableProps> = ({ table, height, headers }) => {
             className="overflow-x-auto overflow-y-auto level-2 card"
             style={{ maxHeight: height }}
         >
-            <table className="table-auto w-full">
+            <table className="table-auto w-full whitespace-nowrap">
                 <tbody>
                     {
                         // Render headers if they exist

@@ -37,6 +37,11 @@ function to_table(data: Map<Exercise, RepData[]>): string[][] {
     });
 }
 
+export function lift_estimate_height_px(data: LiftData): number {
+    const exercises = new Set(data.reps.map((rep) => rep.exercise)).size;
+    return 120 + exercises * 37;
+}
+
 const Lift: React.FC<LiftProps> = ({ data, height }) => {
     const [table, setTable] = useState<string[][]>([]);
 
