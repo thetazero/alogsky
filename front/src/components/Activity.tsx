@@ -12,8 +12,8 @@ const Activity: React.FC<ActivityProps> = ({ children, title, date }) => {
 
     return (
         <>
-            <div className="flex justify-between items-center">
-                <div className="text-xl font-bold emph mb-4">{title}</div>
+            <div className={"flex justify-between items-center" + (children ? " mb-2" : "")}>
+                <div className="text-xl font-bold emph">{title}</div>
                 <div className="text-sm text-gray-400">
                     <PrettyDate date={date} />
                 </div>

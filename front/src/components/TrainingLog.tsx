@@ -39,12 +39,12 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
 
     const getItemSize = useCallback(
         (index: number) => {
-            if (index % 2 == 1) return 2;
+            if (index % 2 == 1) return 18;
             index = index / 2;
             const item = processed[index];
             if (item.type === 'run') return 120;
             else if (item.type === 'lift') return lift_estimate_height_px(item);
-            else if (item.type === 'sleep') return 44;
+            else if (item.type === 'sleep') return 28;
             else if (item.type === 'pain') return 130;
             else return 100;
         },
@@ -57,7 +57,11 @@ const TrainingLog: React.FC<TrainingLogProps> = ({ processed, height }) => {
     }, [processed]);
 
     const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => {
-        if (index % 2 == 1) return <div style={style} className="bg-gray-400" />;
+        if (index % 2 == 1) return (
+            <div style={style} className='py-2'>
+                <div className="bg-gray-700 h-full" />
+            </div>
+        )
         index = index / 2;
         const activity = processed[index];
 
