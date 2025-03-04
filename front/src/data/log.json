@@ -728,7 +728,7 @@
             "exercises": [
                 "squat: 12x135lbs, 12x135lbs",
                 "cable seated row: 12x65lbs, 12x80lbs",
-                "dumbell 1 leg, 1 arm rdl: 12x30lbs, 12x45lbs",
+                "dumbbell 1 leg, 1 arm rdl: 12x30lbs, 12x45lbs",
                 "overhead press: 12x40lbs, 12x50lbs",
                 "speed skater jumps: 5, 5",
                 "single leg stair calf raise: 20, 20",
@@ -898,11 +898,11 @@
             "notes": "",
             "exercises": [
                 "bench: 6x95lbs, 6x95lbs, 5x105lbs",
-                "dumbell row: 6x60lbs, 8x70lbs, 8x80lbs",
+                "dumbbell row: 6x60lbs, 8x70lbs, 8x80lbs",
                 "lateral raises: 3x8x20lbs",
                 "bicep curls:3x8x40lbs",
-                "dumbell incline bench: 8x40lbs, 8x50lbs, 8x60lbs",
-                "dumbell flys: 3x8x30lbs",
+                "dumbbell incline bench: 8x40lbs, 8x50lbs, 8x60lbs",
+                "dumbbell flys: 3x8x30lbs",
                 "farmer cary: 2x(24kg|20meters)"
             ]
         }
@@ -981,7 +981,7 @@
             "exercises": [
                 "squat: 12x95lbs, 12x145lbs, 12x155lbs",
                 "cable seated row: 12x70lbs, 12x80lbs",
-                "dumbell 1 leg, 1 arm rdl: 12x35lbs, 12x45lbs",
+                "dumbbell 1 leg, 1 arm rdl: 12x35lbs, 12x45lbs",
                 "overhead press: 12x50lbs, 12x60lbs",
                 "speed skater jumps: 5, 5",
                 "single leg stair calf raise: 20, 20",
@@ -1002,9 +1002,9 @@
             "duration": 35,
             "notes": "",
             "exercises": [
-                "dumbell row: 9x60lbs, 8x80lbs, 8x80lbs",
-                "dumbell flys: 2x8x30lbs, 8x40lbs",
-                "dumbell incline bench: 2x8x50lbs, 8x60lbs",
+                "dumbbell row: 9x60lbs, 8x80lbs, 8x80lbs",
+                "dumbbell flys: 2x8x30lbs, 8x40lbs",
+                "dumbbell incline bench: 2x8x50lbs, 8x60lbs",
                 "lateral raises: 3x8x20lbs",
                 "bench: 6x95lbs, 8x95lbs, 5x105lbs",
                 "bicep curls:3x8x40lbs",
@@ -1022,7 +1022,7 @@
             "exercises": [
                 "squat: 12x95lbs, 12x115lbs, 12x135lbs",
                 "cable seated row: 12x65lbs, 12x80lbs",
-                "dumbell 1 leg, 1 arm rdl: 12x35lbs",
+                "dumbbell 1 leg, 1 arm rdl: 12x35lbs",
                 "overhead press: 12x50lbs, 12x60lbs",
                 "single leg stair calf raise: 12, 15",
                 "pull up: 8, 8",
@@ -1674,7 +1674,7 @@
             "exercises": [
                 "squat: 12x95lbs, 12x145lbs, 12x155lbs",
                 "cable seated row: 12x70lbs, 12x80lbs",
-                "dumbell 1 leg, 1 arm rdl: 12x16kg, 12x16kg",
+                "dumbbell 1 leg, 1 arm rdl: 12x16kg, 12x16kg",
                 "overhead press: 12x50lbs, 12x60lbs",
                 "speed skater jumps: 5, 5",
                 "single leg stair calf raise: 20, 20",
@@ -1697,7 +1697,7 @@
             "exercises": [
                 "squat: 12x95lbs, 12x115lbs, 12x135lbs",
                 "cable seated row: 12x65lbs, 12x80lbs",
-                "dumbell 1 leg, 1 arm rdl: 12x35lbs, 35lbs",
+                "dumbbell 1 leg, 1 arm rdl: 12x35lbs, 35lbs",
                 "overhead press: 12x50lbs, 12x60lbs",
                 "single leg stair calf raise: 12, 12",
                 "pull up: 8, 8",
@@ -1744,11 +1744,11 @@
             "duration": 42,
             "exercises": [
                 "bench: 6x95lbs, 8x95lbs, 5x105lbs",
-                "dumbell fly: 8x30lbs, 8x30lbs, 8x35lbs",
+                "dumbbell fly: 8x30lbs, 8x30lbs, 8x35lbs",
                 "lateral raise: 8x20lbs, 8x20lbs, 8x20lbs",
                 "bicep curl: 8x35lbs, 8x40lbs, 8x40lbs",
-                "dumbell row: 8x65lbs, 8x70lbs, 8x80lbs",
-                "dumbell incline bench: 8x50lbs, 8x50lbs, 8x60lbs"
+                "dumbbell row: 8x65lbs, 8x70lbs, 8x80lbs",
+                "dumbbell incline bench: 8x50lbs, 8x50lbs, 8x60lbs"
             ]
         }
     },
@@ -2052,7 +2052,7 @@
     {
         "version": 2,
         "type": "sleep",
-        "date": "Feb 22, 2025, 7:29:00 AM",
+        "date": "Feb 21, 2025, 7:29:00 AM",
         "data": {
             "duration": 509,
             "quality": "fair"
@@ -2146,6 +2146,120 @@
         "data": {
             "duration": 348,
             "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 10, 2025, 6:00:00 PM",
+        "data": {
+            "duration": 48,
+            "notes": "",
+            "exercises": [
+                "squat: 12x115lbs, 8x115lbs, 8x115lbs",
+                "cable seated row: 8x75lbs, 8x75lbs, 8x75lbs",
+                "dumbbell 1 leg, 1 arm rdl: 8x16kg, 8x16kg, 8x16kg",
+                "dumbbell incline bench: 8x50lbs, 8x60lbs, 8x60lbs",
+                "med ball speed skaters: 5x15lbs, 5x20lbs",
+                "single leg stair calf raise: 8, 8, 8",
+                "pull up: 8, 8, 8",
+                "one leg buck: 8, 8",
+                "45 degree back extension: 10, 8, 8",
+                "bulgarian split squat: 8x20lbs, 8x20lbs",
+                "oxidative squat: 4x95lbs, 4x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 16, 2025, 12:50:00 AM",
+        "data": {
+            "duration": 8,
+            "notes": "core felt very tired",
+            "exercises": [
+                "crunch: 45",
+                "rush n twist: 50, 25",
+                "situp: 30",
+                "push up: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 17, 2025, 8:50:00 AM",
+        "data": {
+            "duration": 17,
+            "notes": "",
+            "exercises": [
+                "bulgarian split squat: 8x30lbs, 8x20lbs",
+                "single leg stair calf raise: 20, 20",
+                "dumbbell 1 leg, 1 arm rdl: 2x8x30lbs",
+                "dumbbell bench: 8x70lbs",
+                "dumbbell overhead press: 8x40lbs, 8x50lbs, 8x60lbs",
+                "tib raises: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 22, 2025, 9:23:00 AM",
+        "data": {
+            "duration": 25,
+            "notes": "",
+            "exercises": [
+                "crunch: 60",
+                "rush n twist: 40",
+                "plank: 60s",
+                "push up: 20, 25, 25",
+                "single leg stair calf raise: 20, 20",
+                "ledge tricep dip: 3x12x0lbs",
+                "single leg squat: 2, 3"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Feb 24, 2025, 6:00:00 PM",
+        "data": {
+            "duration": 31,
+            "notes": "felt back on rdl, but not on back extensions",
+            "exercises": [
+                "squat: 12x115lbs, 8x135lbs, 8x155lbs",
+                "cable seated row: 8x75lbs, 8x90lbs, 8x90lbs",
+                "dumbbell 1 leg, 1 arm rdl: 8x16kg",
+                "dumbbell incline bench: 8x50lbs, 8x60lbs, 8x70lbs",
+                "single leg stair calf raise: 14, 14, 12",
+                "pull up: 6, 8, 8",
+                "one leg buck: 8, 8",
+                "45 degree back extension: 8, 8",
+                "bulgarian split squat: 8x30lbs, 8x20lbs",
+                "oxidative squat: 4x95lbs, 4x105lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 03, 2025, 11:30:00 AM",
+        "data": {
+            "duration": 30,
+            "notes": "chest + back feels really tired post race",
+            "exercises": [
+                "push up: 15, 15, 12",
+                "dips: 4, 6, 5, 5",
+                "crunch: 60",
+                "rush n twist: 50",
+                "core row: 30",
+                "side leg lift: 25",
+                "single leg stair calf raise: 20, 20",
+                "single leg squat: 5, 8",
+                "nordic curl: 4, 8",
+                "tib raises: 3x20x0lbs"
+            ]
         }
     }
 ]
