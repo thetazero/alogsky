@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Activity from "../components/Activity";
 import { SleepData, SleepQuality } from "../types";
 import { format_time } from "../utils/format";
@@ -8,7 +8,7 @@ export interface SleepProps {
     height: number;
 }
 
-const SleepQualityMap = new Map(
+const SleepQualityMap: Map<SleepQuality, "good" | "bad" | "okay"> = new Map(
     [
         [SleepQuality.Poor, "bad"],
         [SleepQuality.Low, "bad"],
@@ -17,9 +17,11 @@ const SleepQualityMap = new Map(
 )
 
 const SleepActivity: React.FC<SleepProps> = ({ data, height }) => {
-    const color = SleepQualityMap.get(data.quality ?? SleepQuality.Fair);
+    const color = SleepQualityMap.get(data.quality ?? SleepQuality.Fair) ?? "okay"
     return (
-        <Activity title={`${format_time(data.duration)}`} height={height} date={data.date} color={color}></Activity>
+        <Activity title={`${format_time(data.duration)}`} height={height} date={data.date}
+            color={color}
+        ></Activity>
     )
 }
 
