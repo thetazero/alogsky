@@ -1,6 +1,8 @@
 import csv
 import json
 from typing import Any
+from datetime import datetime
+import pytz
 
 
 def read_strava_export(folder_path: str, export_path: str):
@@ -10,6 +12,14 @@ def read_strava_export(folder_path: str, export_path: str):
     runs = extract_relevant_runs(activities)
     with open(export_path, "w") as file:
         json.dump(runs, file, indent=2)
+
+def parse_date(time: str) -> str:
+    date_format = "%b %d, %Y, %I:%M:%S %p"
+    dt_naive = datetime.strptime(time, date_format)
+    dt_aware = dt_naive.replace(tzinfo=pytz.UTC)
+    dt_pst = dt_aware.astimezone(pytz.timezone("US/Pacific"))
+    return dt_pst.strftime(date_format)
+
 
 
 def extract_relevant_runs(activities: Any):
@@ -22,7 +32,7 @@ def extract_relevant_runs(activities: Any):
             run = {
                 "version": 2,
                 "type": "run",
-                "date": activity["Activity Date"],
+                "date": parse_date(activity["Activity Date"]),
                 "data": {
                     "title": activity["Activity Name"],
                     "distance": activity["Distance"],
@@ -40,7 +50,7 @@ def extract_relevant_runs(activities: Any):
                 row = {
                     "version": 1,
                     "type": "row",
-                    "date": activity["Activity Date"],
+                    "date": parse_date(activity["Activity Date"]),
                     "data": {
                         "title": title,
                         "description": activity["Activity Description"],
