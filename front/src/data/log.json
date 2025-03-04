@@ -2021,5 +2021,131 @@
             "duration": 528,
             "quality": "fair"
         }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 18, 2025, 8:39:00 AM",
+        "data": {
+            "duration": 354,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 19, 2025, 8:08:00 AM",
+        "data": {
+            "duration": 524,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 20, 2025, 5:50:00 AM",
+        "data": {
+            "duration": 371,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 22, 2025, 7:29:00 AM",
+        "data": {
+            "duration": 509,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 22, 2025, 7:58:00 AM",
+        "data": {
+            "duration": 470,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 23, 2025, 6:52:00 AM",
+        "data": {
+            "duration": 453,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 24, 2025, 8:09:00 AM",
+        "data": {
+            "duration": 518,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 25, 2025, 7:52:00 AM",
+        "data": {
+            "duration": 521,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 26, 2025, 7:44:00 AM",
+        "data": {
+            "duration": 523,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 27, 2025, 7:27:00 AM",
+        "data": {
+            "duration": 489,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Feb 28, 2025, 3:35:00 AM",
+        "data": {
+            "duration": 247,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 01, 2025, 8:04:00 AM",
+        "data": {
+            "duration": 559,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 02, 2025, 7:54:00 AM",
+        "data": {
+            "duration": 506,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 03, 2025, 9:55:00 AM",
+        "data": {
+            "duration": 348,
+            "quality": "low"
+        }
     }
 ]
