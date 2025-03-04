@@ -10,9 +10,7 @@ export interface SleepProps {
 
 const SleepActivity: React.FC<SleepProps> = ({ data, height }) => {
     return (
-        <Activity title="Sleep" height={height} date={data.date}>
-            Duration: {format_time(data.duration)}
-        </Activity>
+        <Activity title={`${format_time(data.duration)}`} height={height} date={data.date}></Activity>
     )
 }
 

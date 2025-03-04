@@ -31,6 +31,8 @@ export interface RunData {
     temperature?: Temperature,
     feels_like?: Temperature,
     workout_data?: RunningWorkoutData,
+    description?: string,
+    private_note?: string,
     date: Date
     type: "run"
 }

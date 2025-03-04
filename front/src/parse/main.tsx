@@ -94,6 +94,8 @@ function parse_run_v2(data: any, date: Date): RunData {
         elapsed_time,
         temperature,
         feels_like,
+        description: data.description,
+        private_note: data.private_note,
         date,
         type: "run"
     };

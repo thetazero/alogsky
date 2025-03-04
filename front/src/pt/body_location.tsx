@@ -44,6 +44,7 @@ class BodyLocation {
 
 export const AchillesTendon = new BodyLocation("Achilles Tendon", BodyRegion.Ankle)
 export const Ankle = new BodyLocation("Ankle", BodyRegion.Ankle)
+export const Back = new BodyLocation("Back", BodyRegion.Back)
 export const Bicep = new BodyLocation("Bicep", BodyRegion.Arm)
 export const Calf = new BodyLocation("Calf", BodyRegion.LowerLeg)
 export const Core = new BodyLocation("Core", BodyRegion.Core)
@@ -79,6 +80,7 @@ export const UpperCore = new BodyLocation("Upper Core", BodyRegion.Core)
 export const body_locations: BodyLocation[] = [
     AchillesTendon,
     Ankle,
+    Back,
     Bicep,
     Calf,
     Core,

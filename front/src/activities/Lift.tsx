@@ -39,7 +39,7 @@ function to_table(data: Map<Exercise, RepData[]>): string[][] {
 
 export function lift_estimate_height_px(data: LiftData): number {
     const exercises = new Set(data.reps.map((rep) => rep.exercise)).size;
-    return 120 + exercises * 37;
+    return 100 + exercises * 36;
 }
 
 const Lift: React.FC<LiftProps> = ({ data, height }) => {
@@ -54,7 +54,7 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
             <div className="mb-4">
                 <span className="font-semibold emph mb-4">Tonage: </span> {nice_number(lift_tonage(data).in(tons).amount)} tons
             </div>
-            <ScrollableTable height={height - 120} table={table} />
+            <ScrollableTable height={height - 97} table={table} />
         </Activity>
     );
 };

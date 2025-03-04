@@ -40,6 +40,9 @@ def extract_relevant_runs(activities: Any):
                     "elapsed_time": activity["Elapsed Time"],
                     "temperature": activity["Average Temperature"],
                     "feels_like": activity["Apparent Temperature"],
+                    "description": activity["Activity Description"],
+                    "private_note": activity["Activity Private Note"],
+                    "strava_id": activity_id,
                 },
             }
             res.append(run)
