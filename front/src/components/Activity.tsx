@@ -6,14 +6,23 @@ export interface ActivityProps {
     height: number
     title: string
     date: Date
+    color?: "good" | "bad" | "okay"
 }
 
-const Activity: React.FC<ActivityProps> = ({ children, title, date }) => {
+export const color_map = {
+    "good": "text-green-300",
+    "bad": "text-red-300",
+    "okay": "text-yellow-300"
+}
+
+const Activity: React.FC<ActivityProps> = ({ children, title, date, color }) => {
 
     return (
         <>
             <div className={"flex justify-between items-center" + (children ? " mb-2" : "")}>
-                <div className="text-xl font-bold emph">{title}</div>
+                <div className={"text-xl font-bold " + (
+                    color ? color_map[color] : "emph"
+                )}>{title}</div>
                 <div className="text-sm text-gray-400">
                     <PrettyDate date={date} />
                 </div>
