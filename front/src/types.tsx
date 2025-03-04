@@ -50,19 +50,25 @@ export enum Exercise {
     BicepCurl = "Bicep Curl",
     BulgarianSplitSquat = "Bulgarian Split Squat",
     CableSeatedRow = "Cable Seated Row",
+    CoreRow = "Core Row",
     Crunch = "Crunch",
     DeadBugs = "Dead Bugs",
-    DumbellFly = "Dumbell Fly",
-    DumbellInclineBench = "Dumbell Incline Bench",
-    DumbellOneLegOneArmRomanialDeadLift = "Dumbell One Leg One Arm Romanian Deadlift",
-    DumbellRow = "Dumbell Row",
+    Dip = "Dip",
+    DumbbellBench = "Dumbbell Bench",
+    DumbbellFly = "Dumbbell Fly",
+    DumbbellInclineBench = "Dumbbell Incline Bench",
+    DumbbellOneLegOneArmRomanialDeadLift = "Dumbbell One Leg One Arm Romanian Deadlift",
+    DumbbellRow = "Dumbbell Row",
     FarmerCary = "Farmer Cary",
     FourtyFiveDegreeBackExtension = "45 Degree Back Extension",
     LateralBunkie = "Lateral Bunkie",
     LateralRaise = "Lateral Raise",
+    LedgeTricepDip = "Ledge Tricep Dip",
     LemonSqueezers = "Lemon Squeezers",
     MedBallSeatedRussianTwist = "Med Ball Seated Russian Twist",
+    MedBallSpeedSkaterJumps = "Med Ball Speed Skater Jumps",
     MedialBunkie = "Medial Bunkie",
+    NordicCurl = "Nordic Curl",
     OneLegBuck = "One Leg Buck",
     OverheadPress = "Overhead Press",
     OxidativeSquat = "Oxidative Squat",
@@ -74,12 +80,15 @@ export enum Exercise {
     Row = "Row",
     RushNTwist = "Rush N Twist",
     ShortFootExercise = "Short Foot Exercise",
+    SideLegLift = "Side Leg Lift",
     SingleLegCalfRaise = "Single Leg Calf Raise",
+    SingleLegSquat = "Single Leg Squat",
     SingleLegStairCalfRaise = "Single Leg Stair Calf Raise",
     Situp = "Situp",
     SpeedSkaterJumps = "Speed Skater Jumps",
     Squat = "Squat",
     SupineKneeDrive = "Supine Knee Drive", // https://www.youtube.com/watch?v=wpt_RPlfcR4 (but without the band)
+    TibialisRaise = "Tibialis Raise",
 }
 
 export enum SleepQuality {
@@ -171,7 +180,7 @@ export enum Metric {
     ActiveTime = "Active Time",
     Tonage = "Tonage",
     MeanFatigueScore = "MFS"
-}export enum Side {
+} export enum Side {
     Left,
     Right,
     NoSide

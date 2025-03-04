@@ -4,22 +4,29 @@ import { meters, miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 import { One, Quantity } from "@buge/ts-units";
 
+// Ratio of body weight to weight lifted
 const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.BulgarianSplitSquat, 0.7],
+    [Exercise.CoreRow, 0.2],
     [Exercise.Crunch, 0.1],
     [Exercise.DeadBugs, 0.1],
+    [Exercise.Dip, 0.9],
     [Exercise.FourtyFiveDegreeBackExtension, 0.3],
-    [Exercise.LemonSqueezers, 0.2],
+    [Exercise.LedgeTricepDip, 0.5],
+    [Exercise.NordicCurl, 0.6],
     [Exercise.OneLegBuck, 0.4],
     [Exercise.Plank, 0.02],
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
     [Exercise.RushNTwist, 0.1],
+    [Exercise.SideLegLift, 0.1],
     [Exercise.SingleLegCalfRaise, 0.8],
+    [Exercise.SingleLegSquat, 0.9],
     [Exercise.SingleLegStairCalfRaise, 0.8],
     [Exercise.Situp, 0.15],
     [Exercise.SpeedSkaterJumps, 0.05],
     [Exercise.SupineKneeDrive, 0.1],
+    [Exercise.TibialisRaise, 0.01],
 ]);
 
 export function rep_tonage(rep: RepData) {
