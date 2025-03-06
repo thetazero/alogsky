@@ -12,7 +12,7 @@ interface RunProps {
 }
 
 const Run: React.FC<RunProps> = ({
-    data: { date, distance, moving_time, temperature, title },
+    data: { date, distance, moving_time, temperature, title, shoe },
     height,
 }: RunProps) => {
     const [minutesPerMile, setMinutesPerMile] = useState<InverseSpeed>(moving_time.per(distance));
@@ -30,7 +30,10 @@ const Run: React.FC<RunProps> = ({
             )}
             <p>
                 {distance.in(miles).amount.toFixed(2)} miles |{" "}
-                {fmt_minutes_per_mile(minutesPerMile)}
+                {fmt_minutes_per_mile(minutesPerMile)} | {""}
+                {
+                    shoe
+                }
             </p>
         </Activity>
     );

@@ -62,6 +62,7 @@ export const ITBand = new BodyLocation("IT Band", BodyRegion.Hip)
 export const InnerBackKneeTendon = new BodyLocation("Inner Back Knee Tendon", BodyRegion.Knee)
 export const Knee = new BodyLocation("Knee", BodyRegion.Knee)
 export const Lat = new BodyLocation("Lat", BodyRegion.Chest) // Not sure about this one
+export const LateralDeltoid = new BodyLocation("Lateral Deltoid", BodyRegion.Shoulder)
 export const LowerBack = new BodyLocation("Lower Back", BodyRegion.Back)
 export const LowerCore = new BodyLocation("Lower Core", BodyRegion.Core)
 export const MidBack = new BodyLocation("Mid Back", BodyRegion.Back)
@@ -98,6 +99,7 @@ export const body_locations: BodyLocation[] = [
     InnerBackKneeTendon,
     Knee,
     Lat,
+    LateralDeltoid,
     LowerBack,
     LowerCore,
     MidBack,

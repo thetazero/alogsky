@@ -33,6 +33,7 @@ export interface RunData {
     workout_data?: RunningWorkoutData,
     description?: string,
     private_note?: string,
+    shoe?: string,
     date: Date
     type: "run"
 }
@@ -148,7 +149,7 @@ export interface PainAtLocationData {
 
 export interface PainSnapshotsData {
     description: string
-    pain: number
+    pain: number // 1-5 1: barely noticable, 2: noticable, 3: annoying, 4: painful, 5: excruciating
     date: Date
 }
 

@@ -42,6 +42,7 @@ def extract_relevant_runs(activities: Any):
                     "feels_like": activity["Apparent Temperature"],
                     "description": activity["Activity Description"],
                     "private_note": activity["Activity Private Note"],
+                    "shoe": activity["Activity Gear"],
                     "strava_id": activity_id,
                 },
             }

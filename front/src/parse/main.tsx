@@ -6,7 +6,7 @@ import { kilograms, Mass } from "@buge/ts-units/mass";
 import { Mass as MassDimension } from "@buge/ts-units/mass/dimension";
 import { pounds } from "../types";
 import { Quantity, Unit } from "@buge/ts-units";
-import BodyLocation, { body_locations, Shin, Hamstring, AchillesTendon, Knee, PatellarTendon, Foot, Quad, Glute, BodyLocationWithSide, Pec, Lat, MidBack, Calf, Shoulder } from "../pt/body_location";
+import BodyLocation, { body_locations, Shin, Hamstring, AchillesTendon, Knee, PatellarTendon, Foot, Quad, Glute, BodyLocationWithSide, Pec, Lat, MidBack, Calf, Shoulder, LateralDeltoid } from "../pt/body_location";
 import { Side } from "../types";
 import { get_day_string } from "../utils/time";
 import { Time as TimeDimension } from "@buge/ts-units/time/dimension";
@@ -96,6 +96,7 @@ function parse_run_v2(data: any, date: Date): RunData {
         feels_like,
         description: data.description,
         private_note: data.private_note,
+        shoe: data.shoe,
         date,
         type: "run"
     };
@@ -314,6 +315,7 @@ const locations_map: Map<string, BodyLocation> = new Map([
     ["shins", Shin],
     ["calves", Calf],
     ["shoulders", Shoulder],
+    ["lateral raises muscle", LateralDeltoid],
     ["foot sciatica", Foot], // TODO: Diagnosis ???
 ]);
 
