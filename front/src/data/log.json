@@ -2477,5 +2477,38 @@
                 ]
             }
         ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 05, 2025, 12:06:00 PM",
+        "data": {
+            "duration": 31,
+            "notes": "felt nauseous and light headed stopped early, took 4 hours to start feeling normal, 9 completely normal.",
+            "exercises": [
+                "dumbbell row:  8x70, 12x70, 12x70",
+                "lateral raise: 12x20, 15x20, 12x24",
+                "dumbbell incline bench: 12x60, 9x60, 7x60",
+                "tricep extension: 12x22.5, 12x27.5, 12x27.5",
+                "dumbbell fly: 8x24",
+                "bicep curl: 10x30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 07, 2025, 4:25:00 PM",
+        "data": {
+            "duration": 18,
+            "notes": "Took it a little easy because of the light headedness last time. Easy on the RDLs due to back pain",
+            "exercises": [
+                "single leg squat: 4",
+                "squat: 12x135lbs, 12x135lbs",
+                "barbell rdl: 12x45lbs, 12x45lbs",
+                "bulgarian split squat: 8x30lbs",
+                "nordic curl: 8, 10"
+            ]
+        }
     }
 ]
