@@ -2510,5 +2510,41 @@
                 "nordic curl: 8, 10"
             ]
         }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 04, 2025, 8:59:00 AM",
+        "data": {
+            "duration": 531,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 05, 2025, 8:44:00 AM",
+        "data": {
+            "duration": 387,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 06, 2025, 8:32:00 AM",
+        "data": {
+            "duration": 470,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 07, 2025, 8:37:00 AM",
+        "data": {
+            "duration": 582,
+            "quality": "low"
+        }
     }
 ]
