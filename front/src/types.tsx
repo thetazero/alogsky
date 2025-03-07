@@ -49,6 +49,7 @@ export interface Interval {
 
 export enum Exercise {
     AnteriorBunkie = "Anterior Bunkie",
+    BarbellRdl = "Barbell Romanian Deadlift",
     Bench = "Bench",
     BicepCurl = "Bicep Curl",
     BulgarianSplitSquat = "Bulgarian Split Squat",
@@ -92,6 +93,7 @@ export enum Exercise {
     Squat = "Squat",
     SupineKneeDrive = "Supine Knee Drive", // https://www.youtube.com/watch?v=wpt_RPlfcR4 (but without the band)
     TibialisRaise = "Tibialis Raise",
+    TricepExtension = "Tricep Extension",
 }
 
 export enum SleepQuality {
