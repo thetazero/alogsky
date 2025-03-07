@@ -17,7 +17,7 @@ def parse_date(time: str) -> str:
     date_format = "%b %d, %Y, %I:%M:%S %p"
     dt_naive = datetime.strptime(time, date_format)
     dt_aware = dt_naive.replace(tzinfo=pytz.UTC)
-    dt_pst = dt_aware.astimezone(pytz.timezone("US/Pacific"))
+    dt_pst = dt_aware.astimezone(pytz.timezone("US/Eastern"))
     return dt_pst.strftime(date_format)
 
 

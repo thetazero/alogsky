@@ -19,7 +19,7 @@ export class TrainingDataSet {
     private _splitWeeks: TrainingDataSet[]
 
     constructor(data: TrainingData[]) {
-        this.data = data.sort((b, a) => a.date.getTime() - b.date.getTime())
+        this.data = data.sort((a, b) => a.date.getTime() - b.date.getTime())
         this.runs = data.filter(e => e.type === "run")
         this.lifts = data.filter(e => e.type === "lift")
         this.sleeps = data.filter(e => e.type === "sleep")

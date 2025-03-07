@@ -50,7 +50,6 @@ const ParticularLiftTile: panelComponentType = ({ dataset, id }) => {
                             lift.reps.map(fmt_rep).join(", ")
                         ]
                     })}
-                    height={400}
                 />
             }
         </Tile>

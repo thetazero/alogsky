@@ -104,4 +104,16 @@ describe("Test training data set", () => {
             new Date(2024, 11, 29, 23, 59, 59, 999)
         ]);
     });
+
+    it('Orders data correctly', ()=> {
+        const dataset= new TrainingDataSet([
+            make_run_data(new Date(2024, 11, 28, 1)),
+            make_run_data(new Date(2024, 11, 27, 12)),
+            make_run_data(new Date(2024, 11, 27, 5)),
+            make_run_data(new Date(2024, 11, 27, 17)),
+            make_run_data(new Date(2024, 11, 27, 8)),
+        ]);
+        console.log(dataset.data.map(d => d.date.getHours()));
+        expect(dataset.data.map(d => d.date.getHours())).toEqual([5, 8, 12, 17, 1]);
+    });
 })

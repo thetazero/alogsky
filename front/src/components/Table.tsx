@@ -3,10 +3,9 @@ import React, { useEffect, useState } from "react";
 interface TableProps {
     headers?: string[]; // Optional headers for the table
     table: string[][]; // 2D array representing table rows and cells
-    height: number;    // Height of the scrollable container
 }
 
-const ScrollableTable: React.FC<TableProps> = ({ table, height, headers }) => {
+const ScrollableTable: React.FC<TableProps> = ({ table, headers }) => {
     const [filled, setFilled] = useState<string[][]>([]);
 
     useEffect(() => {
@@ -24,8 +23,7 @@ const ScrollableTable: React.FC<TableProps> = ({ table, height, headers }) => {
 
     return (
         <div
-            className="overflow-x-auto overflow-y-auto level-2 card"
-            style={{ maxHeight: height }}
+            className="overflow-x-auto overflow-y-auto level-2 card h-full"
         >
             <table className="table-auto w-full whitespace-nowrap">
                 <tbody>

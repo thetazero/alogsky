@@ -56,7 +56,7 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
             <div className="mb-4">
                 <span className="font-semibold emph mb-4">Tonage: </span> {nice_number(lift_tonage(data).in(tons).amount)} tons
             </div>
-            <ScrollableTable height={height - lift_const_pixels} table={table} />
+            <ScrollableTable table={table} />
         </Activity>
     );
 };
