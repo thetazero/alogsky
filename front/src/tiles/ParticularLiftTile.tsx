@@ -42,9 +42,9 @@ const ParticularLiftTile: panelComponentType = ({ dataset, id }) => {
                 />
             </div>
             <div
-            style={{
-                "maxHeight": "400px",
-            }}
+                style={{
+                    "maxHeight": "400px",
+                }}
             >
                 <ScrollableTable
                     headers={["Date", "Reps"]}
