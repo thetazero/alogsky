@@ -2546,5 +2546,19 @@
             "duration": 582,
             "quality": "low"
         }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 08, 2025, 1:18:00 AM",
+        "data": {
+            "duration": 5,
+            "notes": "",
+            "exercises": [
+                "crunch: 50",
+                "core row: 30, 25",
+                "rush n twist: 50"
+            ]
+        }
     }
 ]

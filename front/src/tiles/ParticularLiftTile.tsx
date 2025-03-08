@@ -41,17 +41,21 @@ const ParticularLiftTile: panelComponentType = ({ dataset, id }) => {
                     renderOption={(option: Exercise) => option}
                 />
             </div>
-            {
+            <div
+            style={{
+                "maxHeight": "400px",
+            }}
+            >
                 <ScrollableTable
                     headers={["Date", "Reps"]}
-                    table={history.map(lift => {
+                    table={history.slice().reverse().map(lift => {
                         return [
                             lift.date.toDateString(),
                             lift.reps.map(fmt_rep).join(", ")
                         ]
                     })}
                 />
-            }
+            </div>
         </Tile>
     )
 }
