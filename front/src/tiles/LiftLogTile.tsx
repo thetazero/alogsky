@@ -6,7 +6,7 @@ import panelComponentType from "./tileType";
 const LiftLogTile: panelComponentType = ({ dataset, id }) => {
     return (
         <Tile title="Lift Log" id={id}>
-            <TrainingLog processed={dataset.lifts} />
+            <TrainingLog processed={dataset.lifts.slice().reverse()} />
         </Tile>
     );
 };

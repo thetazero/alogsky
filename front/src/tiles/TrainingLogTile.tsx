@@ -16,7 +16,7 @@ const TrainingLogTile: panelComponentType = ({ dataset, id }) => {
                     </div>
                 }
                 bottomChild={
-                    <TrainingLog processed={dataset.data} />
+                    <TrainingLog processed={dataset.data.slice().reverse()} />
                 }
             />
         </Tile>
