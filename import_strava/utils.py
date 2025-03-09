@@ -1,6 +1,7 @@
 import pytz
 from datetime import datetime
 
+
 def contains_keywords(text: str, keywords: list[str]) -> bool:
     for keyword in keywords:
         if keyword in text:

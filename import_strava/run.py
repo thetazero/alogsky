@@ -1,21 +1,91 @@
 from typing import Any
 from .utils import contains_keywords, parse_date
+from .cache import Cache
+import os
 
-def parse_run_for_workout(run: dict[str, Any]):
+CACHE_VERSION_STRING = "runv1"
+NOT_A_WORKOUT = "not_a_workout"
+
+
+def input_rep():
+    print("Input rep data: [distance, time]")
+    res = input("> ").lower()
+    if res == "":
+        return None
+    else:
+        distance, time = res.split(",")
+        distance = distance.strip()
+        time = time.strip()
+        return {
+            "distance": distance,
+            "time": time,
+        }
+
+
+def input_reps():
+    print("Input reps data (including recovery)")
+    result = []
+    while True:
+        rep = input_rep()
+        if rep is None:
+            break
+        result.append(rep)
+    print(result)
+    confirm = input("Confirm reps data [Y]es [N]o [C]ancel").lower()
+    if confirm == "y":
+        return result
+    elif confirm == "n":
+        return input_reps()
+    elif confirm == "c":
+        return None
+    raise ValueError("Invalid input")
+
+
+def input_intervals(id: str):
+    print(f"Link: https://www.strava.com/activities/{id}")
+    print("Input workout data [N]ot a workout [S]kip [F]inish [Y]es")
+    res = input("> ").lower()
+    if res == "f":
+        os.environ["NO_INPUT"] = "1"
+        return None
+    if res == "s" or res == "":
+        print("Skipping")
+        return None
+    if res == "n":
+        print(f"Setting {id} as not a workout")
+        return NOT_A_WORKOUT
+    if res == "y":
+        return input_reps()
+    raise ValueError("Invalid input")
+
+
+def parse_run_for_workout(run: dict[str, Any], cache: Cache):
     assert run["type"] == "run"
     description = run["data"]["description"]
     private_note = run["data"]["private_note"]
     title = run["data"]["title"]
 
     keywords = ["workout", "strides", "tempo"]
-    if contains_keywords(description+private_note+title, keywords):
-        print(f"title: {title}")
-        print(f"description: {description}")
-        print(f"private_note: {private_note}")
+    strava_id = run["data"]["strava_id"]
+    if contains_keywords(description + private_note + title, keywords):
+        if not os.getenv("NO_INPUT", None) and not cache.contains(
+            strava_id, CACHE_VERSION_STRING
+        ):
+            print(f"{run['date']}: {title}")
+            print(f"description: {description}")
+            print(f"private_note: {private_note}")
+            intervals = input_intervals(strava_id)
+            if intervals == NOT_A_WORKOUT:
+                cache.set(strava_id, CACHE_VERSION_STRING, None)
+            elif intervals is not None:
+                cache.set(strava_id, CACHE_VERSION_STRING, intervals)
+
+    if cache.contains(strava_id, CACHE_VERSION_STRING):
+        run["data"]["intervals"] = cache.get(strava_id)
     return run
 
 
-def parse_run(activity):
+def parse_run(activity, cache: Cache):
     activity_id = int(activity["Activity ID"])
     if activity_id == 13220250113:
         return
@@ -36,5 +106,5 @@ def parse_run(activity):
             "strava_id": activity_id,
         },
     }
-    run = parse_run_for_workout(run)
+    run = parse_run_for_workout(run, cache)
     return run

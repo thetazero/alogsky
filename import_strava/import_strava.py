@@ -3,21 +3,23 @@ import json
 from typing import Any
 from .run import parse_run
 from .utils import parse_date
+from .cache import Cache
 
 
-def read_strava_export(folder_path: str, export_path: str):
+def read_strava_export(folder_path: str, export_path: str, cache: Cache):
     with open(f"{folder_path}/activities.csv", "r") as file:
         reader = csv.DictReader(file)
         activities = list(reader)
-    runs = extract_relevant_runs(activities)
+    runs = extract_relevant_activities(activities, cache)
     with open(export_path, "w") as file:
         json.dump(runs, file, indent=2)
 
-def extract_relevant_runs(activities: Any):
+
+def extract_relevant_activities(activities: Any, cache: Cache):
     res = []
     for activity in activities:
         if activity["Activity Type"] == "Run":
-            run = parse_run(activity)
+            run = parse_run(activity, cache)
             if run:
                 res.append(run)
         elif activity["Activity Type"] == "Workout":
@@ -44,4 +46,6 @@ def extract_relevant_runs(activities: Any):
 
 if __name__ == "__main__":
     # read_strava_export("neltoid", "front/src/data/strava_neltoid.json")
-    read_strava_export("data", "front/src/data/strava_export.json")
+    cache = Cache("strava_cache.json")
+    read_strava_export("data", "front/src/data/strava_export.json", cache)
+    cache.save()

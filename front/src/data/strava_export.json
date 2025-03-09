@@ -19172,7 +19172,13 @@
       "description": "IT band started hurting a lot, pushing the workout back to later in the week. Get fit quick scheme in shambles ",
       "private_note": "",
       "shoe": "Saucony Kinvara 13",
-      "strava_id": 10483034884
+      "strava_id": 10483034884,
+      "intervals": [
+        {
+          "distance": ".83 miles",
+          "time": "4:38"
+        }
+      ]
     }
   },
   {
@@ -20532,7 +20538,17 @@
       "description": "",
       "private_note": "",
       "shoe": "Saucony Kinvara 13",
-      "strava_id": 10906765569
+      "strava_id": 10906765569,
+      "intervals": [
+        {
+          "distance": "100meters",
+          "time": "?"
+        },
+        {
+          "distance": "100meters",
+          "time": "?"
+        }
+      ]
     }
   },
   {
@@ -20770,7 +20786,97 @@
       "description": "Allegedly a sneaky strength workout ",
       "private_note": "4x200(100j), 4min, 4x400(200j), 4 min, 2x200(100j)\n\n28, 29, 29, 29, 63, 61, 62, 61, 29, 29, 29, 28",
       "shoe": "Saucony Kinvara 13",
-      "strava_id": 10967248990
+      "strava_id": 10967248990,
+      "intervals": [
+        {
+          "distance": "200m",
+          "time": "28"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "200m",
+          "time": "29"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "200m",
+          "time": "29"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "?",
+          "time": "4:00"
+        },
+        {
+          "distance": "400m",
+          "time": "1:03"
+        },
+        {
+          "distance": "200m",
+          "time": "?"
+        },
+        {
+          "distance": "400m",
+          "time": "1:01"
+        },
+        {
+          "distance": "200m",
+          "time": "?"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02"
+        },
+        {
+          "distance": "200m",
+          "time": "?"
+        },
+        {
+          "distance": "400m",
+          "time": "1:01"
+        },
+        {
+          "distance": "?",
+          "time": "4:00"
+        },
+        {
+          "distance": "200m",
+          "time": "29"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "200m",
+          "time": "29"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "200m",
+          "time": "29"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "200m",
+          "time": "28"
+        }
+      ]
     }
   },
   {

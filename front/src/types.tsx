@@ -30,7 +30,7 @@ export interface RunData {
     elapsed_time?: Time,
     temperature?: Temperature,
     feels_like?: Temperature,
-    workout_data?: RunningWorkoutData,
+    workout?: RunningWorkoutData,
     description?: string,
     private_note?: string,
     shoe?: string,
