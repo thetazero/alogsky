@@ -31,7 +31,8 @@ def input_reps():
             break
         result.append(rep)
     print(result)
-    confirm = input("Confirm reps data [Y]es [N]o [C]ancel").lower()
+    print("Confirm reps data [Y]es [N]o [C]ancel")
+    confirm = input("> ").lower()
     if confirm == "y":
         return result
     elif confirm == "n":
