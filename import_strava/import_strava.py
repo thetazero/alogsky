@@ -4,6 +4,7 @@ from typing import Any
 from .run import parse_run
 from .utils import parse_date
 from .cache import Cache
+from .bike import parse_bike
 
 
 def read_strava_export(folder_path: str, export_path: str, cache: Cache):
@@ -20,6 +21,10 @@ def extract_relevant_activities(activities: Any, cache: Cache):
     for activity in activities:
         if activity["Activity Type"] == "Run":
             run = parse_run(activity, cache)
+            if run:
+                res.append(run)
+        elif activity["Activity Type"] == "Ride":
+            run = parse_bike(activity)
             if run:
                 res.append(run)
         elif activity["Activity Type"] == "Workout":

@@ -178,7 +178,17 @@ export interface RowData {
     type: "row"
 }
 
-export type TrainingData = RunData | LiftData | SleepData | PainLogData | KayakData | NoteData | RowData
+export interface BikeData {
+    title: string
+    date: Date
+    description: string
+    moving_time: Time
+    average_heartrate?: Frequency
+    distance?: Length
+    type: "bike"
+}
+
+export type TrainingData = RunData | LiftData | SleepData | PainLogData | KayakData | NoteData | RowData | BikeData
 export enum Metric {
     Mileage = "Mileage",
     Pace = "Pace",

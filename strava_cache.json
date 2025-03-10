@@ -560,5 +560,235 @@
                 "time": "?"
             }
         ]
+    },
+    "6472931168": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "800m",
+                "time": "2:23"
+            },
+            {
+                "distance": "400m",
+                "time": "2:03"
+            },
+            {
+                "distance": "800m",
+                "time": "2:24"
+            },
+            {
+                "distance": "400m",
+                "time": "2:23"
+            }
+        ]
+    },
+    "6913204351": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "200m",
+                "time": "?"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "200m",
+                "time": "?"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "200m",
+                "time": "?"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "200m",
+                "time": "?"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "200m",
+                "time": "?"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "200m",
+                "time": "?"
+            }
+        ]
+    },
+    "9641131871": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "4mi",
+                "time": "23:05"
+            }
+        ]
+    },
+    "13382063974": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "200m",
+                "time": "30.15"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "31.57"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "30.37"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "30.67"
+            },
+            {
+                "distance": "?",
+                "time": "4:00"
+            },
+            {
+                "distance": "200m",
+                "time": "28.53"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "29.05"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "28.76"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "29.17"
+            },
+            {
+                "distance": "?",
+                "time": "4:00"
+            },
+            {
+                "distance": "200m",
+                "time": "31.28"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "30.30"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "29.08"
+            },
+            {
+                "distance": "?",
+                "time": "1:30"
+            },
+            {
+                "distance": "200m",
+                "time": "27.92"
+            }
+        ]
+    },
+    "13452077361": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            }
+        ]
+    },
+    "13665011742": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "?"
+            }
+        ]
     }
 }
