@@ -31,6 +31,7 @@ class Cache:
         return bool(data["version"] == version)
 
     def set(self, key: str, version: str, value):
+        key = str(key)
         self.cache[key] = {
             "version": version,
             "value": value,
