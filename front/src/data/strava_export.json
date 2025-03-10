@@ -4717,7 +4717,8 @@
       "description": "",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6524506432
+      "strava_id": 6524506432,
+      "intervals": null
     }
   },
   {
@@ -5856,7 +5857,69 @@
       "description": "2x600 3 min jog, 3x400 2 min jog, 3x200 90 sec jog.\n1:31, 1:32, 60, 61, 62, 28, 29, 27",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6723625984
+      "strava_id": 6723625984,
+      "intervals": [
+        {
+          "distance": "600m",
+          "time": "1:31"
+        },
+        {
+          "distance": "?",
+          "time": "3:00"
+        },
+        {
+          "distance": "600m",
+          "time": "1:32"
+        },
+        {
+          "distance": "?",
+          "time": "3:00"
+        },
+        {
+          "distance": "400m",
+          "time": "1:00"
+        },
+        {
+          "distance": "?",
+          "time": "2:00"
+        },
+        {
+          "distance": "400m",
+          "time": "1:01"
+        },
+        {
+          "distance": "?",
+          "time": "2:00"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02"
+        },
+        {
+          "distance": "?",
+          "time": "2:00"
+        },
+        {
+          "distance": "200m",
+          "time": "28"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "200m",
+          "time": "29"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "200m",
+          "time": "27"
+        }
+      ]
     }
   },
   {
@@ -6400,7 +6463,8 @@
       "description": "Just doing mileage is kinda fun. Some workouts would be nice though.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6831130773
+      "strava_id": 6831130773,
+      "intervals": null
     }
   },
   {
@@ -6417,7 +6481,8 @@
       "description": "No workouts hits different",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6840341963
+      "strava_id": 6840341963,
+      "intervals": null
     }
   },
   {
@@ -6502,7 +6567,8 @@
       "description": "surprise appearance of Lauren for the bike. Tomorrow will be a great day to do a workout.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6861103762
+      "strava_id": 6861103762,
+      "intervals": null
     }
   },
   {
