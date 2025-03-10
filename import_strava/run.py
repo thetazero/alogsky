@@ -21,6 +21,10 @@ def input_rep():
             "time": time,
         }
 
+def print_reps(reps):
+    for rep in reps:
+        print(f"{rep['distance']}@{rep['time']}")
+
 
 def input_reps():
     print("Input reps data (including recovery)")
@@ -30,7 +34,7 @@ def input_reps():
         if rep is None:
             break
         result.append(rep)
-    print(result)
+    print_reps(result)
     print("Confirm reps data [Y]es [N]o [C]ancel")
     confirm = input("> ").lower()
     if confirm == "y":
@@ -66,9 +70,9 @@ def parse_run_for_workout(run: dict[str, Any], cache: Cache):
     private_note = run["data"]["private_note"]
     title = run["data"]["title"]
 
-    keywords = ["workout", "strides", "tempo"]
+    keywords = ["workout", "strides", "tempo", "x("]
     strava_id = run["data"]["strava_id"]
-    if contains_keywords(description + private_note + title, keywords):
+    if contains_keywords((description + private_note + title).lower(), keywords):
         if not os.getenv("NO_INPUT", None) and not cache.contains(
             strava_id, CACHE_VERSION_STRING
         ):

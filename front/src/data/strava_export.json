@@ -12229,7 +12229,8 @@
       "description": "calf hurts, workout tomorrow ",
       "private_note": "",
       "shoe": "",
-      "strava_id": 8283010910
+      "strava_id": 8283010910,
+      "intervals": null
     }
   },
   {
@@ -13368,7 +13369,85 @@
       "description": "Nice to struggle for the right reasons\n",
       "private_note": "62-63, 90 second rest",
       "shoe": "",
-      "strava_id": 8523631385
+      "strava_id": 8523631385,
+      "intervals": [
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        },
+        {
+          "distance": "?",
+          "time": "1:30"
+        },
+        {
+          "distance": "400m",
+          "time": "1:02.5"
+        }
+      ]
     }
   },
   {
@@ -22671,7 +22750,25 @@
       "description": "+35 minute bike before \n+5 commuter bike miles\n+lift after\n+4 strides\n\nCan't seem to completely get rid of sickness even after 4 days off",
       "private_note": "",
       "shoe": "",
-      "strava_id": 11576119613
+      "strava_id": 11576119613,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        }
+      ]
     }
   },
   {
@@ -26564,7 +26661,29 @@
       "description": "Hillary Spotted\n\n3 mile tempo, 2x200\n5:32 pace, 31, 29.\nHoping it's just the travel \n",
       "private_note": "",
       "shoe": "",
-      "strava_id": 13178069962
+      "strava_id": 13178069962,
+      "intervals": [
+        {
+          "distance": "3mi",
+          "time": "16:36"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "200m",
+          "time": "31"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "200m",
+          "time": "29"
+        }
+      ]
     }
   },
   {
@@ -26717,7 +26836,21 @@
       "description": "3 strides",
       "private_note": "",
       "shoe": "",
-      "strava_id": 13282113602
+      "strava_id": 13282113602,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        }
+      ]
     }
   },
   {
@@ -27478,7 +27611,101 @@
       "description": "Hard workout felt very fatigued, close enough to intended paces. Good first workout back from sickness ",
       "private_note": "",
       "shoe": "ASICS Hyper Speed 2",
-      "strava_id": 13567443191
+      "strava_id": 13567443191,
+      "intervals": [
+        {
+          "distance": "300m",
+          "time": "48"
+        },
+        {
+          "distance": "300m",
+          "time": "2:11"
+        },
+        {
+          "distance": "300m",
+          "time": "48"
+        },
+        {
+          "distance": "300m",
+          "time": "2:09"
+        },
+        {
+          "distance": "300m",
+          "time": "48"
+        },
+        {
+          "distance": "300m",
+          "time": "2:06"
+        },
+        {
+          "distance": "300m",
+          "time": "43"
+        },
+        {
+          "distance": "?",
+          "time": "3:42"
+        },
+        {
+          "distance": "300m",
+          "time": "48"
+        },
+        {
+          "distance": "300m",
+          "time": "2:14"
+        },
+        {
+          "distance": "300m",
+          "time": "48"
+        },
+        {
+          "distance": "300m",
+          "time": "2:13"
+        },
+        {
+          "distance": "300m",
+          "time": "47"
+        },
+        {
+          "distance": "300m",
+          "time": "2:22"
+        },
+        {
+          "distance": "300m",
+          "time": "44"
+        },
+        {
+          "distance": "?",
+          "time": "3:36"
+        },
+        {
+          "distance": "300m",
+          "time": "47"
+        },
+        {
+          "distance": "300m",
+          "time": "2:22"
+        },
+        {
+          "distance": "300m",
+          "time": "48"
+        },
+        {
+          "distance": "300m",
+          "time": "2:30"
+        },
+        {
+          "distance": "300m",
+          "time": "49"
+        },
+        {
+          "distance": "300m",
+          "time": "2:20"
+        },
+        {
+          "distance": "300m",
+          "time": "45"
+        }
+      ]
     }
   },
   {
@@ -27882,7 +28109,33 @@
       "description": "",
       "private_note": "",
       "shoe": "ASICS Hyper Speed 2",
-      "strava_id": 13690410911
+      "strava_id": 13690410911,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        }
+      ]
     }
   },
   {
