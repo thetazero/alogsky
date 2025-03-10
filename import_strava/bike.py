@@ -1,9 +1,10 @@
 from .utils import parse_date
 
+
 def parse_bike(activity):
     bike = {
-        "version": 2,
-        "type": "run",
+        "version": 1,
+        "type": "bike",
         "date": parse_date(activity["Activity Date"]),
         "data": {
             "title": activity["Activity Name"],
@@ -11,7 +12,6 @@ def parse_bike(activity):
             "moving_time": activity["Moving Time"],
             "average_heartrate": activity["Average Heart Rate"],
             "distance": activity["Distance"],
-            "type": "bike",
         },
     }
     return bike

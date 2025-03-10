@@ -5012,15 +5012,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jan 24, 2022, 06:35:05 PM",
     "data": {
       "title": "New found respect for the biking crew",
       "distance": "0.0",
       "moving_time": "1200.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -6327,15 +6326,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Mar 07, 2022, 06:41:22 PM",
     "data": {
       "title": "Bike",
       "distance": "0.0",
       "moving_time": "1800.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -15528,51 +15526,47 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 08, 2023, 11:36:30 AM",
     "data": {
       "title": "Commuting is cross training? ",
       "distance": "4969.9599609375",
       "moving_time": "1017.0",
-      "average_heartrate": "128.83567810058594",
-      "type": "bike"
+      "average_heartrate": "128.83567810058594"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 08, 2023, 08:30:02 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4836.77978515625",
       "moving_time": "1039.0",
-      "average_heartrate": "121.98512268066406",
-      "type": "bike"
+      "average_heartrate": "121.98512268066406"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 09, 2023, 11:13:12 AM",
     "data": {
       "title": "Recovery pace",
       "distance": "5093.330078125",
       "moving_time": "1408.0",
-      "average_heartrate": "118.62098693847656",
-      "type": "bike"
+      "average_heartrate": "118.62098693847656"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 09, 2023, 08:27:29 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "5468.9599609375",
       "moving_time": "2562.0",
-      "average_heartrate": "96.6690673828125",
-      "type": "bike"
+      "average_heartrate": "96.6690673828125"
     }
   },
   {
@@ -15593,27 +15587,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 12, 2023, 11:41:42 AM",
     "data": {
       "title": "New commute pr",
       "distance": "5252.2900390625",
       "moving_time": "1066.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 12, 2023, 08:23:12 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "5341.4501953125",
       "moving_time": "1231.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -15651,51 +15643,47 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 13, 2023, 11:56:06 AM",
     "data": {
       "title": "Solid speedrun attempt ",
       "distance": "4831.81982421875",
       "moving_time": "1031.0",
-      "average_heartrate": "122.09504699707031",
-      "type": "bike"
+      "average_heartrate": "122.09504699707031"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 13, 2023, 08:30:29 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "5025.580078125",
       "moving_time": "1153.0",
-      "average_heartrate": "113.94642639160156",
-      "type": "bike"
+      "average_heartrate": "113.94642639160156"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 14, 2023, 11:45:46 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "5011.14990234375",
       "moving_time": "1207.0",
-      "average_heartrate": "125.14478302001953",
-      "type": "bike"
+      "average_heartrate": "125.14478302001953"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 14, 2023, 08:32:24 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4993.08984375",
       "moving_time": "932.0",
-      "average_heartrate": "118.1546859741211",
-      "type": "bike"
+      "average_heartrate": "118.1546859741211"
     }
   },
   {
@@ -15716,27 +15704,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 15, 2023, 11:39:16 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4958.72998046875",
       "moving_time": "916.0",
-      "average_heartrate": "127.51181030273438",
-      "type": "bike"
+      "average_heartrate": "127.51181030273438"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 15, 2023, 08:28:52 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4986.18994140625",
       "moving_time": "1065.0",
-      "average_heartrate": "115.95643615722656",
-      "type": "bike"
+      "average_heartrate": "115.95643615722656"
     }
   },
   {
@@ -15757,27 +15743,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 16, 2023, 11:48:09 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4951.91015625",
       "moving_time": "1119.0",
-      "average_heartrate": "125.94192504882812",
-      "type": "bike"
+      "average_heartrate": "125.94192504882812"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 16, 2023, 08:40:26 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4943.14013671875",
       "moving_time": "921.0",
-      "average_heartrate": "128.59718322753906",
-      "type": "bike"
+      "average_heartrate": "128.59718322753906"
     }
   },
   {
@@ -15832,27 +15816,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 19, 2023, 11:30:10 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4992.85009765625",
       "moving_time": "1235.0",
-      "average_heartrate": "117.78070831298828",
-      "type": "bike"
+      "average_heartrate": "117.78070831298828"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 19, 2023, 08:16:42 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4973.75",
       "moving_time": "967.0",
-      "average_heartrate": "113.72210693359375",
-      "type": "bike"
+      "average_heartrate": "113.72210693359375"
     }
   },
   {
@@ -15873,39 +15855,36 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 21, 2023, 11:41:49 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "5016.0498046875",
       "moving_time": "1053.0",
-      "average_heartrate": "131.3032684326172",
-      "type": "bike"
+      "average_heartrate": "131.3032684326172"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 21, 2023, 08:28:21 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4981.2998046875",
       "moving_time": "925.0",
-      "average_heartrate": "111.39800262451172",
-      "type": "bike"
+      "average_heartrate": "111.39800262451172"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 21, 2023, 08:53:12 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "3400.56005859375",
       "moving_time": "589.0",
-      "average_heartrate": "116.74314880371094",
-      "type": "bike"
+      "average_heartrate": "116.74314880371094"
     }
   },
   {
@@ -15926,27 +15905,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 21, 2023, 10:11:52 PM",
     "data": {
       "title": "Evening Ride",
       "distance": "1487.780029296875",
       "moving_time": "358.0",
-      "average_heartrate": "120.01700592041016",
-      "type": "bike"
+      "average_heartrate": "120.01700592041016"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 21, 2023, 11:14:20 PM",
     "data": {
       "title": "Evening Ride",
       "distance": "2396.14990234375",
       "moving_time": "568.0",
-      "average_heartrate": "105.19230651855469",
-      "type": "bike"
+      "average_heartrate": "105.19230651855469"
     }
   },
   {
@@ -15967,51 +15944,47 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 22, 2023, 11:49:20 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "5110.81005859375",
       "moving_time": "1212.0",
-      "average_heartrate": "120.9933853149414",
-      "type": "bike"
+      "average_heartrate": "120.9933853149414"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 22, 2023, 08:35:26 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "5073.35986328125",
       "moving_time": "920.0",
-      "average_heartrate": "113.91730499267578",
-      "type": "bike"
+      "average_heartrate": "113.91730499267578"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 23, 2023, 11:34:32 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4972.31005859375",
       "moving_time": "1181.0",
-      "average_heartrate": "123.09044647216797",
-      "type": "bike"
+      "average_heartrate": "123.09044647216797"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 23, 2023, 08:28:56 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4837.02978515625",
       "moving_time": "954.0",
-      "average_heartrate": "118.0022201538086",
-      "type": "bike"
+      "average_heartrate": "118.0022201538086"
     }
   },
   {
@@ -16066,27 +16039,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 26, 2023, 11:41:23 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4994.64990234375",
       "moving_time": "1190.0",
-      "average_heartrate": "127.84827423095703",
-      "type": "bike"
+      "average_heartrate": "127.84827423095703"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 26, 2023, 08:33:52 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4966.4599609375",
       "moving_time": "1036.0",
-      "average_heartrate": "111.4647445678711",
-      "type": "bike"
+      "average_heartrate": "111.4647445678711"
     }
   },
   {
@@ -16107,27 +16078,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 27, 2023, 11:21:47 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "5052.8701171875",
       "moving_time": "1260.0",
-      "average_heartrate": "124.09781646728516",
-      "type": "bike"
+      "average_heartrate": "124.09781646728516"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 27, 2023, 08:16:01 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4939.759765625",
       "moving_time": "1028.0",
-      "average_heartrate": "112.57852935791016",
-      "type": "bike"
+      "average_heartrate": "112.57852935791016"
     }
   },
   {
@@ -16148,27 +16117,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 28, 2023, 11:43:21 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4952.60986328125",
       "moving_time": "1254.0",
-      "average_heartrate": "131.76600646972656",
-      "type": "bike"
+      "average_heartrate": "131.76600646972656"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 28, 2023, 08:04:03 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4855.60986328125",
       "moving_time": "973.0",
-      "average_heartrate": "115.00205993652344",
-      "type": "bike"
+      "average_heartrate": "115.00205993652344"
     }
   },
   {
@@ -16206,27 +16173,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 30, 2023, 11:40:08 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "5540.2900390625",
       "moving_time": "2256.0",
-      "average_heartrate": "123.50634002685547",
-      "type": "bike"
+      "average_heartrate": "123.50634002685547"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jun 30, 2023, 08:44:22 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4792.89990234375",
       "moving_time": "1003.0",
-      "average_heartrate": "115.62224578857422",
-      "type": "bike"
+      "average_heartrate": "115.62224578857422"
     }
   },
   {
@@ -16264,27 +16229,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 03, 2023, 10:31:21 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4969.02978515625",
       "moving_time": "1232.0",
-      "average_heartrate": "111.86705017089844",
-      "type": "bike"
+      "average_heartrate": "111.86705017089844"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 03, 2023, 06:53:42 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4955.89990234375",
       "moving_time": "977.0",
-      "average_heartrate": "121.23133087158203",
-      "type": "bike"
+      "average_heartrate": "121.23133087158203"
     }
   },
   {
@@ -16339,27 +16302,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 05, 2023, 10:16:19 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4952.81982421875",
       "moving_time": "1054.0",
-      "average_heartrate": "127.73141479492188",
-      "type": "bike"
+      "average_heartrate": "127.73141479492188"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 05, 2023, 07:12:03 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4877.47998046875",
       "moving_time": "993.0",
-      "average_heartrate": "112.8983383178711",
-      "type": "bike"
+      "average_heartrate": "112.8983383178711"
     }
   },
   {
@@ -16380,39 +16341,36 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 06, 2023, 10:20:30 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "5119.0498046875",
       "moving_time": "1289.0",
-      "average_heartrate": "125.46629333496094",
-      "type": "bike"
+      "average_heartrate": "125.46629333496094"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 07, 2023, 11:45:12 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4945.8701171875",
       "moving_time": "1070.0",
-      "average_heartrate": "119.721435546875",
-      "type": "bike"
+      "average_heartrate": "119.721435546875"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 07, 2023, 08:35:57 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4922.22021484375",
       "moving_time": "913.0",
-      "average_heartrate": "113.5522232055664",
-      "type": "bike"
+      "average_heartrate": "113.5522232055664"
     }
   },
   {
@@ -16501,27 +16459,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 10, 2023, 11:33:43 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4974.64990234375",
       "moving_time": "1176.0",
-      "average_heartrate": "132.908935546875",
-      "type": "bike"
+      "average_heartrate": "132.908935546875"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 10, 2023, 08:39:35 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4948.06005859375",
       "moving_time": "930.0",
-      "average_heartrate": "120.20973205566406",
-      "type": "bike"
+      "average_heartrate": "120.20973205566406"
     }
   },
   {
@@ -16542,27 +16498,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 11, 2023, 01:48:59 PM",
     "data": {
       "title": "Morning Ride",
       "distance": "5068.72021484375",
       "moving_time": "1040.0",
-      "average_heartrate": "138.5811004638672",
-      "type": "bike"
+      "average_heartrate": "138.5811004638672"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 11, 2023, 08:39:19 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4974.9599609375",
       "moving_time": "961.0",
-      "average_heartrate": "108.60294342041016",
-      "type": "bike"
+      "average_heartrate": "108.60294342041016"
     }
   },
   {
@@ -16583,27 +16537,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 12, 2023, 11:13:04 AM",
     "data": {
       "title": "Interesting developments at the office ",
       "distance": "4968.0400390625",
       "moving_time": "1188.0",
-      "average_heartrate": "119.13571166992188",
-      "type": "bike"
+      "average_heartrate": "119.13571166992188"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 12, 2023, 08:09:25 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "5660.580078125",
       "moving_time": "1137.0",
-      "average_heartrate": "110.56552124023438",
-      "type": "bike"
+      "average_heartrate": "110.56552124023438"
     }
   },
   {
@@ -16641,27 +16593,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 13, 2023, 11:32:43 AM",
     "data": {
       "title": "New developments ",
       "distance": "4995.330078125",
       "moving_time": "1211.0",
-      "average_heartrate": "115.14396667480469",
-      "type": "bike"
+      "average_heartrate": "115.14396667480469"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 13, 2023, 08:46:30 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4872.080078125",
       "moving_time": "976.0",
-      "average_heartrate": "109.54889678955078",
-      "type": "bike"
+      "average_heartrate": "109.54889678955078"
     }
   },
   {
@@ -16682,27 +16632,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 14, 2023, 11:59:50 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4981.72998046875",
       "moving_time": "1155.0",
-      "average_heartrate": "124.3591079711914",
-      "type": "bike"
+      "average_heartrate": "124.3591079711914"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 14, 2023, 09:01:15 PM",
     "data": {
       "title": "Evening Ride",
       "distance": "4974.419921875",
       "moving_time": "931.0",
-      "average_heartrate": "111.33657836914062",
-      "type": "bike"
+      "average_heartrate": "111.33657836914062"
     }
   },
   {
@@ -16757,27 +16705,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 17, 2023, 10:19:33 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4854.60986328125",
       "moving_time": "1147.0",
-      "average_heartrate": "127.15864562988281",
-      "type": "bike"
+      "average_heartrate": "127.15864562988281"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 17, 2023, 04:40:28 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4862.6201171875",
       "moving_time": "845.0",
-      "average_heartrate": "126.73076629638672",
-      "type": "bike"
+      "average_heartrate": "126.73076629638672"
     }
   },
   {
@@ -16815,27 +16761,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 18, 2023, 11:06:52 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "5034.16015625",
       "moving_time": "1104.0",
-      "average_heartrate": "123.65816497802734",
-      "type": "bike"
+      "average_heartrate": "123.65816497802734"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 18, 2023, 08:47:42 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4814.47021484375",
       "moving_time": "908.0",
-      "average_heartrate": "114.71540069580078",
-      "type": "bike"
+      "average_heartrate": "114.71540069580078"
     }
   },
   {
@@ -16873,75 +16817,69 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 19, 2023, 12:06:21 PM",
     "data": {
       "title": "Morning Ride",
       "distance": "5062.27001953125",
       "moving_time": "1170.0",
-      "average_heartrate": "131.98475646972656",
-      "type": "bike"
+      "average_heartrate": "131.98475646972656"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 19, 2023, 08:57:31 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4635.31005859375",
       "moving_time": "956.0",
-      "average_heartrate": "115.56243133544922",
-      "type": "bike"
+      "average_heartrate": "115.56243133544922"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 20, 2023, 11:44:13 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4931.9501953125",
       "moving_time": "1196.0",
-      "average_heartrate": "119.08506774902344",
-      "type": "bike"
+      "average_heartrate": "119.08506774902344"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 20, 2023, 09:07:56 PM",
     "data": {
       "title": "Evening Ride",
       "distance": "5062.81982421875",
       "moving_time": "1102.0",
-      "average_heartrate": "100.7463607788086",
-      "type": "bike"
+      "average_heartrate": "100.7463607788086"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 21, 2023, 11:45:55 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4972.1298828125",
       "moving_time": "1085.0",
-      "average_heartrate": "119.13301849365234",
-      "type": "bike"
+      "average_heartrate": "119.13301849365234"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 21, 2023, 08:07:16 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4826.22021484375",
       "moving_time": "1002.0",
-      "average_heartrate": "111.53853607177734",
-      "type": "bike"
+      "average_heartrate": "111.53853607177734"
     }
   },
   {
@@ -17030,15 +16968,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 25, 2023, 12:30:17 PM",
     "data": {
       "title": "Morning Ride",
       "distance": "4923.81982421875",
       "moving_time": "1097.0",
-      "average_heartrate": "126.39701843261719",
-      "type": "bike"
+      "average_heartrate": "126.39701843261719"
     }
   },
   {
@@ -17093,15 +17030,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 27, 2023, 11:46:54 AM",
     "data": {
       "title": "Exciting times at Tesla ",
       "distance": "4932.56982421875",
       "moving_time": "996.0",
-      "average_heartrate": "131.5313720703125",
-      "type": "bike"
+      "average_heartrate": "131.5313720703125"
     }
   },
   {
@@ -17122,27 +17058,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 28, 2023, 11:31:02 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4910.919921875",
       "moving_time": "1078.0",
-      "average_heartrate": "117.33580780029297",
-      "type": "bike"
+      "average_heartrate": "117.33580780029297"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 28, 2023, 08:58:59 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4648.89013671875",
       "moving_time": "978.0",
-      "average_heartrate": "117.01459503173828",
-      "type": "bike"
+      "average_heartrate": "117.01459503173828"
     }
   },
   {
@@ -17197,27 +17131,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 31, 2023, 11:48:00 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4986.39990234375",
       "moving_time": "1155.0",
-      "average_heartrate": "124.62226104736328",
-      "type": "bike"
+      "average_heartrate": "124.62226104736328"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jul 31, 2023, 09:04:15 PM",
     "data": {
       "title": "Evening Ride",
       "distance": "6058.6201171875",
       "moving_time": "1053.0",
-      "average_heartrate": "117.44627380371094",
-      "type": "bike"
+      "average_heartrate": "117.44627380371094"
     }
   },
   {
@@ -17238,27 +17170,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 01, 2023, 11:23:23 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4998.85009765625",
       "moving_time": "955.0",
-      "average_heartrate": "138.25308227539062",
-      "type": "bike"
+      "average_heartrate": "138.25308227539062"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 01, 2023, 08:08:24 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4985.4599609375",
       "moving_time": "770.0",
-      "average_heartrate": "129.50799560546875",
-      "type": "bike"
+      "average_heartrate": "129.50799560546875"
     }
   },
   {
@@ -17466,39 +17396,36 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 09, 2023, 10:55:18 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4995.66015625",
       "moving_time": "1026.0",
-      "average_heartrate": "127.19425201416016",
-      "type": "bike"
+      "average_heartrate": "127.19425201416016"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 09, 2023, 07:09:41 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4892.0498046875",
       "moving_time": "954.0",
-      "average_heartrate": "123.29649353027344",
-      "type": "bike"
+      "average_heartrate": "123.29649353027344"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 09, 2023, 07:47:53 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "3420.840087890625",
       "moving_time": "685.0",
-      "average_heartrate": "115.59708404541016",
-      "type": "bike"
+      "average_heartrate": "115.59708404541016"
     }
   },
   {
@@ -17519,15 +17446,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 09, 2023, 11:01:50 PM",
     "data": {
       "title": "Evening Ride",
       "distance": "3697.699951171875",
       "moving_time": "768.0",
-      "average_heartrate": "122.31002807617188",
-      "type": "bike"
+      "average_heartrate": "122.31002807617188"
     }
   },
   {
@@ -17548,27 +17474,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 10, 2023, 11:22:26 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4918.75",
       "moving_time": "1070.0",
-      "average_heartrate": "121.26260375976562",
-      "type": "bike"
+      "average_heartrate": "121.26260375976562"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 10, 2023, 07:28:57 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4971.669921875",
       "moving_time": "968.0",
-      "average_heartrate": "104.47115325927734",
-      "type": "bike"
+      "average_heartrate": "104.47115325927734"
     }
   },
   {
@@ -17606,15 +17530,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 11, 2023, 11:20:17 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4811.509765625",
       "moving_time": "1105.0",
-      "average_heartrate": "115.59488677978516",
-      "type": "bike"
+      "average_heartrate": "115.59488677978516"
     }
   },
   {
@@ -17692,27 +17615,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 14, 2023, 12:27:24 PM",
     "data": {
       "title": "Morning Ride",
       "distance": "4927.72021484375",
       "moving_time": "1037.0",
-      "average_heartrate": "118.95054626464844",
-      "type": "bike"
+      "average_heartrate": "118.95054626464844"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 14, 2023, 08:12:29 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4857.5400390625",
       "moving_time": "930.0",
-      "average_heartrate": "108.9617919921875",
-      "type": "bike"
+      "average_heartrate": "108.9617919921875"
     }
   },
   {
@@ -17767,39 +17688,36 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 15, 2023, 01:00:55 PM",
     "data": {
       "title": "Morning Ride",
       "distance": "4957.41015625",
       "moving_time": "1057.0",
-      "average_heartrate": "129.45298767089844",
-      "type": "bike"
+      "average_heartrate": "129.45298767089844"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 15, 2023, 08:46:05 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4684.14990234375",
       "moving_time": "844.0",
-      "average_heartrate": "115.5997543334961",
-      "type": "bike"
+      "average_heartrate": "115.5997543334961"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 16, 2023, 10:09:58 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "3436.159912109375",
       "moving_time": "577.0",
-      "average_heartrate": "124.47811126708984",
-      "type": "bike"
+      "average_heartrate": "124.47811126708984"
     }
   },
   {
@@ -17820,15 +17738,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 17, 2023, 08:01:39 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4734.43994140625",
       "moving_time": "966.0",
-      "average_heartrate": "105.848876953125",
-      "type": "bike"
+      "average_heartrate": "105.848876953125"
     }
   },
   {
@@ -17849,27 +17766,25 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 18, 2023, 11:18:20 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "4918.72998046875",
       "moving_time": "1038.0",
-      "average_heartrate": "114.8553237915039",
-      "type": "bike"
+      "average_heartrate": "114.8553237915039"
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 18, 2023, 07:45:44 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "5050.0498046875",
       "moving_time": "1090.0",
-      "average_heartrate": "111.45943450927734",
-      "type": "bike"
+      "average_heartrate": "111.45943450927734"
     }
   },
   {
@@ -17907,15 +17822,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 20, 2023, 01:01:54 PM",
     "data": {
       "title": "Morning Ride",
       "distance": "3154.969970703125",
       "moving_time": "641.0",
-      "average_heartrate": "116.39469909667969",
-      "type": "bike"
+      "average_heartrate": "116.39469909667969"
     }
   },
   {
@@ -17953,15 +17867,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Aug 21, 2023, 08:56:45 PM",
     "data": {
       "title": "Afternoon Ride",
       "distance": "4974.490234375",
       "moving_time": "1013.0",
-      "average_heartrate": "108.69322967529297",
-      "type": "bike"
+      "average_heartrate": "108.69322967529297"
     }
   },
   {
@@ -20379,15 +20292,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Dec 27, 2023, 01:57:52 PM",
     "data": {
       "title": "Morning Ride",
       "distance": "3346.179931640625",
       "moving_time": "639.0",
-      "average_heartrate": "115.31028747558594",
-      "type": "bike"
+      "average_heartrate": "115.31028747558594"
     }
   },
   {
@@ -21988,15 +21900,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Mar 10, 2024, 12:16:12 PM",
     "data": {
       "title": "with podnar",
       "distance": "0.0",
       "moving_time": "2580.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -22068,15 +21979,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Mar 13, 2024, 04:15:44 PM",
     "data": {
       "title": "Bike",
       "distance": "0.0",
       "moving_time": "3600.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -22289,15 +22199,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Mar 17, 2024, 10:42:55 AM",
     "data": {
       "title": "Bike",
       "distance": "0.0",
       "moving_time": "1680.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -22369,15 +22278,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Mar 20, 2024, 04:41:29 PM",
     "data": {
       "title": "Domestic relations",
       "distance": "0.0",
       "moving_time": "3600.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -22993,15 +22901,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Apr 10, 2024, 02:48:56 PM",
     "data": {
       "title": "Solo bike",
       "distance": "0.0",
       "moving_time": "1800.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -25624,15 +25531,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Sep 07, 2024, 02:59:00 PM",
     "data": {
       "title": "Bike",
       "distance": "0.0",
       "moving_time": "1800.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -25670,15 +25576,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Sep 09, 2024, 01:43:25 PM",
     "data": {
       "title": "Bike",
       "distance": "0.0",
       "moving_time": "2700.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -25852,15 +25757,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Sep 18, 2024, 04:16:37 PM",
     "data": {
       "title": "bike",
       "distance": "0.0",
       "moving_time": "1800.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -25932,15 +25836,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Sep 21, 2024, 02:29:54 PM",
     "data": {
       "title": "Bike",
       "distance": "14484.095703125",
       "moving_time": "2168.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -26743,15 +26646,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Oct 23, 2024, 09:32:38 AM",
     "data": {
       "title": "Morning Ride",
       "distance": "0.0",
       "moving_time": "2400.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -26772,15 +26674,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Oct 26, 2024, 02:54:34 PM",
     "data": {
       "title": "Bike",
       "distance": "0.0",
       "moving_time": "1200.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
@@ -28546,15 +28447,14 @@
     }
   },
   {
-    "version": 2,
-    "type": "run",
+    "version": 1,
+    "type": "bike",
     "date": "Jan 22, 2025, 12:02:46 PM",
     "data": {
       "title": "Bike",
       "distance": "11265.408203125",
       "moving_time": "1800.0",
-      "average_heartrate": "",
-      "type": "bike"
+      "average_heartrate": ""
     }
   },
   {
