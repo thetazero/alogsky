@@ -4531,7 +4531,77 @@
       "description": "6x800 3x200.\n2:21, 2:21, 2:24, 2:19, 2:24, 2:19, 32, 32, 32\nHeadwind on the 200s was horrendous, but it being 50 something degrees more than made up for it",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6488695687
+      "strava_id": 6488695687,
+      "intervals": [
+        {
+          "distance": "800m",
+          "time": "2:21"
+        },
+        {
+          "distance": "400m",
+          "time": "1:58"
+        },
+        {
+          "distance": "800m",
+          "time": "2:21"
+        },
+        {
+          "distance": "400m",
+          "time": "2:01"
+        },
+        {
+          "distance": "800m",
+          "time": "2:24"
+        },
+        {
+          "distance": "400m",
+          "time": "5:10"
+        },
+        {
+          "distance": "800m",
+          "time": "2:19"
+        },
+        {
+          "distance": "400m",
+          "time": "2:00"
+        },
+        {
+          "distance": "800m",
+          "time": "2:25"
+        },
+        {
+          "distance": "400m",
+          "time": "2:10"
+        },
+        {
+          "distance": "800m",
+          "time": "2:19"
+        },
+        {
+          "distance": "400m",
+          "time": "2:47"
+        },
+        {
+          "distance": "100m",
+          "time": "32"
+        },
+        {
+          "distance": "100m",
+          "time": "1:19"
+        },
+        {
+          "distance": "100m",
+          "time": "32"
+        },
+        {
+          "distance": "100m",
+          "time": "1:39"
+        },
+        {
+          "distance": "100m",
+          "time": "32"
+        }
+      ]
     }
   },
   {
@@ -12775,7 +12845,37 @@
       "description": "getting there",
       "private_note": "4x1k, 2:30 recovery\n\n3:01, 3:01, 3:05, 3:07",
       "shoe": "",
-      "strava_id": 8391713248
+      "strava_id": 8391713248,
+      "intervals": [
+        {
+          "distance": "1k",
+          "time": "3:01"
+        },
+        {
+          "distance": "?",
+          "time": "2:30"
+        },
+        {
+          "distance": "1k",
+          "time": "3:01"
+        },
+        {
+          "distance": "?",
+          "time": "2:30"
+        },
+        {
+          "distance": "1k",
+          "time": "3:05"
+        },
+        {
+          "distance": "?",
+          "time": "2:30"
+        },
+        {
+          "distance": "1k",
+          "time": "3:07"
+        }
+      ]
     }
   },
   {
@@ -28505,7 +28605,125 @@
       "description": "5x(200, 45' jog, 400, 45' jog, 200, 3\" jog)\n30.5, 66.9, 32.4\n31.9, 65.3, 31.3\n31.6, 65.4, 31.7\n31.2, 59.2, 31.0,\n30.9, 61.2, 30.2",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13441941216
+      "strava_id": 13441941216,
+      "intervals": [
+        {
+          "distance": "200m",
+          "time": "30.5"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "400m",
+          "time": "66.9"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "200m",
+          "time": "32.4"
+        },
+        {
+          "distance": "?",
+          "time": "3:00"
+        },
+        {
+          "distance": "200m",
+          "time": "31.9"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "400m",
+          "time": "65.3"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "200m",
+          "time": "31.3"
+        },
+        {
+          "distance": "?",
+          "time": "3:00"
+        },
+        {
+          "distance": "200m",
+          "time": "31.6"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "400m",
+          "time": "65.4"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "200m",
+          "time": "31.7"
+        },
+        {
+          "distance": "?",
+          "time": "3:00"
+        },
+        {
+          "distance": "200m",
+          "time": "31.2"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "400m",
+          "time": "59.2"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "200m",
+          "time": "31.0"
+        },
+        {
+          "distance": "?",
+          "time": "3:00"
+        },
+        {
+          "distance": "200m",
+          "time": "30.9"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "400m",
+          "time": "61.2"
+        },
+        {
+          "distance": "?",
+          "time": "45"
+        },
+        {
+          "distance": "200m",
+          "time": "30.2"
+        }
+      ]
     }
   },
   {
