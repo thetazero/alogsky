@@ -29990,5 +29990,186 @@
       "shoe": "Nike Dragonfly",
       "strava_id": 13782147067
     }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 04, 2025, 10:49:43 AM",
+    "data": {
+      "title": "Frick at last",
+      "distance": "13611.2001953125",
+      "moving_time": "3621.0",
+      "elapsed_time": "4764.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "5 strides: ?, ?, 12.59, 13.04, 12.67",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13788305617
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 05, 2025, 11:08:10 AM",
+    "data": {
+      "title": "Porter",
+      "distance": "4895.0",
+      "moving_time": "1335.0",
+      "elapsed_time": "1444.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13797304349
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Mar 05, 2025, 12:06:16 PM",
+    "data": {
+      "title": "Bike",
+      "distance": "14162.2275390625",
+      "moving_time": "1800.0",
+      "average_heartrate": ""
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 07, 2025, 03:08:56 PM",
+    "data": {
+      "title": "Tranquil",
+      "distance": "11658.900390625",
+      "moving_time": "3112.0",
+      "elapsed_time": "3808.0",
+      "temperature": "17.0",
+      "feels_like": "",
+      "description": "frick is amazing ",
+      "private_note": "strides: 13.70, 13.46, 12.80",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13817511633
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 08, 2025, 12:16:22 PM",
+    "data": {
+      "title": "B+ Tree Index",
+      "distance": "9932.5",
+      "moving_time": "2619.0",
+      "elapsed_time": "3100.0",
+      "temperature": "14.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "strides: 14.33, 12.72",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13826230526
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 09, 2025, 12:05:41 PM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "17321.0",
+      "moving_time": "4533.0",
+      "elapsed_time": "4795.0",
+      "temperature": "18.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13837222997
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 10, 2025, 05:07:41 PM",
+    "data": {
+      "title": "Poke",
+      "distance": "8911.7001953125",
+      "moving_time": "2364.0",
+      "elapsed_time": "3071.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "Loving the weather ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13847246139
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 10, 2025, 05:59:29 PM",
+    "data": {
+      "title": "ins and outs",
+      "distance": "1649.0",
+      "moving_time": "483.0",
+      "elapsed_time": "485.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "8x(100m, 100m jog)",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13847247743
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 11, 2025, 06:11:01 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "1618.4000244140625",
+      "moving_time": "576.0",
+      "elapsed_time": "740.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13856708930
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 11, 2025, 05:01:39 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "3237.10009765625",
+      "moving_time": "884.0",
+      "elapsed_time": "1936.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13856709019
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 11, 2025, 05:35:21 PM",
+    "data": {
+      "title": "5x(1k, 2\" jog), 4x(200m, 200m jog)",
+      "distance": "8394.0",
+      "moving_time": "1937.0",
+      "elapsed_time": "1955.0",
+      "temperature": "26.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13856709035
+    }
   }
 ]
