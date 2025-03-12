@@ -43,8 +43,8 @@ export interface RunningWorkoutData {
 }
 
 export interface Interval {
-    duration: Time,
-    distance: Length,
+    duration?: Time,
+    distance?: Length,
 }
 
 export enum Exercise {

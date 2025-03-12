@@ -1,6 +1,6 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData, RowData, per_minute, BikeData } from "../types";
-import { meters } from "@buge/ts-units/length";
-import { seconds, minutes } from "@buge/ts-units/time";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData, RowData, per_minute, BikeData, Interval } from "../types";
+import { kilometers, Length, meters, miles } from "@buge/ts-units/length";
+import { seconds, minutes, Time } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
 import { kilograms, Mass } from "@buge/ts-units/mass";
 import { Mass as MassDimension } from "@buge/ts-units/mass/dimension";
@@ -78,6 +78,7 @@ function parse_run_v1(data: any, date: Date): RunData {
     const duration = seconds(parseFloat(data.duration));
     return { title, notes, distance, moving_time: duration, date, type: "run" };
 }
+
 function parse_run_v2(data: any, date: Date): RunData {
     const title: string = data.title;
     const distance = meters(parseFloat(data.distance));
@@ -86,6 +87,11 @@ function parse_run_v2(data: any, date: Date): RunData {
 
     const temperature = data.temperature !== '' ? celsius(parseFloat(data.temperature)) : undefined;
     const feels_like = data.feels_like !== '' ? celsius(parseFloat(data.feels_like)) : undefined;
+
+    let workout;
+    if (data.intervals) {
+        workout = data.intervals.map(parse_interval)
+    }
 
     return {
         title,
@@ -98,9 +104,42 @@ function parse_run_v2(data: any, date: Date): RunData {
         description: data.description,
         private_note: data.private_note,
         shoe: data.shoe,
+        workout,
         date,
         type: "run"
     };
+}
+
+export function parse_interval(data: any): Interval {
+    console.log(data)
+    let distance: Length | undefined;
+    if (data.distance !== "?") {
+        if (data.distance === "0") {
+            distance = meters(0)
+        } else {
+
+            let dist = parse_unit(data.distance);
+            if (dist.dimension === LengthDimension) {
+                distance = dist as Length
+            } else {
+                throw "Interval distance must be a length" + data.distance
+            }
+        }
+    }
+    let time = data.time;
+    let duration: Time | undefined;
+    if (time !== "?") {
+        if (time.includes(":")) {
+            const [mins, secs] = time.split(":").map(parseFloat)
+            duration = minutes(mins).plus(seconds(secs))
+        } else {
+            duration = seconds(parseFloat(time))
+        }
+    }
+    return {
+        duration,
+        distance,
+    }
 }
 
 function split_unit(input: string): [string, string] {
@@ -121,6 +160,10 @@ export function parse_unit(weight: string | number | undefined): Quantity<number
         "kg": kilograms,
         "s": seconds,
         "meters": meters,
+        "m": meters,
+        "mi": miles,
+        "miles": miles,
+        "k": kilometers,
     }
     if (unit in unit_map) {
         return unit_map[unit](parseFloat(value));

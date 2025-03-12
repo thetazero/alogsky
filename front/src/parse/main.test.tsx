@@ -1,10 +1,10 @@
 import { kilograms } from "@buge/ts-units/mass";
 import { Exercise, LiftData, NoteTopic, PainLogData, per_minute, pounds, RowData } from "../types";
-import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse_body_location, parse_notev1, parse_unit, parse_units } from "./main";
+import parse, { data_if_in_parens, extract_paren_data, natural_reps_parse, parse_body_location, parse_interval, parse_notev1, parse_unit, parse_units } from "./main";
 import { Foot, Calf, FootMetatarsals, AchillesTendon, BodyLocationWithSide } from "../pt/body_location";
 import { Side } from "../types";
-import { meters } from "@buge/ts-units/length";
-import { seconds } from "@buge/ts-units/time";
+import { meters, miles } from "@buge/ts-units/length";
+import { minutes, seconds } from "@buge/ts-units/time";
 
 describe("Test parse unit", () => {
     it('Should parse kg', () => {
@@ -356,4 +356,58 @@ describe("parse row", () => {
             expect(false).toBeTruthy()
         }
     })
+})
+
+describe("parse interval", () => {
+    it('Should parse meters and seconds', () => {
+        const res = parse_interval({
+            "distance": "100m",
+            "time": "45"
+        });
+        expect(res.distance).toBeDefined()
+        expect(res.duration).toBeDefined()
+        expect(res.distance?.in(meters).amount).toEqual(100)
+        expect(res.duration?.in(seconds).amount).toEqual(45)
+    });
+
+    it('Should parse meters and minutes', () => {
+        const res = parse_interval({
+            "distance": "400m",
+            "time": "1:01"
+        });
+        expect(res.distance).toBeDefined()
+        expect(res.duration).toBeDefined()
+        expect(res.distance?.in(meters).amount).toEqual(400)
+        expect(res.duration?.in(seconds).amount).toEqual(61)
+    });
+
+    it('Should parse miles and minutes', () => {
+        const res = parse_interval({
+            "distance": "1.5mi",
+            "time": "6:00"
+        });
+        expect(res.distance).toBeDefined()
+        expect(res.duration).toBeDefined()
+        expect(res.distance?.in(miles).amount).toEqual(1.5)
+        expect(res.duration?.in(minutes).amount).toEqual(6)
+    });
+
+    it('Should handle ?, ?', () => {
+        const res = parse_interval({
+            "distance": "?",
+            "time": "?"
+        });
+        expect(res.distance).toBeUndefined()
+        expect(res.duration).toBeUndefined()
+    });
+
+    it('Should handle 0 distance', () => {
+        const res = parse_interval({
+            "distance": "0",
+            "time": "?"
+        });
+        expect(res.distance).toBeDefined()
+        expect(res.duration).toBeUndefined()
+        expect(res.distance?.in(meters).amount).toEqual(0)
+    });
 })
