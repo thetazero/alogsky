@@ -4,6 +4,7 @@ import { miles } from "@buge/ts-units/length";
 import { fmt_minutes_per_mile } from "../utils/format";
 import { celsius } from "@buge/ts-units/temperature";
 import Activity from "../components/Activity";
+import WorkoutSummary from "../components/WorkoutSummary";
 
 interface RunProps {
     data: RunData;
@@ -37,7 +38,7 @@ const Run: React.FC<RunProps> = ({
             </p>
             <p>
                 {
-                    JSON.stringify(workout)
+                    workout ? <WorkoutSummary data={workout} /> : null
                 }
             </p>
         </Activity>

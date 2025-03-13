@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData, RowData, per_minute, BikeData, Interval } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData, RowData, per_minute, BikeData, Interval, RunningWorkoutData } from "../types";
 import { kilometers, Length, meters, miles } from "@buge/ts-units/length";
 import { seconds, minutes, Time } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -88,9 +88,11 @@ function parse_run_v2(data: any, date: Date): RunData {
     const temperature = data.temperature !== '' ? celsius(parseFloat(data.temperature)) : undefined;
     const feels_like = data.feels_like !== '' ? celsius(parseFloat(data.feels_like)) : undefined;
 
-    let workout;
+    let workout: RunningWorkoutData | undefined = undefined;
     if (data.intervals) {
-        workout = data.intervals.map(parse_interval)
+        workout = {
+            intervals: data.intervals.map(parse_interval)
+        }
     }
 
     return {
@@ -111,7 +113,6 @@ function parse_run_v2(data: any, date: Date): RunData {
 }
 
 export function parse_interval(data: any): Interval {
-    console.log(data)
     let distance: Length | undefined;
     if (data.distance !== "?") {
         if (data.distance === "0") {
