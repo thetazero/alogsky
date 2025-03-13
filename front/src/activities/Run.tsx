@@ -24,21 +24,16 @@ const Run: React.FC<RunProps> = ({
 
     return (
         <Activity title={title} date={date} height={height}>
-            {temperature && (
-                <>
-                    Feels like: {temperature.in(celsius).amount}°C
-                </>
-            )}
+            <>
+                {
+                    workout ? <WorkoutSummary data={workout} /> : null
+                }
+            </>
             <p>
                 {distance.in(miles).amount.toFixed(2)} miles |{" "}
                 {fmt_minutes_per_mile(minutesPerMile)} | {""}
                 {
                     shoe
-                }
-            </p>
-            <p>
-                {
-                    workout ? <WorkoutSummary data={workout} /> : null
                 }
             </p>
         </Activity>
