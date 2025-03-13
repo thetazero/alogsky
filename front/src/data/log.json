@@ -2550,7 +2550,7 @@
     {
         "version": 2,
         "type": "lift",
-        "date": "Mar 08, 2025, 1:18:00 AM",
+        "date": "Mar 08, 2025, 1:18:00 PM",
         "data": {
             "duration": 5,
             "notes": "",
@@ -2558,6 +2558,40 @@
                 "crunch: 50",
                 "core row: 30, 25",
                 "rush n twist: 50"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 10, 2025, 6:09:00 PM",
+        "data": {
+            "duration": 50,
+            "notes": "",
+            "exercises": [
+                "squat: 8x135lbs, 8x135lbs, 8x155lbs",
+                "dumbbell row: 8x70lbs, 8x80lbs, 8x80lbs",
+                "dumbbell bench: 8x60lbs, 8x70lbs, 8x70lbs",
+                "single leg stair calf raise: 20, 20",
+                "pull up: 8, 8, 8",
+                "45 degree back extension: 8, 8, 8",
+                "bulgarian split squat: 8x30lbs, 8x30lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 11, 2025, 6:36:00 PM",
+        "data": {
+            "duration": 10,
+            "notes": "",
+            "exercises": [
+                "crunch: 60",
+                "rush n twist: 50",
+                "side leg lift: 20",
+                "core row: 30",
+                "nordic curl: 8"
             ]
         }
     }
