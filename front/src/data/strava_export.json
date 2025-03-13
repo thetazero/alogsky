@@ -4720,7 +4720,45 @@
       "description": "2:56, 2:55, 3:02, 3:02, 2:59\nFinally hitting what I was hoping to be hitting.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6509752970
+      "strava_id": 6509752970,
+      "intervals": [
+        {
+          "distance": "1k",
+          "time": "2:57"
+        },
+        {
+          "distance": "400m",
+          "time": "1:52"
+        },
+        {
+          "distance": "1k",
+          "time": "2:58"
+        },
+        {
+          "distance": "400m",
+          "time": "1:59"
+        },
+        {
+          "distance": "1k",
+          "time": "3:00"
+        },
+        {
+          "distance": "400m",
+          "time": "2:04"
+        },
+        {
+          "distance": "1k",
+          "time": "3:02"
+        },
+        {
+          "distance": "400m",
+          "time": "2:10"
+        },
+        {
+          "distance": "1k",
+          "time": "2:59"
+        }
+      ]
     }
   },
   {
@@ -30005,7 +30043,37 @@
       "description": "5 strides: ?, ?, 12.59, 13.04, 12.67",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13788305617
+      "strava_id": 13788305617,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "?"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "12.59"
+        },
+        {
+          "distance": "100m",
+          "time": "13.04"
+        },
+        {
+          "distance": "100m",
+          "time": "12.67"
+        }
+      ]
     }
   },
   {
@@ -30050,7 +30118,21 @@
       "description": "frick is amazing ",
       "private_note": "strides: 13.70, 13.46, 12.80",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13817511633
+      "strava_id": 13817511633,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "13.70"
+        },
+        {
+          "distance": "100m",
+          "time": "13.46"
+        },
+        {
+          "distance": "100m",
+          "time": "12.80"
+        }
+      ]
     }
   },
   {
@@ -30067,7 +30149,17 @@
       "description": "",
       "private_note": "strides: 14.33, 12.72",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13826230526
+      "strava_id": 13826230526,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "14.33"
+        },
+        {
+          "distance": "100m",
+          "time": "12.72"
+        }
+      ]
     }
   },
   {
