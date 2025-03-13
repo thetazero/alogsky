@@ -2,11 +2,13 @@ import React, { createContext, useContext, useState } from "react";
 import { TrainingDataSet } from "./analysis/analysis";
 import Tile from "./components/Tile";
 import panelComponentType from "./tiles/tileType";
+import { RunData } from "./types";
 
 interface CommandContextType {
     sendMessage: (message: string) => void;
     closePanel: (id: string) => void;
     addPanel: (tile: panelComponentType, id: string) => void;
+    inspectRun: (run: RunData) => void;
 }
 
 const CommandContext = createContext<CommandContextType | undefined>(undefined);
@@ -32,8 +34,12 @@ const CommandProvider: React.FC<CommandProviderProps> = ({ defaultTiles, parseEr
         setTiles((prev) => prev.filter((tile) => tile.id !== id));
     };
 
+    const inspectRun = (run: RunData) => {
+        console.log("Inspecting run", run);
+    };
+
     return (
-        <CommandContext.Provider value={{ sendMessage, closePanel, addPanel }}>
+        <CommandContext.Provider value={{ sendMessage, closePanel, addPanel, inspectRun }}>
             <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,_minmax(500px,_1fr))] gap-5 p-4 mx-auto">
                 {tiles.map(({ component: Component, id }) => (
                     <Component key={id} dataset={dataset} id={id} />

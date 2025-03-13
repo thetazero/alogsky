@@ -4,6 +4,7 @@ import { miles } from "@buge/ts-units/length";
 import { fmt_minutes_per_mile } from "../utils/format";
 import Activity from "../components/Activity";
 import WorkoutSummary from "../components/WorkoutSummary";
+import { useCommand } from "../CommandProvider";
 
 interface RunProps {
     data: RunData;
@@ -12,27 +13,29 @@ interface RunProps {
 }
 
 const Run: React.FC<RunProps> = ({
-    data: { date, distance, moving_time, title, shoe, workout },
+    data,
     height,
 }: RunProps) => {
-    const [minutesPerMile, setMinutesPerMile] = useState<InverseSpeed>(moving_time.per(distance));
+    const [minutesPerMile, setMinutesPerMile] = useState<InverseSpeed>(data.moving_time.per(data.distance));
 
     useEffect(() => {
-        setMinutesPerMile(moving_time.per(distance));
-    }, [distance, moving_time]);
+        setMinutesPerMile(data.moving_time.per(data.distance));
+    }, [data.distance, data.moving_time]);
+
+    const { inspectRun } = useCommand();
 
     return (
-        <Activity title={title} date={date} height={height}>
-            <>
+        <Activity title={data.title} date={data.date} height={height}>
+            <div onClick={() => inspectRun(data)}>
                 {
-                    workout ? <WorkoutSummary data={workout} /> : null
+                    data.workout ? <WorkoutSummary data={data.workout} /> : null
                 }
-            </>
+            </div>
             <p>
-                {distance.in(miles).amount.toFixed(2)} miles |{" "}
+                {data.distance.in(miles).amount.toFixed(2)} miles |{" "}
                 {fmt_minutes_per_mile(minutesPerMile)} | {""}
                 {
-                    shoe
+                    data.shoe
                 }
             </p>
         </Activity>
