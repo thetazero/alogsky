@@ -25,8 +25,8 @@ const Run: React.FC<RunProps> = ({
     const { inspectRun } = useCommand();
 
     return (
-        <Activity title={data.title} date={data.date} height={height}>
-            <div onClick={() => inspectRun(data)}>
+        <Activity title={data.title} date={data.date} height={height} onClick={() => inspectRun(data)}>
+            <div>
                 {
                     data.workout ? <WorkoutSummary data={data.workout} /> : null
                 }

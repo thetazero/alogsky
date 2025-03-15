@@ -36,7 +36,7 @@ const CommandProvider: React.FC<CommandProviderProps> = ({ defaultTiles, parseEr
     };
 
     const inspectRun = (run: RunData) => {
-        setTiles((prev) => [...prev, { component: RunTile, id: "run", data: run }]);
+        setTiles((prev) => [...prev, { component: RunTile, id: "current_inspected_run", data: run }]);
     };
 
     return (

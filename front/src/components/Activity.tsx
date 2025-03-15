@@ -6,6 +6,7 @@ export interface ActivityProps {
     height: number
     title: string
     date: Date
+    onClick?: () => void
     color?: "good" | "bad" | "okay"
 }
 
@@ -15,10 +16,10 @@ export const color_map = {
     "okay": "text-yellow-300"
 }
 
-const Activity: React.FC<ActivityProps> = ({ children, title, date, color }) => {
+const Activity: React.FC<ActivityProps> = ({ children, title, date, color, onClick }) => {
 
     return (
-        <>
+        <div onClick={onClick}>
             <div className={"flex justify-between items-center" + (children ? " mb-2" : "")}>
                 <div className={"text-xl font-bold " + (
                     color ? color_map[color] : "emph"
@@ -30,7 +31,7 @@ const Activity: React.FC<ActivityProps> = ({ children, title, date, color }) => 
             <div className="text-sm text-gray-300">
                 {children}
             </div>
-        </>
+        </div>
     );
 };
 
