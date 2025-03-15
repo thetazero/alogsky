@@ -1,7 +1,7 @@
 import { makeUnit, One, Quantity, Unit } from '@buge/ts-units';
-import { Length, miles } from '@buge/ts-units/length';
+import { Length, meters, miles } from '@buge/ts-units/length';
 import { Temperature } from '@buge/ts-units/temperature';
-import { minutes, Time } from '@buge/ts-units/time';
+import { minutes, seconds, Time } from '@buge/ts-units/time';
 import { Mass as MassDimension } from '@buge/ts-units/mass/dimension';
 import { Mass } from '@buge/ts-units/mass/';
 import { kilograms } from '@buge/ts-units/mass';
@@ -18,6 +18,7 @@ export type FrequencyDimensions = {
 export type Frequency = Quantity<number, FrequencyDimensions>;
 export const unitless: Unit<number, One> = makeUnit("", One)
 export const minutes_per_mile: Unit<number, InverseSpeedDimensions> = minutes.per(miles);
+export const seconds_per_meter: Unit<number, InverseSpeedDimensions> = seconds.per(meters);
 export const pounds: Unit<number, MassDimension> = kilograms.times(1 / 2.20462).withSymbol("lbs");
 export const tons: Unit<number, MassDimension> = pounds.times(2000).withSymbol("tons");
 export const per_minute: Unit<number, FrequencyDimensions> = minutes.reciprocal();
@@ -195,8 +196,11 @@ export enum Metric {
     Pace = "Pace",
     ActiveTime = "Active Time",
     Tonage = "Tonage",
-    MeanFatigueScore = "MFS"
-} export enum Side {
+    MeanFatigueScore = "MFS",
+    Fastest100m = "Fastest 100m",
+}
+
+export enum Side {
     Left,
     Right,
     NoSide

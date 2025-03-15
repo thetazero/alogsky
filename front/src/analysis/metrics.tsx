@@ -1,5 +1,5 @@
 import { Mass } from "@buge/ts-units/mass";
-import { BodyRegion, Exercise, InverseSpeed, LiftData, minutes_per_mile, PainLogData, pounds, RepData, RunData, TrainingData, unitless } from "../types";
+import { BodyRegion, Exercise, InverseSpeed, LiftData, minutes_per_mile, PainLogData, pounds, RepData, RunData, seconds_per_meter, TrainingData, unitless } from "../types";
 import { meters, miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 import { One, Quantity } from "@buge/ts-units";
@@ -133,4 +133,25 @@ export function fatigue(data: PainLogData): Quantity<number, One> {
         fatigue += pain * body_region_to_fatgue_weight(region)
     });
     return unitless(fatigue);
+}
+
+export function fastest_pace(runs: RunData[]): InverseSpeed {
+    if (runs.length == 0) return seconds_per_meter(0)
+    const paces: InverseSpeed[] = runs.map(run => {
+        const baseline = run.moving_time.per(run.distance)
+        if (run.workout) {
+            return run.workout.intervals.map(interval => {
+                if (interval.distance && interval.duration) return interval.duration.per(interval.distance)
+                return baseline
+            }).reduce((a, b) => {
+                if (a.in(seconds_per_meter).amount < b.in(seconds_per_meter).amount) return a
+                return b
+            });
+        }
+        return baseline
+    })
+    return paces.reduce((a, b) => {
+        if (a.in(seconds_per_meter).amount < b.in(seconds_per_meter).amount) return a
+        return b
+    })
 }

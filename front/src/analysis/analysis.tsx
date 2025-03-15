@@ -1,7 +1,7 @@
-import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, Metric, tons, PainAtLocationData, unitless } from "../types";
+import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, Metric, tons, PainAtLocationData, unitless, seconds_per_meter } from "../types";
 import { Mass } from "@buge/ts-units/mass";
-import { average_pace, fatigue, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
-import { Length, miles } from "@buge/ts-units/length";
+import { average_pace, fastest_pace, fatigue, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
+import { Length, meters, miles } from "@buge/ts-units/length";
 import { hours, seconds, Time } from "@buge/ts-units/time";
 import { get_week_end, get_week_start } from "../utils/time";
 import { Dimensions, One, Quantity, Unit } from "@buge/ts-units";
@@ -112,6 +112,10 @@ class Analysis {
         return score
     }
 
+    fastest_100m(): Time {
+        return fastest_pace(this.dataset.runs).in(seconds_per_meter).times(meters(100)).in(seconds)
+    }
+
     get_metric(metric: Metric): Quantity<number, Dimensions> {
         switch (metric) {
             case Metric.Mileage:
@@ -124,6 +128,8 @@ class Analysis {
                 return this.total_tonage().in(tons)
             case Metric.MeanFatigueScore:
                 return this.get_mean_fatigue_score()
+            case Metric.Fastest100m:
+                return this.fastest_100m()
         }
     }
 
@@ -168,5 +174,7 @@ export function get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
             return tons
         case Metric.MeanFatigueScore:
             return unitless
+        case Metric.Fastest100m:
+            return seconds
     }
 }

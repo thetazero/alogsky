@@ -1,8 +1,9 @@
-import { minutes } from "@buge/ts-units/time";
-import { Exercise, LiftData, PainLogData, pounds, RepData, Side, unitless } from "../types";
-import { fatigue, rep_tonage, total_tonage } from "./metrics";
+import { minutes, seconds, Time } from "@buge/ts-units/time";
+import { Exercise, LiftData, minutes_per_mile, PainLogData, pounds, RepData, RunData, RunningWorkoutData, seconds_per_meter, Side, unitless } from "../types";
+import { fastest_pace, fatigue, rep_tonage, total_tonage } from "./metrics";
 import { kilograms } from "@buge/ts-units/mass";
 import { BodyLocationWithSide, Calf, LowerBack, UpperBack } from "../pt/body_location";
+import { Length, meters, miles } from "@buge/ts-units/length";
 
 describe("Test rep tonage metric", () => {
     it('Works on 1 rep', () => {
@@ -87,4 +88,48 @@ describe("Test fatigue", ()=> {
         }
         expect(fatigue(data)).toEqual(unitless(4))
     })
+})
+
+function make_run_data(distance: Length, time: Time, workout?: RunningWorkoutData): RunData {
+    return {
+        date: new Date(),
+        distance: distance,
+        moving_time: time,
+        title: "Run",
+        type: "run",
+        notes: '',
+        workout: workout
+    }
+}
+
+describe("Test fastest pace", () => {
+    it('Works with no workout data', ()=>{
+        const data: RunData[] = [
+            make_run_data(miles(10), minutes(60)),
+            make_run_data(miles(1), minutes(8)),
+        ]
+        expect(fastest_pace(data).in(minutes_per_mile).amount).toBeCloseTo(6)
+    })
+
+    it('Works with intervals', ()=>{
+        const data: RunData[] = [
+            make_run_data(miles(10), minutes(60)),
+            make_run_data(miles(1), minutes(8), {
+                intervals: [
+                    {
+                        distance: meters(100),
+                        duration: seconds(10)
+                    },
+                    {},
+                    {
+                        distance: meters(100),
+                    }, 
+                    {
+                        duration: seconds(10)
+                    }
+                ]
+            }),
+        ]
+        expect(fastest_pace(data).in(seconds_per_meter).amount).toBeCloseTo(0.1)
+    });
 })
