@@ -2594,5 +2594,102 @@
                 "nordic curl: 8"
             ]
         }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 13, 2025, 5:30:00 PM",
+        "data": {
+            "duration": 30,
+            "notes": "",
+            "exercises": [
+                "squat: 8x135lbs, 8x135lbs",
+                "dumbbell row: 8x70lbs, 8x80lbs",
+                "dumbbell bench: 8x60lbs, 8x70lbs",
+                "pull up: 8, 8",
+                "one leg buck: 8, 8",
+                "45 degree back extension: 8, 8",
+                "med ball hip toss: 12x15lbs",
+                "oxidative squat: 8x95lbs, 8x115lbs, 8x115lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 15, 2025, 10:49:00 AM",
+        "data": {
+            "duration": 9,
+            "notes": "",
+            "exercises": [
+                "crunch: 60",
+                "rush n twist: 50",
+                "core row: 30",
+                "push up: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 08, 2025, 8:33:00 AM",
+        "data": {
+            "duration": 496,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 09, 2025, 9:00:00 AM",
+        "data": {
+            "duration": 495,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 10, 2025, 9:11:00 AM",
+        "data": {
+            "duration": 484,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 11, 2025, 8:12:00 AM",
+        "data": {
+            "duration": 489,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 12, 2025, 8:34:00 AM",
+        "data": {
+            "duration": 501,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 13, 2025, 8:16:00 AM",
+        "data": {
+            "duration": 496,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 15, 2025, 7:42:00 AM",
+        "data": {
+            "duration": 401,
+            "quality": "low"
+        }
     }
 ]

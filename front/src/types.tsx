@@ -69,6 +69,7 @@ export enum Exercise {
     LateralRaise = "Lateral Raise",
     LedgeTricepDip = "Ledge Tricep Dip",
     LemonSqueezers = "Lemon Squeezers",
+    MedBallHipToss = "Med Ball Hip Toss",
     MedBallSeatedRussianTwist = "Med Ball Seated Russian Twist",
     MedBallSpeedSkaterJumps = "Med Ball Speed Skater Jumps",
     MedialBunkie = "Medial Bunkie",
