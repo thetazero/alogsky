@@ -141,8 +141,8 @@ describe("natural reps parse", () => {
     })
 
     it("Works for multi unit exercises", () => {
-        let text = "farmer cary: 2x(24lbs|15meters)"
-        let parsed = natural_reps_parse(text)
+        const text = "farmer cary: 2x(24lbs|15meters)"
+        const parsed = natural_reps_parse(text)
         expect(parsed).toHaveLength(1)
         expect(parsed[0].reps).toEqual(2)
         expect(parsed[0].weight).toEqual(pounds(24))

@@ -64,9 +64,7 @@ const long_dataset: TrainingData[] = [
 describe("Test training data set", () => {
     it('Should report the correct first and last activity date', () => {
         const dataset = new TrainingDataSet(example_dataset_1);
-        // @ts-ignore
         expect(dataset._first_activity).toEqual(new Date(2024, 11, 27));
-        // @ts-ignore
         expect(dataset._last_activity).toEqual(new Date(2024, 11, 30));
     });
 

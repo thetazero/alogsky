@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
     plugins: [react()],
     base: "./",
-    // @ts-ignore
+    // @ts-expect-error test config is broken for some reason
     test: {
         globals: true, // Use global `describe`, `it`, etc.
         environment: 'jsdom', // Simulate a browser-like environment

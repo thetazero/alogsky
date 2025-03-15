@@ -6,11 +6,11 @@ interface WorkoutSummaryProps {
 }
 
 function computeWorkoutName(data: RunningWorkoutData): string {
-    let summary : string[] =[];
+    const summary : string[] =[];
     let cur: string | null = null;
     let count = 0;
     for (let i = 0; i < data.intervals.length; i++) {
-        let interval = data.intervals[i];
+        const interval = data.intervals[i];
         if (interval.distance) {
             if (!cur || cur !== interval.distance.toString()) {
                 if (cur) {

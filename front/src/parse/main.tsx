@@ -119,7 +119,7 @@ export function parse_interval(data: any): Interval {
             distance = meters(0)
         } else {
 
-            let dist = parse_unit(data.distance);
+            const dist = parse_unit(data.distance);
             if (dist.dimension === LengthDimension) {
                 distance = dist as Length
             } else {
@@ -127,7 +127,7 @@ export function parse_interval(data: any): Interval {
             }
         }
     }
-    let time = data.time;
+    const time = data.time;
     let duration: Time | undefined;
     if (time !== "?") {
         if (time.includes(":")) {

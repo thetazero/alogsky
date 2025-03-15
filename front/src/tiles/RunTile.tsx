@@ -7,7 +7,7 @@ import Intervals from "../components/Intervals";
 
 
 const RunTile: panelComponentType = ({ id, data }) => {
-    let runData = data as RunData;
+    const runData = data as RunData;
     return (
         <Tile title={runData.title} id={id}>
             <p>
