@@ -7,6 +7,7 @@ import SelectMultiple from "../components/SelectMultiple";
 import { Metric } from "../types";
 import Tile from "../components/Tile";
 import panelComponentType from "./tileType";
+import NumberInput from "../components/NumberInput";
 
 function getDataForMetric(dataset: TrainingDataSet, metric: Metric, weeks: number): BarChartData {
     const unit = get_unit_for_metric(metric)
@@ -30,7 +31,7 @@ const TrainingSummaryTile: panelComponentType = ({ dataset, id }) => {
         Metric.Mileage,
         Metric.Tonage,
     ])
-    const [weeksToShow, _] = useState<number>(8)
+    const [weeksToShow, setWeeksToShow] = useState<number>(8)
 
     useEffect(() => {
         if (dataset.data.length === 0) return
@@ -61,6 +62,11 @@ const TrainingSummaryTile: panelComponentType = ({ dataset, id }) => {
                             selected={metrics}
                             onChange={setMetrics}
                             renderOption={(option) => option}
+                        />
+                        <NumberInput
+                            value={weeksToShow}
+                            onChange={setWeeksToShow}
+                            label="Weeks"
                         />
                     </div>
                 }
