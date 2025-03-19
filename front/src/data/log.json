@@ -2734,5 +2734,14 @@
             "duration": 524,
             "quality": "fair"
         }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 19, 2025, 8:34:00 AM",
+        "data": {
+            "duration": 530,
+            "quality": "fair"
+        }
     }
 ]

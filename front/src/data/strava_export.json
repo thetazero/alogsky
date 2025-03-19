@@ -3617,7 +3617,8 @@
       "description": "",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6327738093
+      "strava_id": 6327738093,
+      "intervals": null
     }
   },
   {
@@ -3702,7 +3703,13 @@
       "description": "4:18.9 great way to end the season",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6339675345
+      "strava_id": 6339675345,
+      "intervals": [
+        {
+          "distance": "1mi",
+          "time": "4:18.9"
+        }
+      ]
     }
   },
   {
@@ -3776,7 +3783,8 @@
       "description": "Need to keep this week under 35 miles.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6388222917
+      "strava_id": 6388222917,
+      "intervals": null
     }
   },
   {
@@ -4224,7 +4232,8 @@
       "description": "",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6444100452
+      "strava_id": 6444100452,
+      "intervals": null
     }
   },
   {
@@ -4241,7 +4250,8 @@
       "description": "slowly becoming a big mileage guy",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6448569036
+      "strava_id": 6448569036,
+      "intervals": null
     }
   },
   {
@@ -4326,7 +4336,8 @@
       "description": "years in the making.\nCalf had me down horrendous, Tuesday I'll be up tremendous.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6462668608
+      "strava_id": 6462668608,
+      "intervals": null
     }
   },
   {
@@ -4699,7 +4710,8 @@
       "description": "brushed my watch against my leg and deleted around 9.7 miles of running. L.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6498893703
+      "strava_id": 6498893703,
+      "intervals": null
     }
   },
   {
@@ -5293,7 +5305,8 @@
       "description": "For some reason I just felt really excited to race today. Hopefully I don't get contact traced again.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6601777944
+      "strava_id": 6601777944,
+      "intervals": null
     }
   },
   {
@@ -5786,7 +5799,13 @@
       "description": "4:15.98 converted pr?",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6673348803
+      "strava_id": 6673348803,
+      "intervals": [
+        {
+          "distance": "1mi",
+          "time": "4:15.98"
+        }
+      ]
     }
   },
   {
@@ -6984,7 +7003,8 @@
       "description": "XC weekly mileage in one recovery run?",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6908837312
+      "strava_id": 6908837312,
+      "intervals": null
     }
   },
   {
@@ -7081,7 +7101,13 @@
       "description": "Let Colin down on the second lap.",
       "private_note": "",
       "shoe": "",
-      "strava_id": 6922055182
+      "strava_id": 6922055182,
+      "intervals": [
+        {
+          "distance": "1500m",
+          "time": "3:56.11"
+        }
+      ]
     }
   },
   {
