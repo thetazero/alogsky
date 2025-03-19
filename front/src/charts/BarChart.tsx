@@ -95,7 +95,7 @@ const BarChart: React.FC<BarChartProps> = ({ data_set, title }) => {
                         const datasetLabel = context.dataset.label || '';
                         const dataSet = dataSetMap.get(datasetLabel);
                         const value = dataSet?.data[context.dataIndex];
-                        return fmt_quantity(value as Quantity<number, Dimensions>);
+                        return fmt_quantity(value as Quantity<number, Dimensions>, 1);
                     },
                 },
             },
