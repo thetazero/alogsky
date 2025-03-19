@@ -112,11 +112,15 @@ class Analysis {
         return score
     }
 
-    fastest_100m(): Time {
-        return fastest_pace(this.dataset.runs).in(seconds_per_meter).times(meters(100)).in(seconds)
+    fastest_100m(limit: Time): Time | null {
+        const pace = fastest_pace(this.dataset.runs)
+        if (!pace) return null
+        const res = pace.in(seconds_per_meter).times(meters(100)).in(seconds)
+        if (res > limit) return null
+        return res
     }
 
-    get_metric(metric: Metric): Quantity<number, Dimensions> {
+    get_metric(metric: Metric): Quantity<number, Dimensions> | null{
         switch (metric) {
             case Metric.Mileage:
                 return this.total_mileage().in(miles)
@@ -129,7 +133,7 @@ class Analysis {
             case Metric.MeanFatigueScore:
                 return this.get_mean_fatigue_score()
             case Metric.Fastest100m:
-                return this.fastest_100m()
+                return this.fastest_100m(seconds(17)) ?? null
         }
     }
 

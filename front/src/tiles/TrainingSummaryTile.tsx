@@ -73,7 +73,7 @@ const TrainingSummaryTile: panelComponentType = ({ dataset, id }) => {
                 bottomChild={
                     <div className="mb-4 card level-2">
                         <BarChart
-                            data_set={barData} title="Weekly Mileage"
+                            data_set={barData} title="Metrics"
                         />
                     </div>
                 }

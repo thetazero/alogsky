@@ -135,8 +135,8 @@ export function fatigue(data: PainLogData): Quantity<number, One> {
     return unitless(fatigue);
 }
 
-export function fastest_pace(runs: RunData[]): InverseSpeed {
-    if (runs.length == 0) return seconds_per_meter(0)
+export function fastest_pace(runs: RunData[]): InverseSpeed | null {
+    if (runs.length == 0) return null
     const paces: InverseSpeed[] = runs.map(run => {
         const baseline = run.moving_time.per(run.distance)
         if (run.workout) {

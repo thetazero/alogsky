@@ -19,7 +19,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export type BarChartData = {
     label: string;
-    data: Quantity<number, Dimensions>[];
+    data: (Quantity<number, Dimensions> | null)[];
     unit: Unit<number, Dimensions>;
 }
 
@@ -36,7 +36,7 @@ export interface BarChartProps {
 
 type BarChartInternalData = {
     label: string;
-    data: number[];
+    data: (number | null)[];
     backgroundColor: string;
 }
 
@@ -58,10 +58,14 @@ const BarChart: React.FC<BarChartProps> = ({ data_set, title }) => {
             labels: data_set.labels,
             datasets: data_set.datasets.map((dataset, i) => {
                 const hue = Math.floor(Math.abs(starting_hue + i * (360 / data_set.datasets.length)));
-                const data = dataset.data.map((d) => d.amount);
+                const data = dataset.data.map((d) => {
+                    if (d === null) return null;
+                    return d.amount
+                });
+                const num_only = data.filter((d) => d !== null);
                 return {
                     label: dataset.label,
-                    data: normalize_within(data, 0, Math.max(...data)),
+                    data: normalize_within(data, Math.min(...num_only) * .85, Math.max(...num_only)),
                     backgroundColor: `hsl(${hue}, 50%, 50%)`,
                 }
             }),

@@ -63,6 +63,13 @@ def input_intervals(id: str):
         return input_reps()
     raise ValueError("Invalid input")
 
+def could_be_workout(run: dict[str, Any])-> bool:
+    description = run["data"]["description"]
+    private_note = run["data"]["private_note"]
+    title = run["data"]["title"]
+    keywords = ["workout", "strides", "tempo", "x(", "race", "mile", "4x4", "800m"]
+    return contains_keywords((description + private_note + title).lower(), keywords) or private_note != ""
+
 
 def parse_run_for_workout(run: dict[str, Any], cache: Cache):
     assert run["type"] == "run"
@@ -70,9 +77,8 @@ def parse_run_for_workout(run: dict[str, Any], cache: Cache):
     private_note = run["data"]["private_note"]
     title = run["data"]["title"]
 
-    keywords = ["workout", "strides", "tempo", "x(", "race", "mile", "4x4", "800m"]
     strava_id = run["data"]["strava_id"]
-    if contains_keywords((description + private_note + title).lower(), keywords):
+    if could_be_workout(run):
         if not os.getenv("NO_INPUT", None) and not cache.contains(
             strava_id, CACHE_VERSION_STRING
         ):

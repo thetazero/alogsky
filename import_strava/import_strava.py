@@ -18,7 +18,7 @@ def read_strava_export(folder_path: str, export_path: str, cache: Cache):
 
 def extract_relevant_activities(activities: Any, cache: Cache):
     res = []
-    for activity in activities:
+    for activity in reversed(activities):
         if activity["Activity Type"] == "Run":
             run = parse_run(activity, cache)
             if run:
