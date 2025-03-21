@@ -108,7 +108,9 @@ describe("Test fastest pace", () => {
             make_run_data(miles(10), minutes(60)),
             make_run_data(miles(1), minutes(8)),
         ]
-        expect(fastest_pace(data).in(minutes_per_mile).amount).toBeCloseTo(6)
+        const res = fastest_pace(data)
+        expect(res).not.toBeNull()
+        expect(res?.in(minutes_per_mile).amount).toBeCloseTo(6)
     })
 
     it('Works with intervals', ()=>{
@@ -130,6 +132,33 @@ describe("Test fastest pace", () => {
                 ]
             }),
         ]
-        expect(fastest_pace(data).in(seconds_per_meter).amount).toBeCloseTo(0.1)
+        const res = fastest_pace(data)
+        expect(res).not.toBeNull()
+        expect(res?.in(seconds_per_meter).amount).toBeCloseTo(0.1)
+    });
+
+    it('Works with intervals and min length', ()=>{
+        const data: RunData[] = [
+            make_run_data(miles(10), minutes(60)),
+            make_run_data(miles(10), minutes(80)),
+            make_run_data(miles(1), minutes(8), {
+                intervals: [
+                    {
+                        distance: meters(200),
+                        duration: seconds(40)
+                    },
+                    {},
+                    {
+                        distance: meters(100),
+                    }, 
+                    {
+                        duration: seconds(10)
+                    }
+                ]
+            }),
+        ]
+        const res = fastest_pace(data, meters(200))
+        expect(res).not.toBeNull()
+        expect(res?.in(seconds_per_meter).amount).toBeCloseTo(0.2)
     });
 })

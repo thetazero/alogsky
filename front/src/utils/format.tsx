@@ -1,7 +1,8 @@
-import { hours, Time } from "@buge/ts-units/time";
-import { InverseSpeed, RepData } from "../types";
+import { hours, minutes, seconds, Time } from "@buge/ts-units/time";
+import { InverseSpeed, InverseSpeedDimensions, RepData } from "../types";
 import { minutes_per_mile } from "../types";
 import { Dimensions, Quantity } from "@buge/ts-units";
+import { Time as TimeDimensions } from "@buge/ts-units/time/dimension";
 
 export function fmt_minutes_per_mile(inverse_speed: InverseSpeed): string {
     const mpm = inverse_speed.in(minutes_per_mile).amount;
@@ -17,16 +18,23 @@ export function nice_number(num: number, extra_detail: number = 0): string {
 }
 
 export function format_time(time: Time): string {
+    if (time < minutes(1)) {
+        return `${time.in(seconds).amount.toFixed(1)}s`;
+    } else if (time < hours(1)) {
+        const mins = Math.floor(time.in(minutes).amount);
+        const secs = Math.floor((time.in(minutes).amount - mins) * 60);
+        return `${mins}:${secs.toString().padStart(2, "0")}`;
+    }
     const hrs = time.in(hours).amount;
-    const minutes = Math.round((hrs - Math.floor(hrs)) * 60);
-    return `${Math.floor(hrs)}:${minutes.toString().padStart(2, "0")}`;
+    const mins = Math.round((hrs - Math.floor(hrs)) * 60);
+    return `${Math.floor(hrs)}:${mins.toString().padStart(2, "0")}`;
 }
 
 export function fmt_quantity(q: Quantity<number, Dimensions>, extra_detail: number = 0): string {
-    switch (q.unit) {
-        case minutes_per_mile:
+    switch (q.unit.dimension) {
+        case InverseSpeedDimensions:
             return fmt_minutes_per_mile(q as InverseSpeed);
-        case hours:
+        case TimeDimensions:
             return format_time(q as Time);
         default:
             return `${nice_number(q.amount, extra_detail)} ${q.unit.symbol}`;

@@ -11,10 +11,19 @@ export type InverseSpeedDimensions = {
     length: -1;
     time: 1;
 }
+export const InverseSpeedDimensions = {
+    length: -1,
+    time: 1
+}
 export type InverseSpeed = Quantity<number, InverseSpeedDimensions>;
+
 export type FrequencyDimensions = {
     time: -1;
 }
+export const FrequencyDimensions = {
+    time: -1
+}
+
 export type Frequency = Quantity<number, FrequencyDimensions>;
 export const unitless: Unit<number, One> = makeUnit("", One)
 export const minutes_per_mile: Unit<number, InverseSpeedDimensions> = minutes.per(miles);
@@ -82,6 +91,7 @@ export enum Exercise {
     PlateMcGillCrunch = "Plate McGill Crunch",
     Pullup = "Pullup",
     Pushup = "Pushup",
+    ReverseCrunch = "Reverse Crunch",
     RomanianDeadLift = "Romanian Deadlift",
     Row = "Row",
     RushNTwist = "Rush N Twist",

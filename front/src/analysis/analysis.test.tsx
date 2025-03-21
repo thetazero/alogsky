@@ -33,7 +33,9 @@ describe("Test Analysis class", () => {
         const dataset = new TrainingDataSet([run_data]);
         const analysis = new Analysis(dataset);
         expect(analysis.total_mileage().in(miles).amount).toBeCloseTo(6.8363259)
-        expect(analysis.get_metric(Metric.Mileage).in(miles).amount).toBeCloseTo(6.8363259)
+        const mileage = analysis.get_metric(Metric.Mileage);
+        expect(mileage).not.toBeNull();
+        expect(mileage?.in(miles).amount).toBeCloseTo(6.8363259)
     });
 });
 
@@ -111,7 +113,6 @@ describe("Test training data set", () => {
             make_run_data(new Date(2024, 11, 27, 17)),
             make_run_data(new Date(2024, 11, 27, 8)),
         ]);
-        console.log(dataset.data.map(d => d.date.getHours()));
         expect(dataset.data.map(d => d.date.getHours())).toEqual([5, 8, 12, 17, 1]);
     });
 })

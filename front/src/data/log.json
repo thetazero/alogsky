@@ -2743,5 +2743,34 @@
             "duration": 530,
             "quality": "fair"
         }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 19, 2025, 9:00:00 PM",
+        "data": {
+            "duration": 1,
+            "notes": "",
+            "exercises": [
+                "reverse crunch: 15"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 20, 2025, 3:32:00 PM",
+        "data": {
+            "duration": 29,
+            "notes": "taking it easy for intercostals.",
+            "exercises": [
+                "squat: 8x115lbs, 8x135lbs, 8x135lbs",
+                "dumbbell row: 8x70lbs, 8x70lbs, 8x60lbs",
+                "single leg stair calf raise: 12, 12",
+                "one leg buck: 8, 8",
+                "45 degree back extension: 8, 8x10lbs, 8",
+                "bulgarian split squat: 8x30lbs"
+            ]
+        }
     }
 ]

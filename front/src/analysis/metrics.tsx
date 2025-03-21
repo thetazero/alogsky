@@ -18,6 +18,7 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.Plank, 0.02],
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
+    [Exercise.ReverseCrunch, 0.1],
     [Exercise.RushNTwist, 0.1],
     [Exercise.SideLegLift, 0.1],
     [Exercise.SingleLegCalfRaise, 0.8],
@@ -137,12 +138,14 @@ export function fatigue(data: PainLogData): Quantity<number, One> {
 
 export function fastest_pace(runs: RunData[], min_length: Length = meters(0)): InverseSpeed | null {
     if (runs.length == 0) return null
-    const paces: (InverseSpeed| null)[] = runs.map(run => {
-        if (run.distance.amount < min_length.amount) return null
+    const paces: (InverseSpeed | null)[] = runs.map(run => {
+        if (run.distance < min_length) return null
         const baseline = run.moving_time.per(run.distance)
         if (run.workout) {
             return run.workout.intervals.map(interval => {
-                if (interval.distance && interval.duration && interval.distance >= min_length) return interval.duration.per(interval.distance)
+                if (interval.distance && interval.duration && interval.distance >= min_length) {
+                    return interval.duration.per(interval.distance)
+                }
                 return baseline
             }).reduce((a, b) => {
                 if (a.in(seconds_per_meter).amount < b.in(seconds_per_meter).amount) return a
