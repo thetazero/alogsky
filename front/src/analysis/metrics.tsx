@@ -1,6 +1,6 @@
 import { Mass } from "@buge/ts-units/mass";
 import { BodyRegion, Exercise, InverseSpeed, LiftData, minutes_per_mile, PainLogData, pounds, RepData, RunData, seconds_per_meter, TrainingData, unitless } from "../types";
-import { meters, miles } from "@buge/ts-units/length";
+import { Length, meters, miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 import { One, Quantity } from "@buge/ts-units";
 
@@ -135,13 +135,14 @@ export function fatigue(data: PainLogData): Quantity<number, One> {
     return unitless(fatigue);
 }
 
-export function fastest_pace(runs: RunData[]): InverseSpeed | null {
+export function fastest_pace(runs: RunData[], min_length: Length = meters(0)): InverseSpeed | null {
     if (runs.length == 0) return null
-    const paces: InverseSpeed[] = runs.map(run => {
+    const paces: (InverseSpeed| null)[] = runs.map(run => {
+        if (run.distance.amount < min_length.amount) return null
         const baseline = run.moving_time.per(run.distance)
         if (run.workout) {
             return run.workout.intervals.map(interval => {
-                if (interval.distance && interval.duration) return interval.duration.per(interval.distance)
+                if (interval.distance && interval.duration && interval.distance >= min_length) return interval.duration.per(interval.distance)
                 return baseline
             }).reduce((a, b) => {
                 if (a.in(seconds_per_meter).amount < b.in(seconds_per_meter).amount) return a
@@ -151,6 +152,8 @@ export function fastest_pace(runs: RunData[]): InverseSpeed | null {
         return baseline
     })
     return paces.reduce((a, b) => {
+        if (!a) return b
+        if (!b) return a
         if (a.in(seconds_per_meter).amount < b.in(seconds_per_meter).amount) return a
         return b
     })

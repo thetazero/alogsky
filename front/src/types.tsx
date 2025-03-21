@@ -198,6 +198,10 @@ export enum Metric {
     Tonage = "Tonage",
     MeanFatigueScore = "MFS",
     Fastest100m = "Fastest 100m",
+    Fastest200m = "Fastest 200m",
+    Fastest400m = "Fastest 400m",
+    FastestMile = "Fastest Mile",
+    Fastest5k = "Fastest 5k",
 }
 
 export enum Side {

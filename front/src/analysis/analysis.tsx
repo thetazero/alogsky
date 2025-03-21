@@ -2,7 +2,7 @@ import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogDa
 import { Mass } from "@buge/ts-units/mass";
 import { average_pace, fastest_pace, fatigue, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
 import { Length, meters, miles } from "@buge/ts-units/length";
-import { hours, seconds, Time } from "@buge/ts-units/time";
+import { hours, minutes, seconds, Time } from "@buge/ts-units/time";
 import { get_week_end, get_week_start } from "../utils/time";
 import { Dimensions, One, Quantity, Unit } from "@buge/ts-units";
 
@@ -120,6 +120,14 @@ class Analysis {
         return res
     }
 
+    fastest_distance(distance: Length, limit: Time): Time | null {
+        const pace = fastest_pace(this.dataset.runs, distance)
+        if (!pace) return null
+        const res = pace.in(seconds_per_meter).times(distance).in(seconds)
+        if (res > limit) return null
+        return res
+    }
+
     get_metric(metric: Metric): Quantity<number, Dimensions> | null{
         switch (metric) {
             case Metric.Mileage:
@@ -134,6 +142,14 @@ class Analysis {
                 return this.get_mean_fatigue_score()
             case Metric.Fastest100m:
                 return this.fastest_100m(seconds(17)) ?? null
+            case Metric.Fastest200m:
+                return this.fastest_distance(meters(200), seconds(35)) ?? null
+            case Metric.Fastest400m:
+                return this.fastest_distance(meters(400), seconds(90)) ?? null
+            case Metric.FastestMile:
+                return this.fastest_distance(miles(1), minutes(6)) ?? null
+            case Metric.Fastest5k:
+                return this.fastest_distance(miles(3.1), minutes(20)) ?? null
         }
     }
 
@@ -179,6 +195,10 @@ export function get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
         case Metric.MeanFatigueScore:
             return unitless
         case Metric.Fastest100m:
+        case Metric.Fastest200m:
+        case Metric.Fastest400m:
+        case Metric.FastestMile:
+        case Metric.Fastest5k:
             return seconds
     }
 }
