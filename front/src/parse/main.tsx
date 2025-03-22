@@ -6,7 +6,7 @@ import { kilograms, Mass } from "@buge/ts-units/mass";
 import { Mass as MassDimension } from "@buge/ts-units/mass/dimension";
 import { pounds } from "../types";
 import { Quantity, Unit } from "@buge/ts-units";
-import BodyLocation, { body_locations, Shin, Hamstring, AchillesTendon, Knee, PatellarTendon, Foot, Quad, Glute, BodyLocationWithSide, Pec, Lat, MidBack, Calf, Shoulder, LateralDeltoid } from "../pt/body_location";
+import BodyLocation, { body_locations, Shin, Hamstring, AchillesTendon, Knee, PatellarTendon, Foot, Quad, Glute, BodyLocationWithSide, Pec, Lat, MidBack, Calf, Shoulder, LateralDeltoid, Tricep } from "../pt/body_location";
 import { Side } from "../types";
 import { get_day_string } from "../utils/time";
 import { Time as TimeDimension } from "@buge/ts-units/time/dimension";
@@ -349,9 +349,13 @@ const locations_map: Map<string, BodyLocation> = new Map([
     ["achilles", AchillesTendon],
     ["back inner knee tendon", Knee],
     ["back of knee", Knee], // TODO: More specific? likely tendon stuff
+    ["calves", Calf],
     ["feet", Foot],
+    ["foot sciatica", Foot], // TODO: Diagnosis ???
     ["glutes", Glute],
     ["hamstrings", Hamstring],
+    ["lateral raise muscles", LateralDeltoid],
+    ["lateral raises muscle", LateralDeltoid],
     ["lats", Lat],
     ["lower shin", Shin],
     ["middle back", MidBack],
@@ -359,10 +363,8 @@ const locations_map: Map<string, BodyLocation> = new Map([
     ["pecs", Pec],
     ["quads", Quad],
     ["shins", Shin],
-    ["calves", Calf],
     ["shoulders", Shoulder],
-    ["lateral raises muscle", LateralDeltoid],
-    ["foot sciatica", Foot], // TODO: Diagnosis ???
+    ["triceps", Tricep],
 ]);
 
 export function parse_body_location(str: string): BodyLocationWithSide[] {
