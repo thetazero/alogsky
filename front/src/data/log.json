@@ -2764,7 +2764,7 @@
             "duration": 29,
             "notes": "taking it easy for intercostals.",
             "exercises": [
-                "squat: 8x115lbs, 8x135lbs, 8x135lbs",
+                "squat: 8x135lbs, 8x135lbs, 8x135lbs",
                 "dumbbell row: 8x70lbs, 8x70lbs, 8x60lbs",
                 "single leg stair calf raise: 12, 12",
                 "one leg buck: 8, 8",
@@ -2772,5 +2772,272 @@
                 "bulgarian split squat: 8x30lbs"
             ]
         }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 20, 2025, 8:52:00 AM",
+        "data": {
+            "duration": 569,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 21, 2025, 9:04:00 AM",
+        "data": {
+            "duration": 583,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 22, 2025, 8:10:00 AM",
+        "data": {
+            "duration": 490,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 19, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "core (2)",
+                    "lower back (2)",
+                    "right calf (1)",
+                    "left knee (1)"
+                ]
+            },
+            {
+                "description": "in class",
+                "snapshots": [
+                    "right hip (2)"
+                ]
+            },
+            {
+                "description": "run",
+                "snapshots": [
+                    "left heel (1)",
+                    "left calf (1)",
+                    "right hamstring (1)",
+                    "left upper back (2)",
+                    "core (1)",
+                    "lower back (1)"
+                ]
+            },
+            {
+                "description": "post run",
+                "snapshots": [
+                    "both quads (1)",
+                    "right shin (1)",
+                    "left glute (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 20, 2025",
+        "data": [
+            {
+                "description": "",
+                "snapshots": [
+                    "right hip (2)",
+                    "lower back (1)",
+                    "core (1)",
+                    "left shin (2)",
+                    "left hip (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 21, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "right knee (2)",
+                    "right hip flexor (2)"
+                ]
+            },
+            {
+                "description": "post ride",
+                "snapshots": [
+                    "left knee (2)",
+                    "lower back (1)",
+                    "left foot (1)",
+                    "both shins (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 22, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "left glute (3)",
+                    "right glute (2)",
+                    "core (1)"
+                ]
+            },
+            {
+                "description": "run",
+                "snapshots": [
+                    "lower back (1)",
+                    "core (2)",
+                    "left shin (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 23, 2025",
+        "data": [
+            {
+                "description": "post lr",
+                "snapshots": [
+                    "both quads (1)",
+                    "lower back (1)",
+                    "left shin (2)",
+                    "right hamstring (1)",
+                    "upper back (1)",
+                    "both triceps (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 24, 2025",
+        "data": [
+            {
+                "description": "run",
+                "snapshots": [
+                    "lower back (2)",
+                    "left upper back (1)",
+                    "left heel (2)",
+                    "right hamstring (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 25, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "right hip (1)"
+                ]
+            },
+            {
+                "description": "walk",
+                "snapshots": [
+                    "left shin (2)",
+                    "left tibialis (2)"
+                ]
+            },
+            {
+                "description": "workout",
+                "snapshots": [
+                    "lower back (2)",
+                    "left upper back (2)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 26, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "right hip (2)",
+                    "upper back (1)",
+                    "lower back (1)"
+                ]
+            },
+            {
+                "description": "run",
+                "snapshots": [
+                    "lower core (1)",
+                    "left calf (2)",
+                    "left shin (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 27, 2025",
+        "data": [
+            {
+                "description": "morning",
+                "snapshots": [
+                    "upper back (1)",
+                    "lower back (2)",
+                    "lateral raise muscles (1)"
+                ]
+            },
+            {
+                "description": "run",
+                "snapshots": [
+                    "lower back (2)",
+                    "upper back (1)",
+                    "right foot (1)",
+                    "right quad (2)",
+                    "left quad (1)",
+                    "left shin (2)",
+                    "left calf (1)"
+                ]
+            }
+        ]
+    },
+    {
+        "version": 2,
+        "type": "pain",
+        "date": "Feb 28, 2025",
+        "data": [
+            {
+                "description": "mid day",
+                "snapshots": [
+                    "right upper back (2)",
+                    "core (1)",
+                    "lower back (1)"
+                ]
+            },
+            {
+                "description": "run",
+                "snapshots": [
+                    "left knee (3)",
+                    "right knee (1)",
+                    "both quads (1)",
+                    "left calf (2)",
+                    "left shin (1)"
+                ]
+            }
+        ]
     }
 ]
