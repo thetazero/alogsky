@@ -1834,5 +1834,204 @@
                 "time": "27"
             }
         ]
+    },
+    "13949031651": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "1k",
+                "time": "2:57"
+            },
+            {
+                "distance": "0.3mi",
+                "time": "2:56"
+            },
+            {
+                "distance": "1k",
+                "time": "3:00"
+            },
+            {
+                "distance": "0.28mi",
+                "time": "2:51"
+            },
+            {
+                "distance": "1k",
+                "time": "2:58"
+            },
+            {
+                "distance": ".61mi",
+                "time": "5:41"
+            },
+            {
+                "distance": "500m",
+                "time": "1:18"
+            },
+            {
+                "distance": "200m",
+                "time": "1:18"
+            },
+            {
+                "distance": "300m",
+                "time": "46.69"
+            },
+            {
+                "distance": "200m",
+                "time": "1:32"
+            },
+            {
+                "distance": "200m",
+                "time": "29.2"
+            },
+            {
+                "distance": ".26mi",
+                "time": "2:58"
+            },
+            {
+                "distance": "500m",
+                "time": "1:23.15"
+            },
+            {
+                "distance": "200m",
+                "time": "1:25.63"
+            },
+            {
+                "distance": "300m",
+                "time": "44.96"
+            },
+            {
+                "distance": "200m",
+                "time": "1:52"
+            },
+            {
+                "distance": "200m",
+                "time": "26.74"
+            }
+        ]
+    },
+    "13921348013": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "1mi",
+                "time": "5:11.9"
+            },
+            {
+                "distance": ".13mi",
+                "time": "1:19"
+            },
+            {
+                "distance": "1mi",
+                "time": "5:07.68"
+            },
+            {
+                "distance": ".1mi",
+                "time": "1:21"
+            },
+            {
+                "distance": "1mi",
+                "time": "5:07.14"
+            },
+            {
+                "distance": ".1mi",
+                "time": "1:15"
+            },
+            {
+                "distance": "1mi",
+                "time": "5:25.02"
+            }
+        ]
+    },
+    "13921347814": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "100m",
+                "time": "14.51"
+            }
+        ]
+    },
+    "13911225777": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "100m",
+                "time": "16.79"
+            },
+            {
+                "distance": "100m",
+                "time": "15.33"
+            }
+        ]
+    },
+    "13883981959": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "4mi",
+                "time": "21:45"
+            }
+        ]
+    },
+    "13865577599": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "100m",
+                "time": "13.28"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "13.53"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "13.97"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "12.97"
+            }
+        ]
+    },
+    "13955377016": {
+        "version": "runv1",
+        "value": null
+    },
+    "13939949635": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "100m",
+                "time": "16.91"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "12.58"
+            },
+            {
+                "distance": "?",
+                "time": "?"
+            },
+            {
+                "distance": "100m",
+                "time": "14.70"
+            }
+        ]
     }
 }
