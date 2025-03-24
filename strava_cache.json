@@ -2033,5 +2033,46 @@
                 "time": "14.70"
             }
         ]
+    },
+    "12744289861": {
+        "version": "runv1",
+        "value": [
+            {
+                "distance": "800m",
+                "time": "2:20"
+            },
+            {
+                "distance": ".19mi",
+                "time": "1:53"
+            },
+            {
+                "distance": "1mi",
+                "time": "4:55"
+            },
+            {
+                "distance": ".33mi",
+                "time": "3:03"
+            },
+            {
+                "distance": "1mi",
+                "time": "4:52"
+            },
+            {
+                "distance": ".31mi",
+                "time": "3:01"
+            },
+            {
+                "distance": "1mi",
+                "time": "5:04"
+            },
+            {
+                "distance": ".26mi",
+                "time": "2:46"
+            },
+            {
+                "distance": "800m",
+                "time": "2:19"
+            }
+        ]
     }
 }

@@ -4382,7 +4382,45 @@
       "description": "800m, 2j, 3x(1600m, 3j), 800m\n\n2:20, 4:55, 4:52, 5:04, 2:19\n\nTough one",
       "private_note": "",
       "shoe": "",
-      "strava_id": 12744289861
+      "strava_id": 12744289861,
+      "intervals": [
+        {
+          "distance": "800m",
+          "time": "2:20"
+        },
+        {
+          "distance": ".19mi",
+          "time": "1:53"
+        },
+        {
+          "distance": "1mi",
+          "time": "4:55"
+        },
+        {
+          "distance": ".33mi",
+          "time": "3:03"
+        },
+        {
+          "distance": "1mi",
+          "time": "4:52"
+        },
+        {
+          "distance": ".31mi",
+          "time": "3:01"
+        },
+        {
+          "distance": "1mi",
+          "time": "5:04"
+        },
+        {
+          "distance": ".26mi",
+          "time": "2:46"
+        },
+        {
+          "distance": "800m",
+          "time": "2:19"
+        }
+      ]
     }
   },
   {
