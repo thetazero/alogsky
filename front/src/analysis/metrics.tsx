@@ -161,3 +161,22 @@ export function fastest_pace(runs: RunData[], min_length: Length = meters(0)): I
         return b
     })
 }
+
+export function num_strides(runs: RunData[]): number {
+    return runs.map(r => {
+        if (r.workout) {
+            const counts: number[] = r.workout.intervals.map(i => {
+                if (i.distance && i.duration) {
+                    let pace = i.duration.per(i.distance)
+                    console.log(pace.in(seconds_per_meter).amount)
+                    if (pace <= seconds_per_meter(15 / 100)) {
+                        return 1
+                    }
+                }
+                return 0
+            })
+            return counts.reduce((a, b) => a + b, 0)
+        }
+        return 0
+    }).reduce((a, b) => a + b, 0)
+}

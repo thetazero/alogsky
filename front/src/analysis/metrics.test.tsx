@@ -1,9 +1,10 @@
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 import { Exercise, LiftData, minutes_per_mile, PainLogData, pounds, RepData, RunData, RunningWorkoutData, seconds_per_meter, Side, unitless } from "../types";
-import { fastest_pace, fatigue, rep_tonage, total_tonage } from "./metrics";
+import { fastest_pace, fatigue, num_strides, rep_tonage, total_tonage } from "./metrics";
 import { kilograms } from "@buge/ts-units/mass";
 import { BodyLocationWithSide, Calf, LowerBack, UpperBack } from "../pt/body_location";
 import { Length, meters, miles } from "@buge/ts-units/length";
+import Intervals from "../components/Intervals";
 
 describe("Test rep tonage metric", () => {
     it('Works on 1 rep', () => {
@@ -54,7 +55,7 @@ describe("Test lift tonage metric", () => {
     });
 });
 
-describe("Test fatigue", ()=> {
+describe("Test fatigue", () => {
     it('Works on no data', () => {
         const data: PainLogData = {
             date: new Date(),
@@ -64,7 +65,7 @@ describe("Test fatigue", ()=> {
         expect(fatigue(data)).toEqual(unitless(0))
     })
 
-    it('Works on basic data', ()=>{
+    it('Works on basic data', () => {
         const data: PainLogData = {
             date: new Date(),
             type: "pain",
@@ -103,7 +104,7 @@ function make_run_data(distance: Length, time: Time, workout?: RunningWorkoutDat
 }
 
 describe("Test fastest pace", () => {
-    it('Works with no workout data', ()=>{
+    it('Works with no workout data', () => {
         const data: RunData[] = [
             make_run_data(miles(10), minutes(60)),
             make_run_data(miles(1), minutes(8)),
@@ -113,7 +114,7 @@ describe("Test fastest pace", () => {
         expect(res?.in(minutes_per_mile).amount).toBeCloseTo(6)
     })
 
-    it('Works with intervals', ()=>{
+    it('Works with intervals', () => {
         const data: RunData[] = [
             make_run_data(miles(10), minutes(60)),
             make_run_data(miles(1), minutes(8), {
@@ -125,7 +126,7 @@ describe("Test fastest pace", () => {
                     {},
                     {
                         distance: meters(100),
-                    }, 
+                    },
                     {
                         duration: seconds(10)
                     }
@@ -137,7 +138,7 @@ describe("Test fastest pace", () => {
         expect(res?.in(seconds_per_meter).amount).toBeCloseTo(0.1)
     });
 
-    it('Works with intervals and min length', ()=>{
+    it('Works with intervals and min length', () => {
         const data: RunData[] = [
             make_run_data(miles(10), minutes(60)),
             make_run_data(miles(10), minutes(80)),
@@ -150,7 +151,7 @@ describe("Test fastest pace", () => {
                     {},
                     {
                         distance: meters(100),
-                    }, 
+                    },
                     {
                         duration: seconds(10)
                     }
@@ -161,4 +162,42 @@ describe("Test fastest pace", () => {
         expect(res).not.toBeNull()
         expect(res?.in(seconds_per_meter).amount).toBeCloseTo(0.2)
     });
+})
+
+describe("Test num strides", () => {
+    it('Works on basic strides', () => {
+        const data: RunData[] = [
+            make_run_data(miles(10), minutes(60)),
+            make_run_data(miles(1), minutes(8), {
+                intervals: [
+                    {
+                        distance: meters(100),
+                        duration: seconds(10)
+                    },
+                    {},
+                    {
+                        distance: meters(100),
+                    },
+                    {
+                        duration: seconds(10)
+                    }
+                ]
+            }),
+        ]
+        expect(num_strides(data)).toEqual(1)
+    })
+
+    it('Does not work for slow strides', () => {
+        const data: RunData[] = [
+            make_run_data(miles(10), minutes(60), {
+                intervals: [
+                    {
+                        distance: meters(100),
+                        duration: seconds(16)
+                    }
+                ]
+            })
+        ]
+        expect(num_strides(data)).toEqual(0)
+    })
 })

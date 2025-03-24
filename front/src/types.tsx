@@ -212,6 +212,7 @@ export enum Metric {
     Fastest400m = "Fastest 400m",
     FastestMile = "Fastest Mile",
     Fastest5k = "Fastest 5k",
+    NumStrides = "Num Strides",
 }
 
 export enum Side {
