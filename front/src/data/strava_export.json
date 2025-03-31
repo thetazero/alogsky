@@ -2,9 +2,332 @@
   {
     "version": 2,
     "type": "run",
-    "date": "Mar 22, 2025, 08:59:44 AM",
+    "date": "Mar 29, 2025, 03:12:35 PM",
+    "data": {
+      "title": "cmu invite 800",
+      "distance": "800.0000610351562",
+      "moving_time": "115.0",
+      "elapsed_time": "115.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "negative split",
+      "private_note": "",
+      "shoe": "Nike Dragonfly",
+      "strava_id": 14041788828
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 28, 2025, 03:10:26 PM",
+    "data": {
+      "title": "CMU invite 1500m",
+      "distance": "1500.0",
+      "moving_time": "238.0",
+      "elapsed_time": "238.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "Back on track, closed well. ",
+      "private_note": "",
+      "shoe": "Nike Dragonfly",
+      "strava_id": 14041777767
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 29, 2025, 03:09:16 PM",
+    "data": {
+      "title": "Race day mileage",
+      "distance": "482.80322265625",
+      "moving_time": "108.0",
+      "elapsed_time": "108.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "strides and stuff",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14041755640
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 30, 2025, 10:25:15 AM",
     "data": {
       "title": "Morning Run",
+      "distance": "17198.0",
+      "moving_time": "4707.0",
+      "elapsed_time": "5884.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14031681077
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 30, 2025, 10:03:43 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "258.29998779296875",
+      "moving_time": "82.0",
+      "elapsed_time": "117.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14030576379
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 29, 2025, 01:13:27 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "5455.0",
+      "moving_time": "1703.0",
+      "elapsed_time": "2071.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14022736828
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 29, 2025, 12:08:16 PM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "3242.300048828125",
+      "moving_time": "934.0",
+      "elapsed_time": "1000.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14022736773
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 28, 2025, 06:32:36 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "3290.0",
+      "moving_time": "954.0",
+      "elapsed_time": "957.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14015035351
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 28, 2025, 05:16:32 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "3196.300048828125",
+      "moving_time": "898.0",
+      "elapsed_time": "1028.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14014567396
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 28, 2025, 02:16:00 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "2219.5",
+      "moving_time": "637.0",
+      "elapsed_time": "650.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14013460939
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 27, 2025, 03:32:20 PM",
+    "data": {
+      "title": "Pre race",
+      "distance": "9078.0",
+      "moving_time": "2394.0",
+      "elapsed_time": "3043.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "2 fast strides at the end",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14006907088
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 26, 2025, 11:01:01 AM",
+    "data": {
+      "title": "Coyle Shake",
+      "distance": "5253.0",
+      "moving_time": "1428.0",
+      "elapsed_time": "1735.0",
+      "temperature": "20.0",
+      "feels_like": "",
+      "description": "strides",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13993259102
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 25, 2025, 06:15:35 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "2807.0",
+      "moving_time": "804.0",
+      "elapsed_time": "826.0",
+      "temperature": "17.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13987373650
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 25, 2025, 05:02:46 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "3354.89990234375",
+      "moving_time": "918.0",
+      "elapsed_time": "1633.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13987180468
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 25, 2025, 05:32:19 PM",
+    "data": {
+      "title": "Major communication failure",
+      "distance": "6941.0",
+      "moving_time": "1655.0",
+      "elapsed_time": "1699.0",
+      "temperature": "16.0",
+      "feels_like": "",
+      "description": "1200, 1000, 800, 600, 400 on 2;30 jog\n3x(200, 200j)",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13987178876
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 25, 2025, 06:05:49 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "501.0",
+      "moving_time": "188.0",
+      "elapsed_time": "188.0",
+      "temperature": "16.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13987178821
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 24, 2025, 05:01:38 PM",
+    "data": {
+      "title": "poke seth",
+      "distance": "9257.0",
+      "moving_time": "2463.0",
+      "elapsed_time": "3214.0",
+      "temperature": "20.0",
+      "feels_like": "",
+      "description": "4 strides",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13977090133
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 23, 2025, 10:36:08 AM",
+    "data": {
+      "title": "4 strides",
+      "distance": "3866.0",
+      "moving_time": "999.0",
+      "elapsed_time": "1470.0",
+      "temperature": "16.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 13965199971
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Feb 14, 2025, 07:40:00 PM",
+    "data": {
+      "title": "BU Mile",
+      "distance": "1609.343994140625",
+      "moving_time": "260.0",
+      "elapsed_time": "260.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "Ran a lot of the laps in lane 2, started catching people with 200 to go.\nLast 400 lactic in full upper body, felt a lot in biceps, vision did the high contrast thing for a bit post race.",
+      "shoe": "Nike Dragonfly",
+      "strava_id": 13958382161
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 22, 2025, 08:59:44 AM",
+    "data": {
+      "title": "Long",
       "distance": "20396.69921875",
       "moving_time": "5599.0",
       "elapsed_time": "6586.0",
@@ -143,7 +466,7 @@
     "type": "run",
     "date": "Mar 20, 2025, 04:04:41 PM",
     "data": {
-      "title": "Afternoon Run",
+      "title": "2 stride day",
       "distance": "11890.400390625",
       "moving_time": "3146.0",
       "elapsed_time": "3940.0",
