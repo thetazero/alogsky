@@ -183,7 +183,21 @@
       "description": "2 fast strides at the end",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 14006907088
+      "strava_id": 14006907088,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "12.74"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "12.42"
+        }
+      ]
     }
   },
   {
@@ -200,7 +214,37 @@
       "description": "strides",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13993259102
+      "strava_id": 13993259102,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "15.71"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "14.34"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "14.45"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "13.61"
+        }
+      ]
     }
   },
   {
