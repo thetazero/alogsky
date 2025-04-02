@@ -3039,5 +3039,64 @@
                 ]
             }
         ]
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 24, 2025, 6:10:00 PM",
+        "data": {
+            "duration": 40,
+            "notes": "",
+            "exercises": [
+                "squat: 8x135lbs, 8x135lbs, 8x155lbs",
+                "dumbbell row: 8x70lbs, 8x70lbs, 8x70lbs",
+                "barbell rdl: 8x65lbs, 8x65lbs, 8x65lbs",
+                "single leg stair calf raise: 12, 12, 12",
+                "underhand lat pulldown: 8x100lbs, 8x110lbs, 8x110lbs",
+                "one leg buck: 8",
+                "45 degree back extension: 8, 8x10lbs, 8x10lbs",
+                "bulgarian split squat: 10x30lbs, 8x30lbs, 8x40lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs, 12x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Mar 31, 2025, 5:55:00 PM",
+        "data": {
+            "duration": 62,
+            "notes": "",
+            "exercises": [
+                "squat: 8x135lbs, 8x135lbs, 8x155lbs",
+                "dumbbell row: 8x70lbs, 8x80lbs, 8x80lbs",
+                "barbell rdl: 8x75lbs, 8x75lbs, 8x75lbs",
+                "single leg stair calf raise: 15, 15, 15",
+                "pull up: 8, 9, 8",
+                "90 degree back extension: 8, 8",
+                "bulgarian split squat: 10x30lbs, 8x30lbs, 8x40lbs",
+                "oxidative squat: 12x95lbs, 12x95lbs, 12x95lbs"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "Apr 2, 2025, 1:45:00 AM",
+        "data": {
+            "duration": 30,
+            "notes": "",
+            "exercises": [
+                "hamstring curl: 8x70lbs",
+                "rush n twist: 50, 15x10lbs, 15x10lbs",
+                "plank: 120s",
+                "crunch: 56",
+                "plate mcgill crunch: 20x25lbs, 9x45lbs",
+                "single leg calf raise: 20, 20, 10",
+                "squat: 15x95lbs, 8x115lbs, 8x135lbs, 8x155lbs, 8x160lbs",
+                "hammer curl: 10x30lbs, 10x40lbs",
+                "bicep curl: 10x40lbs"
+            ]
+        }
     }
 ]
