@@ -47,7 +47,8 @@
       "description": "strides and stuff",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 14041755640
+      "strava_id": 14041755640,
+      "intervals": null
     }
   },
   {
@@ -295,7 +296,69 @@
       "description": "1200, 1000, 800, 600, 400 on 2;30 jog\n3x(200, 200j)",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13987178876
+      "strava_id": 13987178876,
+      "intervals": [
+        {
+          "distance": "1200m",
+          "time": "3:36"
+        },
+        {
+          "distance": "400m",
+          "time": "2:30"
+        },
+        {
+          "distance": "100m",
+          "time": "2:58"
+        },
+        {
+          "distance": "400m",
+          "time": "2:32"
+        },
+        {
+          "distance": "800m",
+          "time": "2:16"
+        },
+        {
+          "distance": "400m",
+          "time": "2:31"
+        },
+        {
+          "distance": "600m",
+          "time": "1:44"
+        },
+        {
+          "distance": "400m",
+          "time": "2:25"
+        },
+        {
+          "distance": "400m",
+          "time": "59.96"
+        },
+        {
+          "distance": "?",
+          "time": "2:00"
+        },
+        {
+          "distance": "200m",
+          "time": "32.01"
+        },
+        {
+          "distance": "200m",
+          "time": "1:08"
+        },
+        {
+          "distance": "200m",
+          "time": "31.64"
+        },
+        {
+          "distance": "200m",
+          "time": "1:14"
+        },
+        {
+          "distance": "200m",
+          "time": "28.98"
+        }
+      ]
     }
   },
   {
