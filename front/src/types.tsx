@@ -75,6 +75,8 @@ export enum Exercise {
     DumbbellRow = "Dumbbell Row",
     FarmerCary = "Farmer Cary",
     FourtyFiveDegreeBackExtension = "45 Degree Back Extension",
+    HammerCurl = "Hammer Curl",
+    HamstringCurl = "Hamstring Curl",
     LateralBunkie = "Lateral Bunkie",
     LateralRaise = "Lateral Raise",
     LedgeTricepDip = "Ledge Tricep Dip",
@@ -83,6 +85,7 @@ export enum Exercise {
     MedBallSeatedRussianTwist = "Med Ball Seated Russian Twist",
     MedBallSpeedSkaterJumps = "Med Ball Speed Skater Jumps",
     MedialBunkie = "Medial Bunkie",
+    NinetyDegreeBackExtension = "90 Degree Back Extension",
     NordicCurl = "Nordic Curl",
     OneLegBuck = "One Leg Buck",
     OverheadPress = "Overhead Press",
@@ -106,6 +109,7 @@ export enum Exercise {
     SupineKneeDrive = "Supine Knee Drive", // https://www.youtube.com/watch?v=wpt_RPlfcR4 (but without the band)
     TibialisRaise = "Tibialis Raise",
     TricepExtension = "Tricep Extension",
+    UnderhandLatPulldown = "Underhand Lat Pulldown",
 }
 
 export enum SleepQuality {

@@ -12,6 +12,7 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.DeadBugs, 0.1],
     [Exercise.Dip, 0.9],
     [Exercise.FourtyFiveDegreeBackExtension, 0.3],
+    [Exercise.NinetyDegreeBackExtension, 0.4],
     [Exercise.LedgeTricepDip, 0.5],
     [Exercise.NordicCurl, 0.6],
     [Exercise.OneLegBuck, 0.4],
