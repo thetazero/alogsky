@@ -5,6 +5,7 @@ from .run import parse_run
 from .utils import parse_date
 from .cache import Cache
 from .bike import parse_bike
+from .elliptical import parse_elliptical
 
 
 def read_strava_export(folder_path: str, export_path: str, cache: Cache):
@@ -27,6 +28,10 @@ def extract_relevant_activities(activities: Any, cache: Cache):
             run = parse_bike(activity)
             if run:
                 res.append(run)
+        elif activity["Activity Type"] == "Elliptical":
+            act = parse_elliptical(activity)
+            if act:
+                res.append(act)
         elif activity["Activity Type"] == "Workout":
             title = str(activity["Activity Name"])
             lower_title = title.lower()

@@ -204,7 +204,17 @@ export interface BikeData {
     type: "bike"
 }
 
-export type TrainingData = RunData | LiftData | SleepData | PainLogData | KayakData | NoteData | RowData | BikeData
+export interface EllipitcalData {
+    title: string
+    date: Date
+    description: string
+    moving_time: Time
+    average_heartrate?: Frequency
+    distance?: Length
+    type: "elliptical"
+}
+
+export type TrainingData = RunData | LiftData | SleepData | PainLogData | KayakData | NoteData | RowData | BikeData | EllipitcalData;
 export enum Metric {
     Mileage = "Mileage",
     Pace = "Pace",

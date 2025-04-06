@@ -1,4 +1,4 @@
-import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData, RowData, per_minute, BikeData, Interval, RunningWorkoutData } from "../types";
+import { Exercise, PainLogData, KayakData, LiftData, RepData, RunData, SleepData, TrainingData, PainAtLocationLogData, SleepQuality, NoteTopic, NoteData, RowData, per_minute, BikeData, Interval, RunningWorkoutData, EllipitcalData } from "../types";
 import { kilometers, Length, meters, miles } from "@buge/ts-units/length";
 import { seconds, minutes, Time } from "@buge/ts-units/time";
 import { celsius } from "@buge/ts-units/temperature";
@@ -53,6 +53,7 @@ const proc_map: { [key: string]: (point: any, date: Date) => TrainingData } = {
     "note1": parse_notev1,
     "row1": parse_rowv1,
     "bike1": parse_bikev1,
+    "elliptical1": parse_ellipticalv1,
 }
 
 function _parse(point: any): TrainingData | string {
@@ -476,6 +477,17 @@ function parse_bikev1(data: any, date: Date): BikeData {
         average_heartrate: per_minute(parseFloat(data.average_heart_rate)),
         date,
         type: "bike"
+    }
+}
+
+function parse_ellipticalv1(data: any, date: Date): EllipitcalData {
+    return {
+        title: data.title,
+        description: data.description,
+        moving_time: seconds(parseFloat(data.moving_time)),
+        average_heartrate: per_minute(parseFloat(data.average_heart_rate)),
+        date,
+        type: "elliptical"
     }
 }
 

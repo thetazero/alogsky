@@ -52,6 +52,17 @@
     }
   },
   {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Mar 31, 2025, 11:50:53 AM",
+    "data": {
+      "title": "Ellipticalmon",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "2235.0"
+    }
+  },
+  {
     "version": 2,
     "type": "run",
     "date": "Mar 30, 2025, 10:25:15 AM",
@@ -249,6 +260,17 @@
     }
   },
   {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Mar 26, 2025, 10:26:51 AM",
+    "data": {
+      "title": "Elipticalmon",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "2105.0"
+    }
+  },
+  {
     "version": 2,
     "type": "run",
     "date": "Mar 25, 2025, 06:15:35 PM",
@@ -392,7 +414,48 @@
       "description": "4 strides",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13977090133
+      "strava_id": 13977090133,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "15.47"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "13.90"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "14.97"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "13.71"
+        }
+      ]
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Mar 24, 2025, 11:07:08 AM",
+    "data": {
+      "title": "Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "1907.0"
     }
   },
   {
@@ -409,7 +472,37 @@
       "description": "",
       "private_note": "",
       "shoe": "New Balance 1080R14",
-      "strava_id": 13965199971
+      "strava_id": 13965199971,
+      "intervals": [
+        {
+          "distance": "100m",
+          "time": "15.40"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "15.64"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "14.19"
+        },
+        {
+          "distance": "?",
+          "time": "?"
+        },
+        {
+          "distance": "100m",
+          "time": "14.11"
+        }
+      ]
     }
   },
   {
@@ -426,7 +519,13 @@
       "description": "",
       "private_note": "Ran a lot of the laps in lane 2, started catching people with 200 to go.\nLast 400 lactic in full upper body, felt a lot in biceps, vision did the high contrast thing for a bit post race.",
       "shoe": "Nike Dragonfly",
-      "strava_id": 13958382161
+      "strava_id": 13958382161,
+      "intervals": [
+        {
+          "distance": "1mi",
+          "time": "4:20"
+        }
+      ]
     }
   },
   {
