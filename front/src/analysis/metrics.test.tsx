@@ -4,7 +4,6 @@ import { fastest_pace, fatigue, num_strides, rep_tonage, total_tonage } from "./
 import { kilograms } from "@buge/ts-units/mass";
 import { BodyLocationWithSide, Calf, LowerBack, UpperBack } from "../pt/body_location";
 import { Length, meters, miles } from "@buge/ts-units/length";
-import Intervals from "../components/Intervals";
 
 describe("Test rep tonage metric", () => {
     it('Works on 1 rep', () => {

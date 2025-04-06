@@ -26,4 +26,8 @@ describe("Format rep", () => {
     it('Should format unweighted rep correctly', () => {
         expect(fmt_rep({ reps: 5, weight: makeQuantity(0, pounds), exercise: Exercise.Squat })).toEqual("5");
     });
+
+    it('Should format rep with time correctly', () => {
+        expect(fmt_rep({ reps: 5, weight: makeQuantity(0, pounds), time: makeQuantity(30, seconds), exercise: Exercise.Squat })).toEqual("5 x 30s");
+    });
 });

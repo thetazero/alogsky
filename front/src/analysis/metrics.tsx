@@ -16,7 +16,6 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.LedgeTricepDip, 0.5],
     [Exercise.NordicCurl, 0.6],
     [Exercise.OneLegBuck, 0.4],
-    [Exercise.Plank, 0.02],
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
     [Exercise.ReverseCrunch, 0.1],
@@ -32,12 +31,17 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
 ]);
 
 export function rep_tonage(rep: RepData) {
+    const body_weight = pounds(125);
     const extra_weight_multiplier = bonus_weight_map.get(rep.exercise) ?? 0.0;
-    const bonus_weight = pounds(125).times(extra_weight_multiplier)
+    const bonus_weight = body_weight.times(extra_weight_multiplier)
     if (rep.length) {
         if (rep.exercise == Exercise.FarmerCary) {
             const length_multiplier = rep.length.in(meters).amount / 2;
             return rep.weight.times(rep.reps).times(length_multiplier);
+        }
+    } else if (rep.time) {
+        if (rep.exercise == Exercise.Plank) {
+            return body_weight.times(0.02).times(rep.time.in(seconds).amount);
         }
     }
     return (rep.weight.plus(bonus_weight)).times(rep.reps);
