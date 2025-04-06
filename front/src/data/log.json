@@ -713,8 +713,8 @@
             "exercises": [
                 "dead bugs: 20, 20",
                 "lemon squeezers: 20, 20",
-                "plank: 60",
-                "knee drive push leg thing: 30"
+                "plank: 1x60s",
+                "knee drive push leg thing: 1x30s"
             ]
         }
     },
@@ -2212,7 +2212,7 @@
             "exercises": [
                 "crunch: 60",
                 "rush n twist: 40",
-                "plank: 60s",
+                "plank: 1x60s",
                 "push up: 20, 25, 25",
                 "single leg stair calf raise: 20, 20",
                 "ledge tricep dip: 3x12x0lbs",

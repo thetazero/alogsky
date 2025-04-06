@@ -42,7 +42,6 @@ export function fmt_quantity(q: Quantity<number, Dimensions>, extra_detail: numb
 }
 
 export function fmt_rep(rep: RepData): string {
-    console.log(rep.weight.amount)
     if (rep.weight.amount === 0) {
         if (rep.time) return `${rep.reps} x ${rep.time.in(seconds).amount.toFixed(0)}s`;
         return `${rep.reps}`;

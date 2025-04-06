@@ -174,7 +174,6 @@ export function num_strides(runs: RunData[]): number {
             const counts: number[] = r.workout.intervals.map(i => {
                 if (i.distance && i.duration) {
                     let pace = i.duration.per(i.distance)
-                    console.log(pace.in(seconds_per_meter).amount)
                     if (pace <= seconds_per_meter(15 / 100)) {
                         return 1
                     }

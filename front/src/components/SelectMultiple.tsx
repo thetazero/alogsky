@@ -28,6 +28,16 @@ const SelectMultiple = <T,>({
         }
     };
 
+    const clickOption = (e: React.MouseEvent, i: number) => {
+        e.preventDefault();
+        if (e.shiftKey) {
+            onChange([options[i]]);
+        } else {
+            toggleOption(options[i]);
+        }
+    }
+
+
     const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
         if (!dropdownRef.current?.contains(e.relatedTarget as Node)) {
             setIsOpen(false);
@@ -59,17 +69,19 @@ const SelectMultiple = <T,>({
                     tabIndex={0} // Allows focus within dropdown
                 >
                     <ul className="max-h-48 overflow-auto">
-                        {options.map((option) => (
+                        {options.map((option, index) => (
                             <li
                                 key={getOptionKey ? getOptionKey(option) : JSON.stringify(option)}
                                 className="px-4 py-2"
+                                onClick={e => clickOption(e, index)}
+                                onMouseDown={e => e.preventDefault()} // Prevents text selection
                             >
                                 <label className="flex items-center space-x-2 cursor-pointer">
                                     <input
                                         type="checkbox"
                                         checked={selected.includes(option)}
-                                        onChange={() => toggleOption(option)}
-                                        className="appearance-none h-4 w-4 text-gray-300 bg-gray-600 border-gray-600 rounded focus:ring-gray-400 focus:ring-offset-gray-900 checked:bg-blue-600"
+                                        onChange={() => { }}
+                                        className="appearance-none h-4 w-4 text-gray-300 bg-gray-600 border-gray-600 rounded focus:ring-gray-400 focus:ring-offset-gray-900 checked:bg-blue-600 cursor-pointer"
                                     />
 
                                     <span>{renderOption(option)}</span>
