@@ -10,6 +10,7 @@ def parse_elliptical(activity):
             "description": activity["Activity Description"],
             "distance": activity["Distance"],
             "moving_time": activity["Moving Time"],
+            "average_heartrate": activity["Average Heart Rate"],
         },
     }
     return elliptical
