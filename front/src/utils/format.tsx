@@ -12,6 +12,7 @@ export function fmt_minutes_per_mile(inverse_speed: InverseSpeed): string {
 }
 
 export function nice_number(num: number, extra_detail: number = 0): string {
+    if (num > 1000) return `${(num / 1000).toFixed(1)}k`;
     if (num < 1) return num.toFixed(2 + extra_detail);
     else if (num < 10) return num.toFixed(1 + extra_detail);
     else return num.toFixed(0 + extra_detail);

@@ -69,10 +69,19 @@ export function total_moving_time(runs: RunData[]): Time {
     return runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
 }
 
+function lift_time(lift: LiftData): Time {
+    if (lift.duration.in(minutes).value() < 1) {
+        return lift.reps.map(rep => {
+            return seconds(rep.reps * 10)
+        }).reduce((a, b) => a.plus(b), seconds(0))
+    }
+    return lift.duration
+}
+
 export function training_time(training_data: TrainingData[]): Time {
     return training_data.map(d => {
         if (d.type == "run") return d.moving_time
-        if (d.type == "lift") return d.duration
+        if (d.type == "lift") return lift_time(d)
         if (d.type == "pain") return minutes(0)
         if (d.type == "kayak") return d.duration
         if (d.type == "sleep") return minutes(0)
@@ -192,17 +201,18 @@ export function num_strides(runs: RunData[]): number {
     }).reduce((a, b) => a + b, 0)
 }
 
-export function estimated_heart_beats(training_data: TrainingData[]): Quantity<number, One> {
+export function training_heart_beats(training_data: TrainingData[]): Quantity<number, One> {
     const hr_guess = per_minute(120);
+    const resting_hr = per_minute(60);
     const res = training_data.map(a => {
         if (a.type === "run" || a.type === "bike" || a.type == "elliptical") {
-            if (!a.average_heartrate) return a.moving_time.times(hr_guess).in(unitless);
-            return a.moving_time.times(a.average_heartrate).in(unitless);
+            if (!a.average_heartrate) return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
+            return a.moving_time.times(a.average_heartrate.minus(resting_hr)).in(unitless);
         }
-        if (a.type === "kayak") return a.duration.times(hr_guess).in(unitless);
-        if (a.type === "row") return a.moving_time.times(hr_guess).in(unitless);
+        if (a.type === "kayak") return a.duration.times(hr_guess.minus(resting_hr)).in(unitless);
+        if (a.type === "row") return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
         if (a.type === "note") return unitless(0);
-        if (a.type === "lift") return a.duration.times(hr_guess).in(unitless);
+        if (a.type === "lift") return lift_time(a).times(hr_guess.minus(resting_hr)).in(unitless);
         if (a.type === "sleep" || a.type == "pain") return unitless(0);
         throw new Error(`Unknown training data type: ${a}`);
     })
