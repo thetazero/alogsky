@@ -8,6 +8,7 @@ if __name__ == "__main__":
     with open("input.txt") as f:
         dataset = f.read()
     dataset = dataset.split("\n\n")
+    print(len(dataset))
     for i, context in enumerate(dataset):
         if progress_state.state.get(str(i), None) in ["done", "skip"]:
             print(f"Skipping {i}")

@@ -20,7 +20,7 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.Pullup, 1.0],
     [Exercise.Pushup, 0.7],
     [Exercise.ReverseCrunch, 0.1],
-    [Exercise.RushNTwist, 0.1],
+    [Exercise.RussianTwist, 0.1],
     [Exercise.SideLegLift, 0.1],
     [Exercise.SingleLegCalfRaise, 0.8],
     [Exercise.SingleLegGluteBridge, 0.4],

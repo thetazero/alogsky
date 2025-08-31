@@ -3260,5 +3260,79 @@
                 "tib raise: 15x10, 15x10"
             ]
         }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 7, 2025, 5:04:00 PM",
+        "data": {
+            "duration": 10,
+            "notes": "",
+            "exercises": [
+                "reverse crunch: 30, 30",
+                "rush n twist: 50, 50",
+                "hollow body hold: 20s, 12s",
+                "dead bug: 20, 25",
+                "crunch: 60, 70"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 14, 2025, 3:00:00 PM",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "pushup: 20, 20",
+                "Russian twist: 50, 50",
+                "single leg hamstring bridge: 10",
+                "single leg stair calf raise: 20, 20",
+                "single leg tib raise: 12, 20",
+                "inner down bunkie: 30s",
+                "forward down bunkie: 30s",
+                "outer down bunkie: 30s",
+                "single leg glute bridge: 20",
+                "single leg squat: 3, 3",
+                "ledge tricep dip: 12, 12"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 16, 2025, 12:48:00 PM",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "crunch: 50, 50",
+                "push up: 20, 22",
+                "Russian twist: 50, 50",
+                "single leg hamstring bridge: 13, 10",
+                "single leg stair calf raise: 20, 20",
+                "single leg tib raise: 15, 20",
+                "single leg glute bridge: 20, 15*",
+                "single leg squat: 3, 5",
+                "ledge tricep dip: 14, 16"
+            ]
+        }
+    },
+    {
+    "version": 2,
+    "type": "lift",
+    "date": "May 18, 2025, 9:03:00 AM",
+    "data": {
+        "duration": 30,
+        "notes": "right hip clicking a lot for rows",
+        "exercises": [
+            "crunch: 50, 60",
+            "Russian twist: 50, 50",
+            "reverse crunch: 30, 40",
+            "rows: 32, 13",
+            "hollow body hold: 18s"
+        ]
     }
+}
 ]
