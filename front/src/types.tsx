@@ -43,6 +43,7 @@ export interface RunData {
     workout?: RunningWorkoutData,
     description?: string,
     private_note?: string,
+    average_heartrate?: Frequency,
     shoe?: string,
     date: Date
     type: "run"
@@ -237,6 +238,7 @@ export enum Metric {
     FastestMile = "Fastest Mile",
     Fastest5k = "Fastest 5k",
     NumStrides = "Num Strides",
+    HeartBeats = "Heart Beats",
 }
 
 export enum Side {

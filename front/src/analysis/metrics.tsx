@@ -1,5 +1,5 @@
 import { Mass } from "@buge/ts-units/mass";
-import { BodyRegion, Exercise, InverseSpeed, LiftData, minutes_per_mile, PainLogData, pounds, RepData, RunData, seconds_per_meter, TrainingData, unitless } from "../types";
+import { BodyRegion, Exercise, Frequency, InverseSpeed, LiftData, minutes_per_mile, PainLogData, per_minute, pounds, RepData, RunData, seconds_per_meter, TrainingData, unitless } from "../types";
 import { Length, meters, miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 import { One, Quantity } from "@buge/ts-units";
@@ -190,4 +190,23 @@ export function num_strides(runs: RunData[]): number {
         }
         return 0
     }).reduce((a, b) => a + b, 0)
+}
+
+export function estimated_heart_beats(training_data: TrainingData[]): Quantity<number, One> {
+    const hr_guess = per_minute(120);
+    const res = training_data.map(a => {
+        if (a.type === "run" || a.type === "bike" || a.type == "elliptical") {
+            if (!a.average_heartrate) return a.moving_time.times(hr_guess).in(unitless);
+            return a.moving_time.times(a.average_heartrate).in(unitless);
+        }
+        if (a.type === "kayak") return a.duration.times(hr_guess).in(unitless);
+        if (a.type === "row") return a.moving_time.times(hr_guess).in(unitless);
+        if (a.type === "note") return unitless(0);
+        if (a.type === "lift") return a.duration.times(hr_guess).in(unitless);
+        if (a.type === "sleep" || a.type == "pain") return unitless(0);
+        throw new Error(`Unknown training data type: ${a}`);
+    })
+    console.log(res)
+    console.log(training_data)
+    return res.reduce((a, b) => a.plus(b), unitless(0));
 }

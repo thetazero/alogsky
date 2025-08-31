@@ -96,7 +96,7 @@ function parse_run_v2(data: any, date: Date): RunData {
         }
     }
 
-    return {
+    let parsed: RunData = {
         title,
         notes: "",
         distance,
@@ -111,6 +111,10 @@ function parse_run_v2(data: any, date: Date): RunData {
         date,
         type: "run"
     };
+    if (data.average_heartrate) {
+        parsed.average_heartrate = per_minute(parseFloat(data.average_heartrate))
+    }
+    return parsed
 }
 
 export function parse_interval(data: any): Interval {
@@ -474,25 +478,31 @@ function parse_rowv1(data: any, date: Date): RowData {
 }
 
 function parse_bikev1(data: any, date: Date): BikeData {
-    return {
+    let parsed: BikeData= {
         title: data.title,
         description: data.description,
         moving_time: seconds(parseFloat(data.moving_time)),
-        average_heartrate: per_minute(parseFloat(data.average_heart_rate)),
         date,
         type: "bike"
     }
+    if (data.average_heart_rate) {
+        parsed.average_heartrate = per_minute(parseFloat(data.average_heart_rate));
+    }
+    return parsed;
 }
 
 function parse_ellipticalv1(data: any, date: Date): EllipitcalData {
-    return {
+    let parsed: EllipitcalData = {
         title: data.title,
         description: data.description,
         moving_time: seconds(parseFloat(data.moving_time)),
-        average_heartrate: per_minute(parseFloat(data.average_heart_rate)),
         date,
         type: "elliptical"
     }
+    if (data.average_heart_rate) {
+        parsed.average_heartrate = per_minute(parseFloat(data.average_heart_rate));
+    }
+    return parsed;
 }
 
 export function extract_paren_data(data: string): [string, string] {

@@ -114,6 +114,7 @@ def parse_run(activity, cache: Cache):
             "description": activity["Activity Description"],
             "private_note": activity["Activity Private Note"],
             "shoe": activity["Activity Gear"],
+            "average_heartrate": activity["Average Heart Rate"],
             "strava_id": activity_id,
         },
     }

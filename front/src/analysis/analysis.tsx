@@ -1,6 +1,6 @@
 import { TrainingData, LiftData, RunData, SleepData, minutes_per_mile, PainLogData, Metric, tons, PainAtLocationData, unitless, seconds_per_meter } from "../types";
 import { Mass } from "@buge/ts-units/mass";
-import { average_pace, fastest_pace, fatigue, num_strides, total_mileage, total_tonage, training_time as total_training_time } from "./metrics";
+import { average_pace, fastest_pace, fatigue, num_strides, total_mileage, total_tonage, training_time as total_training_time, estimated_heart_beats } from "./metrics";
 import { Length, meters, miles } from "@buge/ts-units/length";
 import { hours, minutes, seconds, Time } from "@buge/ts-units/time";
 import { get_week_end, get_week_start } from "../utils/time";
@@ -156,6 +156,8 @@ class Analysis {
                 return this.fastest_distance(miles(3.1), minutes(20)) ?? null
             case Metric.NumStrides:
                 return unitless(this.stride_count())
+            case Metric.HeartBeats:
+                return estimated_heart_beats(this.dataset.data)
         }
     }
 
@@ -200,6 +202,7 @@ export function get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
             return tons
         case Metric.MeanFatigueScore:
         case Metric.NumStrides:
+        case Metric.HeartBeats:
             return unitless
         case Metric.Fastest100m:
         case Metric.Fastest200m:
