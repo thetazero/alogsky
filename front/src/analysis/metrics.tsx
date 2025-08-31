@@ -12,8 +12,9 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.DeadBugs, 0.1],
     [Exercise.Dip, 0.9],
     [Exercise.FourtyFiveDegreeBackExtension, 0.3],
-    [Exercise.NinetyDegreeBackExtension, 0.4],
+    [Exercise.GluteBridge, 0.2],
     [Exercise.LedgeTricepDip, 0.5],
+    [Exercise.NinetyDegreeBackExtension, 0.4],
     [Exercise.NordicCurl, 0.6],
     [Exercise.OneLegBuck, 0.4],
     [Exercise.Pullup, 1.0],
@@ -22,6 +23,7 @@ const bonus_weight_map: Map<Exercise, number> = new Map([
     [Exercise.RushNTwist, 0.1],
     [Exercise.SideLegLift, 0.1],
     [Exercise.SingleLegCalfRaise, 0.8],
+    [Exercise.SingleLegGluteBridge, 0.4],
     [Exercise.SingleLegSquat, 0.9],
     [Exercise.SingleLegStairCalfRaise, 0.8],
     [Exercise.Situp, 0.15],
@@ -42,6 +44,10 @@ export function rep_tonage(rep: RepData) {
     } else if (rep.time) {
         if (rep.exercise == Exercise.Plank) {
             return body_weight.times(0.02).times(rep.time.in(seconds).amount);
+        } else if (rep.exercise == Exercise.DeadHang) {
+            return body_weight.times(0.1).times(rep.time.in(seconds).amount);
+        } else if (rep.exercise == Exercise.HollowHold) {
+            return body_weight.times(0.05).times(rep.time.in(seconds).amount);
         }
     }
     return (rep.weight.plus(bonus_weight)).times(rep.reps);

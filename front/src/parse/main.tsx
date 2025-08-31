@@ -203,6 +203,8 @@ const exercise_map: Map<string, Exercise> = new Map(
         ["dips", Exercise.Dip],
         ["lemon squeezers", Exercise.CoreRow],
         ["barbell rdl", Exercise.BarbellRdl],
+        ["rdl", Exercise.BarbellRdl],
+        ["tib raise", Exercise.TibialisRaise],
         ...defaults_for_exercise_map
     ],
 );
