@@ -2,6 +2,3165 @@
   {
     "version": 2,
     "type": "run",
+    "date": "Aug 30, 2025, 02:20:41 PM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "1704.0",
+      "moving_time": "532.0",
+      "elapsed_time": "532.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15641078155
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 30, 2025, 02:45:43 PM",
+    "data": {
+      "title": "Lunch Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "2475.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 29, 2025, 06:53:49 PM",
+    "data": {
+      "title": "Afternoon Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "2163.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 28, 2025, 09:11:33 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "3105.89990234375",
+      "moving_time": "991.0",
+      "elapsed_time": "1057.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15630108900
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 28, 2025, 11:51:48 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5860.7001953125",
+      "moving_time": "1089.0",
+      "average_heartrate": "131.3383026123047"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 28, 2025, 08:27:15 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5922.2998046875",
+      "moving_time": "1085.0",
+      "average_heartrate": "135.3640594482422"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 27, 2025, 11:09:32 AM",
+    "data": {
+      "title": "Morning Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "534.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 26, 2025, 08:15:15 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5871.7001953125",
+      "moving_time": "1123.0",
+      "average_heartrate": "123.83978271484375"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 26, 2025, 09:43:00 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5853.60009765625",
+      "moving_time": "1088.0",
+      "average_heartrate": "118.99720001220703"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 26, 2025, 10:16:08 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "1963.300048828125",
+      "moving_time": "555.0",
+      "elapsed_time": "555.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15596769117
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 25, 2025, 08:51:30 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5898.7001953125",
+      "moving_time": "1088.0",
+      "average_heartrate": "127.21881103515625"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 25, 2025, 11:42:12 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5855.0",
+      "moving_time": "1098.0",
+      "average_heartrate": "123.77322387695312"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 25, 2025, 11:09:56 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "1207.5999755859375",
+      "moving_time": "353.0",
+      "elapsed_time": "381.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15581728384
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 24, 2025, 12:16:20 PM",
+    "data": {
+      "title": "Morning Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "3615.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 22, 2025, 11:48:06 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5909.89990234375",
+      "moving_time": "1011.0",
+      "average_heartrate": "136.4134521484375"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 21, 2025, 10:23:52 AM",
+    "data": {
+      "title": "Morning Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "1807.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 21, 2025, 11:40:14 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5871.7001953125",
+      "moving_time": "1091.0",
+      "average_heartrate": "125.41905975341797"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 21, 2025, 09:26:56 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5782.0",
+      "moving_time": "1043.0",
+      "average_heartrate": "127.59651184082031"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 22, 2025, 10:18:50 AM",
+    "data": {
+      "title": "Morning Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "2073.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 20, 2025, 09:16:20 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "3534.0",
+      "moving_time": "645.0",
+      "average_heartrate": "137.71783447265625"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 20, 2025, 11:47:00 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5843.7001953125",
+      "moving_time": "1037.0",
+      "average_heartrate": "131.794921875"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 20, 2025, 10:36:10 AM",
+    "data": {
+      "title": "Morning Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "1693.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 19, 2025, 08:17:53 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5845.0",
+      "moving_time": "887.0",
+      "average_heartrate": "154.6197052001953"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 19, 2025, 09:17:22 PM",
+    "data": {
+      "title": "Evening Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "1815.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 19, 2025, 11:37:48 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5880.0",
+      "moving_time": "1071.0",
+      "average_heartrate": "119.19509887695312"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 18, 2025, 11:46:53 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5863.0",
+      "moving_time": "996.0",
+      "average_heartrate": "135.53077697753906"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 18, 2025, 08:39:00 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5953.0",
+      "moving_time": "1039.0",
+      "average_heartrate": "123.7613525390625"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 18, 2025, 11:02:52 AM",
+    "data": {
+      "title": "Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "1806.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "elliptical",
+    "date": "Aug 16, 2025, 07:00:05 PM",
+    "data": {
+      "title": "Elliptical",
+      "description": "",
+      "distance": "0.0",
+      "moving_time": "1988.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 15, 2025, 11:43:21 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5848.0",
+      "moving_time": "1080.0",
+      "average_heartrate": "130.36851501464844"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 15, 2025, 09:34:32 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5878.0",
+      "moving_time": "1118.0",
+      "average_heartrate": "125.16272735595703"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 14, 2025, 11:34:49 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5885.0",
+      "moving_time": "1020.0",
+      "average_heartrate": "125.1386947631836"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 14, 2025, 09:41:00 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5931.7998046875",
+      "moving_time": "1074.0",
+      "average_heartrate": "126.70599365234375"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 13, 2025, 09:25:13 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5947.39990234375",
+      "moving_time": "1096.0",
+      "average_heartrate": "126.14689636230469"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 13, 2025, 08:21:06 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "1837.0",
+      "moving_time": "508.0",
+      "elapsed_time": "530.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15451515710
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 13, 2025, 11:19:22 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5874.2001953125",
+      "moving_time": "1039.0",
+      "average_heartrate": "127.7294692993164"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 12, 2025, 09:19:58 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5869.89990234375",
+      "moving_time": "1051.0",
+      "average_heartrate": "125.0315170288086"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 12, 2025, 11:52:28 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5871.0",
+      "moving_time": "1026.0",
+      "average_heartrate": "125.97660827636719"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 11, 2025, 08:20:24 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5926.0",
+      "moving_time": "1021.0",
+      "average_heartrate": "130.6229248046875"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 11, 2025, 10:30:01 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5854.2998046875",
+      "moving_time": "1183.0",
+      "average_heartrate": "117.61174774169922"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 11, 2025, 10:55:39 AM",
+    "data": {
+      "title": "Shin splint demons finally caught up to me",
+      "distance": "4067.60009765625",
+      "moving_time": "1193.0",
+      "elapsed_time": "1384.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "Still splinted after a week off. Elliptical/Rowing machine awaits. ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15422177245
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 08, 2025, 11:27:53 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5875.2001953125",
+      "moving_time": "1100.0",
+      "average_heartrate": "119.80363464355469"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 07, 2025, 11:13:39 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5877.89990234375",
+      "moving_time": "1095.0",
+      "average_heartrate": "108.98249053955078"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 07, 2025, 08:53:19 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5942.0",
+      "moving_time": "1126.0",
+      "average_heartrate": "129.1431121826172"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 06, 2025, 08:40:30 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5921.0",
+      "moving_time": "1128.0",
+      "average_heartrate": "111.96939849853516"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 04, 2025, 07:48:50 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "5629.0",
+      "moving_time": "1553.0",
+      "elapsed_time": "1631.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15366345230
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 06, 2025, 11:07:30 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5836.0",
+      "moving_time": "1150.0",
+      "average_heartrate": "114.7522201538086"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 05, 2025, 09:14:51 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5845.0",
+      "moving_time": "1098.0",
+      "average_heartrate": "111.9926986694336"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 04, 2025, 10:25:58 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5867.5",
+      "moving_time": "1115.0",
+      "average_heartrate": "103.4517593383789"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 02, 2025, 07:35:17 PM",
+    "data": {
+      "title": "Easy",
+      "distance": "8686.2001953125",
+      "moving_time": "2427.0",
+      "elapsed_time": "2573.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15325579126
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 02, 2025, 01:02:44 PM",
+    "data": {
+      "title": "Coworker run",
+      "distance": "4621.0",
+      "moving_time": "1486.0",
+      "elapsed_time": "2341.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15322021395
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Aug 01, 2025, 11:16:29 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "6429.10009765625",
+      "moving_time": "1895.0",
+      "elapsed_time": "2055.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15314786736
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 01, 2025, 10:52:18 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5885.0",
+      "moving_time": "1103.0",
+      "average_heartrate": "108.38995361328125"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Aug 01, 2025, 08:33:47 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5917.0",
+      "moving_time": "1174.0",
+      "average_heartrate": "114.13085174560547"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 31, 2025, 10:39:33 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "9682.7998046875",
+      "moving_time": "2741.0",
+      "elapsed_time": "2799.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15309060841
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 31, 2025, 08:38:04 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5545.5",
+      "moving_time": "1028.0",
+      "average_heartrate": "125.13727569580078"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 31, 2025, 10:16:26 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "7346.0",
+      "moving_time": "1581.0",
+      "average_heartrate": "115.3809814453125"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 30, 2025, 08:51:31 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5897.7998046875",
+      "moving_time": "1124.0",
+      "average_heartrate": "118.37188720703125"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 30, 2025, 11:28:54 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5867.0",
+      "moving_time": "1045.0",
+      "average_heartrate": "116.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 29, 2025, 09:51:29 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "5804.39990234375",
+      "moving_time": "1663.0",
+      "elapsed_time": "1945.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15291888790
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 29, 2025, 06:07:06 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5861.0",
+      "moving_time": "1047.0",
+      "average_heartrate": "138.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 29, 2025, 11:17:57 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5830.10009765625",
+      "moving_time": "1105.0",
+      "average_heartrate": "113.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 28, 2025, 09:05:08 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "9202.099609375",
+      "moving_time": "2611.0",
+      "elapsed_time": "2624.0",
+      "temperature": "30.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15271203821
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 28, 2025, 10:02:35 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5922.39990234375",
+      "moving_time": "1039.0",
+      "average_heartrate": "119.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 28, 2025, 01:25:27 PM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5873.0",
+      "moving_time": "1034.0",
+      "average_heartrate": "119.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 27, 2025, 08:17:49 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "8731.0",
+      "moving_time": "2438.0",
+      "elapsed_time": "2573.0",
+      "temperature": "30.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15264111844
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 27, 2025, 12:45:05 AM",
+    "data": {
+      "title": "Night Run",
+      "distance": "1948.0",
+      "moving_time": "560.0",
+      "elapsed_time": "585.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15249020577
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 26, 2025, 12:44:33 PM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "6360.39990234375",
+      "moving_time": "1764.0",
+      "elapsed_time": "2222.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15245455236
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 25, 2025, 08:34:27 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "5699.0",
+      "moving_time": "1008.0",
+      "average_heartrate": "116.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 25, 2025, 11:09:57 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "6030.7998046875",
+      "moving_time": "1658.0",
+      "elapsed_time": "1742.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15236051784
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 25, 2025, 10:19:07 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5903.89990234375",
+      "moving_time": "1134.0",
+      "average_heartrate": "118.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 24, 2025, 09:26:02 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5846.60009765625",
+      "moving_time": "1056.0",
+      "average_heartrate": "114.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 24, 2025, 11:09:03 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "8912.0",
+      "moving_time": "2602.0",
+      "elapsed_time": "2669.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15223112565
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 24, 2025, 10:39:21 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5877.0",
+      "moving_time": "1150.0",
+      "average_heartrate": "107.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 23, 2025, 09:27:10 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5904.0",
+      "moving_time": "1083.0",
+      "average_heartrate": "121.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 23, 2025, 11:13:33 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "851.0",
+      "moving_time": "261.0",
+      "elapsed_time": "270.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15217681410
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 23, 2025, 10:37:52 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "6719.10009765625",
+      "moving_time": "2191.0",
+      "elapsed_time": "2534.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15214092002
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 23, 2025, 10:07:35 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5885.0",
+      "moving_time": "1120.0",
+      "average_heartrate": "113.0"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 22, 2025, 08:54:26 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "7382.89990234375",
+      "moving_time": "2077.0",
+      "elapsed_time": "2233.0",
+      "temperature": "26.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15209999967
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 22, 2025, 09:41:01 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "5919.0",
+      "moving_time": "1092.0",
+      "average_heartrate": "129.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 22, 2025, 11:25:03 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5895.0",
+      "moving_time": "1137.0",
+      "average_heartrate": "106.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 21, 2025, 08:38:56 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "3485.0",
+      "moving_time": "714.0",
+      "average_heartrate": "109.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 21, 2025, 10:45:17 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5882.7998046875",
+      "moving_time": "1075.0",
+      "average_heartrate": "112.38736724853516"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 21, 2025, 11:11:56 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "4291.5",
+      "moving_time": "1310.0",
+      "elapsed_time": "1450.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15187862588
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 20, 2025, 11:30:00 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "14155.0",
+      "moving_time": "4093.0",
+      "elapsed_time": "4321.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15178996442
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 18, 2025, 08:44:13 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "11075.0",
+      "moving_time": "3382.0",
+      "elapsed_time": "3382.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15169866345
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 18, 2025, 11:26:06 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5855.0",
+      "moving_time": "1167.0",
+      "average_heartrate": "105.37791442871094"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 18, 2025, 10:40:28 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "3477.0",
+      "moving_time": "718.0",
+      "average_heartrate": "99.2779312133789"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 18, 2025, 09:42:02 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "274.0",
+      "moving_time": "77.0",
+      "elapsed_time": "220.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15169866246
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 17, 2025, 10:32:49 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "6013.0",
+      "moving_time": "1030.0",
+      "average_heartrate": "131.1203155517578"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 17, 2025, 11:12:51 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "10773.099609375",
+      "moving_time": "2993.0",
+      "elapsed_time": "3350.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15145800338
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 17, 2025, 10:40:00 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5710.2001953125",
+      "moving_time": "1004.0",
+      "average_heartrate": "116.25349426269531"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 16, 2025, 09:27:32 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "6702.7998046875",
+      "moving_time": "1262.0",
+      "average_heartrate": "110.62619018554688"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 16, 2025, 11:05:30 AM",
+    "data": {
+      "title": "Easy",
+      "distance": "11218.0",
+      "moving_time": "3417.0",
+      "elapsed_time": "3456.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15134809891
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 16, 2025, 10:41:18 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5888.2998046875",
+      "moving_time": "1103.0",
+      "average_heartrate": "115.0054702758789"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 15, 2025, 10:33:48 PM",
+    "data": {
+      "title": "Evening Ride",
+      "distance": "9510.599609375",
+      "moving_time": "2055.0",
+      "average_heartrate": "117.42919921875"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 15, 2025, 09:57:34 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "2033.0",
+      "moving_time": "672.0",
+      "elapsed_time": "1740.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15128764615
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 15, 2025, 09:40:56 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "3782.10009765625",
+      "moving_time": "839.0",
+      "elapsed_time": "867.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15128612901
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 15, 2025, 09:05:05 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "1734.300048828125",
+      "moving_time": "455.0",
+      "elapsed_time": "455.0",
+      "temperature": "30.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15128358411
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 15, 2025, 08:53:20 PM",
+    "data": {
+      "title": "Afternoon Ride",
+      "distance": "2487.0",
+      "moving_time": "506.0",
+      "average_heartrate": "121.48799896240234"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 15, 2025, 11:40:47 AM",
+    "data": {
+      "title": "Morning Ride",
+      "distance": "5888.0",
+      "moving_time": "1102.0",
+      "average_heartrate": "117.78402709960938"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 14, 2025, 10:03:09 PM",
+    "data": {
+      "title": "Post lift",
+      "distance": "5875.0",
+      "moving_time": "1224.0",
+      "average_heartrate": "102.72154235839844"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 14, 2025, 08:57:23 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "872.0",
+      "moving_time": "263.0",
+      "elapsed_time": "272.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15116715877
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 14, 2025, 11:07:04 AM",
+    "data": {
+      "title": "Good loop",
+      "distance": "8344.0",
+      "moving_time": "2421.0",
+      "elapsed_time": "2564.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15111914491
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jul 14, 2025, 10:34:38 AM",
+    "data": {
+      "title": "Commute",
+      "distance": "5907.89990234375",
+      "moving_time": "1138.0",
+      "average_heartrate": "108.42618560791016"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 13, 2025, 12:43:44 PM",
+    "data": {
+      "title": "With donald",
+      "distance": "10906.7998046875",
+      "moving_time": "2838.0",
+      "elapsed_time": "3098.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15103342617
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 12, 2025, 01:26:09 PM",
+    "data": {
+      "title": "Slow",
+      "distance": "11680.0",
+      "moving_time": "3504.0",
+      "elapsed_time": "3611.0",
+      "temperature": "30.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15092516999
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 10, 2025, 10:58:22 AM",
+    "data": {
+      "title": "Sore",
+      "distance": "6166.2998046875",
+      "moving_time": "1742.0",
+      "elapsed_time": "1801.0",
+      "temperature": "23.0",
+      "feels_like": "15.84000015258789",
+      "description": "need to cook up some good routes from work",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15069503216
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 08, 2025, 10:19:50 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "211.0",
+      "moving_time": "80.0",
+      "elapsed_time": "87.0",
+      "temperature": "30.0",
+      "feels_like": "19.649999618530273",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15052661289
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 08, 2025, 09:32:20 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "8175.0",
+      "moving_time": "1828.0",
+      "elapsed_time": "2326.0",
+      "temperature": "28.0",
+      "feels_like": "23.690000534057617",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15052552056
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 08, 2025, 09:17:09 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "1866.0",
+      "moving_time": "476.0",
+      "elapsed_time": "476.0",
+      "temperature": "29.0",
+      "feels_like": "23.690000534057617",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15052311926
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 07, 2025, 10:00:50 AM",
+    "data": {
+      "title": "Day 1",
+      "distance": "8702.0",
+      "moving_time": "2548.0",
+      "elapsed_time": "2548.0",
+      "temperature": "23.0",
+      "feels_like": "14.550000190734863",
+      "description": "work o'clock",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15035577758
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 06, 2025, 07:25:53 PM",
+    "data": {
+      "title": "Work tomorrow",
+      "distance": "8308.5",
+      "moving_time": "2459.0",
+      "elapsed_time": "2550.0",
+      "temperature": "30.0",
+      "feels_like": "25.559999465942383",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15030532607
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 03, 2025, 11:04:05 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "10758.0",
+      "moving_time": "3240.0",
+      "elapsed_time": "3374.0",
+      "temperature": "25.0",
+      "feels_like": "16.770000457763672",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 15001836244
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jul 02, 2025, 02:56:21 AM",
+    "data": {
+      "title": "Post snorkle",
+      "distance": "8330.0",
+      "moving_time": "2360.0",
+      "elapsed_time": "3203.0",
+      "temperature": "28.0",
+      "feels_like": "21.3700008392334",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14981095246
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 30, 2025, 08:06:35 PM",
+    "data": {
+      "title": "Leland time",
+      "distance": "8235.0",
+      "moving_time": "2325.0",
+      "elapsed_time": "2551.0",
+      "temperature": "31.0",
+      "feels_like": "20.59000015258789",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14968364134
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 20, 2025, 05:53:55 PM",
+    "data": {
+      "title": "Run to water, turn right",
+      "distance": "6869.0",
+      "moving_time": "1741.0",
+      "elapsed_time": "1941.0",
+      "temperature": "19.0",
+      "feels_like": "3.990000009536743",
+      "description": "surprise soft surfaces",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14864422429
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 18, 2025, 02:25:26 PM",
+    "data": {
+      "title": "Pre flight",
+      "distance": "8688.599609375",
+      "moving_time": "2262.0",
+      "elapsed_time": "2321.0",
+      "temperature": "30.0",
+      "feels_like": "23.59000015258789",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14842287059
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 17, 2025, 02:18:16 PM",
+    "data": {
+      "title": "Wind + cramp",
+      "distance": "8459.0",
+      "moving_time": "2135.0",
+      "elapsed_time": "2395.0",
+      "temperature": "29.0",
+      "feels_like": "20.93000030517578",
+      "description": "rip tempo",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14831220648
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 16, 2025, 06:13:51 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "2921.699951171875",
+      "moving_time": "845.0",
+      "elapsed_time": "851.0",
+      "temperature": "28.0",
+      "feels_like": "21.700000762939453",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14821743093
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 12, 2025, 07:50:29 PM",
+    "data": {
+      "title": "Warm up",
+      "distance": "1851.0",
+      "moving_time": "534.0",
+      "elapsed_time": "538.0",
+      "temperature": "29.0",
+      "feels_like": "21.329999923706055",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14781917740
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jun 12, 2025, 07:09:55 PM",
+    "data": {
+      "title": "apartment tour #2",
+      "distance": "4828.0",
+      "moving_time": "900.0",
+      "average_heartrate": ""
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jun 12, 2025, 03:16:04 PM",
+    "data": {
+      "title": "Back home",
+      "distance": "6175.0",
+      "moving_time": "1221.0",
+      "average_heartrate": "133.34800720214844"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jun 12, 2025, 01:02:56 PM",
+    "data": {
+      "title": "Past work to apartment tour",
+      "distance": "9380.0",
+      "moving_time": "1817.0",
+      "average_heartrate": "126.20807647705078"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 11, 2025, 06:54:26 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "8612.599609375",
+      "moving_time": "2429.0",
+      "elapsed_time": "2539.0",
+      "temperature": "27.0",
+      "feels_like": "22.280000686645508",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14772766263
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 09, 2025, 02:30:57 AM",
+    "data": {
+      "title": "Mempo Monday",
+      "distance": "7493.0",
+      "moving_time": "1778.0",
+      "elapsed_time": "2039.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "3 miles @5:27\n\nIn better tempo shape than I expected. ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14740970211
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 08, 2025, 03:41:11 AM",
+    "data": {
+      "title": "Katie run",
+      "distance": "4966.7001953125",
+      "moving_time": "1532.0",
+      "elapsed_time": "1607.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14730693708
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 07, 2025, 03:08:06 AM",
+    "data": {
+      "title": "Same run",
+      "distance": "7296.0",
+      "moving_time": "2054.0",
+      "elapsed_time": "2186.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "You should have lost faith [strava://athletes/87740052/13]Seth Williams ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14720455130
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 06, 2025, 02:38:46 AM",
+    "data": {
+      "title": "Did not find a better route",
+      "distance": "10498.099609375",
+      "moving_time": "2896.0",
+      "elapsed_time": "3110.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "trails randomly end or split you out into the city",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14711783845
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 05, 2025, 02:59:13 AM",
+    "data": {
+      "title": "Little run",
+      "distance": "5209.0",
+      "moving_time": "1470.0",
+      "elapsed_time": "1696.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "need to figure out a better route",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14701756805
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 04, 2025, 02:21:41 AM",
+    "data": {
+      "title": "Easy",
+      "distance": "6526.0",
+      "moving_time": "1778.0",
+      "elapsed_time": "2000.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "last half day in Copenhagen ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14691131935
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 03, 2025, 03:46:09 AM",
+    "data": {
+      "title": "Mini \"tempo\"",
+      "distance": "8204.0",
+      "moving_time": "2001.0",
+      "elapsed_time": "2153.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "2.4 miles at 5:40\n\nLittle aerobic stimulus ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14682235010
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jun 01, 2025, 03:32:24 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "6173.0",
+      "moving_time": "1711.0",
+      "elapsed_time": "2598.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14658991450
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 31, 2025, 04:04:58 AM",
+    "data": {
+      "title": "Easy",
+      "distance": "6300.39990234375",
+      "moving_time": "1755.0",
+      "elapsed_time": "1755.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "nice view just outside the hotel",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14648566533
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 30, 2025, 04:45:36 AM",
+    "data": {
+      "title": "Soft surfaces",
+      "distance": "8020.0",
+      "moving_time": "2291.0",
+      "elapsed_time": "2601.0",
+      "temperature": "21.0",
+      "feels_like": "",
+      "description": "creative route",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14639176199
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 29, 2025, 04:47:55 AM",
+    "data": {
+      "title": "Easy",
+      "distance": "4725.89990234375",
+      "moving_time": "1271.0",
+      "elapsed_time": "1411.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "travel debuff",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14629095542
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 27, 2025, 01:29:39 PM",
+    "data": {
+      "title": "Shake out",
+      "distance": "2150.0",
+      "moving_time": "537.0",
+      "elapsed_time": "553.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "pre body weight workout ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14612639726
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 26, 2025, 11:17:52 AM",
+    "data": {
+      "title": "Tranquil",
+      "distance": "11542.099609375",
+      "moving_time": "2993.0",
+      "elapsed_time": "3111.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "rip frick",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14601446107
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 24, 2025, 02:05:06 PM",
+    "data": {
+      "title": "\"long run\"",
+      "distance": "13912.2998046875",
+      "moving_time": "3667.0",
+      "elapsed_time": "3828.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "Not very long, mileage build has started though ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14583385679
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 24, 2025, 03:09:36 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "168.0",
+      "moving_time": "55.0",
+      "elapsed_time": "59.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14583384802
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 23, 2025, 10:09:52 AM",
+    "data": {
+      "title": "strides",
+      "distance": "5996.0",
+      "moving_time": "1596.0",
+      "elapsed_time": "1756.0",
+      "temperature": "20.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14574395231
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 22, 2025, 06:11:02 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "8187.0",
+      "moving_time": "2290.0",
+      "elapsed_time": "2355.0",
+      "temperature": "18.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14574394811
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 23, 2025, 10:39:53 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "1706.0",
+      "moving_time": "463.0",
+      "elapsed_time": "468.0",
+      "temperature": "21.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14574394645
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 22, 2025, 11:37:56 AM",
+    "data": {
+      "title": "Pre body weight lift",
+      "distance": "1558.199951171875",
+      "moving_time": "417.0",
+      "elapsed_time": "423.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14561663291
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 20, 2025, 02:04:23 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "8330.599609375",
+      "moving_time": "2182.0",
+      "elapsed_time": "2244.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14551961453
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 19, 2025, 10:10:28 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "3341.89990234375",
+      "moving_time": "973.0",
+      "elapsed_time": "1070.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14551957133
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 19, 2025, 09:08:18 AM",
+    "data": {
+      "title": "6x200",
+      "distance": "6328.0",
+      "moving_time": "1727.0",
+      "elapsed_time": "2680.0",
+      "temperature": "21.0",
+      "feels_like": "",
+      "description": "wanted to get moving a bit ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14551956934
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 17, 2025, 09:07:45 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "11354.0",
+      "moving_time": "3274.0",
+      "elapsed_time": "3406.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14514410977
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 16, 2025, 12:05:11 PM",
+    "data": {
+      "title": "Easy",
+      "distance": "8362.7998046875",
+      "moving_time": "2319.0",
+      "elapsed_time": "2346.0",
+      "temperature": "33.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14500096987
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 14, 2025, 02:18:04 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "8372.2998046875",
+      "moving_time": "2132.0",
+      "elapsed_time": "2138.0",
+      "temperature": "31.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14481448013
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 12, 2025, 01:18:30 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "13728.400390625",
+      "moving_time": "3827.0",
+      "elapsed_time": "4153.0",
+      "temperature": "32.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14459047305
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 08, 2025, 10:28:49 AM",
+    "data": {
+      "title": "Katie run",
+      "distance": "4894.0",
+      "moving_time": "1547.0",
+      "elapsed_time": "1563.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14416417320
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 06, 2025, 11:42:47 AM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "1683.0",
+      "moving_time": "482.0",
+      "elapsed_time": "528.0",
+      "temperature": "26.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14396265775
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 05, 2025, 04:40:30 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "4947.0",
+      "moving_time": "1395.0",
+      "elapsed_time": "1421.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14391208936
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 03, 2025, 03:09:04 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "830.7999877929688",
+      "moving_time": "238.0",
+      "elapsed_time": "238.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14370843798
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 03, 2025, 06:23:42 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "2196.0",
+      "moving_time": "740.0",
+      "elapsed_time": "790.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14370843606
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 03, 2025, 05:04:22 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "3262.0",
+      "moving_time": "905.0",
+      "elapsed_time": "905.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14370843564
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 03, 2025, 06:41:56 PM",
+    "data": {
+      "title": "WVU 800",
+      "distance": "800.0000610351562",
+      "moving_time": "113.0",
+      "elapsed_time": "113.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "Matthew Denton is my hero.\n\nFirst track PR since freshman year, nice to end on a good note. Pleasure running with my teammates one last time.\n",
+      "private_note": "",
+      "shoe": "Nike Dragonfly",
+      "strava_id": 14369354675
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 02, 2025, 02:59:52 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "7991.2001953125",
+      "moving_time": "2162.0",
+      "elapsed_time": "2738.0",
+      "temperature": "31.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14360023136
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "May 01, 2025, 11:59:17 AM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "5385.0",
+      "moving_time": "1468.0",
+      "elapsed_time": "1700.0",
+      "temperature": "31.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14350557351
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 30, 2025, 10:04:35 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "3458.0",
+      "moving_time": "1013.0",
+      "elapsed_time": "1738.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14334962205
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 30, 2025, 10:34:08 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "3756.89990234375",
+      "moving_time": "935.0",
+      "elapsed_time": "935.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14334960793
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 30, 2025, 10:59:30 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "1510.0",
+      "moving_time": "492.0",
+      "elapsed_time": "496.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14334960508
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 29, 2025, 10:32:09 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "7815.2001953125",
+      "moving_time": "2161.0",
+      "elapsed_time": "2423.0",
+      "temperature": "31.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14322987897
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 27, 2025, 10:38:20 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "1552.199951171875",
+      "moving_time": "472.0",
+      "elapsed_time": "472.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14303267203
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 27, 2025, 09:19:11 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "3414.5",
+      "moving_time": "986.0",
+      "elapsed_time": "1027.0",
+      "temperature": "19.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14302983772
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 27, 2025, 09:56:01 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "223.3000030517578",
+      "moving_time": "66.0",
+      "elapsed_time": "75.0",
+      "temperature": "19.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14302983716
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 26, 2025, 02:44:50 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "2410.0",
+      "moving_time": "684.0",
+      "elapsed_time": "684.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14295102972
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 26, 2025, 03:46:41 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "1213.5999755859375",
+      "moving_time": "398.0",
+      "elapsed_time": "970.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14295102969
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 26, 2025, 10:44:48 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "1964.5999755859375",
+      "moving_time": "553.0",
+      "elapsed_time": "557.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14295042026
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 25, 2025, 12:32:09 PM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "102.0",
+      "moving_time": "30.0",
+      "elapsed_time": "178.0",
+      "temperature": "31.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14290807180
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 25, 2025, 11:46:54 AM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "5929.5",
+      "moving_time": "1639.0",
+      "elapsed_time": "2360.0",
+      "temperature": "30.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14290807170
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 24, 2025, 03:03:17 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "6892.2998046875",
+      "moving_time": "1824.0",
+      "elapsed_time": "2364.0",
+      "temperature": "33.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14276021939
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 24, 2025, 03:46:35 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "1381.0",
+      "moving_time": "404.0",
+      "elapsed_time": "404.0",
+      "temperature": "34.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14276021908
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 23, 2025, 03:36:56 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "6811.7998046875",
+      "moving_time": "1933.0",
+      "elapsed_time": "3067.0",
+      "temperature": "31.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14266433059
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 22, 2025, 05:44:47 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "5156.7998046875",
+      "moving_time": "1417.0",
+      "elapsed_time": "1427.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14257018122
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 22, 2025, 06:17:25 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "2352.0",
+      "moving_time": "688.0",
+      "elapsed_time": "688.0",
+      "temperature": "26.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14257018053
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 22, 2025, 05:03:34 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "3996.60009765625",
+      "moving_time": "1071.0",
+      "elapsed_time": "2315.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14257017975
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 21, 2025, 02:09:45 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "7533.0",
+      "moving_time": "1989.0",
+      "elapsed_time": "2419.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14245396546
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 20, 2025, 10:17:53 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "7011.0",
+      "moving_time": "1936.0",
+      "elapsed_time": "1944.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14233729054
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 19, 2025, 09:22:41 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "2913.0",
+      "moving_time": "935.0",
+      "elapsed_time": "979.0",
+      "temperature": "30.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14223022628
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 19, 2025, 08:03:29 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "3234.0",
+      "moving_time": "923.0",
+      "elapsed_time": "2093.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14222797522
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 19, 2025, 08:43:05 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "5326.10009765625",
+      "moving_time": "1403.0",
+      "elapsed_time": "1461.0",
+      "temperature": "28.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14222795065
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 18, 2025, 04:06:12 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "8188.5",
+      "moving_time": "2291.0",
+      "elapsed_time": "2451.0",
+      "temperature": "34.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14216723901
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 17, 2025, 03:15:45 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "8842.599609375",
+      "moving_time": "2302.0",
+      "elapsed_time": "2973.0",
+      "temperature": "27.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14206911618
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 15, 2025, 05:07:23 PM",
+    "data": {
+      "title": "Workout Cancelled",
+      "distance": "9101.0",
+      "moving_time": "2524.0",
+      "elapsed_time": "3140.0",
+      "temperature": "19.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14188658046
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 14, 2025, 04:58:51 PM",
+    "data": {
+      "title": "poke",
+      "distance": "10297.2998046875",
+      "moving_time": "2818.0",
+      "elapsed_time": "3987.0",
+      "temperature": "30.0",
+      "feels_like": "",
+      "description": "5 strides ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14178863913
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 13, 2025, 01:35:19 PM",
+    "data": {
+      "title": "LR",
+      "distance": "17744.19921875",
+      "moving_time": "4780.0",
+      "elapsed_time": "4931.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14168940008
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 12, 2025, 07:51:59 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "4894.0",
+      "moving_time": "1579.0",
+      "elapsed_time": "2108.0",
+      "temperature": "12.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14160460909
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 12, 2025, 06:44:53 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "3189.199951171875",
+      "moving_time": "911.0",
+      "elapsed_time": "911.0",
+      "temperature": "15.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14160021947
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 12, 2025, 03:03:26 PM",
+    "data": {
+      "title": "Ovals",
+      "distance": "1807.5",
+      "moving_time": "515.0",
+      "elapsed_time": "515.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14158981084
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 11, 2025, 03:05:59 PM",
+    "data": {
+      "title": "Pre race",
+      "distance": "8502.0",
+      "moving_time": "2305.0",
+      "elapsed_time": "2963.0",
+      "temperature": "20.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "4 strides",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14148933324
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 10, 2025, 05:06:02 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "8094.0",
+      "moving_time": "2214.0",
+      "elapsed_time": "2217.0",
+      "temperature": "20.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14140943681
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 10, 2025, 05:55:58 PM",
+    "data": {
+      "title": "5x200",
+      "distance": "2959.0",
+      "moving_time": "766.0",
+      "elapsed_time": "792.0",
+      "temperature": "17.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14140943536
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 09, 2025, 03:49:52 PM",
+    "data": {
+      "title": "4 strides",
+      "distance": "4101.0",
+      "moving_time": "1153.0",
+      "elapsed_time": "2083.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14130848136
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 08, 2025, 06:08:09 PM",
+    "data": {
+      "title": "Evening Run",
+      "distance": "3067.39990234375",
+      "moving_time": "949.0",
+      "elapsed_time": "1017.0",
+      "temperature": "15.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14121411407
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 08, 2025, 05:03:31 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "4171.0",
+      "moving_time": "1071.0",
+      "elapsed_time": "2209.0",
+      "temperature": "25.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14121411304
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 08, 2025, 05:40:34 PM",
+    "data": {
+      "title": "4,2,3,2,6,2,2,2",
+      "distance": "4152.0",
+      "moving_time": "1176.0",
+      "elapsed_time": "1177.0",
+      "temperature": "17.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14121410599
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 07, 2025, 05:03:10 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "9467.0",
+      "moving_time": "2534.0",
+      "elapsed_time": "3440.0",
+      "temperature": "22.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "strides",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14110897009
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 06, 2025, 09:12:24 AM",
+    "data": {
+      "title": "Morning Run",
+      "distance": "17633.599609375",
+      "moving_time": "4788.0",
+      "elapsed_time": "5126.0",
+      "temperature": "16.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14098694722
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 05, 2025, 02:20:05 PM",
+    "data": {
+      "title": "pre race strides",
+      "distance": "482.80322265625",
+      "moving_time": "90.0",
+      "elapsed_time": "90.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14091596067
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 05, 2025, 02:30:53 PM",
+    "data": {
+      "title": "Man 1500",
+      "distance": "1500.0",
+      "moving_time": "247.0",
+      "elapsed_time": "247.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "Fitness needed",
+      "private_note": "",
+      "shoe": "Nike Dragonfly",
+      "strava_id": 14091591989
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 05, 2025, 02:00:15 PM",
+    "data": {
+      "title": "Warm",
+      "distance": "3218.68798828125",
+      "moving_time": "880.0",
+      "elapsed_time": "880.0",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14091588159
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Apr 05, 2025, 06:00:30 PM",
+    "data": {
+      "title": "Eamon watching",
+      "distance": "5632.7041015625",
+      "moving_time": "1440.0",
+      "average_heartrate": ""
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 05, 2025, 02:33:44 PM",
+    "data": {
+      "title": "Cool down",
+      "distance": "4816.7001953125",
+      "moving_time": "1436.0",
+      "elapsed_time": "1786.0",
+      "temperature": "26.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "4 strides ",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14090916110
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 04, 2025, 10:07:13 AM",
+    "data": {
+      "title": "Pre race",
+      "distance": "7987.7001953125",
+      "moving_time": "2186.0",
+      "elapsed_time": "3183.0",
+      "temperature": "20.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "3 strides",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14078728925
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 03, 2025, 10:09:18 AM",
+    "data": {
+      "title": "1,2,3,3,2,1",
+      "distance": "6765.10009765625",
+      "moving_time": "1871.0",
+      "elapsed_time": "3198.0",
+      "temperature": "26.0",
+      "feels_like": "",
+      "description": "tune up workout ",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14069332312
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 03, 2025, 11:07:48 AM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "5307.5",
+      "moving_time": "1509.0",
+      "elapsed_time": "1561.0",
+      "temperature": "29.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14069331472
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 02, 2025, 12:29:20 PM",
+    "data": {
+      "title": "Lunch Run",
+      "distance": "4946.0",
+      "moving_time": "1366.0",
+      "elapsed_time": "1370.0",
+      "temperature": "24.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14067673701
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 01, 2025, 05:01:13 PM",
+    "data": {
+      "title": "Up",
+      "distance": "3714.0",
+      "moving_time": "995.0",
+      "elapsed_time": "1911.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "strides",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14053235856
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 01, 2025, 06:00:09 PM",
+    "data": {
+      "title": "Down",
+      "distance": "3872.10009765625",
+      "moving_time": "1095.0",
+      "elapsed_time": "1206.0",
+      "temperature": "18.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14053235316
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Apr 01, 2025, 05:34:08 PM",
+    "data": {
+      "title": "3x(800m, 200m jog, 200m, 4 min jog)",
+      "distance": "4925.60009765625",
+      "moving_time": "1199.0",
+      "elapsed_time": "1199.0",
+      "temperature": "18.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14053235233
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Mar 31, 2025, 05:03:21 PM",
+    "data": {
+      "title": "Afternoon Run",
+      "distance": "9345.0",
+      "moving_time": "2516.0",
+      "elapsed_time": "3023.0",
+      "temperature": "23.0",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "New Balance 1080R14",
+      "strava_id": 14043323484
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
     "date": "Mar 29, 2025, 03:12:35 PM",
     "data": {
       "title": "cmu invite 800",
