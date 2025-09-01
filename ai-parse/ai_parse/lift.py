@@ -4,6 +4,8 @@ from ai_parse.interface import AiParser
 def make_lift_request(context: str) -> str:
     return f"""{context}
     Convert the above context into the following format, return nothing else.
+    Put any additional information that does not fit into the structured data below into the "notes" field.
+    Correct any obvious spelling errors.
     ```json
         {{
         "version": 2,
