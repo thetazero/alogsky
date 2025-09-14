@@ -2788,7 +2788,7 @@
         "date": "Mar 21, 2025, 9:04:00 AM",
         "data": {
             "duration": 583,
-            "quality": "fair"
+            "quality": "low"
         }
     },
     {
@@ -2797,7 +2797,7 @@
         "date": "Mar 22, 2025, 8:10:00 AM",
         "data": {
             "duration": 490,
-            "quality": "fair"
+            "quality": "low"
         }
     },
     {
@@ -4052,6 +4052,78 @@
                 "overhead press: 12x40, 4x60, 10x60",
                 "lat pull down: 12x65, 6x80, 5x95"
             ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 23, 2025, 8:21:00 AM",
+        "data": {
+            "duration": 484,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 25, 2025, 8:49:00 AM",
+        "data": {
+            "duration": 529,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 26, 2025, 7:14:00 AM",
+        "data": {
+            "duration": 428,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 27, 2025, 8:01:00 AM",
+        "data": {
+            "duration": 503,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 28, 2025, 8:17:00 AM",
+        "data": {
+            "duration": 512,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 29, 2025, 8:59:00 AM",
+        "data": {
+            "duration": 416,
+            "quality": "fair"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Mar 30, 2025, 9:16:00 AM",
+        "data": {
+            "duration": 344,
+            "quality": "low"
+        }
+    },
+    {
+        "version": 2,
+        "type": "sleep",
+        "date": "Apr 1, 2025, 8:29:00 AM",
+        "data": {
+            "duration": 511,
+            "quality": "low"
         }
     }
 ]
