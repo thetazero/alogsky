@@ -153,7 +153,7 @@ function split_unit(input: string): [string, string] {
     if (match) {
         return [match[1], match[2] || ""];
     } else {
-        throw new Error("Unit parsing error");
+        throw new Error(`Unit parsing error: ${input}`);
     }
 }
 
@@ -211,6 +211,13 @@ const exercise_map: Map<string, Exercise> = new Map(
         ["tib raise", Exercise.TibialisRaise],
         ["dead bug", Exercise.DeadBugs],
         ["rush n twist", Exercise.RussianTwist],
+        ["biceps curl", Exercise.BicepCurl],
+        ["smith squat", Exercise.SmithSquat],
+        ["dumbbell rdl", Exercise.DumbbellRdl],
+        ["dumbbell incline bench press", Exercise.DumbbellInclineBench],
+        ["decline sit up", Exercise.DeclineSitUp],
+        ["lat pull down", Exercise.LatPulldown],
+        ["single leg stair calf raises", Exercise.SingleLegStairCalfRaise],
         ...defaults_for_exercise_map
     ],
 );

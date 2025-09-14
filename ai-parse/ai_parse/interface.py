@@ -11,7 +11,7 @@ class AiParser:
     def parse(self, context: str) -> dict:
         request = self.make_req(context)
         response = client.chat.completions.create(
-            model="gpt-5-nano",
+            model="gpt-4o",
             messages=[
                 {"role": "user", "content": request}
             ]

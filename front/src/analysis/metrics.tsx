@@ -70,12 +70,16 @@ export function total_moving_time(runs: RunData[]): Time {
 }
 
 function lift_time(lift: LiftData): Time {
+    let res = lift.duration
     if (lift.duration.in(minutes).value() < 1) {
-        return lift.reps.map(rep => {
+        res = lift.reps.map(rep => {
             return seconds(rep.reps * 10)
         }).reduce((a, b) => a.plus(b), seconds(0))
     }
-    return lift.duration
+    if (isNaN(res.amount)) {
+        console.log(`NaN in lift_time for entry: ${JSON.stringify(lift)}`);
+    }
+    return res
 }
 
 export function training_time(training_data: TrainingData[]): Time {
@@ -201,22 +205,28 @@ export function num_strides(runs: RunData[]): number {
     }).reduce((a, b) => a + b, 0)
 }
 
-export function training_heart_beats(training_data: TrainingData[]): Quantity<number, One> {
+function training_heart_beat_helper(a: TrainingData): Quantity<number, One> {
     const hr_guess = per_minute(120);
     const resting_hr = per_minute(60);
+    if (a.type === "run" || a.type === "bike" || a.type == "elliptical") {
+        if (!a.average_heartrate) return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
+        return a.moving_time.times(a.average_heartrate.minus(resting_hr)).in(unitless);
+    }
+    if (a.type === "kayak") return a.duration.times(hr_guess.minus(resting_hr)).in(unitless);
+    if (a.type === "row") return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
+    if (a.type === "note") return unitless(0);
+    if (a.type === "lift") return lift_time(a).times(hr_guess.minus(resting_hr)).in(unitless);
+    if (a.type === "sleep" || a.type == "pain") return unitless(0);
+    throw new Error(`Unknown training data type: ${a}`);
+}
+
+
+export function training_heart_beats(training_data: TrainingData[]): Quantity<number, One> {
     const res = training_data.map(a => {
-        if (a.type === "run" || a.type === "bike" || a.type == "elliptical") {
-            if (!a.average_heartrate) return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
-            return a.moving_time.times(a.average_heartrate.minus(resting_hr)).in(unitless);
-        }
-        if (a.type === "kayak") return a.duration.times(hr_guess.minus(resting_hr)).in(unitless);
-        if (a.type === "row") return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
-        if (a.type === "note") return unitless(0);
-        if (a.type === "lift") return lift_time(a).times(hr_guess.minus(resting_hr)).in(unitless);
-        if (a.type === "sleep" || a.type == "pain") return unitless(0);
-        throw new Error(`Unknown training data type: ${a}`);
+        const res = training_heart_beat_helper(a);
+        if (isNaN(res.amount)) console.log(`NaN in training_heart_beats for entry: ${JSON.stringify(a)}`);
+        return res
     })
-    console.log(res)
-    console.log(training_data)
-    return res.reduce((a, b) => a.plus(b), unitless(0));
+    const result = res.reduce((a, b) => a.plus(b), unitless(0));
+    return result
 }

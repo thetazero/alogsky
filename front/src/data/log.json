@@ -3320,19 +3320,524 @@
         }
     },
     {
-    "version": 2,
-    "type": "lift",
-    "date": "May 18, 2025, 9:03:00 AM",
-    "data": {
-        "duration": 30,
-        "notes": "right hip clicking a lot for rows",
-        "exercises": [
-            "crunch: 50, 60",
-            "Russian twist: 50, 50",
-            "reverse crunch: 30, 40",
-            "rows: 32, 13",
-            "hollow body hold: 18s"
-        ]
+        "version": 2,
+        "type": "lift",
+        "date": "May 18, 2025, 9:03:00 AM",
+        "data": {
+            "duration": 30,
+            "notes": "right hip clicking a lot for rows",
+            "exercises": [
+                "crunch: 50, 60",
+                "Russian twist: 50, 50",
+                "reverse crunch: 30, 40",
+                "rows: 32, 13",
+                "hollow body hold: 18s"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 20, 2025, 2:44:00 PM",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 20, 20",
+                "push up: 20, 22",
+                "single leg stair calf raise: 20, 20",
+                "single leg squat: 4, 5",
+                "single leg tib raise: 20, 20",
+                "single leg hamstring bridge: 12, 12",
+                "ledge tricep dip: 14, 13"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 21, 2025, 12:40:00 PM",
+        "data": {
+            "duration": 9,
+            "notes": "",
+            "exercises": [
+                "crunch: 60, 50",
+                "hollow body hold: 19s",
+                "Russian twist: 50",
+                "reverse crunch: 30, 20",
+                "row: 23"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 22, 2025, 11:46:00 AM",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 16, 16",
+                "push up: 16, 17",
+                "single leg stair calf raise: 16, 16",
+                "single leg squat: 4, 4",
+                "single leg tib raise: 16, 16",
+                "single leg hamstring bridge: 10, 10",
+                "ledge tricep dip: 10, 11"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 24, 2025, 11:46:00 AM",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 14, 14",
+                "push up: 14",
+                "single leg stair calf raise: 14, 14",
+                "single leg squat: 3, 4",
+                "single leg tib raise: 14, 14",
+                "single leg hamstring bridge: 9, 9",
+                "ledge tricep dip: 10, 10"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 27, 2025, 1:41:00 PM",
+        "data": {
+            "duration": 36,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 21, 21",
+                "push up: 21, 22",
+                "single leg stair calf raise: 21, 21",
+                "single leg squat: 5, 6",
+                "single leg tib raise: 21, 21",
+                "single leg hamstring bridge: 12, 12",
+                "ledge tricep dip: 14, 14"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "May 30, 2025, 8:51:00 PM",
+        "data": {
+            "duration": 29,
+            "notes": "80%",
+            "exercises": [
+                "single leg glute bridge: 17, 17",
+                "push up: 17, 18",
+                "single leg stair calf raise: 18",
+                "single leg squat: 4, 5",
+                "single leg tib raise: 18, 18",
+                "single leg hamstring bridge: 10, 10",
+                "ledge tricep dip: 12, 12"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 2, 2025, 8:23:00 PM",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 21, 22",
+                "push up: 22, 22",
+                "single leg stair calf raise: 21, 21",
+                "single leg squat: 5, 6",
+                "single leg tib raise: 21, 21",
+                "hamstring bridge: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 5, 2025, 9:34:00 AM",
+        "data": {
+            "duration": 16,
+            "notes": "80%",
+            "exercises": [
+                "single leg glute bridge: 17, 17",
+                "push up: 18, 18",
+                "single leg tib raise: 17, 17",
+                "hamstring bridge: 16, 16",
+                "single leg squat: 4, 5",
+                "single leg stair calf raise: 17, 17"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 12, 2025",
+        "data": {
+            "duration": 0,
+            "notes": "Corrected 'tub raise' to 'tib raise'.",
+            "exercises": [
+                "single leg stair calf raise: 22",
+                "single leg tib raise: 22, 22"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 14, 2025",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 23, 25",
+                "push up: 26, 30",
+                "single leg stair calf raise: 22, 22",
+                "single leg squat: 5, 8",
+                "single leg tib raise: 22, 22",
+                "hamstring bridge: 21, 31"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 18, 2025, 12:00:00 PM",
+        "data": {
+            "duration": 0,
+            "notes": "Date: June 18, 2025; Intensity: 80%",
+            "exercises": [
+                "single leg glute bridge: 18, 20",
+                "push up: 20, 24",
+                "hamstring bridge: 17, 24",
+                "single leg tib raise: 18, 19",
+                "single leg squat: 4, 6",
+                "single leg stair calf raise: 18, 18"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 23, 2025, 12:00:00 PM",
+        "data": {
+            "duration": 40,
+            "notes": "Intensity: 80%",
+            "exercises": [
+                "single leg glute bridge: 18, 22",
+                "push up: 20, 24",
+                "hamstring bridge: 19, 24",
+                "single leg tib raise: 18, 18",
+                "single leg squat: 4, 6",
+                "single leg stair calf raise: 18, 18"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 25, 2025",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 23, 26",
+                "push up: 26, 26",
+                "hamstring bridge: 21, 31",
+                "single leg tib raise: 23, 25",
+                "single leg squat: 5, 8",
+                "single leg stair calf raise: 22, 22"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "June 29, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "Russian twist: 60",
+                "crunches: 70",
+                "dead bug: 32"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 2, 2025",
+        "data": {
+            "duration": 0,
+            "notes": "",
+            "exercises": [
+                "single leg glute bridge: 23, 26",
+                "push up: 26, 26",
+                "hamstring bridge: 24, 31",
+                "single leg tib raise: 23, 25",
+                "single leg squat: 5, 8",
+                "single leg stair calf raise: 23, 22"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 4, 2025",
+        "data": {
+            "duration": null,
+            "notes": "80%",
+            "exercises": [
+                "single leg glute bridge: 19, 23",
+                "push up: 23, 23",
+                "hamstring bridge: 23, 25",
+                "single leg tib raise: 19, 20",
+                "single leg squat: 4, 6",
+                "single leg stair calf raise: 19, 18"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 14, 2025",
+        "data": {
+            "duration": 40,
+            "notes": "Single leg glute bridge data not provided in the input. Incline bench name expanded to incline bench press; corrected 'Dumbell' to 'dumbbell'. Date converted from 7/14/25.",
+            "exercises": [
+                "squat: 8x65, 8x95",
+                "rdl: 8x45, 8x55",
+                "dumbbell incline bench press: 8x60, 8x60",
+                "overhead press: 8x40, 8x50",
+                "pull up: 6, 7",
+                "single leg stair calf raise: 20, 20",
+                "dumbbell row: 8x30, 8x30",
+                "bulgarian split squat: 4x(40lbs|5s), 3x(50lbs|5s)",
+                "tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 20, 2025, 12:00:00 PM",
+        "data": {
+            "duration": 0,
+            "notes": "duration not provided; time assumed as 12:00:00 PM.",
+            "exercises": [
+                "squat: 10x65, 10x115, 10x115",
+                "rdl: 10x45, 10x65",
+                "dumbbell incline bench: 10x40, 10x50, 9x60",
+                "bulgarian split squat: 4x(40lbs|5s), 4x(40lbs|5s)",
+                "overhead press: 6x40, 10x40",
+                "pull up: 6, 7",
+                "single leg stair calf raise: 20, 20",
+                "dumbbell row: 10x35, 10x35",
+                "tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 23, 2025, 12:00:00 PM",
+        "data": {
+            "duration": 40,
+            "notes": "",
+            "exercises": [
+                "smith squat: 9x70, 12x90, 12x90",
+                "single leg glute bridge: 0",
+                "dumbbell rdl: 12x50, 12x50",
+                "dumbbell incline bench: 12x40, 12x50, 12x60",
+                "bulgarian split squat: 5s, 40lbs; 5s, 40lbs; 5s, 40lbs; 5s, 40lbs; 5s, 40lbs; 5s, 40lbs; 5s, 40lbs; 5s, 40lbs",
+                "overhead press: 12x30, 12x40, 12x50",
+                "pull up: 6, 3",
+                "single leg stair calf raises: 20, 20",
+                "dumbbell row: 12x25, 12x35, 13x35",
+                "tib raise: 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 26, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "dumbbell incline bench: 12x40, 12x60, 12x60",
+                "overhead press: 12x30, 12x40, 11x50",
+                "pull up: 6, 6",
+                "dumbbell row: 8x25, 12x35, 12x35",
+                "bicep curl: 12x30, 12x30, 12x30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 27, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "squat: 7x45, 12x115, 12x115",
+                "single leg glute bridge: 22, 20",
+                "dumbbell rdl: 12x50, 12x50",
+                "Bulgarian split squat: 4x(5s|40lbs), 4x(5s|40lbs)",
+                "single leg stair calf raise: 20, 20",
+                "tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "July 30, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "dumbbell incline bench: 13x40, 13x60, 13x60",
+                "overhead press: 13x40, 13x50, 12x50",
+                "pull up: 6, 6",
+                "dumbbell row: 8x25, 13x35",
+                "bicep curl: 13x30, 13x30, 13x30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 2, 2025",
+        "data": {
+            "duration": 30,
+            "notes": "Bulgarian split squat: 4x(5s|40lbs), 4x(5s|50lbs) indicates 5-second isometric holds. All weights are in pounds.",
+            "exercises": [
+                "squat: 12x45, 13x115, 13x115",
+                "single leg glute bridge: 22, 20",
+                "dumbbell rdl: 12x50, 12x50",
+                "bulgarian split squat: 4x(5s|40lbs), 4x(5s|50lbs)",
+                "single leg stair calf raise: 20, 20",
+                "tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 3, 2025, 11:13:00 AM",
+        "data": {
+            "duration": 40,
+            "notes": "Missing data for overhead press and dumbbell row (reps/weights not provided). Date interpreted from input 8/03/25.",
+            "exercises": [
+                "dumbbell incline bench: 13x40, 13x60, 13x60",
+                "lat pulldown: 10x65, 10x65",
+                "bicep curl: 13x30, 13x30, 14x30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 6, 2025",
+        "data": {
+            "duration": 0,
+            "notes": "Weights are in pounds (lbs). Squat last set performed on a Smith machine.",
+            "exercises": [
+                "smith squat: 12x0, 12x70, 12x90, 5x70",
+                "dumbbell rdl: 12x40, 12x50, 12x50",
+                "bulgarian split squat: 0",
+                "single leg stair calf raise: 0",
+                "tib raise: 0"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 11, 2025, 12:00:00 PM",
+        "data": {
+            "duration": 40,
+            "notes": "dumbbell row data not provided.",
+            "exercises": [
+                "dumbbell incline bench: 12x40, 12x60, 12x60",
+                "overhead press: 12x30, 6x50",
+                "lat pulldown: 10x65, 7x80",
+                "bicep curl: 12x30, 12x30, 8x40"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 13, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "squat: 8x45, 4x115, 11x115, 10x125",
+                "dumbbell rdl: 10x40, 12x40, 10x50",
+                "decline sit up: 10, 8x10",
+                "Bulgarian split squat: ",
+                "single leg stair calf raise: 0",
+                "tib raise: 0"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 16, 2025, 11:13:00 AM",
+        "data": {
+            "duration": 0,
+            "notes": "lat pulldown data not provided.",
+            "exercises": [
+                "dumbbell incline bench: 12x40, 12x60, 12x60",
+                "overhead press: 12x40, 12x50, 12x50",
+                "dumbbell row: 10x70, 8x80",
+                "bicep curl: 12x30, 12x30, 10x40"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 17, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "smith squat: 12x0, 12x70, 12x90",
+                "dumbbell rdl: 12x40, 12x50, 12x50",
+                "Bulgarian split squat: ",
+                "single leg stair calf raise: 10, 10",
+                "single leg tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 18, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "dumbbell incline bench: 12x40",
+                "overhead press: 12x40, 12x50, 8x50",
+                "lat pull down: 7x65, 9x65",
+                "dumbbell row: 12x60, 12x70",
+                "bicep curl: 4x40, 10x40"
+            ]
+        }
     }
-}
 ]

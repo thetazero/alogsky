@@ -93,6 +93,37 @@ describe("Test parse lift v2", () => {
         expect(lift.reps[20].reps).toEqual(8)
         expect(lift.reps[20].exercise).toEqual(Exercise.BicepCurl)
     })
+
+    it('Does not give nan for reps count', () => {
+        const data = {
+            "version": 2,
+            "type": "lift",
+            "date": "Jan 2, 2024, 7:50:00 AM",
+            "data": {
+                "duration": 0,
+                "notes": "duration not provided; time assumed as 12:00:00 PM.",
+                "exercises": [
+                    "squat: 10x65, 10x115, 10x115",
+                    "rdl: 10x45, 10x65",
+                    "dumbbell incline bench: 10x40, 10x50, 9x60",
+                    "bulgarian split squat: 4x(40lbs|5s), 4x(40lbs|5s)",
+                    "overhead press: 6x40, 10x40",
+                    "pull up: 6, 7",
+                    "single leg stair calf raise: 20, 20",
+                    "dumbbell row: 10x35, 10x35",
+                    "tib raise: 20, 20"
+                ]
+            }
+        }
+        const [res, errors] = parse([data])
+        const lift: LiftData = res[0] as LiftData
+        expect(errors).toEqual([])
+        expect(lift).not.toEqual(undefined)
+        expect(lift.reps).toHaveLength(20)
+        lift.reps.map(r => {
+            expect(isNaN(r.reps)).toBeFalsy()
+        })
+    })
 });
 
 describe("parse body location", () => {
