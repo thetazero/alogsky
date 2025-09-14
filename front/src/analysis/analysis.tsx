@@ -158,6 +158,10 @@ class Analysis {
                 return unitless(this.stride_count())
             case Metric.TrainingHeartBeats:
                 return training_heart_beats(this.dataset.data)
+            case Metric.AverageSleepTime:
+                const sleep_time = this.average_sleep_time()
+                if (!sleep_time) return hours(0)
+                return sleep_time.in(hours)
         }
     }
 
@@ -195,6 +199,7 @@ export function get_unit_for_metric(metric: Metric): Unit<number, Dimensions> {
         case Metric.Mileage:
             return miles
         case Metric.ActiveTime:
+        case Metric.AverageSleepTime:
             return hours
         case Metric.Pace:
             return minutes_per_mile
