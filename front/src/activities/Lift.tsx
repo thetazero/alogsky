@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Exercise, LiftData, RepData, tons } from "../types";
-import { lift_tonage, rep_tonage } from "../analysis/metrics";
+import { lift_tonage, rep_tonage, lift_time } from "../analysis/metrics";
 import Activity from "../components/Activity";
 import ScrollableTable from "../components/Table";
 import { fmt_quantity, fmt_rep, nice_number } from "../utils/format";
+import { minutes } from "@buge/ts-units/time";
 
 export interface LiftProps {
     data: LiftData;
@@ -55,6 +56,7 @@ const Lift: React.FC<LiftProps> = ({ data, height }) => {
         <Activity date={data.date} height={height} title="Lift">
             <div className="mb-4">
                 <span className="font-semibold emph mb-4">Tonage: </span> {nice_number(lift_tonage(data).in(tons).amount)} tons
+                <span className="font-semibold emph ml-4">Duration: </span> {fmt_quantity(lift_time(data).in(minutes))}
             </div>
             <ScrollableTable table={table} />
         </Activity>

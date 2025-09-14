@@ -69,7 +69,7 @@ export function total_moving_time(runs: RunData[]): Time {
     return runs.map(r => r.moving_time).reduce((a, b) => a.plus(b), seconds(0))
 }
 
-function lift_time(lift: LiftData): Time {
+export function lift_time(lift: LiftData): Time {
     let res = lift.duration
     if (lift.duration.in(minutes).value() < 1) {
         res = lift.reps.map(rep => {

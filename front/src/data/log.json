@@ -3839,5 +3839,219 @@
                 "bicep curl: 4x40, 10x40"
             ]
         }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 20, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "squat: 8x45, 4x115, 12x115, 12x125",
+                "dumbbell rdl: 12x40, 12x50",
+                "decline sit up: 10, 10",
+                "Bulgarian split squat: ",
+                "single leg stair calf raise: 15, 15",
+                "single leg tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 23, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "dumbbell incline bench: 12x40, 4x70, 11x70, 10x60",
+                "overhead press: 12x40, 11x50, 11x50",
+                "lat pull down: 8x65, 8x80",
+                "dumbbell row: 12x70",
+                "bicep curl: 12x30, 10x40"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 24, 2025",
+        "data": {
+            "duration": null,
+            "notes": "Smith machine squat",
+            "exercises": [
+                "squat: 12x0, 12x70, 12x90",
+                "dumbbell rdl: 12x40, 12x50, 12x50",
+                "Bulgarian split squat: ",
+                "single leg stair calf raise: 15, 15",
+                "single leg tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 26, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "dumbbell incline bench: 12x40, 4x70, 12x70, 12x60",
+                "overhead press: 12x40, 12x50, 8x60",
+                "lat pull down: 10x60, 5x90",
+                "dumbbell row: 12x70, 10x80",
+                "bicep curl: 12x30, 12x40"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 27, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "squat: 8x45, 8x95, 12x115, 12x135",
+                "dumbbell rdl: 12x40, 12x50",
+                "Bulgarian split squat: ",
+                "single leg stair calf raise: 20, 20",
+                "tib bar: 12x5, 12x10, 12x15",
+                "dumbbell upright row: 12x30, 8x40, 8x30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 29, 2025",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "pull up: 3, 10, 8, 5, 5",
+                "rdl: 8x50, 8x60",
+                "lat pull down: 8x60, 8x70, 8x60",
+                "upright row: 10x30, 10x40, 10x30",
+                "face pull: 8x20, 8x25, 10x25",
+                "preacher curl: 10x42, 8x42",
+                "leg raise: 32, 32"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "August 31, 2025, 5:03:00 PM",
+        "data": {
+            "duration": 12,
+            "notes": "3 strides",
+            "exercises": [
+                "smith squat: 12x0, 12x70, 12x90",
+                "dumbbell rdl: 12x40, 12x50, 12x50",
+                "Bulgarian split squat: ",
+                "single leg stair calf raise: 20, 20",
+                "single leg tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "September 1, 2025, 2:55:00 PM",
+        "data": {
+            "duration": 21,
+            "notes": "",
+            "exercises": [
+                "dumbbell incline bench: 12x40, 4x80, 12x80",
+                "overhead press: 12x40, 12x50, 9x60",
+                "lat pull down: ",
+                "dumbbell row: ",
+                "bicep curl: 12x30, 12x40"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "September 3, 2025, 8:05:00 AM",
+        "data": {
+            "duration": 14,
+            "notes": "",
+            "exercises": [
+                "smith squat: 12x0, 12x70, 12x90",
+                "dumbbell rdl: 4x50, 12x50, 4x70",
+                "Bulgarian split squat: ",
+                "single leg stair calf raise: 20, 20",
+                "single leg tib raise: 20, 20"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "September 1, 2025, 5:34:00 PM",
+        "data": {
+            "duration": 31,
+            "notes": "",
+            "exercises": [
+                "dumbbell incline bench: 12x40, 4x80, 10x80, 8x70",
+                "overhead press: 12x40, 12x50, 10x60",
+                "lat pull down: 12x60, 12x80",
+                "dumbbell row: 12x70",
+                "bicep curl: 12x30, 12x40"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "September 8, 2025, 12:00:00 AM",
+        "data": {
+            "duration": null,
+            "notes": "",
+            "exercises": [
+                "lat pulldown: 10x80, 8x90, 8x90, 8x100",
+                "face pull: 10x42, 8x42, 8x32",
+                "face pull: 8x35, 10x40, 8x40",
+                "preacher curl: 10x42, 9x47",
+                "sit up: 20, 13",
+                "core bicycle: 36",
+                "mountain climber: 32",
+                "side crunch: 30",
+                "rush n twist: 30"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "September 12, 2025, 5:40:00 PM",
+        "data": {
+            "duration": 30,
+            "notes": "",
+            "exercises": [
+                "deadlift: 10x95, 3x115",
+                "squat: 12x95, 12x115, 11x135",
+                "tib bar: 20x15, 15x20",
+                "single leg stair calf raise: 10, 18",
+                "bicep curl: 12x30, 12x40"
+            ]
+        }
+    },
+    {
+        "version": 2,
+        "type": "lift",
+        "date": "September 14, 2025, 10:41:00 AM",
+        "data": {
+            "duration": 26,
+            "notes": "dumbbell row skipped due to deadlift",
+            "exercises": [
+                "dumbbell incline bench: 12x50, 4x80, 12x80, 8x70",
+                "overhead press: 12x40, 4x60, 10x60",
+                "lat pull down: 12x65, 6x80, 5x95"
+            ]
+        }
     }
 ]
