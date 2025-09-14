@@ -207,15 +207,15 @@ export function num_strides(runs: RunData[]): number {
 
 function training_heart_beat_helper(a: TrainingData): Quantity<number, One> {
     const hr_guess = per_minute(120);
-    const resting_hr = per_minute(60);
+    const baseline_hr = per_minute(100);
     if (a.type === "run" || a.type === "bike" || a.type == "elliptical") {
-        if (!a.average_heartrate) return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
-        return a.moving_time.times(a.average_heartrate.minus(resting_hr)).in(unitless);
+        if (!a.average_heartrate) return a.moving_time.times(hr_guess.minus(baseline_hr)).in(unitless);
+        return a.moving_time.times(a.average_heartrate.minus(baseline_hr)).in(unitless);
     }
-    if (a.type === "kayak") return a.duration.times(hr_guess.minus(resting_hr)).in(unitless);
-    if (a.type === "row") return a.moving_time.times(hr_guess.minus(resting_hr)).in(unitless);
+    if (a.type === "kayak") return a.duration.times(hr_guess.minus(baseline_hr)).in(unitless);
+    if (a.type === "row") return a.moving_time.times(hr_guess.minus(baseline_hr)).in(unitless);
     if (a.type === "note") return unitless(0);
-    if (a.type === "lift") return lift_time(a).times(hr_guess.minus(resting_hr)).in(unitless);
+    if (a.type === "lift") return lift_time(a).times(hr_guess.minus(baseline_hr)).in(unitless);
     if (a.type === "sleep" || a.type == "pain") return unitless(0);
     throw new Error(`Unknown training data type: ${a}`);
 }
