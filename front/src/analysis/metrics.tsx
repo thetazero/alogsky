@@ -87,7 +87,7 @@ export function training_time(training_data: TrainingData[]): Time {
         if (d.type == "run") return d.moving_time
         if (d.type == "lift") return lift_time(d)
         if (d.type == "pain") return minutes(0)
-        if (d.type == "kayak") return d.duration
+        if (d.type == "kayak") return d.moving_time
         if (d.type == "sleep") return minutes(0)
         if (d.type == "note") return minutes(0)
         if (d.type == "row") return d.moving_time
@@ -212,11 +212,9 @@ function training_heart_beat_helper(a: TrainingData): Quantity<number, One> {
         if (!a.average_heartrate) return a.moving_time.times(hr_guess.minus(baseline_hr)).in(unitless);
         return a.moving_time.times(a.average_heartrate.minus(baseline_hr)).in(unitless);
     }
-    if (a.type === "kayak") return a.duration.times(hr_guess.minus(baseline_hr)).in(unitless);
-    if (a.type === "row") return a.moving_time.times(hr_guess.minus(baseline_hr)).in(unitless);
-    if (a.type === "note") return unitless(0);
+    if (a.type === "kayak" || a.type == "row") return a.moving_time.times(hr_guess.minus(baseline_hr)).in(unitless);
     if (a.type === "lift") return lift_time(a).times(hr_guess.minus(baseline_hr)).in(unitless);
-    if (a.type === "sleep" || a.type == "pain") return unitless(0);
+    if (a.type === "sleep" || a.type == "pain" || a.type == "note") return unitless(0);
     throw new Error(`Unknown training data type: ${a}`);
 }
 

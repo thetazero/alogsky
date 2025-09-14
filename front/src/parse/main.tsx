@@ -445,7 +445,7 @@ function parse_painv2(data: unknown, date: Date): PainLogData {
 
 function parse_kayakv1(data: any, date: Date): KayakData {
     return {
-        duration: minutes(parseFloat(data.duration)),
+        moving_time: minutes(parseFloat(data.duration)),
         date,
         type: "kayak",
     }

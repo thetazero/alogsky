@@ -181,7 +181,7 @@ export interface PainLogData {
 }
 
 export interface KayakData {
-    duration: Time
+    moving_time: Time
     date: Date
     type: "kayak"
 }
