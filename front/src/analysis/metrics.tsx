@@ -1,5 +1,5 @@
 import { Mass } from "@buge/ts-units/mass";
-import { BodyRegion, Exercise, Frequency, InverseSpeed, LiftData, minutes_per_mile, PainLogData, per_minute, pounds, RepData, RunData, seconds_per_meter, TrainingData, unitless } from "../types";
+import { BodyRegion, Exercise, InverseSpeed, LiftData, minutes_per_mile, PainLogData, per_minute, pounds, RepData, RunData, seconds_per_meter, TrainingData, unitless } from "../types";
 import { Length, meters, miles } from "@buge/ts-units/length";
 import { minutes, seconds, Time } from "@buge/ts-units/time";
 import { One, Quantity } from "@buge/ts-units";
