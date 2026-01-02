@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import data from "./data/log.json"
 // import strava_data from "./data/strava_neltoid.json"
 import strava_data from "./data/strava_export.json"
 import parse from './parse/main';
 import { TrainingData } from './types';
-import WeekOverview from './tiles/WeekOverview';
 import { TrainingDataSet } from './analysis/analysis'
-import TrainingLogTile from './tiles/TrainingLogTile';
-import TrainingSummaryTile from './tiles/TrainingSummaryTile';
-import CommandProvider from './CommandProvider';
-import ParticularLiftTile from './tiles/ParticularLiftTile';
-import LiftLogTile from './tiles/LiftLogTile';
+import { NavBar } from './components/NavBar'
+import { LegacyPage } from './pages/LegacyPage'
+import { OverviewPage } from './pages/OverviewPage'
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
@@ -31,37 +29,18 @@ function App() {
         setDataset(new TrainingDataSet(processed))
     }, [processed]);
 
-    const defaultTiles = [
-        {
-            component: WeekOverview,
-            id: "week-overview"
-        },
-        {
-            component: TrainingSummaryTile,
-            id: "training-summary"
-        },
-        {
-            component: TrainingLogTile,
-            id: "training-log"
-        },
-        // {
-        //     component: OpenInjuryTile,
-        //     id: "open-injuries"
-        // },
-        {
-            component: ParticularLiftTile,
-            id: "particular-lift"
-        },
-        {
-            component: LiftLogTile,
-            id: "lift-log"
-        }
-    ]
-
     return (
-        <>
-            <CommandProvider defaultTiles={defaultTiles} parseErrors={errors} dataset={dataset} />
-        </>
+        <BrowserRouter>
+            <div className="min-h-screen">
+                <NavBar />
+                <div className="pt-14">
+                    <Routes>
+                        <Route path="/" element={<LegacyPage dataset={dataset} parseErrors={errors} />} />
+                        <Route path="/new" element={<OverviewPage dataset={dataset} parseErrors={errors} />} />
+                    </Routes>
+                </div>
+            </div>
+        </BrowserRouter>
     )
 }
 
