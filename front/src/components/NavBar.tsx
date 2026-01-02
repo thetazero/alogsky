@@ -19,7 +19,7 @@ export function NavBar() {
           Legacy
         </Link>
         <Link to="/new" className={linkClass('/new')}>
-          New
+          Overview
         </Link>
       </div>
     </nav>

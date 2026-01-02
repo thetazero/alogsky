@@ -8,7 +8,7 @@ import { TrainingData } from './types';
 import { TrainingDataSet } from './analysis/analysis'
 import { NavBar } from './components/NavBar'
 import { LegacyPage } from './pages/LegacyPage'
-import { NewPage } from './pages/NewPage'
+import { OverviewPage } from './pages/OverviewPage'
 
 function App() {
     const [processed, setProcessed] = useState<TrainingData[]>([]);
@@ -36,7 +36,7 @@ function App() {
                 <div className="pt-14">
                     <Routes>
                         <Route path="/" element={<LegacyPage dataset={dataset} parseErrors={errors} />} />
-                        <Route path="/new" element={<NewPage dataset={dataset} parseErrors={errors} />} />
+                        <Route path="/new" element={<OverviewPage dataset={dataset} parseErrors={errors} />} />
                     </Routes>
                 </div>
             </div>
