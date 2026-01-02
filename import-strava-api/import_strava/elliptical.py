@@ -1,4 +1,4 @@
-from .utils import parse_date
+from .utils import parse_date, extract_common_data
 
 def parse_elliptical(activity):
     elliptical = {
@@ -6,7 +6,7 @@ def parse_elliptical(activity):
         "type": "elliptical",
         "date": parse_date(activity["Activity Date"]),
         "data": {
-            "title": activity["Activity Name"],
+            **extract_common_data(activity),
             "description": activity["Activity Description"],
             "distance": activity["Distance"],
             "moving_time": activity["Moving Time"],
