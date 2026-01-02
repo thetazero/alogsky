@@ -13,15 +13,7 @@ Incremental Strava activity importer using the Strava API. This tool fetches new
 
 ## Quick Start
 
-### 1. Install Dependencies
-
-This project uses `uv` for dependency management:
-
-```bash
-# Dependencies are already installed during setup
-```
-
-### 2. Set Up Strava API Credentials
+### 1. Set Up Strava API Credentials
 
 Follow the complete setup guide in [`docs/STRAVA_API_SETUP.md`](docs/STRAVA_API_SETUP.md)
 
@@ -31,7 +23,7 @@ Quick version:
 3. Run `python scripts/strava_auth_setup.py`
 4. Authorize the application in your browser
 
-### 3. Import Activities
+### 2. Import Activities
 
 ```bash
 python -m import_strava.import_strava

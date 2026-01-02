@@ -1,5 +1,5 @@
 from typing import Any
-from .utils import contains_keywords, parse_date
+from .utils import contains_keywords, parse_date, extract_common_data
 from .cache import Cache
 import os
 
@@ -105,7 +105,7 @@ def parse_run(activity, cache: Cache):
         "type": "run",
         "date": parse_date(activity["Activity Date"]),
         "data": {
-            "title": activity["Activity Name"],
+            **extract_common_data(activity),
             "distance": activity["Distance"],
             "moving_time": activity["Moving Time"],
             "elapsed_time": activity["Elapsed Time"],
@@ -115,7 +115,6 @@ def parse_run(activity, cache: Cache):
             "private_note": activity["Activity Private Note"],
             "shoe": activity["Activity Gear"],
             "average_heartrate": activity["Average Heart Rate"],
-            "strava_id": activity_id,
         },
     }
     run = parse_run_for_workout(run, cache)

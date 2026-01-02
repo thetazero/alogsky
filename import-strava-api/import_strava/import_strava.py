@@ -6,7 +6,7 @@ from typing import Any, List, Dict, Set
 from dotenv import load_dotenv
 
 from .run import parse_run
-from .utils import parse_date
+from .utils import parse_date, extract_common_data
 from .cache import Cache
 from .bike import parse_bike
 from .elliptical import parse_elliptical
@@ -47,7 +47,7 @@ def extract_relevant_activities(activities: Any, cache: Cache):
                     "type": "row",
                     "date": parse_date(activity["Activity Date"]),
                     "data": {
-                        "title": title,
+                        **extract_common_data(activity),
                         "description": activity["Activity Description"],
                         "moving_time": activity["Moving Time"],
                         "elapsed_time": activity["Elapsed Time"],
@@ -114,11 +114,17 @@ def read_strava_api_incremental(export_path: str, cache: Cache):
     auth = StravaAuth()
     api = StravaAPI(auth)
 
-    # Fetch activities from API
+    # Fetch activities from API (only after September 13, 2025)
     print("\nFetching activities from Strava API...")
-    # For incremental updates, we can limit to recent pages
-    # For first run, fetch all (but will filter against existing JSON)
-    api_activities = api.get_activities(per_page=100, max_pages=None)
+    from datetime import datetime
+    import pytz
+
+    # Set cutoff date: September 13, 2025 at midnight Eastern time
+    cutoff_date = datetime(2025, 9, 13, 0, 0, 0, tzinfo=pytz.timezone("US/Eastern"))
+    cutoff_timestamp = int(cutoff_date.timestamp())
+
+    print(f"  Only fetching activities after: {cutoff_date.strftime('%b %d, %Y')}")
+    api_activities = api.get_activities(after=cutoff_timestamp, per_page=100, max_pages=None)
 
     # Normalize and filter activities
     print("\nProcessing activities...")
@@ -151,8 +157,24 @@ def read_strava_api_incremental(export_path: str, cache: Cache):
     # Append to existing activities
     updated_activities = existing_activities + new_processed
 
+    # Sort by date (chronological order)
+    print("\nSorting activities by date...")
+    from datetime import datetime
+
+    def parse_activity_date(activity):
+        """Parse activity date for sorting."""
+        try:
+            date_str = activity.get("date", "")
+            # Parse format: "Sep 14, 2025, 02:23:26 AM"
+            return datetime.strptime(date_str, "%b %d, %Y, %I:%M:%S %p")
+        except (ValueError, KeyError):
+            # If parsing fails, put at beginning
+            return datetime.min
+
+    updated_activities.sort(key=parse_activity_date, reverse=True)
+
     # Save updated JSON
-    print(f"\nSaving updated JSON to {export_path}...")
+    print(f"\nSaving sorted JSON to {export_path}...")
     with open(export_path, "w") as f:
         json.dump(updated_activities, f, indent=2)
 

@@ -1,4 +1,4 @@
-from .utils import parse_date
+from .utils import parse_date, extract_common_data
 
 
 def parse_bike(activity):
@@ -7,11 +7,10 @@ def parse_bike(activity):
         "type": "bike",
         "date": parse_date(activity["Activity Date"]),
         "data": {
-            "title": activity["Activity Name"],
+            **extract_common_data(activity),
             "distance": activity["Distance"],
             "moving_time": activity["Moving Time"],
             "average_heartrate": activity["Average Heart Rate"],
-            "distance": activity["Distance"],
         },
     }
     return bike
