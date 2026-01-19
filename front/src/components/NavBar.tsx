@@ -21,6 +21,9 @@ export function NavBar() {
         <Link to="/new" className={linkClass('/new')}>
           Overview
         </Link>
+        <Link to="/plan" className={linkClass('/plan')}>
+          Plan
+        </Link>
       </div>
     </nav>
   )
