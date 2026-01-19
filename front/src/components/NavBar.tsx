@@ -21,12 +21,9 @@ export function NavBar() {
         <Link to="/new" className={linkClass('/new')}>
           Overview
         </Link>
-<<<<<<< HEAD
-=======
         <Link to="/plan" className={linkClass('/plan')}>
           Plan
         </Link>
->>>>>>> feat/new-view
       </div>
     </nav>
   )
