@@ -67,7 +67,7 @@ def could_be_workout(run: dict[str, Any])-> bool:
     description = run["data"]["description"]
     private_note = run["data"]["private_note"]
     title = run["data"]["title"]
-    keywords = ["workout", "strides", "tempo", "x(", "race", "mile", "4x4", "800m"]
+    keywords = ["workout", "strides", "tempo", "x(", "race", "mile", "4x4", "800m", "1k"]
     return contains_keywords((description + private_note + title).lower(), keywords) or private_note != ""
 
 

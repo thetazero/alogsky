@@ -14,7 +14,7 @@ interface Props {
 }
 
 export function OverviewPage({ dataset, parseErrors }: Props) {
-  const [duration, setDuration] = useState(GroupByDuration.OneMonth)
+  const [duration, setDuration] = useState(GroupByDuration.OneWeek)
   const [selectedMetrics, setSelectedMetrics] = useState<Metric[]>([
     Metric.Mileage,
   ])

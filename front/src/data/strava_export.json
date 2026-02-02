@@ -1,5 +1,289 @@
 [
   {
+    "version": 2,
+    "type": "run",
+    "date": "Feb 01, 2026, 04:10:17 AM",
+    "data": {
+      "strava_id": 17256237036,
+      "title": "Morning Run",
+      "distance": "6059.1",
+      "moving_time": "1722",
+      "elapsed_time": "2037",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "152.1"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 31, 2026, 11:19:22 AM",
+    "data": {
+      "strava_id": 17244309721,
+      "title": "Afternoon Run",
+      "distance": "6787.0",
+      "moving_time": "1953",
+      "elapsed_time": "1989",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "155.6"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jan 30, 2026, 01:36:12 PM",
+    "data": {
+      "strava_id": 17233682692,
+      "title": "Evening Ride",
+      "distance": "5908.9",
+      "moving_time": "1294",
+      "average_heartrate": "121.9"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 30, 2026, 12:37:13 PM",
+    "data": {
+      "strava_id": 17233682769,
+      "title": "Neel run",
+      "distance": "8695.0",
+      "moving_time": "2602",
+      "elapsed_time": "3499",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "153.9"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jan 30, 2026, 04:08:07 AM",
+    "data": {
+      "strava_id": 17233682687,
+      "title": "Morning Ride",
+      "distance": "5834.0",
+      "moving_time": "1206",
+      "average_heartrate": "122.2"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jan 29, 2026, 02:06:56 PM",
+    "data": {
+      "strava_id": 17228552397,
+      "title": "Evening Ride",
+      "distance": "5894.8",
+      "moving_time": "1321",
+      "average_heartrate": "139.9"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 29, 2026, 03:32:13 AM",
+    "data": {
+      "strava_id": 17228552401,
+      "title": "Morning Run",
+      "distance": "3158.4",
+      "moving_time": "928",
+      "elapsed_time": "946",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "164.2"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 29, 2026, 03:01:54 AM",
+    "data": {
+      "strava_id": 17228552421,
+      "title": "5x1k",
+      "distance": "5976.0",
+      "moving_time": "1646",
+      "elapsed_time": "1650",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "159.3",
+      "intervals": [
+        {
+          "distance": "1k",
+          "time": "3:18"
+        },
+        {
+          "distance": "200m",
+          "time": "1:51"
+        },
+        {
+          "distance": "1k",
+          "time": "3:18"
+        },
+        {
+          "distance": "200m",
+          "time": "2:07"
+        },
+        {
+          "distance": "1k",
+          "time": "3:20"
+        },
+        {
+          "distance": "200m",
+          "time": "2:19"
+        },
+        {
+          "distance": "1k",
+          "time": "3:23"
+        },
+        {
+          "distance": "200m",
+          "time": "2:09"
+        },
+        {
+          "distance": "1k",
+          "time": "3:25"
+        }
+      ]
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 29, 2026, 02:41:05 AM",
+    "data": {
+      "strava_id": 17228552350,
+      "title": "Morning Run",
+      "distance": "3267.5",
+      "moving_time": "957",
+      "elapsed_time": "957",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "160.0"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jan 29, 2026, 02:11:13 AM",
+    "data": {
+      "strava_id": 17228552332,
+      "title": "Morning Ride",
+      "distance": "5822.9",
+      "moving_time": "1148",
+      "average_heartrate": "119.3"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 28, 2026, 03:41:30 AM",
+    "data": {
+      "strava_id": 17209631606,
+      "title": "Morning Run",
+      "distance": "2896.3",
+      "moving_time": "879",
+      "elapsed_time": "885",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "156.1"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 28, 2026, 03:33:04 AM",
+    "data": {
+      "strava_id": 17209631593,
+      "title": "Morning Run",
+      "distance": "1584.9",
+      "moving_time": "419",
+      "elapsed_time": "458",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "170.3"
+    }
+  },
+  {
+    "version": 2,
+    "type": "run",
+    "date": "Jan 28, 2026, 03:16:32 AM",
+    "data": {
+      "strava_id": 17209631609,
+      "title": "Morning Run",
+      "distance": "2650.0",
+      "moving_time": "807",
+      "elapsed_time": "822",
+      "temperature": "",
+      "feels_like": "",
+      "description": "",
+      "private_note": "",
+      "shoe": "",
+      "average_heartrate": "153.3"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jan 28, 2026, 02:49:31 AM",
+    "data": {
+      "strava_id": 17209631602,
+      "title": "Morning Ride",
+      "distance": "5853.0",
+      "moving_time": "1161",
+      "average_heartrate": "109.7"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jan 27, 2026, 12:54:53 PM",
+    "data": {
+      "strava_id": 17202360360,
+      "title": "Afternoon Ride",
+      "distance": "5799.4",
+      "moving_time": "1247",
+      "average_heartrate": "113.4"
+    }
+  },
+  {
+    "version": 1,
+    "type": "bike",
+    "date": "Jan 27, 2026, 03:45:07 AM",
+    "data": {
+      "strava_id": 17202360352,
+      "title": "Morning Ride",
+      "distance": "5739.6",
+      "moving_time": "1080",
+      "average_heartrate": "117.7"
+    }
+  },
+  {
     "version": 1,
     "type": "bike",
     "date": "Jan 26, 2026, 01:48:51 PM",
