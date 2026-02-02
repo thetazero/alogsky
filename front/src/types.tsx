@@ -61,6 +61,7 @@ export interface Interval {
 export enum Exercise {
     AnteriorBunkie = "Anterior Bunkie",
     BarbellRdl = "Barbell Romanian Deadlift",
+    BarbellRow = "Barbell Row",
     Bench = "Bench",
     BicepCurl = "Bicep Curl",
     BulgarianSplitSquat = "Bulgarian Split Squat",
@@ -74,6 +75,7 @@ export enum Exercise {
     DeclineSitUp = "Decline Situp",
     Dip = "Dip",
     DumbbellBench = "Dumbbell Bench",
+    DumbbellBicepCurl = "Dumbbell Bicep Curl",
     DumbbellFly = "Dumbbell Fly",
     DumbbellInclineBench = "Dumbbell Incline Bench",
     DumbbellOneLegOneArmRomanialDeadLift = "Dumbbell One Leg One Arm Romanian Deadlift",
